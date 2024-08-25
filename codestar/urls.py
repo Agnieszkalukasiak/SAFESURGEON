@@ -21,5 +21,6 @@ from SafeFaceIntro.views import my_SafeFace
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('SafeFaceIntro/', my_SafeFace, name='SafeFaceIntro'),
+    path('', my_SafeFace, name='home'),
    
 ]
