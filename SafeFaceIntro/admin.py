@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Post, Education
+from .models import Beauticians, Education
 
 # Register your models here.
-admin.site.register(Post)
+admin.site.register(Beauticians)
 admin.site.register(Education)
