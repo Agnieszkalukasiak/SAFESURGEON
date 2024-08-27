@@ -17,7 +17,7 @@ class Beauticians(models.Model):
     diploma = models.FileField(upload_to='diplomas/', null=True, blank=True)
 
     def __str__(self):
-        return f"{self.author.username}'s Beautician Profile - {self.clinic_name}"
+        return f"{self.author.username}'s Beautician Profile - {self.clinic}"
 
 class Education(models.Model):
     beautician  = models.ForeignKey(Beauticians , related_name='education', on_delete=models.CASCADE)
