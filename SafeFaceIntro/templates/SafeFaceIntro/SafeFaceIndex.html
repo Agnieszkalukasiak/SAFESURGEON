@@ -16,15 +16,12 @@
     <p>{{beautician.clinic}}</p>
 
     <h3>Education:</h3>
-    {% for education in beautician.education_set.all %}
+    { % for Education in beautician.education.all %}
         <p>School: {{education.school}}</p>
         <p>Program: {{education.program}}</p>
+
     {% empty %}
         <p>No education information available.</p>
-    {% endfor %}
-    <hr>
-{% empty %}
-    <p>No beauticians found.</p>
 {% endfor %}
 </body>
 

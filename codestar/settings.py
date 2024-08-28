@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'SafeFaceIntro',
+    'django-summernote-0.8.20.0',
 ]
 
 MIDDLEWARE = [
