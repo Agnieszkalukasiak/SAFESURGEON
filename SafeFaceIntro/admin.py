@@ -4,21 +4,27 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Beauticians)
 class BeauticiansAdmin(SummernoteModelAdmin):
-    list_display = ('get_name', 'clinic', 'city', 'country', 'verification_status')
-    search_fields = ['user__first_name', 'user__last_name', 'clinic', 'city', 'country']
+    list_display = ('name','clinic','city','verification_status','created_on')
     list_filter = ('verification_status', 'city', 'country')
-
-    def get_name(self, obj):
-        return obj.user.get_full_name()
-    get_name.short_description = 'Name'
+    search_fields = ['name', 'clinic', 'city', 'country', 'author__username', 'email']
+    readonly_fields = ('created_on','name','email')
+    prepopulated_fields = {'city': ('city',)}
+    fieldsets = (
+        (None, {
+            'fields': ('author', 'name', 'email', 'clinic', 'city', 'country')
+        }),
+        ('Verification', {
+            'fields': ('verification_status', 'id_document', 'diploma')
+        }),
+        ('Timestamps', {
+            'fields': ('created_on',)
+        })
+    )
 
 @admin.register(Education)
 class EducationAdmin(admin.ModelAdmin):
-    list_display = ('beautician', 'school', 'program')
-    search_fields = ['beautician__user__first_name', 'beautician__user__last_name', 'school', 'program']
-    list_filter = ('school',)
-    summernote_fields = ('description',) 
-
-# Register your models here.
+    list_display = ('beautician', 'school', 'program', 'years')
+    list_filter = ('school', 'program')
+    search_fields = ['beautician__name', 'school', 'program']
 
 

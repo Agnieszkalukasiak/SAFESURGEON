@@ -1,0 +1,42 @@
+[
+    {
+        "model": "SafeFaceIntro.Beauticians",
+        "fields": {
+            "name": "Tom Walander",
+            "clinic": "beauty clinic",
+            "author": 1,
+            "city": "Idaho",
+            "country": "Alaska",
+            "verification_status": 1,
+            "email": "tom@example.com",
+            "created_on": "2023-09-13T09:43:19.754Z"
+        }
+    },
+    {
+        "model": "SafeFaceIntro.Beauticians",
+        "fields": {
+            "name": "John Ask",
+            "clinic": "hair and makeup",
+            "author": 1,
+            "city": "Malmo",
+            "country": "Sweden",
+            "verification_status": 1,
+            "email": "john@example.com",
+            "created_on": "2023-09-13T09:41:53.636Z"
+        }
+    },
+    {
+        "model": "SafeFaceIntro.Beauticians",
+        "fields": {
+            "name": "Nina Simone",
+            "clinic": "eyes clinic",
+            "author": 1,
+            "city": "Linkoping",
+            "country": "Greece",
+            "verification_status": 1,
+            "email": "nina@example.com",
+            "created_on": "2023-09-29T12:55:25.717Z"
+        }
+    }
+]
+       
