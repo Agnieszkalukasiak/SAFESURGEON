@@ -5,8 +5,9 @@ from .models import Beauticians
 # Create your views here.
 class BeauticiansListView(generic.ListView):
     model = Beauticians
-    template_name = 'SafeFaceIntro/SafeFaceIndex.html' 
     context_object_name = 'beauticians'
+    template_name = "SafeFaceIntro/Templates/index.html"
+    paginate_by = 6
     
 
     def get_queryset(self):
