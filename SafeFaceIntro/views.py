@@ -7,7 +7,7 @@ class BeauticiansListView(generic.ListView):
     model = Beauticians
     context_object_name = 'beauticians'
     template_name = "beauticians_list.html"
-    paginate_by = 6
+   
     
 
     def get_queryset(self):
