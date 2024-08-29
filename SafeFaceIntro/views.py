@@ -6,7 +6,7 @@ from .models import Beauticians
 class BeauticiansListView(generic.ListView):
     model = Beauticians
     context_object_name = 'beauticians'
-    template_name = "SafeFaceIntro/Templates/index.html"
+    template_name = "beauticians_list.html"
     paginate_by = 6
     
 
