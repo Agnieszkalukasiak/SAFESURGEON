@@ -25,5 +25,13 @@ class Education(models.Model):
     program = models.CharField(max_length=200)
     years = models.IntegerField()
 
+def __str__(self):
+    return f"{self.school} - {self.program}"
+
+def save(self, *args, **kwargs):
+    if not self.slug:
+        self.slug = slugify(self.name)
+    super().save(*args, **kwargs)
+
     def __str__(self):
-        return f"{self.school} - {self.program}"
+        return f"{self.author.username}'s Beautician Profile - {self.clinic}"
