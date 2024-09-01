@@ -9,34 +9,69 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('SafeFaceIntro', '0001_initial'),
+        ('SafeSurgeon', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Beauticians',
+            name='Verification',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('country', models.CharField(max_length=100)),
-                ('city', models.CharField(max_length=100)),
-                ('clinic', models.CharField(max_length=200)),
+                ('PENDING', (0,'Pending')),
+                ('VERIFIED', (1,'Verified')),
+                ('REJECTED', (2,'Rejected')),
+                ],
+        ),
+
+        migrations.CreateModel(
+            name='Country',
+            fields=[
                 ('name', models.CharField(max_length=100)),
-                ('email', models.EmailField(max_length=254, unique=True)),
-                ('verification_status', models.IntegerField(choices=[(0, 'No'), (1, 'Yes')], default=0)),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
-                ('id_document', models.FileField(blank=True, null=True, upload_to='id_documents/')),
-                ('diploma', models.FileField(blank=True, null=True, upload_to='diplomas/')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='beautician_verifications', to=settings.AUTH_USER_MODEL)),
             ],
         ),
+
+        migrations.CreateModel(
+            name='City',
+            fields=[
+                ('name', models.CharField(max_length=100)),
+                ('country', models.ForeignKey(Country, on_delete=models.CASCADE, related_name="cities")),
+            ],
+        ),
+
+            migrations.CreateModel(
+            name='Clinic',
+            fields=[
+                ('name', models.CharField(max_length=200)),
+                ('city', models.ForeignKey(City, on_delete=models.CASCADE, related_name="clinics")),
+            ],
+        ),
+
+            migrations.CreateModel(
+            name='Surgeon',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('first_name', models.CharField(max_length=100)),
+                ('last_name', models.CharField(max_length=100)),
+                ('email', models.EmailField(max_length=254, unique=True)),
+                ('verification_status', models.IntegerField(choices=[(0, 'Pending'), (1, 'Yes'), (2, 'Rejected')], default=0))
+                ('created_on', models.DateTimeField(auto_now_add=True)),
+                ('id_document', models.FileField(blank=True, null=True, upload_to='id_documents/')),
+                ('profile_picture',CloudinaryField('profile picture', default='default_profile_pic')),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='surgeon_verifications', to=settings.AUTH_USER_MODEL)),
+             ],
+        ),
+       
+
         migrations.CreateModel(
             name='Education',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('school', models.CharField(max_length=200)),
+                ('institution', models.CharField(max_length=200)),
                 ('program', models.CharField(max_length=200)),
-                ('years', models.IntegerField()),
-                ('beautician', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='education', to='SafeFaceIntro.beauticians')),
+                ('country', models.ForeignKey (Country, on_delete=models.CASCADE,related_name="educations"))
+                ('start_date', models.IntegerField()),
+                ('end_date', models.IntegerField()),
+                ('certificate', models.FileField(upload_to='certificates/', null=True, blank=True)) 
+                ('surgeon', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='education', to='SafeSurgeon.surgeons')),
             ],
         ),
         migrations.DeleteModel(
