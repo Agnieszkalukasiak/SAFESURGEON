@@ -63,13 +63,23 @@
                 <span class="navbar-text text-muted">
                     adventures of a software developer
                 </span>
-            </div>
-        </div>
+               
     </nav>
 
     <main class="flex-shrink-0 main-bg">
 
         {% block content %}
+        <div class="image-container">
+            {% if "placeholder" in post.featured_image.url %}
+            <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+              alt="placeholder image">
+            {% else %}
+            <img class="card-img-top" src=" {{ post.featured_image.url }}"
+              alt="{{ post.title }}">
+            {% endif %}
+            <div class="image-flash">
+    </div>
+</div>
         <!-- Content Goes here -->
         {% endblock content %}
 
