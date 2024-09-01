@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+from cloudinary.models import CloudinaryField
 
 
 class Migration(migrations.Migration):
@@ -16,15 +17,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Verification',
             fields=[
-                ('PENDING', (0,'Pending')),
-                ('VERIFIED', (1,'Verified')),
-                ('REJECTED', (2,'Rejected')),
-                ],
-        ),
-
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('status', models.IntegerField(choices=[
+                (0,'Pending'),
+                (1,'Verified'),
+                (2,'Rejected'),
+            ], default=0)),
+        ],
+    ),
         migrations.CreateModel(
             name='Country',
             fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
             ],
         ),
@@ -32,16 +36,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='City',
             fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('country', models.ForeignKey(Country, on_delete=models.CASCADE, related_name="cities")),
+                ('country', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name="cities", to='SafeSurgeon.Country'),),
             ],
         ),
 
             migrations.CreateModel(
             name='Clinic',
             fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=200)),
-                ('city', models.ForeignKey(City, on_delete=models.CASCADE, related_name="clinics")),
+                ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name="clinics", to='SafeSurgeon.City')),
             ],
         ),
 
@@ -57,9 +63,8 @@ class Migration(migrations.Migration):
                 ('id_document', models.FileField(blank=True, null=True, upload_to='id_documents/')),
                 ('profile_picture',CloudinaryField('profile picture', default='default_profile_pic')),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='surgeon_verifications', to=settings.AUTH_USER_MODEL)),
-             ],
+            ],
         ),
-       
 
         migrations.CreateModel(
             name='Education',
@@ -74,6 +79,7 @@ class Migration(migrations.Migration):
                 ('surgeon', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='education', to='SafeSurgeon.surgeons')),
             ],
         ),
+        
         migrations.DeleteModel(
             name='Post',
         ),
