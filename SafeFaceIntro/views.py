@@ -11,6 +11,7 @@ class BeauticiansListView(generic.ListView):
 def Beautician_detail(request, slug):
     queryset = Beauticians.objects.filter(verification=1)
     post = get_object_or_404(queryset, slug=slug)
+
     return render(
         request,
         "SafeFaceIntro/Beautician_detail.html",

@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Beauticians(models.Model):
     Verification = ((0, "No"), (1, "Yes"))
 
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="beautician_verifications")
+    featured_image = CloudinaryField('image', default='placeholder')
     country = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     clinic = models.CharField(max_length=200)
