@@ -86,7 +86,7 @@ class Surgeon(models.Model):
         }
 
 class Education(models.Model):
-    surgeon  = models.ForeignKey( surgeon, related_name='education', on_delete=models.CASCADE)
+    surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="educations")
@@ -94,5 +94,5 @@ class Education(models.Model):
     end_date = models.DateField()
     certificate = models.FileField(upload_to='certificates/', null=True, blank=True)
 
-def __str__(self):
-    return f"{self.institution} - {self.program}"
+    def __str__(self):
+        return f"{self.institution} - {self.program}"
