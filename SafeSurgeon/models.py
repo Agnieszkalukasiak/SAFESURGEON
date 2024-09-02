@@ -37,7 +37,7 @@ class Surgeon(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name="surgeons")
+    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name="surgeon")
     verification_status = models.CharField(
         max_length=9, 
         choices=Verification.choices, 
@@ -78,7 +78,7 @@ class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="educations")
+    country = models.CharField(max_length=200)
     start_date = models.DateField()
     end_date = models.DateField()
     certificate = models.FileField(upload_to='certificates/', null=True, blank=True)

@@ -14,17 +14,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Verification',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('status', models.IntegerField(choices=[
-                (0,'Pending'),
-                (1,'Verified'),
-                (2,'Rejected'),
-            ], default=0)),
-        ],
-    ),
+
         migrations.CreateModel(
             name='Country',
             fields=[
@@ -58,7 +48,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(max_length=100)),
                 ('last_name', models.CharField(max_length=100)),
                 ('email', models.EmailField(max_length=254, unique=True)),
-                ('verification_status', models.IntegerField(choices=[(0, 'Pending'), (1, 'Yes'), (2, 'Rejected')], default=0))
+                ('verification_status', models.CharField(max_length=9, choices=[('PENDING', 'Pending'), ('VERIFIED', 'Verified'), ('REJECTED', 'Rejected')], default='PENDING')),
                 ('created_on', models.DateTimeField(auto_now_add=True)),
                 ('id_document', models.FileField(blank=True, null=True, upload_to='id_documents/')),
                 ('profile_picture',CloudinaryField('profile picture', default='default_profile_pic')),
@@ -72,10 +62,10 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('institution', models.CharField(max_length=200)),
                 ('program', models.CharField(max_length=200)),
-                ('country', models.ForeignKey (Country, on_delete=models.CASCADE,related_name="educations"))
+                ('country', models.CharField (max_length=200)),
                 ('start_date', models.IntegerField()),
                 ('end_date', models.IntegerField()),
-                ('certificate', models.FileField(upload_to='certificates/', null=True, blank=True)) 
+                ('certificate', models.FileField(upload_to='certificates/', null=True, blank=True)), 
                 ('surgeon', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='education', to='SafeSurgeon.surgeons')),
             ],
         ),

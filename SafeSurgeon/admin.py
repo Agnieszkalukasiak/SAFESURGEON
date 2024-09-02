@@ -27,9 +27,10 @@ class EducationInline(admin.TabularInline):
 @admin.register(Surgeon)
 class SurgeonAdmin(SummernoteModelAdmin):
     inlines = [EducationInline]
-    list_display = ('verification_status', 'profile_picture','country', 'city', 'clinic','first_name','last_name','email','id_document','created_on')
-    list_filter = ('verification_status','country','city','clinic')
-    search_fields = ['country__name', 'city__name', 'clinic__name', 'first_name','last_name', 'author__username', 'email']
+
+    list_display = ('profile_picture','get_country', 'get_city', 'clinic','first_name','last_name','email','id_document', 'verification_status','created_on')
+    list_filter = ('verification_status','clinic__city__country','clinic__city')
+    search_fields = ['clinic__city__country__name', 'clinic__city__name', 'clinic__name', 'first_name','last_name', 'author__username', 'email']
     readonly_fields = ('created_on','first_name','last_name','email')
     fieldsets = (
         (None, {
@@ -42,6 +43,14 @@ class SurgeonAdmin(SummernoteModelAdmin):
             'fields': ('created_on',)
         })
     )
+
+    def get_country(self, obj):
+        return obj.clinic.city.country.name if obj.clinic and obj.clinic.city and obj.clinic.city.country else None
+    get_country.short_description = 'Country'
+
+    def get_city(self, obj):
+        return obj.clinic.city.name if obj.clinic and obj.clinic.city else None
+    get_city.short_description = 'City'
 
 @admin.register(Education)
 class EducationAdmin(admin.ModelAdmin):

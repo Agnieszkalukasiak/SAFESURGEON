@@ -8,12 +8,12 @@ class SurgeonListView(generic.ListView):
     context_object_name = 'surgeons'
     template_name = "surgeons_list.html"
    
-def Surgeon_detail(request, slug):
-    queryset = Surgeons.objects.filter(verification=1)
+def surgeon_detail(request, slug):
+    queryset = Surgeon.objects.filter(verification=1)
     post = get_object_or_404(queryset, slug=slug)
 
     return render(
         request,
-        "SafeSurgeon/Surgeon_detail.html",
-        {"Surgeon":surgeon},
+        "SafeSurgeon/surgeon_detail.html",
+        {"surgeon":post},
     )
