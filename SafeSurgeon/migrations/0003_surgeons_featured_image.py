@@ -7,11 +7,11 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('SafeSurgeon', '0002_Surgeon_education_delete_post'),
+        ('SafeSurgeon', '0002_surgeon_delete_post'),
     ]
 
-    operations = [
-        migrations.AddField(
+    operations = [        
+            migrations.AddField(
             model_name='surgeon',
             name='featured_image',
             field=cloudinary.models.CloudinaryField(default='placeholder', max_length=255, verbose_name='image'),

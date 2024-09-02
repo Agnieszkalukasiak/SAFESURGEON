@@ -63,10 +63,10 @@ class Migration(migrations.Migration):
                 ('institution', models.CharField(max_length=200)),
                 ('program', models.CharField(max_length=200)),
                 ('country', models.CharField (max_length=200)),
-                ('start_date', models.IntegerField()),
-                ('end_date', models.IntegerField()),
+                ('start_date', models.DateField()),
+                ('end_date', models.DateField()),
                 ('certificate', models.FileField(upload_to='certificates/', null=True, blank=True)), 
-                ('surgeon', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='education', to='SafeSurgeon.surgeons')),
+                ('surgeon', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='education', to='SafeSurgeon.surgeon')),
             ],
         ),
         
