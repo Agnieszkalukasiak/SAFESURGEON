@@ -34,7 +34,7 @@ class Surgeon(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name="surgeons")
-    verification_status = models.IntegerField(choices=Verification.choices, default=Verification.PENDING)
+    verification= models.IntegerField(choices=Verification.choices, default=Verification.PENDING)
     created_on = models.DateTimeField(auto_now_add=True)
     id_document = models.FileField(upload_to='id_documents/', null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True)
