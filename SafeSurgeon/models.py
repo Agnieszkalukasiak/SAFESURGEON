@@ -5,10 +5,14 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-class Verification(models.IntegerChoices):
-    PENDING = 0, 'Pending'
-    VERIFIED = 1, 'Verified'
-    REJECTED = 2, 'Rejected'
+class Verification(models.TextChoices):
+    PENDING = 'PENDING', 'Pending'
+    VERIFIED = 'VERIFIED', 'Verified'
+    REJECTED = 'REJECTED', 'Rejected'
+
+    def is_verified(self):
+        return self.verification_status == Verification.VERIFIED
+
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
@@ -27,62 +31,46 @@ class Clinic (models.Model):
     name = models.CharField(max_length=200)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="clinics")
 
+    def __str__(self):
+        return self.name
+
 class Surgeon(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="surgeon_verfication")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="surgeon_verification")
     profile_picture = CloudinaryField('profile picture', default='default_profile_pic')
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name="surgeons")
-    verification= models.IntegerField(choices=Verification.choices, default=Verification.PENDING)
+    verification_status= models.CharField(max_length=8,choices=Verification.choices, default=Verification.PENDING,)
     created_on = models.DateTimeField(auto_now_add=True)
     id_document = models.FileField(upload_to='id_documents/', null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True)
 
     class Meta:
         ordering = ['-created_on']
-
-    def __str__(self):
-        return f"{self.name} - {self.get_verification_status_display()}"
-    
-    def user_display(self):
-        return {
-            'name': self.name,
-            'email': self.email,
-            'verification_status': self.get_verification_status_display(),
-            'created_on': self.created_on.strftime('%Y-%m-%d %H:%M:%S'),
-            'has_id_document': bool(self.id_document),
-            'profile_picture_url': self.profile_picture.url if self.profile_picture else None
-        }
-
-    class Meta:
-        ordering = ['-created_on']
-
+        
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name)
-    super().save(*args, **kwargs) 
+            self.slug = slugify(f"{self.first_name}-{self.last_name}")
+        super(Surgeon,self).save(*args, **kwargs) 
 
     def __str__(self):
-        return (f"{'Verified' if self.verification_status == Verification.VERIFIED else 'Not Verified'}, "
-                f"{self.country.name if self.country else 'N/A'}, "
-                f"{self.city.name if self.city else 'N/A'}, "
-                f"{self.name}, "
-                f"{self.clinic.name if self.clinic else 'N/A'}, "
-                f"{', '.join(edu.program for edu in self.education.all())}")
+        return f"{self.first_name} {self.last_name} - {self.get_verification_status_display()}"
     
+    def is_verified(self):
+            return self.verification_status == Verification.VERIFIED
+
     def user_display(self):
         return {
-            'name': self.name,
+            'name':f"{self.first_name} {self.last_name}",
             'email': self.email,
             'verification_status': self.get_verification_status_display(),
             'created_on': self.created_on.strftime('%Y-%m-%d %H:%M:%S'),
             'has_id_document': bool(self.id_document),
             'profile_picture_url': self.profile_picture.url if self.profile_picture else None,
-            'country': self.country.name if self.country else 'N/A',
-            'city': self.city.name if self.city else 'N/A',
+            'city': self.clinic.city.name if self.clinic else 'N/A',
             'clinic': self.clinic.name if self.clinic else 'N/A',
-            'education': [f"{edu.school} - {edu.program}" for edu in self.education.all()]
+            'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
 class Education(models.Model):
