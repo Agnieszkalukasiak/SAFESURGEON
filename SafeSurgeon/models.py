@@ -10,9 +10,6 @@ class Verification(models.TextChoices):
     VERIFIED = 'VERIFIED', 'Verified'
     REJECTED = 'REJECTED', 'Rejected'
 
-    def is_verified(self):
-        return self.verification_status == Verification.VERIFIED
-
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
@@ -41,7 +38,11 @@ class Surgeon(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name="surgeons")
-    verification_status= models.CharField(max_length=8,choices=Verification.choices, default=Verification.PENDING,)
+    verification_status = models.CharField(
+        max_length=9, 
+        choices=Verification.choices, 
+        default=Verification.PENDING
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     id_document = models.FileField(upload_to='id_documents/', null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True)
@@ -52,7 +53,7 @@ class Surgeon(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(f"{self.first_name}-{self.last_name}")
-        super(Surgeon,self).save(*args, **kwargs) 
+        super().save(*args, **kwargs) 
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} - {self.get_verification_status_display()}"

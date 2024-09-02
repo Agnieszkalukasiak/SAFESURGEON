@@ -2,12 +2,6 @@ from django.contrib import admin
 from .models import Verification, Country, City, Clinic, Surgeon, Education
 from django_summernote.admin import SummernoteModelAdmin
 
-@admin.register(Verification)
-class VerificationAdmin(admin.ModelAdmin):
-    list_display = ('status',)
-    list_filter = ('status',)
-    search_fields = ['status']
-
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
     list_display = ('name',)
