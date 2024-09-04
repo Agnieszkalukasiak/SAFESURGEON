@@ -1,0 +1,13 @@
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-4">Verify Your Surgeon</h1>
+            <p class="lead">Ensure that your surgeon is certified and meets all the safety standards.</p>
+            <a href="{% url 'verify_surgeon' %}" class="btn btn-primary btn-lg mb-4">Click Here to Verify</a>
+            <br>
+            <a href="{% url 'get_verified' %}" class="btn btn-success btn-lg">Get Verified</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
