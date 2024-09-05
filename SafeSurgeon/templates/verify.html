@@ -1,41 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}Get Verified - SafeSurgeon{% endblock %}
+{% load static %}
 
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/beauticians_list.css' %}">
-{% endblock extra_css %}
-
-{% block content %}
-    <div class="container">
-        <h1 class="mt-4 mb-4">Beauticians List</h1>
-        {% for beautician in beauticians %}
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">{{beautician.name}}</h2>
-                    <h3 class="card-subtitle mb-2 text-muted">{{beautician.clinic}}</h3>
-                    <p class="card-text">{{beautician.city}}, {{beautician.country}}</p>
-                    <div class="image-container">
-                        {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                          alt="placeholder image">
-                        {% else %}
-                        <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                          alt="{{ post.title }}">
-                        {% endif %}
-                        <div class="image-flash">
-                </div>
-            </div>
-
-                    <h4 class="mt-3">Education:</h4>
-                    {% for education in beautician.education.all %}
-                        <p>{{education.program}} at {{education.school}}</p>
-                    {% empty %}
-                        <p>No education information available.</p>
-                    {% endfor %}
-                </div>
-            </div>
-        {% empty %}
-            <p>No beauticians found.</p>
-        {% endfor %}
+{% block content %}Verify - SafeSurgeon{% endblock %}
+<main class="container mt-5">
+    <h1 class="mb-4">Verify you Surgeon</h1>
+    <form action= "{% url 'verify_surgeon' %}" method="post">
+        {% csrf_token %}
+    <div class="mb-3">
+        <label for="country" class="form-label"></label>
+            <select class="form-select" id="country" name="country" required>
+                <option value="">Select a country</option>
+                {%for country in countries%}
+                <option></option>
+            </select>       
     </div>
-{% endblock content %}
+    <div>
+        <label></label>
+            <select>
+                <option></option>
+                <option></option>
+            </select>       
+    </div>
+    <div>
+        <label></label>
+                <input>
+    </div>
+    <div>
+        <label></label>
+                <input>
+    </div>
+    <div>
+        <label></label>
+                <input>
+    </div>
+    <button></button>
+</form>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static SafeSurgeon/static/script.js %}"></script>
+{% endblock %}
