@@ -44,7 +44,7 @@ def get_cities(request, country_id):
     cities = City.objects.filter(country_id=country_id).values('id', 'name')
     return JsonResponse(list(cities), safe=False)
 
-#create profile html.
+#get_verfieied html.
 def surgeon_profile(request):
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES)
@@ -66,3 +66,6 @@ def surgeon_profile(request):
             'education_formset':education_formset
         })
 
+def get_verfieied(request):
+    if requested.method == 'POST':
+        form = Surgeon.form (request.POST, request.FILES)
