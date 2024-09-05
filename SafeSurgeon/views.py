@@ -43,3 +43,26 @@ def verify(request):
 def get_cities(request, country_id):
     cities = City.objects.filter(country_id=country_id).values('id', 'name')
     return JsonResponse(list(cities), safe=False)
+
+#create profile html.
+def surgeon_profile(request):
+    if request.method == 'POST':
+        form = SurgeonForm(request.POST, request.FILES)
+        education_formset = EducationFormSet(request.POST, request.FILES)
+        if form.is_valid() and education_formset.is_valid():
+            surgeon = form.save(commit=False)
+            surgeon.author = request.user
+            surgeon.save()
+            education_formset.instance = surgeon
+            education_formset.save()
+            message.success(request, 'Profile submitted for verification.')
+            return redirect('confirmation_page')
+        else:
+            form=surgeonForm()
+            educations_formset = educationFormSet()
+
+        return render (request,'profile.html', {
+            'form':form,
+            'education_formset':education_formset
+        })
+

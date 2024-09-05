@@ -85,3 +85,25 @@ class Education(models.Model):
 
     def __str__(self):
         return f"{self.institution} - {self.program}"
+
+
+class SurgeonForm(forms.ModelForm):
+    class Meta:
+        model = Surgeon
+        fields = ['first_name', 'last_name', 'email', 'clinic', 'profile_picture', 'id_document']
+        widgets = {
+            'clinic': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+class EducationForm(forms.ModelForm):
+    class Meta:
+        model = Education
+        fields = ['institution', 'program', 'country', 'start_date', 'end_date', 'certificate']
+        widgets = {
+            'start_date': forms.DateInput(attrs={'type': 'date'}),
+            'end_date': forms.DateInput(attrs={'type': 'date'}),
+        }
+
+EducationFormSet = forms.inlineformset_factory(
+    Surgeon, Education, form=EducationForm, extra=1, can_delete=True
+)
