@@ -69,3 +69,19 @@ def surgeon_profile(request):
 def get_verfieied(request):
     if requested.method == 'POST':
         form = Surgeon.form (request.POST, request.FILES)
+        education_formset = education_formset.is_valid()
+        Surgeon = form.save(commit=False)
+        Surgeon.author =request.user
+        surgeon.save()
+        education_formset.instance = surgeon
+        education_formset.save()
+        messages.success(request, 'Profile submitted for verification.')
+        return redirect('confirmation_page')
+    else:
+        form = SurgeonForm()
+        education_formset = EducationFormSet()
+    
+    return render(request, 'get_verified.html', {
+        'form': form,
+        'education_formset': education_formset
+    })
