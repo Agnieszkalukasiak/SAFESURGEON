@@ -66,17 +66,18 @@ def surgeon_profile(request):
             'education_formset':education_formset
         })
 
-def get_verfieied(request):
-    if requested.method == 'POST':
-        form = Surgeon.form (request.POST, request.FILES)
-        education_formset = education_formset.is_valid()
-        Surgeon = form.save(commit=False)
-        Surgeon.author =request.user
-        surgeon.save()
-        education_formset.instance = surgeon
-        education_formset.save()
-        messages.success(request, 'Profile submitted for verification.')
-        return redirect('confirmation_page')
+def get_verified(request):
+    if request.method == 'POST':
+        form = SurgeonForm (request.POST, request.FILES)
+        education_formset = EducationFormSet(request.POST,request.FILES)
+        if form.is_valid() and education_formset.is_valid():
+            surgeon = form.save(commit=False)
+            surgeon.author =request.user
+            surgeon.save()
+            education_formset.instance = surgeon
+            education_formset.save()
+            messages.success(request, 'Profile submitted for verification.')
+            return redirect('confirmation_page')
     else:
         form = SurgeonForm()
         education_formset = EducationFormSet()

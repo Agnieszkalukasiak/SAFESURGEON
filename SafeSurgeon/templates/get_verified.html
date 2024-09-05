@@ -1,14 +1,163 @@
 {% extends 'base.html' %}
 
+
+{% load static %}
+
+{% block title %}Get Verified - SafeSurgeon{% endblock %}
+
 {% block content %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-sm-12 text-center">
-            <h1 class="display-4 mb-4">Verify Your Surgeon</h1>
-            <a href="{% url 'verify_surgeon' %}" class="btn btn-primary btn-lg btn-block mb-4">Click Here to Verify</a>
-            <br>
-            <a href="{% url 'get_verified' %}" class="btn btn-success btn-lg btn-block">Get Verified</a>
+    <h1 class="mb-4">Submit Your Profile for Verification</h1>
+    
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
         </div>
+        {% endfor %}
     </div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" id="verification-form">
+        {% csrf_token %}
+        
+        <h2>Personal Information</h2>
+        {{ form.non_field_errors }}
+        <div class="mb-3">
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+            {{ form.first_name.errors }}
+        </div>
+        <div class="mb-3">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+            {{ form.last_name.errors }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
+        
+        <h2>Location</h2>
+        <div class="mb-3">
+            {{ form.country.label_tag }}
+            {{ form.country }}
+            {{ form.country.errors }}
+        </div>
+        <div class="mb-3">
+            {{ form.city.label_tag }}
+            {{ form.city }}
+            {{ form.city.errors }}
+        </div>
+        <div class="mb-3">
+            {{ form.clinic.label_tag }}
+            {{ form.clinic }}
+            {{ form.clinic.errors }}
+        </div>
+        
+        <h2>Documents</h2>
+        <div class="mb-3">
+            {{ form.profile_picture.label_tag }}
+            {{ form.profile_picture }}
+            {{ form.profile_picture.errors }}
+        </div>
+        <div class="mb-3">
+            {{ form.id_document.label_tag }}
+            {{ form.id_document }}
+            {{ form.id_document.errors }}
+        </div>
+        
+        <h2>Education</h2>
+        {{ education_formset.management_form }}
+        <div id="education-forms">
+            {% for education_form in education_formset %}
+                <div class="education-form mb-4">
+                    <h3>Education Entry {{ forloop.counter }}</h3>
+                    {{ education_form.non_field_errors }}
+                    <div class="mb-3">
+                        {{ education_form.institution.label_tag }}
+                        {{ education_form.institution }}
+                        {{ education_form.institution.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ education_form.program.label_tag }}
+                        {{ education_form.program }}
+                        {{ education_form.program.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ education_form.country.label_tag }}
+                        {{ education_form.country }}
+                        {{ education_form.country.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ education_form.start_date.label_tag }}
+                        {{ education_form.start_date }}
+                        {{ education_form.start_date.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ education_form.end_date.label_tag }}
+                        {{ education_form.end_date }}
+                        {{ education_form.end_date.errors }}
+                    </div>
+                    <div class="mb-3">
+                        {{ education_form.certificate.label_tag }}
+                        {{ education_form.certificate }}
+                        {{ education_form.certificate.errors }}
+                    </div>
+                    {% if education_formset.can_delete %}
+                        <div class="mb-3">
+                            {{ education_form.DELETE.label_tag }}
+                            {{ education_form.DELETE }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit for Verification</button>
+        </div>
+    </form>
 </div>
-{% endblock content %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/get_verified.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Dynamic form fields for country, city, and clinic
+        const countrySelect = document.getElementById('{{ form.country.id_for_label }}');
+        const citySelect = document.getElementById('{{ form.city.id_for_label }}');
+        const clinicSelect = document.getElementById('{{ form.clinic.id_for_label }}');
+
+        countrySelect.addEventListener('change', function() {
+            // AJAX call to get cities for selected country
+            // Update citySelect options
+        });
+
+        citySelect.addEventListener('change', function() {
+            // AJAX call to get clinics for selected city
+            // Update clinicSelect options
+        });
+
+        // Add education form dynamically
+        const addEducationBtn = document.getElementById('add-education');
+        const educationForms = document.getElementById('education-forms');
+        let formCount = {{ education_formset.total_form_count }};
+
+        addEducationBtn.addEventListener('click', function() {
+            const newForm = educationForms.children[0].cloneNode(true);
+            formCount++;
+            newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
+            newForm.innerHTML = newForm.innerHTML.replace(/__prefix__/g, formCount);
+            educationForms.appendChild(newForm);
+            
+            const totalForms = document.getElementById('id_education-TOTAL_FORMS');
+            totalForms.value = formCount + 1;
+        });
+    });
+</script>
+{% endblock %}
