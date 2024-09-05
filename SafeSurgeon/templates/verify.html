@@ -13,33 +13,32 @@
             <select class="form-select" id="country" name="country" required>
                 <option value="">Select a country</option>
                 {%for country in countries%}
-                <option></option>
+                <option value="{{country.id}}">{{country.name}}</option>
+                {% endfor %}
             </select>       
     </div>
-    <div>
-        <label></label>
-            <select>
-                <option></option>
-                <option></option>
+    <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+            <select class="form-select" id="city" name="city" required>
+                <option value="">Select a city</option>
+                {% for city in cities %}
+                <option value="{{city.id}}">{{city.name}}</option>
+                {% endfor %}
             </select>       
     </div>
-    <div>
-        <label></label>
-                <input>
+    <div class="mb-3">
+        <label for="first_name" class="form-label">First nav-item</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
     </div>
-    <div>
-        <label></label>
-                <input>
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
     </div>
-    <div>
-        <label></label>
-                <input>
-    </div>
-    <button></button>
+    <button type="submit" class="btn btn-primary">Verify</button>
 </form>
 </main>
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static SafeSurgeon/static/script.js %}"></script>
+<script src="{% static 'SafeSurgeon/static/safeSurgeon.js' %}"></script> 
 {% endblock %}
