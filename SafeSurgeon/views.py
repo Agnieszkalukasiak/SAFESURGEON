@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Surgeon, Country, City, Clinic, Education
+from .forms import SurgeonForm, EducationFormSet  
 
 # Create your views here for home page
 def home(request):
