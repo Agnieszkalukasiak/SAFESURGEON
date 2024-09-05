@@ -1,23 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Surgeon
+from .models import Surgeon, Country, City, Clinic, Education
 
-# Create your views here.
+# Create your views here for home page
 def home(request):
     return render(request, 'home.html')
-
-def home(request):
- return render(request, 'verify.html')
-   
-def surgeon_detail(request, slug):
-    queryset = Surgeon.objects.filter(verification=1)
-    post = get_object_or_404(queryset, slug=slug)
-
-    return render(
-        request,
-        "SafeSurgeon/surgeon_detail.html",
-        {"surgeon":post},
-    )
 
 #views for the verify page
 
