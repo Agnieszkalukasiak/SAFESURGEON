@@ -7,7 +7,7 @@
 {% block content %}
 <main class="container mt-5">
     <h1 class="mb-4">Verify your Surgeon</h1>
-    <form action= "{% url 'verify_surgeon' %}" method="post">
+    <form action= "{% url 'verify' %}" method="post">
         {% csrf_token %}
     <div class="mb-3">
         <label for="country" class="form-label"></label>
