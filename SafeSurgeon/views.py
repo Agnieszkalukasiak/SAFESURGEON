@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import SurgeonForm, EducationFormSet
 from django.db import transaction
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 
 # Create your views here for home page
 def home(request):
@@ -70,3 +72,9 @@ def get_verified(request):
         'form': form,
         'education_formset': education_formset
     })
+@require_POST
+def submit_surgeon_form(request):
+    form = SurgeonForm(request.POST, request.FILES)
+    if form.is_valid():
+        surgeon = form.save()
+    return JsonResponse({'success': True})

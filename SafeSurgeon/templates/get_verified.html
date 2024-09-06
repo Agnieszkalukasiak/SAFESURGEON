@@ -120,6 +120,14 @@
         </div>
     </form>
 </div>
+<form id="surgeonForm" method="post">
+    {% csrf_token %}
+    <!-- Your form fields here -->
+    <button type="submit">Submit</button>
+</form>
+<div id="thankYouMessage" style="display: none;">
+    Thank you for your submission. We will email you once your verification process is completed. Thank you!
+</div>
 {% endblock %}
 
 {% block extra_js %}

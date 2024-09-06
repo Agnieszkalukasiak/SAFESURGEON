@@ -51,3 +51,23 @@ document.getElementById('country').addEventListener('change', function(){
             totalForms.value = formCount + 1;
         });
     });
+//thank you message for surgon profile
+document.getElementById('surgeonForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('surgeonForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+        } else {
+            alert('There was an error submitting the form. Please try again.');
+        }
+    });
+});
