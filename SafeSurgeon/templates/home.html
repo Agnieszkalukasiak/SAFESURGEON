@@ -1,9 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Get Verified - SafeSurgeon{% endblock %}
+
+
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-sm-12 text-center">
             <h1 class="display-4 mb-4">Verify Your Surgeon</h1>
-            <a href="{% url 'verify_surgeon' %}" class="btn btn-primary btn-lg btn-block mb-4">Click Here to Verify</a>
+            <a href="{% url 'verify' %}" class="btn btn-primary btn-lg btn-block mb-4">Click Here to Verify</a>
             <br>
             <a href="{% url 'get_verified' %}" class="btn btn-success btn-lg btn-block">Get Verified</a>
         </div>

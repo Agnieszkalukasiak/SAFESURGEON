@@ -28,13 +28,8 @@
             </select>       
     </div>
     <div class="mb-3">
-        <label for="clinic" class="form-label"></label>
-            <select class="form-select" id="city" name="city" required>
-                <option value="">Select a clinic</option>
-                {% for clinic in clinics %}
-                <option value="{{clinic.id}}">{{clinic.name}}</option>
-                {% endfor %}
-            </select>       
+        <label for="clinic" class="clinic_form"></label>
+            <input type='text' class="form-control" id="clinic" name="clinic" placeholder='clinic'required>    
     </div>
     <div class="mb-3">
         <label for="first_name" class="form-label"></label>
