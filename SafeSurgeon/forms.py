@@ -37,19 +37,19 @@ class SurgeonForm(forms.ModelForm):
         elif self.instance.pk and self.instance.clinic:
             self.fields['clinic'].queryset = Clinic.objects.filter(city=self.instance.clinic.city)
 
-    class EducationForm(forms.ModelForm):
-        country = form.ModelChoiceField(queryset=Country.objects.all(), required=True)
-        certificate = forms.FileField(
+class EducationForm(forms.ModelForm):
+    country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
+    certificate = forms.FileField(
         required=True,
         validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])]
-    )
-        class Meta:
-            model = Education
-            fields = ['institution', 'program', 'country', 'start_date', 'end_date', 'certificate']
-            widgets = {
-                'start_date': forms.DateInput(attrs={'type': 'date'}),
-                'end_date': forms.DateInput(attrs={'type': 'date'}),
-        }
+)
+    class Meta:
+        model = Education
+        fields = ['institution', 'program', 'country', 'start_date', 'end_date', 'certificate']
+        widgets = {
+            'start_date': forms.DateInput(attrs={'type': 'date'}),
+            'end_date': forms.DateInput(attrs={'type': 'date'}),
+    }
 
 EducationFormSet = forms.inlineformset_factory(
     Surgeon, Education, form=EducationForm, extra=1, can_delete=True
