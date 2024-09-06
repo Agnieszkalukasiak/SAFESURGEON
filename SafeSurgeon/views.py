@@ -1,13 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Surgeon, Country, City, Clinic, Education
-from .forms import SurgeonForm, EducationFormSet  
+from django.shortcuts import render, redirect 
+from django.contrib.auth.decorators import login_required
+from .forms import SurgeonForm, EducationFormSet
+from django.db import transaction
 
 # Create your views here for home page
 def home(request):
     return render(request, 'home.html')
 
-#views for the verify page
+#views for the verify your surgeon: 'home' page
 
 def verify(request):
     if request.method == 'POST':
@@ -45,40 +48,20 @@ def get_cities(request, country_id):
     cities = City.objects.filter(country_id=country_id).values('id', 'name')
     return JsonResponse(list(cities), safe=False)
 
-#get_verfieied html.
-def surgeon_profile(request):
+#get_verified page
+@login_required
+def get_verified(request):
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES)
         education_formset = EducationFormSet(request.POST, request.FILES)
         if form.is_valid() and education_formset.is_valid():
-            surgeon = form.save(commit=False)
-            surgeon.author = request.user
-            surgeon.save()
-            education_formset.instance = surgeon
-            education_formset.save()
-            message.success(request, 'Profile submitted for verification.')
-            return redirect('confirmation_page')
-        else:
-            form=surgeonForm()
-            educations_formset = educationFormSet()
-
-        return render (request,'profile.html', {
-            'form':form,
-            'education_formset':education_formset
-        })
-
-def get_verified(request):
-    if request.method == 'POST':
-        form = SurgeonForm (request.POST, request.FILES)
-        education_formset = EducationFormSet(request.POST,request.FILES)
-        if form.is_valid() and education_formset.is_valid():
-            surgeon = form.save(commit=False)
-            surgeon.author =request.user
-            surgeon.save()
-            education_formset.instance = surgeon
-            education_formset.save()
-            messages.success(request, 'Profile submitted for verification.')
-            return redirect('confirmation_page')
+            with transaction.atomic():
+                surgeon = form.save(commit=False)
+                surgeon.author = request.user
+                surgeon.save()
+                education_formset.instance = surgeon
+                education_formset.save()
+            return redirect('surgeon_profile')  # Redirect to a success page
     else:
         form = SurgeonForm()
         education_formset = EducationFormSet()

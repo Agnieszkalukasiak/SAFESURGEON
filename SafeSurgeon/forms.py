@@ -7,10 +7,8 @@ class SurgeonForm(forms.ModelForm):
     city = forms.ModelChoiceField(queryset=City.objects.none(),required=True)
     profile_picture = forms.ImageField(required=True)
     id_document=forms.FileField(
-        required=True
+        required=True,
         validators=[FileExtensionValidator(allowed_extensions=['pdf','jpg','jpeg','png'])]
-        )
-])]
     )
 
     class Meta:
@@ -29,7 +27,7 @@ class SurgeonForm(forms.ModelForm):
             except (ValueError, TypeError):
                     pass
         elif self.instance.pk and self.instance.clinic:
-                self.fields['city'].queryset = City.objects.filter(country=self.instance.clinic.city.country) self.instance.clinic.city.clinics.order_by('name')
+                self.fields['city'].queryset = City.objects.filter(country=self.instance.clinic.city.country)
         if 'city' in self.data:
             try:
                 city_id = int(self.data.get('city'))
