@@ -71,3 +71,19 @@ document.getElementById('surgeonForm').addEventListener('submit', function(e) {
         }
     });
 });
+
+// setting for cities to drop down in countries
+$("#id_country").change(function () {
+    var url = "{% url 'ajax_load_cities' %}";
+    var countryId = $(this).val();
+
+    $.ajax({
+        url: url,
+        data: {
+            'country_id': countryId
+        },
+        success: function (data) {
+            $("#id_city").html(data);
+        }
+    });
+});

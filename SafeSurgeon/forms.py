@@ -27,8 +27,8 @@ class SurgeonForm(forms.ModelForm):
                 self.fields['city'].queryset = City.objects.filter(country_id=country_id).order_by('name')
             except (ValueError, TypeError):
                     pass
-        elif self.instance.pk and self.instance.clinic:
-                self.fields['city'].queryset = City.objects.filter(country=self.instance.clinic.city.country)
+        elif self.instance.pk:
+                self.fields['city'].queryset = City.objects.filter(country_id=country_id ).order_by('name')
         if 'city' in self.data:
             try:
                 city_id = int(self.data.get('city'))
