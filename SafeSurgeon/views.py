@@ -105,7 +105,7 @@ def surgeon_profile(request):
 
     #edit surgon_profile
 
-    @login_required
+@login_required
 def edit_profile(request):
     surgeon = Surgeon.objects.get(author=request.user)
     if request.method == 'POST':
