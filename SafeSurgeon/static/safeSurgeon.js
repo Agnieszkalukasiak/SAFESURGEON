@@ -87,3 +87,24 @@ $("#id_country").change(function () {
         }
     });
 });
+//surgeon_profile and edit
+document.addEventListener('DOMContentLoaded', function() {
+    const addEducationBtn = document.getElementById('add-education');
+    const educationFormset = document.getElementById('id_education_set-TOTAL_FORMS');
+    
+    addEducationBtn.addEventListener('click', function() {
+        const formCount = parseInt(educationFormset.value);
+        const newForm = document.querySelector('.education-form').cloneNode(true);
+        
+        // Update form index
+        newForm.innerHTML = newForm.innerHTML.replace(/-\d+-/g, `-${formCount}-`);
+        
+        // Clear input values
+        newForm.querySelectorAll('input, select').forEach(input => {
+            input.value = '';
+        });
+        
+        document.querySelector('.education-form').parentNode.insertBefore(newForm, addEducationBtn);
+        educationFormset.value = formCount + 1;
+    });
+});

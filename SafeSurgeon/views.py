@@ -102,3 +102,25 @@ def surgeon_profile(request):
         'form': form,
     }
     return render(request, 'safesurgeon/surgeon_profile.html', context)
+
+    #edit surgon_profile
+
+    @login_required
+def edit_profile(request):
+    surgeon = Surgeon.objects.get(author=request.user)
+    if request.method == 'POST':
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon)
+        if form.is_valid() and education_formset.is_valid():
+            with transaction.atomic():
+                form.save()
+                education_formset.save()
+            return redirect ('surgeon_profile')
+    else:
+        form = SurgeonForm(instance=surgeon)
+        education_formset = EducationFormSet(instance=surgeon)
+
+    return render(request, 'edit_profile.html',{
+        'form':form,
+        'education_formset': education_formset
+    })
