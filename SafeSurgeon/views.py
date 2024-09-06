@@ -7,6 +7,7 @@ from .forms import SurgeonForm, EducationFormSet
 from django.db import transaction
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from django.contrib import messages
 
 # Create your views here for home page
 def home(request):
@@ -78,3 +79,26 @@ def submit_surgeon_form(request):
     if form.is_valid():
         surgeon = form.save()
     return JsonResponse({'success': True})
+
+#surgon profile page
+@login_required
+def surgeon_profile(request):
+    try:
+        profile = request.user.surgeonprofile
+    except SurgeonProfile.DoesNotExist:
+        profile = SurgeonProfile(user=request.user)
+
+    if request.method == 'POST':
+        form = SurgeonProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Thank you for updating your profile. We will emial you once you verification is completed')
+            return redirect('surfeon_profile')
+    else:
+        form = SurgeonProfileForm(instance=profile)
+    
+    context = {
+        'profile': profile,
+        'form': form,
+    }
+    return render(request, 'safesurgeon/surgeon_profile.html', context)
