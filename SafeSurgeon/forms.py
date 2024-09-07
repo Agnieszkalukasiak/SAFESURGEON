@@ -1,6 +1,8 @@
 from django import forms
 from django.core.validators import FileExtensionValidator
 from .models import Surgeon, Education, Clinic, City, Country
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class SurgeonForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
@@ -56,4 +58,23 @@ EducationFormSet = forms.inlineformset_factory(
     Surgeon, Education, form=EducationForm, extra=1, can_delete=True
 )
 
-        
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ("username", "email", "password1", "password2")
+
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ("username", "email", "password1", "password2")
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+        return user
