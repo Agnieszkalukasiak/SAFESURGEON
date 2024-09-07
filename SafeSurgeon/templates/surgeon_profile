@@ -6,49 +6,54 @@
     <div class="card">
         <div class="card-header">
             <h2 class="card-title">
-                {%if profile.is_verified %}
+                {% if surgeon.is verified %}
                     <span class="badge bg-success">Verified</span>
                 {% else %}
-                    <span class="badge bg-arning">Not Verified</span>
+                    <span class="badge bg-warning">Not Verified</span>
                 {% endif %}
                 Surgeon Profile
             </h2>
         </div>
-        <div class="card-body">
-            {% if messages %}
-                {%for message in messages%}
-                    <div class="alert alert-{{message.tags}}">{{message}}</div>
-                {%end for%}
-            {%end if%}
-
+    <div class="card-body">
+        {% if messages %}
+            {% for message in messages%}
             <div class="row">
-                <div class="col-md-4">
-                    {%if profile.profile_picture%}
-                        <img src="{{profile.profile_picture.url}}" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
-                        {% else %}
-                        <img src="{% static 'images/default_profile.png' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mb-3">
-                    {% endif %}
-                </div>
-                <div class="col-md-8">
-                    <h3>{{profile.user.get_full_name}}</h3>
-                    <p><strong>Clinic:</strong>{{profile.clinic}}</p>
-                    <p><strong>Country:</strong>{{profile.clinic}}</p>
-                    <p><strong>City:</strong>{{profile.clinic}}</p>
+            <div class="col-md-4">
+                {% if surgeon.profile_picture %}
+                    <img src="{{surgeon.profile_picture-url}}" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
+                {% else %}
+                    <img src="{% static 'image/default_profile.png' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mb-3">
+                {% end if%}
+            </div>
+            <div class="col-md-8">
+                <h3>Name: {{ surgeon.first_name }} {{ surgeon.last_name }}</h3>
+                <p><strong>Email:</strong> {{ surgeon.email }}</p>
+                <p><strong>Clinic:</strong> {{ surgeon.clinic.name }}</p>
+                <p><strong>City:</strong> {{ surgeon.clinic.city.name }}</p>
+                <p><strong>Country:</strong> {{ surgeon.clinic.city.country.name }}</p>
 
-                    <h4 class="mt-4">Education</h4>
-                    <p><strong>Insitution:</strong>{{profile.insitution}}</p>
-                    <p><strong>Program:</strong>{{profile.program}}</p>
-                    <p><strong>Country:</strong>{{profile.country}}</p>
-                    <p><strong>Year Start:</strong>{{profile.year_start}}</p>
-                    <p><strong>Year End:</strong>{{profile.year_end}}</p>
-                </div>
+                <h4 class="mt-4">Education</h4>
+                {% for edu in surgeon.education.all %}
+                    <div>
+                        <p><strong>Insitution:</strong>{{profile.insitution}}</p>
+                        <p><strong>Program:</strong>{{profile.program}}</p>
+                        <p><strong>Country:</strong>{{profile.country}}</p>
+                        <p><strong>Year Start:</strong>{{profile.year_start}}</p>
+                        <p><strong>Year End:</strong>{{profile.year_end}}</p>
+                    </div>
+                    {% if not forlopp.last %}<hr>{% endif %}
+                {% empty %}
+                    <p>No education information available.</p>
+                {% endfor %}
             </div>
         </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
-        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
     </div>
 </div>
+</div>
+
 <!-- Edit Profile Modal -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -63,11 +68,11 @@
                     {{ form.as_p }}
                     
                     <h3>Education</h3>
-                    {{ education_formset.management_form }}
+                    {{ for education_formset.managment_form }}
                     {% for education_form in education_formset %}
                         <div class="education-form">
-                            {{ education_form.as_p }}
-                            {% if education_form.instance.pk %}
+                            {{education_form.as_p}}
+                    {% if education_form.instance.pk %}
                                 <p>Current certificate: {{ education_form.instance.certificate.name }}</p>
                             {% endif %}
                             <hr>
@@ -81,3 +86,4 @@
         </div>
     </div>
 </div>
+{% end block %}

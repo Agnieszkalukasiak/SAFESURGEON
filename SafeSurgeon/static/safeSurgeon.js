@@ -108,3 +108,12 @@ document.addEventListener('DOMContentLoaded', function() {
         educationFormset.value = formCount + 1;
     });
 });
+
+document.getElementById('add-education').addEventListener('click', function() {
+    var formCount = parseInt(document.getElementById('id_education-TOTAL_FORMS').value);
+    var newForm = document.querySelector('.education-form').cloneNode(true);
+    var regex = new RegExp('education-\\d+', 'g');
+    newForm.innerHTML = newForm.innerHTML.replace(regex, 'education-' + formCount);
+    document.querySelector('.education-form').parentNode.insertBefore(newForm, this);
+    document.getElementById('id_education-TOTAL_FORMS').value = formCount + 1;
+});
