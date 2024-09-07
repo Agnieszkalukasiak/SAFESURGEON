@@ -107,6 +107,12 @@ def get_verified(request):
                     surgeon = form.save(commit=False)
                     surgeon.author = request.user
                     surgeon.verification_status = Verification.PENDING.value
+                    city_name = form.cleaned_data['city']
+                    country = form.cleaned_data['country']
+                    city, created = City.objects.get_or_create(name=city_name, country=country)
+                    clinic_name = form.cleaned_data['clinic']
+                    clinic, created = Clinic.objects.get_or_create(name=clinic_name, city=city)
+                    surgeon.clinic = clinic
                     surgeon.save()
                     education_formset.instance=surgeon
                     education_formset.save()

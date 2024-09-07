@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class SurgeonForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
-    city = forms.ModelChoiceField(queryset=City.objects.none(),required=True)
+    city = forms.CharField(max_length=200, required=True)
     clinic = forms.CharField(max_length=200, required=True)
     profile_picture = forms.ImageField(required=True)
     id_document=forms.FileField(
