@@ -84,7 +84,7 @@ def get_verified(request):
     if not request.user.is_authenticated:
         messages.info(request, "Please sign up or log in to get verified.")
         return redirect('signup')
-        
+
     try:
         surgeon = Surgeon.objects.get(author=request.user)
         if surgeon.verification_status == Verification.VERIFIED.value:
@@ -166,23 +166,19 @@ def login_view(request):
     return render(request, 'safesurgeon/login.html', {'form': form})
 
 def signup_view(request):
-    if request.user.is_authenticated:
-        try:
-            surgeon = Surgeon.objects.get(author=request.user)
-            return redirect('surgeon_profile')
-        except Surgeon.DoesNotExist:
-            return redirect('get_verified')
-
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
-            messages.success(request, "Registration successful.")
-            return redirect('get_verified')  # Redirect to home page after signup
-        messages.error(request, "Unsuccessful registration. Invalid information.")
-    form = SignUpForm()
-    return render(request, 'safesurgeon/signup.html', {'form': form})
+            login(request, user)  # Log the user in
+            messages.success(request, "Registration successful. Please complete your profile.")
+            return redirect('get_verified')
+        else:
+            messages.error(request, "Unsuccessful registration. Invalid information.")
+    else:
+        form = SignUpForm()
+    
+    return render(request, 'signup.html', {'form': form})
 
 def redirect_user(user):
     try:
