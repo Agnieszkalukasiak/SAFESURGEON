@@ -55,7 +55,9 @@ class EducationForm(forms.ModelForm):
     }
 
 EducationFormSet = forms.inlineformset_factory(
-    Surgeon, Education, form=EducationForm, extra=1, can_delete=True
+    Surgeon, Education,
+    fields=('institution', 'program', 'country', 'start_date', 'end_date', 'certificate'),
+    extra=1, can_delete=True
 )
 
 class SignUpForm(UserCreationForm):

@@ -57,24 +57,24 @@ def get_cities(request, country_id):
 @login_required
 def surgeon_profile(request):
     try:
-        profile = request.user.surgeonprofile
-        if not profile.is_verified:
+        surgeon = Surgeon.objects.get(author=request.user)
+        if not surgeon.is_verified:
             return redirect('get_verified')
-
-    except SurgeonProfile.DoesNotExist:
+    except Surgeon.DoesNotExist:
          return redirect('get_verified')
     
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon)
         if form.is_valid() and education_formset.is_valid():
             form.save()
             education_formset.save()
             messages.success(request, 'Thank you for updating your profile. We will email you once you verification is completed')
             return redirect('surgeon_profile')
     else:
-        form = SurgeonForm(instance=profile)
+        form = SurgeonForm(instance=surgeon)
         education_formset = EducationFormSet(instance=surgeon)
-    
+
     context = {
         'surgeon': surgeon,
         'form': form,
