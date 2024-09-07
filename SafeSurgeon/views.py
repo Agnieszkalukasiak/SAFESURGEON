@@ -53,35 +53,6 @@ def get_cities(request, country_id):
     cities = City.objects.filter(country_id=country_id).values('id', 'name')
     return JsonResponse(list(cities), safe=False)
 
-#get_verified page
-@login_required
-def get_verified(request):
-    if request.method == 'POST':
-        form = SurgeonForm(request.POST, request.FILES)
-        education_formset = EducationFormSet(request.POST, request.FILES)
-        if form.is_valid() and education_formset.is_valid():
-            with transaction.atomic():
-                surgeon = form.save(commit=False)
-                surgeon.author = request.user
-                surgeon.save()
-                education_formset.instance = surgeon
-                education_formset.save()
-            return redirect('surgeon_profile')  # Redirect to a success page
-    else:
-        form = SurgeonForm()
-        education_formset = EducationFormSet()
-    
-    return render(request, 'get_verified.html', {
-        'form': form,
-        'education_formset': education_formset
-    })
-@require_POST
-def submit_surgeon_form(request):
-    form = SurgeonForm(request.POST, request.FILES)
-    if form.is_valid():
-        surgeon = form.save()
-    return JsonResponse({'success': True})
-
 #surgon profile page
 @login_required
 def surgeon_profile(request):
@@ -112,7 +83,7 @@ def surgeon_profile(request):
 def get_verified(request):
     try:
         surgeon = Surgeon.objects.get(author=request.user)
-        if surgeon.verification_status== Verification.VERIFIED
+        if surgeon.verification_status == Verification.VERIFIED.value:
             messages.info(request, "your profile is already verified")
             return redirect ('surgeon_profile')
     except Surgeon.DoesNotExist:
@@ -122,24 +93,32 @@ def get_verified(request):
         form=SurgeonForm(request.POST, request.FILES, instance=surgeon)
         education_formset = EducationFormSet(request.POST, request.FILES,)
         if form.is_valid() and education_formset.is_valid():
-            with transaction.atomic():
-                surgeon = form.save(commit=False)
-                surgeon.author = request.user
-                surgeon.verification_status = Verification:PENDING
-                surgeon.save()
-                education_formset.instance=surgeon
-                education_formset.save()
-            messages.success(request, "your profile has been submitted for verification.")
-            return redirect('surgeon_profile')
+            try:
+                with transaction.atomic():
+                    surgeon = form.save(commit=False)
+                    surgeon.author = request.user
+                    surgeon.verification_status = Verification.PENDING.value
+                    surgeon.save()
+                    education_formset.instance=surgeon
+                    education_formset.save()
+                messages.success(request, "your profile has been submitted for verification.")
+                return redirect('surgeon_profile')
+            except Exception as e:
+                messages.error(request, f"An error occurred: {str(e)}")
         else:
-            form = SurgeonForm(instance=surgeon)
-            education_formset=EducationFormSet(instance=surgeon)
-        return reder (request, 'get_verification.html',{
-            'form':form,
-            'education_formset':education_formset
-        })
+            messages.error(request, "There were errors in your submission. Please check the form.")
+    else:
+        form = SurgeonForm(instance=surgeon)
+        education_formset = EducationFormSet(instance=surgeon)
+
+        context = {
+        'form': form,
+        'education_formset': education_formset
+    }
+    return render(request, 'get_verified.html', context)
+       
         
-        @login_required
+@login_required
 def edit_profile(request):
     surgeon = get_object_or_404(Surgeon, author=request.user)
     if request.method == 'POST':
@@ -184,7 +163,11 @@ def login_view(request):
 
 def signup_view(request):
     if request.user.is_authenticated:
-        return redirect_user(request.user)
+        try:
+            surgeon = Surgeon.objects.get(author=request.user)
+            return redirect('surgeon_profile')
+        except Surgeon.DoesNotExist:
+            return redirect('get_verified')
 
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -199,13 +182,13 @@ def signup_view(request):
 
 def redirect_user(user):
     try:
-        Surgeon = Surgeon.objects.get(author=user)
+        surgeon_profile = Surgeon.objects.get(author=user)
         if surgeon.verification_status == Verification.VERIFIED:
             return redirect('surgeon_profile')
         else:
-            return redirect('get_verfieid')
+            return redirect('get_verified')
     except Surgeon.DoesNotExist:
-        return redirect ('get verified')
+        return redirect ('get_verified')
        
 
 def edit_profile(request):
