@@ -146,8 +146,6 @@ def edit_profile(request):
     })
 
 def login_view(request):
-    if request.user.is_authenticated:
-        return redirect_user(request.user)
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -156,14 +154,16 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
-                return redirect('surgeon_profile')  # Redirect to home page after login
+                messages.success(request, f"Welcome back, {username}!")
+                return redirect('surgeon_profile')
             else:
                 messages.error(request, "Invalid username or password.")
         else:
             messages.error(request, "Invalid username or password.")
-    form = AuthenticationForm()
-    return render(request, 'safesurgeon/login.html', {'form': form})
+    else:
+        form = AuthenticationForm()
+    
+        return render(request, 'login.html', {'form': form})
 
 def signup_view(request):
     if request.method == 'POST':
