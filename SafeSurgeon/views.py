@@ -60,20 +60,25 @@ def surgeon_profile(request):
         profile = request.user.surgeonprofile
         if not profile.is_verified:
             return redirect('get_verified')
+
     except SurgeonProfile.DoesNotExist:
          return redirect('get_verified')
+    
     if request.method == 'POST':
-        form = SurgeonProfileForm(request.POST, request.FILES, instance=profile)
-        if form.is_valid():
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        if form.is_valid() and education_formset.is_valid():
             form.save()
-            messages.success(request, 'Thank you for updating your profile. We will emial you once you verification is completed')
-            return redirect('surfeon_profile')
+            education_formset.save()
+            messages.success(request, 'Thank you for updating your profile. We will email you once you verification is completed')
+            return redirect('surgeon_profile')
     else:
-        form = SurgeonProfileForm(instance=profile)
+        form = SurgeonForm(instance=profile)
+        education_formset = EducationFormSet(instance=surgeon)
     
     context = {
-        'profile': profile,
+        'surgeon': surgeon,
         'form': form,
+        'education_formset': education_formset,
     }
     return render(request, 'safesurgeon/surgeon_profile.html', context)
 
