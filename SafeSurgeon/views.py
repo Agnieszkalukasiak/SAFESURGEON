@@ -81,6 +81,10 @@ def surgeon_profile(request):
 
 @login_required
 def get_verified(request):
+    if not request.user.is_authenticated:
+        messages.info(request, "Please sign up or log in to get verified.")
+        return redirect('signup')
+        
     try:
         surgeon = Surgeon.objects.get(author=request.user)
         if surgeon.verification_status == Verification.VERIFIED.value:
