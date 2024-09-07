@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 
+
+
 # Create your models here.
 
 class Verification(models.TextChoices):
