@@ -15,6 +15,8 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,17 +51,18 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'cloudinary',
-    'SafeSurgeon',
-    
+    'SafeSurgeon',  
 ]
+cloudinary.config( 
+  cloud_name = "your_cloud_name", 
+  api_key = "your_api_key", 
+  api_secret = "your_api_secret" 
+)
 
 SITE_ID = 1
 LOGIN_URL = 'login' 
 LOGIN_REDIRECT_URL = 'surgeon_profile','verify'
 LOGOUT_REDIRECT_URL = '/'
-
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -157,3 +160,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_USE_SESSIONS = True

@@ -6,12 +6,23 @@ from django.contrib.auth.models import User
 
 class SurgeonForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
-    city = forms.CharField(max_length=200, required=True)
+    city = forms.CharField(max_length=100, required=True)
     clinic = forms.CharField(max_length=200, required=True)
-    profile_picture = forms.ImageField(required=True)
-    id_document=forms.FileField(
-        required=True,
-        validators=[FileExtensionValidator(allowed_extensions=['pdf','jpg','jpeg','png'])]
+    profile_picture = CloudinaryFileField (
+        options={
+            'folder': 'certificates',
+            'allowed_formats': ['pdf', 'jpg', 'jpeg', 'png'],
+            'public_id': None,
+        },
+        required=True
+    )
+    id_document= CloudinaryFileField (
+        options={
+            'folder': 'certificates',
+            'allowed_formats': ['pdf', 'jpg', 'jpeg', 'png'],
+            'public_id': None,
+        },
+        required=True
     )
 
     class Meta:
@@ -42,10 +53,14 @@ class SurgeonForm(forms.ModelForm):
 
 class EducationForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
-    certificate = forms.FileField(
-        required=True,
-        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])]
-)
+    certificate = CloudinaryFileField(
+        options={
+            'folder': 'certificates',
+            'allowed_formats': ['pdf', 'jpg', 'jpeg', 'png'],
+            'public_id': None,
+        },
+        required=True
+    )
     class Meta:
         model = Education
         fields = ['institution', 'program', 'country', 'start_date', 'end_date', 'certificate']

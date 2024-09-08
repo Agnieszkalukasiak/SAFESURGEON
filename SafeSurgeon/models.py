@@ -35,7 +35,7 @@ class Clinic (models.Model):
 
 class Surgeon(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="surgeon_verification")
-    profile_picture = CloudinaryField('profile picture', default='default_profile_pic')
+    profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
@@ -46,7 +46,7 @@ class Surgeon(models.Model):
         default=Verification.PENDING
     )
     created_on = models.DateTimeField(auto_now_add=True)
-    id_document = models.FileField(upload_to='id_documents/', null=True, blank=True)
+    id_document = CloudinaryField('Id', folder='Id', null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True)
 
     class Meta:
@@ -83,7 +83,7 @@ class Education(models.Model):
     country = models.CharField(max_length=200)
     start_date = models.DateField()
     end_date = models.DateField()
-    certificate = models.FileField(upload_to='certificates/', null=True, blank=True)
+    certificate = CloudinaryField('certificate', folder='certificates', null=True, blank=True)
 
     def __str__(self):
         return f"{self.institution} - {self.program}"
