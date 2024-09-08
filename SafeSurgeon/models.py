@@ -39,7 +39,7 @@ class Surgeon(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    clinic = models.CharField(max_length=100)
+    clinic = models.CharField(max_length=255, null=True, blank=True)
     verification_status = models.CharField(
         max_length=9, 
         choices=Verification.choices, 

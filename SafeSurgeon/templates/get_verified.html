@@ -117,17 +117,33 @@
         
         <div class="mb-3">
             <button type="submit" class="btn btn-primary">Submit for Verification</button>
+                <div id="thankYouMessage" style="display: none;">
+                    Thank you for your submission. We will email you once your verification process is completed. Thank you!
+            </div>
         </div>
     </form>
+{% if form.errors %}
+<div class="alert alert-danger">
+    <ul>
+    {% for field, errors in form.errors.items %}
+        <li>{{ field }}: {{ errors }}</li>
+    {% endfor %}
+    </ul>
 </div>
-<form id="surgeonForm" method="post">
-    {% csrf_token %}
-    <!-- Your form fields here -->
-    <button type="submit">Submit</button>
-</form>
-<div id="thankYouMessage" style="display: none;">
-    Thank you for your submission. We will email you once your verification process is completed. Thank you!
+{% endif %}
+
+{% if education_formset.errors %}
+<div class="alert alert-danger">
+    <ul>
+    {% for form in education_formset %}
+        {% for error in form.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+    </ul>
 </div>
+{% endif %}
+
 {% endblock %}
 
 {% block extra_js %}

@@ -28,15 +28,14 @@ class SurgeonForm(forms.ModelForm):
 
     class Meta:
         model=Surgeon
-        fields = ['email','country','city','clinic','first_name','last_name','profile_picture', 'id_document','id_document']
+        fields = ['first_name','last_name','email','clinic','profile_picture', 'id_document']
        
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
         #if the form is being submitted, filter cities on the selected country
         if 'country' in self.data:
             try:
-                country_id= int(self.sata.get('country'))
+                country_id= int(self.data.get('country'))
                 self.fields['city'].queryset=City.objects.filter(country_id=country_id).order_by('name')
             except (ValueError,TypeError):
                 self.fields['city'].queryset=City.objects.none()
