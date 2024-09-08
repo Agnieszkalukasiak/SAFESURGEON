@@ -39,7 +39,7 @@ class Surgeon(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name="surgeon")
+    clinic = models.CharField(max_length=100)
     verification_status = models.CharField(
         max_length=9, 
         choices=Verification.choices, 

@@ -5,5 +5,7 @@ os.environ.setdefault(
 os.environ.setdefault("SECRET_KEY", "Monster0483")
 
 # Cloudinary configuration
-os.environ.setdefault(
-"CLOUDINARY_URL", "cloudinary://214731326451677:NhMuqGxD5wG6OMZTe3pbvrgkiQU@dpecpzapk")
+
+os.environ.setdefault("CLOUDINARY_CLOUD_NAME", "dpecpzapk")
+os.environ.setdefault("CLOUDINARY_API_KEY", "214731326451677")
+os.environ.setdefault("CLOUDINARY_API_SECRET", "NhMuqGxD5wG6OMZTe3pbvrgkiQU")

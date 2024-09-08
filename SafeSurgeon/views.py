@@ -89,7 +89,7 @@ def get_verified(request):
     if not request.user.is_authenticated:
         messages.info(request, "Please sign up or log in to get verified.")
         return redirect('signup')
-
+ # Try to get an existing surgeon record for the logged-in user
     try:
         surgeon = Surgeon.objects.get(author=request.user)
         if surgeon.verification_status == Verification.VERIFIED.value:
@@ -101,23 +101,37 @@ def get_verified(request):
     if request.method == 'POST':
         form=SurgeonForm(request.POST, request.FILES, instance=surgeon)
         education_formset = EducationFormSet(request.POST, request.FILES,)
+        
         if form.is_valid() and education_formset.is_valid():
             try:
                 with transaction.atomic():
                     surgeon = form.save(commit=False)
                     surgeon.author = request.user
                     surgeon.verification_status = Verification.PENDING.value
+                    
+                    #handle country creation and retrieval
+                    country_name = form.cleaned_data['country']
+                    country, created_country = Country.objects.get_or_create(name=country_name)
+                    
+                    #handle city creation and retrieval
                     city_name = form.cleaned_data['city']
-                    country = form.cleaned_data['country']
-                    city, created = City.objects.get_or_create(name=city_name, country=country)
+                    city, created_city = City.objects.get_or_create(name=city_name, defaults={'country':country})
+                    
+                     #handle city creation and retrieval
                     clinic_name = form.cleaned_data['clinic']
-                    clinic, created = Clinic.objects.get_or_create(name=clinic_name, city=city)
+                    clinic, created_clinic = Clinic.objects.get_or_create(name=clinic_name, defaults={'city':city})
+                    
+                    #assign a new or excisitng clinic to the surgeon
                     surgeon.clinic = clinic
                     surgeon.save()
+
+                    #save education details
                     education_formset.instance=surgeon
                     education_formset.save()
+
                 messages.success(request, "your profile has been submitted for verification.")
                 return redirect('surgeon_profile')
+                
             except Exception as e:
                 messages.error(request, f"An error occurred: {str(e)}")
         else:

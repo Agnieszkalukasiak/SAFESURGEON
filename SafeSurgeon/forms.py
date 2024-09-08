@@ -8,7 +8,7 @@ from cloudinary.forms import CloudinaryFileField
 class SurgeonForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
     city = forms.CharField(max_length=100, required=True)
-    clinic = forms.CharField(max_length=200, required=True)
+    clinic = forms.CharField(max_length=100, required=True)
     profile_picture = CloudinaryFileField (
         options={
             'folder': 'profile_pictures',
