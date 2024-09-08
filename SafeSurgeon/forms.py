@@ -3,6 +3,7 @@ from django.core.validators import FileExtensionValidator
 from .models import Surgeon, Education, Clinic, City, Country
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from cloudinary.forms import CloudinaryFileField
 
 class SurgeonForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
