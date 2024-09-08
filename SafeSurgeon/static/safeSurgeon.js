@@ -73,20 +73,30 @@ document.getElementById('surgeonForm').addEventListener('submit', function(e) {
 });
 
 // setting for cities to drop down in countries
-$("#id_country").change(function () {
-    var url = "{% url 'ajax_load_cities' %}";
-    var countryId = $(this).val();
-
-    $.ajax({
-        url: url,
-        data: {
-            'country_id': countryId
-        },
-        success: function (data) {
-            $("#id_city").html(data);
+$(document).ready(function() {
+    $("#id_country").change(function () {
+        var countryId = $(this).val(); //Get teh selected country ID
+        if(countryId) {
+            $.ajax({
+                url: '/get-cities/' + countryId + '/',
+                type:'GET',
+                success: function (data) {
+                    $("#id_city").html('');//clear the city dropown
+                    $.each(data, function(key,value){
+                        $("#id_city").append('<option value="' + value.id + '">'+value.name + '</option>');   
+                    });
+                },
+                error:function(){
+                    console.log("Error loading cities.");
+                }
+             });
+        } else {
+            $(#id_city).html(''); //clear city drop down if no country selected
         }
     });
-});
+};
+
+
 //surgeon_profile and edit
 document.addEventListener('DOMContentLoaded', function() {
     const addEducationBtn = document.getElementById('add-education');

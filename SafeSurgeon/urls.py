@@ -8,6 +8,7 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),  
     path('get-verified/', views.get_verified, name='get_verified'),
     path('submit-surgeon-form/', views.submit_surgeon_form, name='submit_surgeon_form'),  
+    path('get-cities/<int:country_id>/', views.get_cities, name='get_cities'),
     path('surgeon-profile/', views.surgeon_profile, name='surgeon_profile'),
     path('edit-profile/', views.edit_profile, name='edit_profile'),
     
