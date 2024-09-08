@@ -46,8 +46,8 @@
         </div>
         <div class="mb-3">
             {{ form.city.label_tag }}
-            <input type="text" name="{{ form.city.name }}" id="{{ form.city.id_for_label }}" class= "form-control" maxlength="10px">
-            {% if form.city.value %}value="{{ form.city.value }}"{% endif %}>
+            {{ form.city }}         
+            {{ form.city.errors }}
         </div>
         <div class="mb-3">
             {{ form.clinic.label_tag }}

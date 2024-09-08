@@ -33,9 +33,9 @@ class EducationInline(admin.TabularInline):
 class SurgeonAdmin(SummernoteModelAdmin):
     inlines = [EducationInline]
 
-    list_display = ('profile_picture','get_country', 'get_city', 'clinic','first_name','last_name','email','id_document', 'verification_status','created_on')
+    list_display = ('profile_picture', 'clinic','first_name','last_name','email','id_document', 'verification_status','created_on')
     list_filter = ('verification_status','clinic')
-    search_fields = ['clinic__name', 'first_name', 'last_name', 'email']
+    search_fields = ['clinic', 'first_name', 'last_name', 'email']
     readonly_fields = ('created_on','first_name','last_name','email')
 
     #Grouping the fields into section in the admin panel

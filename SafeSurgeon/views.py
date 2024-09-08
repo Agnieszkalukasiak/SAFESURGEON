@@ -89,6 +89,10 @@ def get_verified(request):
     if not request.user.is_authenticated:
         messages.info(request, "Please sign up or log in to get verified.")
         return redirect('signup')
+
+#context
+    context = {}
+
  # Try to get an existing surgeon record for the logged-in user
     try:
         surgeon = Surgeon.objects.get(author=request.user)
@@ -131,7 +135,7 @@ def get_verified(request):
 
                 messages.success(request, "your profile has been submitted for verification.")
                 return redirect('surgeon_profile')
-                
+
             except Exception as e:
                 messages.error(request, f"An error occurred: {str(e)}")
         else:
