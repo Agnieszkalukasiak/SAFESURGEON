@@ -1,0 +1,31 @@
+updated html with base:
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    {% if surgeon %}
+    <div>
+        <img>
+        <h2></h2>
+        <h4></h4>
+        <p></p>
+    {% if surgeon is verified%}
+    <span>Verified</span>
+    {% else %}
+    <span>Not Verified</span>
+    {% endif %}
+    </div>
+</div>
+{% else %}
+<div>
+    <h2>No Surgeon Found</h2>
+    <p>
+       Name:{{search_params.first_name}} {{search_params.last_name}} <br>
+       Clinic:{{search_params.clinic}} <br>
+       {{search_params.city}} , {{search_params.country}} 
+    </p>
+    <span>Not Verified</span>
+</div>
+{% endif %}
+</div>
+{% endblock %}
