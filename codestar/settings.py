@@ -18,6 +18,7 @@ if os.path.isfile('env.py'):
 import cloudinary.uploader
 import cloudinary.api
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -61,9 +62,9 @@ LOGIN_REDIRECT_URL = 'surgeon_profile','verify'
 LOGOUT_REDIRECT_URL = '/'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
+    'CLOUD_NAME': os.getenv('dpecpzapk'),
+    'API_KEY': os.getenv('214731326451677'),
+    'API_SECRET': os.getenv('NhMuqGxD5wG6OMZTe3pbvrgkiQU')
 }
 
 # Cloudinary configuration
