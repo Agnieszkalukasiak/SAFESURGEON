@@ -53,16 +53,29 @@ INSTALLED_APPS = [
     'cloudinary',
     'SafeSurgeon',  
 ]
-cloudinary.config( 
-  cloud_name = "your_cloud_name", 
-  api_key = "your_api_key", 
-  api_secret = "your_api_secret" 
-)
+
 
 SITE_ID = 1
 LOGIN_URL = 'login' 
 LOGIN_REDIRECT_URL = 'surgeon_profile','verify'
 LOGOUT_REDIRECT_URL = '/'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
+}
+
+# Cloudinary configuration
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config( 
+  cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME'), 
+  api_key = os.getenv('CLOUDINARY_API_KEY'), 
+  api_secret = os.getenv('CLOUDINARY_API_SECRET') 
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
