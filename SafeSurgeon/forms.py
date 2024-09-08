@@ -11,24 +11,24 @@ class SurgeonForm(forms.ModelForm):
     clinic = forms.CharField(max_length=200, required=True)
     profile_picture = CloudinaryFileField (
         options={
-            'folder': 'certificates',
-            'allowed_formats': ['pdf', 'jpg', 'jpeg', 'png'],
+            'folder': 'profile_pictures',
+            'resource_type': 'auto',
             'public_id': None,
         },
         required=True
     )
     id_document= CloudinaryFileField (
         options={
-            'folder': 'certificates',
-            'allowed_formats': ['pdf', 'jpg', 'jpeg', 'png'],
-            'public_id': None,
-        },
-        required=True
-    )
+        'folder': 'id_documents',
+        'resource_type': 'auto',
+        'public_id': None,
+    },
+    required=True)
+
 
     class Meta:
         model=Surgeon
-        fields = ['email','country','city','clinic','first_name','last_name','profile_picture', 'id_document']
+        fields = ['email','country','city','clinic','first_name','last_name','profile_picture', 'id_document','id_document']
        
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -56,8 +56,8 @@ class EducationForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
     certificate = CloudinaryFileField(
         options={
-            'folder': 'certificates',
-            'allowed_formats': ['pdf', 'jpg', 'jpeg', 'png'],
+            'folder': 'profile_pictures',
+            'resource_type': 'auto',
             'public_id': None,
         },
         required=True

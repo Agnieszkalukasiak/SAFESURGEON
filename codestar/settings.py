@@ -15,6 +15,7 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
@@ -61,22 +62,15 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'surgeon_profile','verify'
 LOGOUT_REDIRECT_URL = '/'
 
+# Cloudinary configuration
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('dpecpzapk'),
-    'API_KEY': os.getenv('214731326451677'),
-    'API_SECRET': os.getenv('NhMuqGxD5wG6OMZTe3pbvrgkiQU')
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
 }
 
-# Cloudinary configuration
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
-cloudinary.config( 
-  cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME'), 
-  api_key = os.getenv('CLOUDINARY_API_KEY'), 
-  api_secret = os.getenv('CLOUDINARY_API_SECRET') 
-)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
