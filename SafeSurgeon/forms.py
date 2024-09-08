@@ -7,7 +7,7 @@ from cloudinary.forms import CloudinaryFileField
 
 class SurgeonForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
-    city = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
+    city = forms.ModelChoiceField(queryset=City.objects.none(), required=True)
     clinic = forms.CharField(max_length=100, required=True)
     profile_picture = CloudinaryFileField (
         options={
@@ -32,17 +32,19 @@ class SurgeonForm(forms.ModelForm):
        
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['city'].queryset=City.objects.none()
-        self.fields['clinic'].queryset=Clinic.objects.none()
 
+        #if the form is being submitted, filter cities on the selected country
         if 'country' in self.data:
             try:
-                country_id = int(self.data.get('country'))
-                self.fields['city'].queryset = City.objects.filter(country_id=country_id).order_by('name')
-            except (ValueError, TypeError):
-                    pass
-        elif self.instance.pk:
-                self.fields['city'].queryset = City.objects.filter(country_id=country_id ).order_by('name')
+                country_id= int(self.sata.get('country'))
+                self.fields['city'].queryset=City.objects.filter(country_id=country_id).order_by('name')
+            except (ValueError,TypeError):
+                self.fields['city'].queryset=City.objects.none()
+        elif self.instance.pk and self.instance.country:
+            #prepopulate cities based on stored countries if editing profile
+            self.fields['city'].queryset = City.objects.filter(country_id=country_id).order_by('name')
+            
+            #handle dynamic clinic population based on selcred city 
         if 'city' in self.data:
             try:
                 city_id = int(self.data.get('city'))
@@ -50,7 +52,8 @@ class SurgeonForm(forms.ModelForm):
             except (ValueError, TypeError):
                 pass
         elif self.instance.pk and self.instance.clinic:
-            self.fields['clinic'].queryset = Clinic.objects.filter(city=self.instance.clinic.city)
+            #pre populated clinics based on the stored city if editing an excisiting profile
+            self.fields['clinic'].queryset = Clinic.objects.filter(city=self.instance.clinic.city).order_by('name')
 
 class EducationForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
