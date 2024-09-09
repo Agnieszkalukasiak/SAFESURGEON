@@ -288,11 +288,11 @@ def verify_result(request, first_name, last_name, clinic, city, country):
     #Get the surgeon education 
         education_history=surgeon.education.all() if surgeon else None
 
-    context ={
-        'surgeon':surgeon_verification, #the surgeon verification info
-        'education': education_history, #educaiton of the surgeon
+        context ={
+            'surgeon':surgeon_verification, #the surgeon verification info
+            'education': education_history, #educaiton of the surgeon
     }
-    else: 
+    else:
         #if no surgeon found
         context={
             'surgeon': None,
@@ -300,11 +300,11 @@ def verify_result(request, first_name, last_name, clinic, city, country):
                 'first_name':first_name,
                 'last_name':last_name,
                 'clinic': clinic,
-                'city':city,
-                'country':country
+                'city': city,
+                'country': country
             }
         }
 
-return render  (request, verify_result.html, context)
+return render  (request, 'verify_result.html', context)
 
 
