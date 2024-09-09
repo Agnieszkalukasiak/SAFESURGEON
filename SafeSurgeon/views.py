@@ -268,12 +268,12 @@ def submit_surgeon_form(request):
 
 def verify_result(request, first_name, last_name, clinic, city, country):
     #Try to get the verification resutls from the database
-    surgeon_verification = SurgeonVerification.object.filter(
+    surgeon_verification = SurgeonVerification.objects.filter(
         first_name=first_name,
         last_name=last_name,
         clinic=clinic,
         city=city,
-        country=country
+        country=country,
     ).first()
 
     if surgeon_verification:
@@ -286,25 +286,25 @@ def verify_result(request, first_name, last_name, clinic, city, country):
             country=country
         ).first()
     #Get the surgeon education 
-    education_history=surgeon.education.all() if surgeon else None
+        education_history=surgeon.education.all() if surgeon else None
 
     context ={
         'surgeon':surgeon_verification, #the surgeon verification info
         'education': education_history, #educaiton of the surgeon
     }
-    else:
+    else: 
         #if no surgeon found
         context={
-            'surgeon': None
+            'surgeon': None,
             'search_params':{
                 'first_name':first_name,
-                'last_name':last_name
-                'clinic': clinic
-                'city':city
+                'last_name':last_name,
+                'clinic': clinic,
+                'city':city,
                 'country':country
             }
         }
 
-        render return (request, verify_result.html, context)
+return render  (request, verify_result.html, context)
 
 
