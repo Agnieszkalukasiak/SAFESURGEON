@@ -19,25 +19,15 @@ def home(request):
 
 def verify(request):
     if request.method == 'POST':
-        # Handle form submission
-        country_id = request.POST.get('country')
-        city_id = request.POST.get('city')
-        clinic_name = request.POST.get('clinic')
+        # Handle form submission  
+        country = request.POST.get('country')
+        city = request.POST.get('city')
+        clinic = request.POST.get('clinic')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
 
-        # Search for the surgeon
-        surgeons = Surgeon.objects.filter(
-            clinic__city__country_id=country_id,
-            clinic__city_id=city_id,
-            clinic__name__icontains=clinic_name,
-            first_name__icontains=first_name,
-            last_name__icontains=last_name
-        )
-
-        # Render results
-        return render(request, 'verification_results.html', {'surgeons': surgeons})
-
+        # Redirect to verify_result with search parameters
+        return redirect ('verify_result', first_name=first_name, last_name=last_name, clinic=clinic, city=city, country=country)
     else:
         # GET request - display the form
         countries = Country.objects.all()
