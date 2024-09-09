@@ -87,3 +87,18 @@ class Education(models.Model):
 
     def __str__(self):
         return f"{self.institution} - {self.program}"
+
+class SurgeonVerification(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
+    clinic = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+    verification_status = models.CharField(
+        max_length=9, 
+        choices=Verification.choices, 
+        default=Verification.PENDING
+    )
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} - {self.clinic}"
