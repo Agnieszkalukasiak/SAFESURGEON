@@ -18,35 +18,34 @@ updated html with base:
             <span class="badge bg-warning">Pending</span>
             {% elif surgeon.verification_status == "REJECTED" %}
             <span class="badge bg-danger">Rejected</span>
+            {% endif %}
         </div>
+        <!-- surgon education-->
+        {% if education %}
+        <div class="card-body">
+            <h3>Education</h3>
+            <ul>
+                {%for edu in education%}
+                <li>
+                    <strong>{{edu.institution}}</strong> <strong> - {{edu.program}}</strong> <br>
+                    {{edu.country}} ({{edu.start_date}} to {{edu.end_date}})
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="card-body">
+                <p>No education history available.</p>
+            </div>
+            {% endif %}
+            <div class="alert alert-danger text-center"></div>
+            <h2>No Surgeon Found</h2>
+            <p>
+                Name:{{search_params.first_name}} {{search_params.last_name}} <br>
+                Clinic:{{search_params.clinic}} <br>
+                {{search_params.city}} , {{search_params.country}}
+            </p>
+            <span class="badge bg-danger">Not Verified</span>
+        </div>
+        {% endif %}
     </div>
-</div>
-{% endif %}
-<!-- surgon education-->
-{% if education %}
-<h3>Education</h3>
-<ul>
-    {%for edu in education}
-    <li>
-        <strong>{{edu.institution}}</strong> <strong> - {edu.program}</strong> <br>
-        {{edu.country}} ({{edu.start_date}}) to ({{edu.end_date}})
-    </li>
-    {% endfor %}
-</ul>
-    {% else %}
-        <p>No education history available.</p>
-    {% endif %}
-    </div>
-</div>
-{% else %}
-<div class="alert alert-danger text-center"></div>
-    <h2>No Surgeon Found</h2>
-    <p>
-        Name:{{search_params.first_name}} {{search_params.last_name}} <br>
-        Clinic:{{search_params.clinic}} <br>
-        {{search_params.city}} , {{search_params.country}}
-    </p>
-    <span class="badge bg-danger">Not Verified</span>
-</div>
-
 {% endblock %}
