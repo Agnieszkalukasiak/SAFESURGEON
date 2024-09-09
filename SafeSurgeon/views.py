@@ -305,6 +305,6 @@ def verify_result(request, first_name, last_name, clinic, city, country):
             }
         }
 
-return render  (request, 'verify_result.html', context)
+    return render  (request, 'verify_result.html', context)
 
 
