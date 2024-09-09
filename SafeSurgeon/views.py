@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 
-from .models import Surgeon, Country, City, Clinic, Education,Verification
+from .models import Surgeon, Country, City, Clinic, Education,Verification, SurgeonVerification
 from .forms import SurgeonForm, EducationFormSet, SignUpForm
 
 # Create your views here for home page
@@ -265,3 +265,46 @@ def submit_surgeon_form(request):
         for formset in education_formset:
             errors.update(formset.errors)
         return JsonResponse({'success': False, 'errors': errors})
+
+def verify_result(request, first_name, last_name, clinic, city, country):
+    #Try to get the verification resutls from the database
+    surgeon_verification = SurgeonVerification.object.filter(
+        first_name=first_name,
+        last_name=last_name,
+        clinic=clinic,
+        city=city,
+        country=country
+    ).first()
+
+    if surgeon_verification:
+    #Get the related surgeon object if it excists
+        surgeon = Surgeon.objects.filter(
+            first_name=first_name,
+            last_name=last_name,
+            clinic=clinic,
+            city=city,
+            country=country
+        ).first()
+    #Get the surgeon education 
+    education_history=surgeon.education.all() if surgeon else None
+
+    context ={
+        'surgeon':surgeon_verification, #the surgeon verification info
+        'education': education_history, #educaiton of the surgeon
+    }
+    else:
+        #if no surgeon found
+        context={
+            'surgeon': None
+            'search_params':{
+                'first_name':first_name,
+                'last_name':last_name
+                'clinic': clinic
+                'city':city
+                'country':country
+            }
+        }
+
+        render return (request, verify_result.html, context)
+
+
