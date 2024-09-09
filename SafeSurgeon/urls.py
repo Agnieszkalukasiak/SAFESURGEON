@@ -11,6 +11,5 @@ urlpatterns = [
     path('get-cities/<int:country_id>/', views.get_cities, name='get_cities'),
     path('surgeon-profile/', views.surgeon_profile, name='surgeon_profile'),
     path('edit-profile/', views.edit_profile, name='edit_profile'),
-    
-    
-    ]
+    path('verify_result/<str:first_name>/<str:last_name>/<str:clinic>/<str:city>/<str:country>/', views.verify_result, name='verify_result'),
+]
