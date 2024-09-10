@@ -10,8 +10,8 @@
     <form action= "{% url 'verify' %}" method="post">
         {% csrf_token %}
     <div class="mb-3">
-        <label for="country" class="form-label"></label>
-            <select class="form-select" id="country" name="country" required>
+        <label for="id_country" class="form-label"></label>
+            <select class="form-select" id="country_select" name="country" required>
                 <option value="">Select a country</option>
                 {%for country in countries%}
                 <option value="{{country.id}}">{{country.name}}</option>
@@ -19,8 +19,8 @@
             </select>       
     </div>
     <div class="mb-3">
-        <label for="city" class="form-label"></label>
-            <select class="form-select" id="city" name="city" required>
+        <label for="id_city" class="form-label"></label>
+            <select class="form-select" id="city_select" name="city" required>
                 <option value="">Select a city</option>
                 {% for city in cities %}
                 <option value="{{city.id}}">{{city.name}}</option>

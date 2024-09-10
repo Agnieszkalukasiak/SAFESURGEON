@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Verification, Country, City, Clinic, Surgeon, Education
 from django_summernote.admin import SummernoteModelAdmin
+from django.contrib.auth.models import User
 
 #country admin
 @admin.register(Country)
@@ -32,8 +33,22 @@ class EducationInline(admin.TabularInline):
 @admin.register(Surgeon)
 class SurgeonAdmin(SummernoteModelAdmin):
     inlines = [EducationInline]
+    list_display = ('profile_picture', 'user', 'clinic','first_name','last_name','email','id_document', 'verification_status','created_on')
+    
+    def get_first_name(self, obj):
+        return obj.user.first_name  # Accessing the first_name from the related User model
 
-    list_display = ('profile_picture', 'clinic','first_name','last_name','email','id_document', 'verification_status','created_on')
+    def get_last_name(self, obj):
+        return obj.user.last_name  # Accessing the last_name from the related User model
+
+    def get_email(self, obj):
+        return obj.user.email  # Accessing the email from the related User model
+
+    
+    get_first_name.short_description = 'First Name'
+    get_last_name.short_description = 'Last Name'
+    get_email.short_description = 'Email'
+    
     list_filter = ('verification_status','clinic')
     search_fields = ['clinic', 'first_name', 'last_name', 'email']
     readonly_fields = ('created_on','first_name','last_name','email')
@@ -41,7 +56,7 @@ class SurgeonAdmin(SummernoteModelAdmin):
     #Grouping the fields into section in the admin panel
     fieldsets = (
         (None, {
-            'fields': ('author', 'first_name', 'last_name', 'email', 'clinic', 'profile_picture') 
+            'fields': ('user', 'first_name', 'last_name', 'email', 'clinic', 'profile_picture') 
         }),
         ('Verification', {
             'fields': ('verification_status', 'id_document')

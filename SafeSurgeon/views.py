@@ -228,7 +228,7 @@ def redirect_user(user):
        
 
 def edit_profile(request):
-    surgeon = Surgeon.objects.get(author=request.user)
+    surgeon = Surgeon.objects.get(user=request.user)
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon)
@@ -314,11 +314,6 @@ def verify_result(request, first_name, last_name, clinic, city, country):
     print(f"Found surgeon verification: {surgeon_verification}") 
     return render  (request, 'verify_result.html', context)
 
-def get_default_user():
-    default_user, created = User.objects.get_or_create(username='default_user', defaults={
-        'email': 'default@example.com',
-        'first_name': 'Default',
-        'last_name': 'User',
-    })
+
+
     
-    return default_user
