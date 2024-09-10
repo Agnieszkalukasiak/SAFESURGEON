@@ -7,6 +7,8 @@ from django.db import transaction
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
+import logging
+import sys
 
 from .models import Surgeon, Country, City, Clinic, Education,Verification, SurgeonVerification
 from .forms import SurgeonForm, EducationFormSet, SignUpForm
@@ -16,18 +18,31 @@ def home(request):
     return render(request, 'home.html')
 
 #views for the verify your surgeon: 'home' page
+logger = logging.getLogger(__name__)
 
 def verify(request):
+    countries = Country.objects.all()
+    context = {'countries': countries}
+    city = None 
+
     if request.method == 'POST':
         # Handle form submission  
-        country = request.POST.get('country')
-        city = request.POST.get('city')
-        clinic = request.POST.get('clinic')
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
+        country_id = request.POST.get('country')
+        city_id = request.POST.get('city')
+        clinic = request.POST.get('clinic','')
+        first_name = request.POST.get('first_name','')
+        last_name = request.POST.get('last_name','')
 
+     # Fetching country and city objects from their IDs
+        country = Country.objects.get(id=country_id) if country_id else None
+        city = City.objects.get(id=city_id) if city_id else None
+
+        # Pass country and city names to the redirect, not their IDs
+        country_name = country.name if country else ''
+        city_name = city.name if city else ''
+    
         # Redirect to verify_result with search parameters
-        return redirect ('verify_result', first_name=first_name, last_name=last_name, clinic=clinic, city=city, country=country)
+        return redirect ('verify_result', first_name=first_name, last_name=last_name, clinic=clinic, city=city_name, country=country_name)
     else:
         # GET request - display the form
         countries = Country.objects.all()
@@ -259,11 +274,11 @@ def submit_surgeon_form(request):
 def verify_result(request, first_name, last_name, clinic, city, country):
     #Try to get the verification resutls from the database
     surgeon_verification = SurgeonVerification.objects.filter(
-        first_name=first_name,
-        last_name=last_name,
-        clinic=clinic,
-        city=city,
-        country=country,
+        first_name__icontains=first_name,
+        last_name__icontains=last_name,
+        clinic__icontains=clinic,
+        city__icontains=city,
+        country__icontains=country,
     ).first()
 
     print(f"Found surgeon verification: {surgeon_verification}") 
@@ -279,7 +294,7 @@ def verify_result(request, first_name, last_name, clinic, city, country):
         ).first()
     #Get the surgeon education 
         education_history=surgeon.education.all() if surgeon else None
-
+ 
         context ={
             'surgeon':surgeon_verification, #the surgeon verification info
             'education': education_history, #educaiton of the surgeon
@@ -297,7 +312,6 @@ def verify_result(request, first_name, last_name, clinic, city, country):
             }
         }
     print(f"Found surgeon verification: {surgeon_verification}") 
-    
     return render  (request, 'verify_result.html', context)
 
 

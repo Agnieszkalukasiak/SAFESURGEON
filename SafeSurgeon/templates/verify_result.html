@@ -34,15 +34,18 @@
             {% else %}
             <div class="card-body">
                 <p>No education history available.</p>
-            </div>
             {% endif %}
+            </div>
+            </div>
+            {% else %}
             <div class="alert alert-danger text-center"></div>
             <h2>No Surgeon Found</h2>
             <p>
                 Name:{{search_params.first_name}} {{search_params.last_name}} <br>
                 Clinic:{{search_params.clinic}} <br>
-                {{search_params.city}} , {{search_params.country}}
+                City:{{search_params.city}} , Country:{{search_params.country}}
             </p>
+
             <span class="badge bg-danger">Not Verified</span>
         </div>
         {% endif %}
