@@ -91,10 +91,10 @@ $(document).ready(function() {
                 }
              });
         } else {
-            $(#id_city).html(''); //clear city drop down if no country selected
+            $("#id_city").html(''); //clear city drop down if no country selected
         }
     });
-};
+});
 
 
 //surgeon_profile and edit

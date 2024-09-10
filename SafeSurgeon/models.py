@@ -33,8 +33,16 @@ class Clinic (models.Model):
     def __str__(self):
         return self.name
 
+def default_user_id():
+    default_user, created = User.objects.get_or_create(username='default_user', defaults={
+        'email': 'default@example.com',
+        'first_name': 'Default',
+        'last_name': 'User',
+    })
+    return default_user.id 
+
 class Surgeon(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="surgeon_verification")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon_verification", default=default_user_id)
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)

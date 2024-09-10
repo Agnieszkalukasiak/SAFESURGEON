@@ -314,4 +314,11 @@ def verify_result(request, first_name, last_name, clinic, city, country):
     print(f"Found surgeon verification: {surgeon_verification}") 
     return render  (request, 'verify_result.html', context)
 
-
+def get_default_user():
+    default_user, created = User.objects.get_or_create(username='default_user', defaults={
+        'email': 'default@example.com',
+        'first_name': 'Default',
+        'last_name': 'User',
+    })
+    
+    return default_user
