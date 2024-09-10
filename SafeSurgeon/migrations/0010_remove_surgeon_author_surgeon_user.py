@@ -21,6 +21,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='surgeon',
             name='user',
-            field=models.OneToOneField(default=SafeSurgeon.models.get_default_user, on_delete=django.db.models.deletion.CASCADE, related_name='surgeon_verification', to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(default=SafeSurgeon.models.default_user_id, on_delete=django.db.models.deletion.CASCADE, related_name='surgeon_verification', to=settings.AUTH_USER_MODEL),
+
         ),
     ]
