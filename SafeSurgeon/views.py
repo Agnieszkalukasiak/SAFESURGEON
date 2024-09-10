@@ -266,12 +266,14 @@ def verify_result(request, first_name, last_name, clinic, city, country):
         country=country,
     ).first()
 
+    print(f"Found surgeon verification: {surgeon_verification}") 
+
     if surgeon_verification:
     #Get the related surgeon object if it excists
         surgeon = Surgeon.objects.filter(
-            first_name=first_name,
-            last_name=last_name,
-            clinic=clinic,
+            first_name__icontains=first_name,
+            last_name__icontains=last_name,
+            clinic__icontains=clinic,
             city=city,
             country=country
         ).first()
@@ -294,7 +296,8 @@ def verify_result(request, first_name, last_name, clinic, city, country):
                 'country': country
             }
         }
-
+    print(f"Found surgeon verification: {surgeon_verification}") 
+    
     return render  (request, 'verify_result.html', context)
 
 

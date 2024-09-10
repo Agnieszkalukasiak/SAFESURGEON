@@ -127,3 +127,27 @@ document.getElementById('add-education').addEventListener('click', function() {
     document.querySelector('.education-form').parentNode.insertBefore(newForm, this);
     document.getElementById('id_education-TOTAL_FORMS').value = formCount + 1;
 });
+// for the verify page
+$(document).ready(function() {
+    $('#country-select').change(function() {
+        var countryId = $(this).val();
+        if (countryId) {
+            $.ajax({
+                url: '/get-cities/' + countryId + '/',
+                type: 'GET',
+                success: function(data) {
+                    $('#city-select').empty();
+                    $('#city-select').append('<option value="">Select a city</option>');
+                    $.each(data, function(key, value) {
+                        $('#city-select').append('<option value="' + value.id + '">' + value.name + '</option>');
+                    });
+                    $('#city-select').prop('disabled', false);
+                }
+            });
+        } else {
+            $('#city-select').empty();
+            $('#city-select').append('<option value="">Select a city</option>');
+            $('#city-select').prop('disabled', true);
+        }
+    });
+});
