@@ -27,13 +27,6 @@ class City(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-class Clinic (models.Model):
-    name = models.CharField(max_length=200)
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="clinics")
-
-    def __str__(self):
-        return self.name
-
 def default_user_id():
     default_user, created = User.objects.get_or_create(username='default_user', defaults={
         'email': 'default@example.com',
@@ -48,18 +41,17 @@ class Surgeon(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    clinic = models.CharField(max_length=255, null=True, blank=True)
+    clinic = models.CharField(max_length=200)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="cities")
+    country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="countries")
     verification_status = models.CharField(
         max_length=9, 
         choices=Verification.choices, 
         default=Verification.PENDING
     )
-    created_on = models.DateTimeField(auto_now_add=True)
     id_document = CloudinaryField('Id', folder='Id', null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True)
 
-    class Meta:
-        ordering = ['-created_on']
         
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -74,13 +66,14 @@ class Surgeon(models.Model):
 
     def user_display(self):
         return {
-            'name':f"{self.first_name} {self.last_name}",
-            'email': self.email,
+            'name':f"{self.user_name} {self.user_name}",
+            'email': user.email,
             'verification_status': self.get_verification_status_display(),
             'created_on': self.created_on.strftime('%Y-%m-%d %H:%M:%S'),
             'has_id_document': bool(self.id_document),
             'profile_picture_url': self.profile_picture.url if self.profile_picture else None,
             'city': self.clinic.city.name if self.clinic else 'N/A',
+            'country':self.clinic.city.name if self.clinic else 'N/A',
             'clinic': self.clinic.name if self.clinic else 'N/A',
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
@@ -89,33 +82,33 @@ class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
-    country = models.ForeignKey('Country', on_delete=models.SET_NULL, null=True)  
+    country = models.CharField(max_length=200) 
     start_date = models.DateField()
     end_date = models.DateField()
     certificate = CloudinaryField('certificate', folder='certificates', null=True, blank=True)
 
     def clean(self):
-        if self.start_date and self.end_date and self.start_date > self.end_date:
-            raise ValidationError(_('End date must be after start date.'))
+       if self.start_date and self.end_date and self.start_date > self.end_date:
+           raise ValidationError(_('End date must be after start date.'))
 
     def save(self, *args, **kwargs):
-        self.full_clean()
-        super().save(*args, **kwargs)
+       self.full_clean()
+       super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.institution} - {self.program}"
+        return f"{self.institution} - {self.program} - {self.start_date} to {self.end_date}"
 
-class SurgeonVerification(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    clinic = models.CharField(max_length=100)
-    city = models.CharField(max_length=100)
-    country = models.CharField(max_length=100)
-    verification_status = models.CharField(
-        max_length=9, 
-        choices=Verification.choices, 
-        default=Verification.PENDING
-    )
-    def __str__(self):
-        return f"{self.first_name} {self.last_name} - {self.clinic}"
+# class SurgeonVerification(models.Model):
+#    user_first_name = models.CharField(max_length=100)
+#    user_last_name = models.CharField(max_length=100)
+ #   profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
+ #   clinic = models.CharField(max_length=100)
+ #   city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="cities")            #this was just a charfield, can go back
+ #   country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="countries") #this was just a charfield, can go back
+ #   verification_status = models.CharField(
+ #       max_length=9, 
+ #       choices=Verification.choices, 
+ #       default=Verification.PENDING
+ #   )
+ #   def __str__(self):
+ #       return f"{self.first_name} {self.last_name} - {self.clinic}"
