@@ -58,11 +58,11 @@ class EducationForm(forms.ModelForm):
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
     certificate = CloudinaryFileField(
         options={
-            'folder': 'profile_pictures',
+            'folder': 'vertificate',
             'resource_type': 'auto',
             'public_id': None,
         },
-        required=True
+        required=False
     )
     class Meta:
         model = Education
@@ -74,6 +74,7 @@ class EducationForm(forms.ModelForm):
 
 EducationFormSet = forms.inlineformset_factory(
     Surgeon, Education,
+    form= EducationForm,
     fields=('institution', 'program', 'country', 'start_date', 'end_date', 'certificate'),
     extra=1, can_delete=True
 )

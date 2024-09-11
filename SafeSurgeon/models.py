@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
-
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -88,10 +89,18 @@ class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
-    country = models.CharField(max_length=200)
+    country = models.ForeignKey('Country', on_delete=models.SET_NULL, null=True)  
     start_date = models.DateField()
     end_date = models.DateField()
     certificate = CloudinaryField('certificate', folder='certificates', null=True, blank=True)
+
+    def clean(self):
+        if self.start_date and self.end_date and self.start_date > self.end_date:
+            raise ValidationError(_('End date must be after start date.'))
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.institution} - {self.program}"
