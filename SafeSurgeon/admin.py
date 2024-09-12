@@ -17,12 +17,6 @@ class CityAdmin(admin.ModelAdmin):
     list_filter = ('country',)
     search_fields = ['name','country__name']
 
-#clinic admin
-@admin.register(Clinic)
-class ClinicAdmin(admin.ModelAdmin):
-    list_display = ('name','city')
-    list_filter = ('city',)
-    search_fields = ['name', 'city__name']
 
 #inline education
 class EducationInline(admin.TabularInline):  
@@ -33,53 +27,69 @@ class EducationInline(admin.TabularInline):
 @admin.register(Surgeon)
 class SurgeonAdmin(SummernoteModelAdmin):
     inlines = [EducationInline]
-    list_display = ('profile_picture', 'user', 'clinic','first_name','last_name','email','id_document', 'verification_status','created_on')
-    
-    def get_first_name(self, obj):
-        return obj.user.first_name  # Accessing the first_name from the related User model
-
-    def get_last_name(self, obj):
-        return obj.user.last_name  # Accessing the last_name from the related User model
-
-    def get_email(self, obj):
-        return obj.user.email  # Accessing the email from the related User model
-
-    
-    get_first_name.short_description = 'First Name'
-    get_last_name.short_description = 'Last Name'
-    get_email.short_description = 'Email'
-    
-    list_filter = ('verification_status','clinic')
-    search_fields = ['clinic', 'first_name', 'last_name', 'email']
-    readonly_fields = ('created_on','first_name','last_name','email')
+    list_display = (
+        'profile_picture', 
+        'user_first_name',
+        'user_last_name',
+        'user_email', 
+        'clinic', 
+        'city', 
+        'get_country', 
+        'id_document', 
+        'verification_status', 
+        )
+        
+    list_filter = ('verification_status', 'clinic')
+    search_fields = ['clinic', 'user__first_name', 'user__last_name', 'user__email']
+    readonly_fields = ('clinic',)
 
     #Grouping the fields into section in the admin panel
     fieldsets = (
         (None, {
-            'fields': ('user', 'first_name', 'last_name', 'email', 'clinic', 'profile_picture') 
+            'fields': ('profile_picture','user_first_name', 'user_last_name', 'user_email', 'clinic', 'city', 'country') 
         }),
         ('Verification', {
             'fields': ('verification_status', 'id_document')
         }),
-        ('Timestamps', {
-            'fields': ('created_on',)
-        })
     )
 
-#Method to display the country via clinic and city relations
+    #Method to display the country via city relations
     def get_country(self, obj):
-        return obj.clinic.city.country.name if obj.clinic and obj.clinic.city and obj.clinic.city.country else None
+        return obj.city.country.name if obj.city and obj.city.country else None
     get_country.short_description = 'Country'
+     
+    #def user_first_name(self, obj):
+    #    return obj.user.first_name  # Accessing the first_name from the related User model
+    #user_first_name.short_description = 'First Name'
 
-#Method to display the city via clinic relations
-    def get_city(self, obj):
-        return obj.clinic.city.name if obj.clinic and obj.clinic.city else None
-    get_city.short_description = 'City'
+    #def user_last_name(self, obj):
+    #    return obj.user.last_name  # Accessing the last_name from the related User model
+    #user_last_name.short_description = 'Last Name'
+
+    #def user_email(self, obj):
+    #    return obj.user.email  # Accessing the email from the related User model
+    #user_email.short_description = 'Email'
+
+    # Education admin
+    @admin.register(Education)
+    class EducationAdmin(admin.ModelAdmin):
+        list_display=('surgeon','institution', 'institution_country', 'program', 'start_date', 'end_date', 'certificate', )
+        list_filter = ('institution',)
+        search_fields= ['institution', 'program']
+
+
+    
+    
+
+   
+
+
 
 #Education Admin
 @admin.register(Education)
 class EducationAdmin(admin.ModelAdmin):
-    list_display = ('surgeon', 'institution', 'program', 'country', 'start_date', 'end_date', 'certificate')
-    list_filter = ('institution', 'program','country')
-    search_fields = ['surgeon__first_name', 'surgeon__last_name', 'institution', 'program','country__name']
+    list_display = ('surgeon', 'institution', 'institution_country', 'program',  'start_date', 'end_date', 'certificate')
+    list_filter = ('institution', 'program','institution_country')
+    search_fields = ['user__first_name', 'user__last_name', 'institution', 'program','country__name']
 
+admin.site.register(Surgeon, SurgeonAdmin)

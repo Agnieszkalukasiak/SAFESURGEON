@@ -14,7 +14,7 @@ class Verification(models.TextChoices):
 
 
 class Country(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     
     def __str__(self):
         return self.name
@@ -40,7 +40,7 @@ def default_user_and_surgeon():
 
     # Create or get default city and country
     default_country,_=Country.objects.get_or_create(name='Default Country')
-    default_city,_= City.objects.get_or_create(name='Default City', country=default_country)
+    default_city,_= City.objects.get_or_create(name='Default City', country = default_country)
 
     #create or get the dafult surgon liked to the default user
     default_surgeon,created = Surgeon.objects.get_or_create(
@@ -49,7 +49,7 @@ def default_user_and_surgeon():
             'profile_picture':'default_profile_pic.jpg',
             'clinic':'default clinic',
             'city':default_city,
-            'country':default_country,
+            'country': default_country,
             'verification_status': Verification.PENDING,
             'id_document':'default_id_document.jpg',
             'slug':slugify(f"default-surgeon-{default_user.id}")
@@ -60,7 +60,7 @@ def default_user_and_surgeon():
         surgeon=default_surgeon,
         institution="default university",
         program= "default program",
-        country="default country",
+        institution_country ="institution country",
         start_date= '2001-02-02',
         end_date= '2004-02-02',
     )
@@ -68,11 +68,10 @@ def default_user_and_surgeon():
     return default_surgeon
 
     #usage Uncomment for testing
-default_surgeon=default_user_and_surgeon()
-if default_surgeon:
-    print (default_surgeon.user_display())
-else:
-    print ("default_surgeon not found.")
+#default_surgeon=default_user_and_surgeon()
+#   print (default_surgeon.user_display())
+#else:
+#    print ("default_surgeon not found.")
 
 
 class Surgeon(models.Model):
@@ -119,7 +118,7 @@ class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
-    institution_country = models.CharField(max_length=200) 
+    institution_country = models.CharField(max_length=100) 
     start_date = models.DateField()
     end_date = models.DateField()
     certificate = CloudinaryField('certificate', folder='certificates', null=True, blank=True)

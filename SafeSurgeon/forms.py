@@ -62,7 +62,7 @@ class EducationForm(forms.ModelForm):
     )
     class Meta:
         model = Education
-        fields = ['insitution_country','institution', 'program', 'start_date', 'end_date', 'certificate']
+        fields = ['institution_country','institution', 'program', 'start_date', 'end_date', 'certificate']
         widgets = {
             'start_date': forms.DateInput(attrs={'type': 'date'}),
             'end_date': forms.DateInput(attrs={'type': 'date'}),
