@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 from django.core.exceptions import ValidationError
-from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -30,14 +29,16 @@ class City(models.Model):
 #default user for development
 def default_user_and_surgeon():
     #create or get default user
-    default_user, created = User.objects.get_or_create(username='default_user', defaults={
+    default_user, created = User.objects.get_or_create(
+        username='default_user', 
+        defaults={
         'first_name': 'Default',
         'last_name': 'User',
         'email': 'default@example.com',
-        'password':'defaultpassword' #set a default password
+        'password':'defaultpassword' 
     })
 
-    # Create or get dault city and country
+    # Create or get default city and country
     default_country,_=Country.objects.get_or_create(name='Default Country')
     default_city,_= City.objects.get_or_create(name='Default City', country=default_country)
 
@@ -66,7 +67,7 @@ def default_user_and_surgeon():
 
     return default_surgeon
 
-    #usage
+    #usage Uncomment for testing
 default_surgeon=default_user_and_surgeon()
 if default_surgeon:
     print (default_surgeon.user_display())
@@ -75,11 +76,8 @@ else:
 
 
 class Surgeon(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon_verification", default=default_user_id)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon_verification")
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    #first_name = models.CharField(max_length=100)
-    #last_name = models.CharField(max_length=100)
-   # email = models.EmailField(unique=True)
     clinic = models.CharField(max_length=200)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="cities")
     country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="countries")
@@ -98,7 +96,7 @@ class Surgeon(models.Model):
         super().save(*args, **kwargs) 
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} - {self.get_verification_status_display()}"
+        return f"{self.user.first_name} {self.user.last_name} - {self.get_verification_status_display()}"
     
     def is_verified(self):
             return self.verification_status == Verification.VERIFIED
@@ -112,7 +110,7 @@ class Surgeon(models.Model):
             'profile_picture_url': self.profile_picture.url if self.profile_picture else None,
             'clinic': self.clinic,
             'city': self.city.name if self.city else 'N/A',
-            'country':self.country if self.country else 'N/A',
+            'country':self.country.name if self.country else 'N/A',
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
