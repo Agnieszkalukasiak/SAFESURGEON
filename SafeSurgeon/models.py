@@ -27,13 +27,52 @@ class City(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-def default_user_id():
+#default user for development
+def default_user_and_surgeon():
+    #create or get default user
     default_user, created = User.objects.get_or_create(username='default_user', defaults={
         'first_name': 'Default',
         'last_name': 'User',
         'email': 'default@example.com',
+        'password':'defaultpassword' #set a default password
     })
-    return default_user.id 
+
+    # Create or get dault city and country
+    default_country,_=Country.objects.get_or_create(name='Default Country')
+    default_city,_= City.objects.get_or_create(name='Default City', country=default_country)
+
+    #create or get the dafult surgon liked to the default user
+    default_surgeon,created = Surgeon.objects.get_or_create(
+        user=default_user,
+        defaults = {
+            'profile_picture':'default_profile_pic.jpg',
+            'clinic':'default clinic',
+            'city':default_city,
+            'country':default_country,
+            'verification_status': Verification.PENDING,
+            'id_document':'default_id_document.jpg',
+            'slug':slugify(f"default-surgeon-{default_user.id}")
+        }
+    )
+            #default education records
+    Education.objects.get_or_create(
+        surgeon=default_surgeon,
+        institution="default university",
+        program= "default program",
+        country="default country",
+        start_date= '2001-02-02',
+        end_date= '2004-02-02',
+    )
+
+    return default_surgeon
+
+    #usage
+default_surgeon=default_user_and_surgeon()
+if default_surgeon:
+    print (default_surgeon.user_display())
+else:
+    print ("default_surgeon not found.")
+
 
 class Surgeon(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon_verification", default=default_user_id)
