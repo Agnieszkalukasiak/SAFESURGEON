@@ -28,7 +28,7 @@ class SurgeonForm(forms.ModelForm):
 
     class Meta:
         model=Surgeon
-        fields = ['first_name','last_name','email','clinic','profile_picture', 'id_document']
+        fields = ['profile_picture','country', 'city', 'clinic', 'id_document']
        
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -41,24 +41,20 @@ class SurgeonForm(forms.ModelForm):
                 self.fields['city'].queryset=City.objects.none()
         elif self.instance.pk and self.instance.country:
             #prepopulate cities based on stored countries if editing profile
-            self.fields['city'].queryset = City.objects.filter(country_id=country_id).order_by('name')
-            
-            #handle dynamic clinic population based on selcred city 
+            self.fields['city'].queryset = City.objects.filter(country_id=self.instance.country.id).order_by('name')
         if 'city' in self.data:
             try:
                 city_id = int(self.data.get('city'))
-                self.fields['clinic'].queryset = Clinic.objects.filter(city_id=city_id).order_by('name')
             except (ValueError, TypeError):
                 pass
-        elif self.instance.pk and self.instance.clinic:
-            #pre populated clinics based on the stored city if editing an excisiting profile
-            self.fields['clinic'].queryset = Clinic.objects.filter(city=self.instance.clinic.city).order_by('name')
-
+        elif self.instance.pk and self.instance.city:
+            pass
+           
 class EducationForm(forms.ModelForm):
-    country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
+    institution_country = forms.CharField(max_length=200)
     certificate = CloudinaryFileField(
         options={
-            'folder': 'vertificate',
+            'folder': 'certificate',
             'resource_type': 'auto',
             'public_id': None,
         },
@@ -66,7 +62,7 @@ class EducationForm(forms.ModelForm):
     )
     class Meta:
         model = Education
-        fields = ['institution', 'program', 'country', 'start_date', 'end_date', 'certificate']
+        fields = ['insitution_country','institution', 'program', 'start_date', 'end_date', 'certificate']
         widgets = {
             'start_date': forms.DateInput(attrs={'type': 'date'}),
             'end_date': forms.DateInput(attrs={'type': 'date'}),
@@ -75,23 +71,18 @@ class EducationForm(forms.ModelForm):
 EducationFormSet = forms.inlineformset_factory(
     Surgeon, Education,
     form= EducationForm,
-    fields=('institution', 'program', 'country', 'start_date', 'end_date', 'certificate'),
+    fields=('institution', 'institution_country', 'program', 'start_date', 'end_date', 'certificate'),
     extra=1, can_delete=True
 )
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(required=True)
+    first_name = forms.CharField(required=True)
+    last_name = forms.CharField(required=True)
 
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2")
-
-class SignUpForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-
-    class Meta:
-        model = User
-        fields = ("username", "email", "password1", "password2")
+        fields = ("username", 'first_name', 'last_name', "email", "password1", "password2")
 
     def save(self, commit=True):
         user = super().save(commit=False)
