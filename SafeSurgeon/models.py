@@ -29,18 +29,18 @@ class City(models.Model):
 
 def default_user_id():
     default_user, created = User.objects.get_or_create(username='default_user', defaults={
-        'email': 'default@example.com',
         'first_name': 'Default',
         'last_name': 'User',
+        'email': 'default@example.com',
     })
     return default_user.id 
 
 class Surgeon(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon_verification", default=default_user_id)
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
+    #first_name = models.CharField(max_length=100)
+    #last_name = models.CharField(max_length=100)
+   # email = models.EmailField(unique=True)
     clinic = models.CharField(max_length=200)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="cities")
     country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="countries")
@@ -66,15 +66,14 @@ class Surgeon(models.Model):
 
     def user_display(self):
         return {
-            'name':f"{self.user_name} {self.user_name}",
-            'email': user.email,
+            'name':f"{self.user.first_name} {self.user.last_name}",
+            'email': self.user.email,
             'verification_status': self.get_verification_status_display(),
-            'created_on': self.created_on.strftime('%Y-%m-%d %H:%M:%S'),
             'has_id_document': bool(self.id_document),
             'profile_picture_url': self.profile_picture.url if self.profile_picture else None,
-            'city': self.clinic.city.name if self.clinic else 'N/A',
-            'country':self.clinic.city.name if self.clinic else 'N/A',
-            'clinic': self.clinic.name if self.clinic else 'N/A',
+            'clinic': self.clinic,
+            'city': self.city.name if self.city else 'N/A',
+            'country':self.country if self.country else 'N/A',
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
