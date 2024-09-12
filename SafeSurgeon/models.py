@@ -114,15 +114,17 @@ class Surgeon(models.Model):
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
+
 class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
-    country = models.CharField(max_length=200) 
+    institution_country = models.CharField(max_length=200) 
     start_date = models.DateField()
     end_date = models.DateField()
     certificate = CloudinaryField('certificate', folder='certificates', null=True, blank=True)
 
+   
     def clean(self):
        if self.start_date and self.end_date and self.start_date > self.end_date:
            raise ValidationError(_('End date must be after start date.'))
