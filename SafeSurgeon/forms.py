@@ -1,6 +1,6 @@
 from django import forms
 from django.core.validators import FileExtensionValidator
-from .models import Surgeon, Education, Clinic, City, Country
+from .models import Surgeon, Education, City, Country
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from cloudinary.forms import CloudinaryFileField
@@ -15,7 +15,7 @@ class SurgeonForm(forms.ModelForm):
             'resource_type': 'auto',
             'public_id': None,
         },
-        required=True
+        required=False
     )
     id_document= CloudinaryFileField (
         options={
@@ -77,12 +77,12 @@ EducationFormSet = forms.inlineformset_factory(
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(required=True)
-    first_name = forms.CharField(required=True)
-    last_name = forms.CharField(required=True)
+    user_first_name = forms.CharField(required=True)
+    user_last_name = forms.CharField(required=True)
 
     class Meta:
         model = User
-        fields = ("username", 'first_name', 'last_name', "email", "password1", "password2")
+        fields = ("username", 'user_first_name', 'user_last_name', "email", "password1", "password2")
 
     def save(self, commit=True):
         user = super().save(commit=False)
