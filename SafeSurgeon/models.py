@@ -15,9 +15,14 @@ class Verification(models.TextChoices):
 
 class Country(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    
+
     def __str__(self):
         return self.name
+    
+    @classmethod
+    def get_default_country(cls):
+        default_country, _ = cls.objects.get_or_create(name='Default Country')
+        return default_country
     
 class City(models.Model):
     name = models.CharField(max_length=100)
@@ -25,6 +30,29 @@ class City(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+    
+    @classmethod
+    def get_default_city(cls):
+        # Ensure a default country exists
+        default_country, _ = Country.objects.get_or_create(name='Default Country')
+        
+        # Create or get the default city
+        default_city, _ = cls.objects.get_or_create(name='Default City', country=default_country)
+        return default_city
+
+class Clinic(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    @classmethod
+    def default_clinic(cls):
+        get_default_clinic, created = cls.objects.get_or_create(
+            name="Default Clinic",
+            defaults={'name': "Default Clinic"}
+        )
+        return default_clinic
 
 #default user for development
 def default_user_and_surgeon():
@@ -38,10 +66,7 @@ def default_user_and_surgeon():
         'password':'defaultpassword' 
     })
 
-    # Create or get default city and country
-    default_country,_=Country.objects.get_or_create(name='Default Country')
-    default_city,_= City.objects.get_or_create(name='Default City', country = default_country)
-    return default_city.id
+    
 
     #create or get the dafult surgon liked to the default user
     default_surgeon,created = Surgeon.objects.get_or_create(
@@ -78,9 +103,9 @@ def default_user_and_surgeon():
 class Surgeon(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon_verification")
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    clinic = models.CharField(max_length=200)
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="cities")
-    country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="countries")
+    clinic = models.ForeignKey(Clinic, on_delete=models.SET_NULL, null=True, related_name="surgeons")
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="surgeon")
+    country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="surgeon")
     verification_status = models.CharField(
         max_length=9, 
         choices=Verification.choices, 
