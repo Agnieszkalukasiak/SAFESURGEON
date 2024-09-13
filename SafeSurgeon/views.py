@@ -11,7 +11,7 @@ import logging
 import sys
 
 from .models import Surgeon, Country, City, Education, Verification
-from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUp
+from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm
 
 #create a logger for this view
 logger = logging.getLogger(__name__)
@@ -103,24 +103,24 @@ def get_verified(request):
     #try to get an existing surgeon profile for logged-in user
     surgeon, created = Surgeon.objects.get_or_create(user=request.user)
     #if profile is verfied and user is editing, use 'suregin_profile.html
-    if surgeon.verification_status == Verfication.VERIFIED.value and not created:
+    if surgeon.verification_status == Verification.VERIFIED.value and not created:
         template = 'SafeSurgeon/surgeon_profile.html'
     else:
         template='get_verified.html' #template for new profile creation
 
     if request.method=='POST':
-        form == SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
         education_formset= EducationFormSet (request.POST, request.FILES, instance.surgeon)
     
-    if form.is_valid and education_formset.is_valid ():
+    if form.is_valid() and education_formset.is_valid():
         try:
             with transaction.atomic():
                 surgeon=form.save(commit=False)
                 surgeon.verification_status = Verification.PENDING.value
                 surgeon.save()
 
-                Education_formset.instance = surgeon
-                Education_formset.save()
+                education_formset.instance = surgeon
+                education_formset.save()
 
             messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
             return redirect('surgeon_profile')
@@ -134,13 +134,13 @@ def get_verified(request):
 
         #if the profile is verified , allow editing but show a message
     if surgeon.verification_status == Verification.VERIFIED.value:
-        message.info(request,"You profile is verified, but you can edit and resubmit for verfication.")
+        messages.info(request,"You profile is verified, but you can edit and resubmit for verfication.")
         #if the profile is rejected , allow editing but show a message
     elif surgeon.verification_status == Verification.REJECTED.value:
-        message.info(request,"You profile is rejected, but you can edit and resubmit for verfication.")
+        messages.info(request,"You profile is rejected, but you can edit and resubmit for verfication.")
         #if the profile is pending
     else:
-        message.info(request,"You profile is pending verification.")
+        messages.info(request,"You profile is pending verification.")
 
     #context
     context = {

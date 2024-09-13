@@ -41,6 +41,7 @@ def default_user_and_surgeon():
     # Create or get default city and country
     default_country,_=Country.objects.get_or_create(name='Default Country')
     default_city,_= City.objects.get_or_create(name='Default City', country = default_country)
+    return default_city.id
 
     #create or get the dafult surgon liked to the default user
     default_surgeon,created = Surgeon.objects.get_or_create(
@@ -91,8 +92,19 @@ class Surgeon(models.Model):
         
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(f"{self.first_name}-{self.last_name}")
+            self.slug = slugify(f"{self.user_first_name}-{self.user_last_name}")
+    
+        if not self.city or not self.country:
+            default_country, _ = Country.objects.get_or_create(name='Default Country')
+            default_city, _ = City.objects.get_or_create(name='Default City', country=default_country)
+            
+            if not self.city:
+                self.city = default_city
+            if not self.country:
+                self.country = default_country
+        
         super().save(*args, **kwargs) 
+
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.get_verification_status_display()}"
@@ -118,7 +130,7 @@ class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
-    institution_country = models.CharField(max_length=100) 
+    institution_country = models.CharField(max_length=100, default='Unknown') 
     start_date = models.DateField()
     end_date = models.DateField()
     certificate = CloudinaryField('certificate', folder='certificates', null=True, blank=True)
