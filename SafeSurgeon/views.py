@@ -35,18 +35,15 @@ def verify(request):
         try:
             country = Country.objects.get(id=country_id) if country_id else None
         except Country.DoesNotExist:
-             Country:None
+             Country=None
         try:
             city = City.objects.get(id=city_id) if city_id else None
-        except Coity.DoesNotExist:
-            City:None
+        except Country.DoesNotExist:
+            City=None
         # Pass country and city names to the redirect, not their IDs
         country_name = country.name if country else ''
         city_name = city.name if city else ''
-        city_name = city.name if city else ''
-    
-        city_name = city.name if city else ''  
-    
+   
         # Redirect to verify_result with search parameters
         return redirect ('verify_result', user_first_name = user_first_name, user_last_name=user_last_name, clinic=clinic, city=city_name, country=country_name)
     else:
