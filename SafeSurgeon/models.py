@@ -57,7 +57,7 @@ class Clinic(models.Model):
 
 
 class Surgeon(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon_verification")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon")
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
     clinic = models.ForeignKey(Clinic, on_delete=models.SET_DEFAULT,default=Clinic.get_default_clinic, related_name="surgeons")
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="surgeons")
@@ -76,8 +76,8 @@ class Surgeon(models.Model):
             self.slug = slugify(f"{self.user.first_name}-{self.user.last_name}")
     
         if not self.city or not self.country:
-            default_country, _ = Country.objects.get_or_create(name='Default Country')
-            default_city, _ = City.objects.get_or_create(name='Default City', country=default_country)
+            default_country = Country.get_default_country()
+            default_city = City.get_default_city()
             
             if not self.city:
                 self.city = default_city
@@ -100,37 +100,39 @@ class Surgeon(models.Model):
             'verification_status': self.get_verification_status_display(),
             'has_id_document': bool(self.id_document),
             'profile_picture_url': self.profile_picture.url if self.profile_picture else None,
-            'clinic': self.clinic,
+            'clinic':  self.clinic.name if self.clinic else 'N/A',
             'city': self.city.name if self.city else 'N/A',
             'country':self.country.name if self.country else 'N/A',
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
-    @classmethod
-    def default_user_and_surgeon(cls):
-            #create or get default user
-        default_user, created = User.objects.get_or_create(
-        username='default_user', 
-        defaults={
-            'first_name': 'Default',
-            'last_name': 'User',
-            'email': 'default@example.com',
-            'password':'defaultpassword' 
+@classmethod
+def default_user_and_surgeon(cls):
+        #create or get default user
+    default_user, created = User.objects.get_or_create(
+    username='default_user', 
+    defaults={
+        'first_name': 'Default',
+        'last_name': 'User',
+        'email': 'default@example.com',
+        'password':'defaultpassword' 
+    }
+)
+    #create or get the dafult surgon liked to the default user
+    default_surgeon,_ = cls.objects.get_or_create(
+        user=default_user,
+        defaults = {
+            'profile_picture':'default_profile_pic.jpg',
+            'clinic':Clinic.get_default_clinic(),
+            'city':City.get_default_city(),
+            'country': Country.get_default_country(),
+            'verification_status': Verification.PENDING,
+            'id_document':'default_id_document.jpg',
+            'slug':slugify(f"default-surgeon-{default_user.id}"),
         }
     )
-    #create or get the dafult surgon liked to the default user
-        default_surgeon,_ = cls.objects.get_or_create(
-            user=default_user,
-            defaults = {
-                'profile_picture':'default_profile_pic.jpg',
-                'clinic':'default clinic',
-                'city':default_city,
-                'country': default_country,
-                'verification_status': Verification.PENDING,
-                'id_document':'default_id_document.jpg',
-                'slug':slugify(f"default-surgeon-{default_user.id}")
-            }
-        )
+    Education.create_default_education(default_surgeon)
+    return default_surgeon
 
 class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
@@ -155,7 +157,7 @@ class Education(models.Model):
     @classmethod      
     #default education records
     def create_default_education(cls, surgeon):
-       default_education, _ = cls.objects.get_or_create(
+        cls.objects.get_or_create(
             surgeon=surgeon,
             defaults={
                 'institution': "default university",
@@ -165,6 +167,4 @@ class Education(models.Model):
                 'end_date': '2004-02-02',
             }
         )
-    Education.create_default_education(default_surgeon)
-    return default_surgeon
-
+        return default_education
