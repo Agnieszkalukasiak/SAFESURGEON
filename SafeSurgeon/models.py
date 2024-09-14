@@ -30,13 +30,10 @@ class City(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-    
+
+    # Create or get the default city
     @classmethod
-    def get_default_city(cls):
-        # Ensure a default country exists
-        default_country, _ = Country.objects.get_or_create(name='Default Country')
-        
-        # Create or get the default city
+    def get_default_city(cls):         
         default_city, _ = cls.objects.get_or_create(name='Default City', country=default_country)
         return default_city
 
