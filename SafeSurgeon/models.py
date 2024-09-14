@@ -41,7 +41,7 @@ class City(models.Model):
         return default_city
 
 class Clinic(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,unique=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -49,9 +49,7 @@ class Clinic(models.Model):
     @classmethod
     def get_default_clinic(cls):
         default_clinic,_ = cls.objects.get_or_create(
-            name="Default Clinic",
-            defaults={'name': "Default Clinic"}
-        )
+            name="Default Clinic")
         return default_clinic
 
 

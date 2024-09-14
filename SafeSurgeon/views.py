@@ -10,7 +10,7 @@ from django.contrib import messages
 import logging
 import sys
 
-from .models import Surgeon, Country, City, Education, Verification
+from .models import Surgeon, Country, City, Clinic, Education, Verification
 from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm
 
 #create a logger for this view
@@ -67,37 +67,6 @@ def get_cities(request, country_id):
 
 
 #surgon profile page
-'''
-@login_required
-def surgeon_profile(request):
-    try:
-        surgeon = Surgeon.objects.get(user=request.user)
-        if not surgeon.is_verified:
-            return redirect('get_verified')
-    except Surgeon.DoesNotExist:
-         return redirect('get_verified')
-    
-    if request.method == 'POST':
-        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
-        education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon)
-        if form.is_valid() and education_formset.is_valid():
-            form.save()
-            education_formset.save()
-            messages.success(request, 'Thank you for updating your profile. We will email you once you verification is completed')
-            return redirect('surgeon_profile')
-    else:
-        form = SurgeonForm(instance=surgeon)
-        education_formset = EducationFormSet(instance=surgeon)
-
-    context = {
-        'surgeon': surgeon,
-        'form': form,
-        'education_formset': education_formset,
-    }
-    return render(request, 'safesurgeon/surgeon_profile.html', context)
-
-    #edit surgon_profile
-'''
 @login_required
 def get_verified(request):  
     #try to get an existing surgeon profile for logged-in user
@@ -186,10 +155,7 @@ def signup_view(request):
         form = SignUpForm()
     
     return render(request, 'signup.html', {'form': form})
-
-
-       
-
+      
 def verify_result(request, user_first_name, user_last_name, clinic, city, country):
     #Try to get the verification resutls from the database
     surgeon = Surgeon.objects.filter(
