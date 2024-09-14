@@ -6,10 +6,10 @@
     <div class="card">
         <div class="card-header text-center">
             <img src="{{surgeon.profile_picture.url}}" alt="Profile Picture" class="rounded-circle"
-                style="width: 150px;">
-            <h2>{{surgeon.first_name}} {{surgeon.last_name}}</h2>
+                style="width: 150px;">              
+            <h2>{{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</h2>
             <h4>{{surgeon.clinic}}</h4>
-            <p>{{surgeon.city}}, {{surgeon.country}}</p>
+            <p>{{surgeon.city.name}}, {{surgeon.country.name}}</p>
 
             {% if surgeon.verification_status == "VERIFIED" %}
             <span class="badge bg-success">Verified</span>
@@ -27,7 +27,7 @@
                 {%for edu in education%}
                 <li>
                     <strong>{{edu.institution}}</strong> <strong> - {{edu.program}}</strong> <br>
-                    {{edu.country}} ({{edu.start_date}} to {{edu.end_date}})
+                    {{edu.insitution_country}} ({{edu.start_date}} to {{edu.end_date}})
                 </li>
                 {% endfor %}
             </ul>
@@ -39,12 +39,12 @@
             </div>
             {% else %}
             <div class="alert alert-danger text-center"></div>
-            <h2>No Surgeon Found</h2>
-            <p>
+                <h2>No Surgeon Found</h2>
+                <p>
                 Name:{{search_params.first_name}} {{search_params.last_name}} <br>
                 Clinic:{{search_params.clinic}} <br>
                 City:{{search_params.city}} , Country:{{search_params.country}}
-            </p>
+                </p>
 
             <span class="badge bg-danger">Not Verified</span>
         </div>
