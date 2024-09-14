@@ -118,7 +118,6 @@ class Surgeon(models.Model):
             'password':'defaultpassword' 
         }
     )
-
     #create or get the dafult surgon liked to the default user
         default_surgeon,_ = cls.objects.get_or_create(
             user=default_user,
@@ -137,15 +136,14 @@ class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)
     institution = models.CharField(max_length=200)
     program = models.CharField(max_length=200)
-    institution_country = models.CharField(max_length=100, default='Unknown') 
+    institution_country = models.CharField(max_length=100, default='Unknown')
     start_date = models.DateField()
     end_date = models.DateField()
     certificate = CloudinaryField('certificate', folder='certificates', null=True, blank=True)
-
    
     def clean(self):
        if self.start_date and self.end_date and self.start_date > self.end_date:
-           raise ValidationError(_('End date must be after start date.'))
+           raise ValidationError('End date must be after start date.')
 
     def save(self, *args, **kwargs):
        self.full_clean()
@@ -154,7 +152,7 @@ class Education(models.Model):
     def __str__(self):
         return f"{self.institution} - {self.program} - {self.start_date} to {self.end_date}"
 
-    @classmethod        
+    @classmethod      
     #default education records
     def create_default_education(cls, surgeon):
        default_education, _ = cls.objects.get_or_create(
@@ -167,8 +165,6 @@ class Education(models.Model):
                 'end_date': '2004-02-02',
             }
         )
-
     Education.create_default_education(default_surgeon)
-
     return default_surgeon
 
