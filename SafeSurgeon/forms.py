@@ -6,6 +6,10 @@ from django.contrib.auth.models import User
 from cloudinary.forms import CloudinaryFileField
 
 class SurgeonForm(forms.ModelForm):
+    first_name = forms.CharField(required=False, disabled=True)
+    last_name = forms.CharField(required=False, disabled=True)
+    email = forms.EmailField(required=False, disabled=True)
+
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
     city = forms.ModelChoiceField(queryset=City.objects.all(), required=True)
     clinic = forms.CharField(max_length=100, required=True)
@@ -31,24 +35,28 @@ class SurgeonForm(forms.ModelForm):
         fields = ['profile_picture','country', 'city', 'clinic', 'id_document']
        
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
-        #if the form is being submitted, filter cities on the selected country
+
+        # Pre-fill 'first_name', 'last_name', 'email' if 'user' is provided
+        if user:
+            self.fields['first_name'].initial = user.first_name
+            self.fields['last_name'].initial = user.last_name
+            self.fields['email'].initial = user.email
+
+        #filter cities on the selected country
         if 'country' in self.data:
             try:
                 country_id= int(self.data.get('country'))
                 self.fields['city'].queryset=City.objects.filter(country_id=country_id).order_by('name')
             except (ValueError,TypeError):
                 self.fields['city'].queryset=City.objects.none()
-        elif self.instance.pk and self.instance.country:
+        elif self.instance and self.instance.country:
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = City.objects.filter(country_id=self.instance.country.id).order_by('name')
-        if 'city' in self.data:
-            try:
-                city_id = int(self.data.get('city'))
-            except (ValueError, TypeError):
-                pass
-        elif self.instance.pk and self.instance.city:
-            pass
+        else:
+            self.fields['city'].queryset = City.objects.none()
+        
            
 class EducationForm(forms.ModelForm):
     institution_country = forms.CharField(max_length=200)

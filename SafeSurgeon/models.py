@@ -46,9 +46,9 @@ class Clinic(models.Model):
 class Surgeon(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon")
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    clinic = models.ForeignKey(Clinic, on_delete=models.SET_DEFAULT, default=Clinic.get_default_clinic, related_name="surgeons")
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="surgeons")
-    country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="surgeons")
+    clinic = models.ForeignKey(Clinic, on_delete=models.SET_DEFAULT, default=Clinic.get_default_clinic, related_name="surgeons",null=True, blank=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
+    country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     verification_status = models.CharField(
         max_length=9, 
         choices=Verification.choices, 

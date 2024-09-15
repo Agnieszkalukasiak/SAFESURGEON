@@ -70,48 +70,60 @@ def get_cities(request, country_id):
 
 #surgon profile page
 @login_required
-def get_verified(request):  
+def get_verified(request): 
+    surgeon = getattr(request.user, 'surgeon', None)   
     #try to get an existing surgeon profile for logged-in user
-    surgeon, created = Surgeon.objects.get_or_create(user=request.user)
-    #if profile is verfied and user is editing, use 'suregin_profile.html
-    if surgeon.verification_status == Verification.VERIFIED.value and not created:
-        template = 'SafeSurgeon/surgeon_profile.html'
-    else:
-        template='get_verified.html' #template for new profile creation
+    if surgeon is not None:
+        # Determine which template to use based on verification status
+        if surgeon is not None and surgeon.verification_status == Verification.VERIFIED.value:
+            template = 'SafeSurgeon/surgeon_profile.html'
+            messages.info(request, "Your profile is verified. Welcome back!")
+        elif surgeon is not None and surgeon.verification_status == Verification.REJECTED.value:
+            template = 'SafeSurgeon/surgeon_profile.html'
+            messages.info(request, "Your profile was rejected. Please edit and resubmit for verification.")
+        elif surgeon is not None and surgeon.verification_status == Verification.PENDING.value:
+            template = 'SafeSurgeon/pending_verification.html'
+            messages.info(request, "Your profile is pending verification.")
+        else:
+            template = 'get_verified.html'
+            messages.info(request, "Please complete your surgeon profile for verification.")
+
 
     if request.method=='POST':
-        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
         education_formset= EducationFormSet (request.POST, request.FILES, instance.surgeon)
     
-    if form.is_valid() and education_formset.is_valid():
-        try:
-            with transaction.atomic():
-                surgeon=form.save(commit=False)
-                surgeon.verification_status = Verification.PENDING.value
-                surgeon.save()
+        if form.is_valid() and education_formset.is_valid():
+            try:
+                with transaction.atomic():
+                    surgeon=form.save(commit=False)
+                    surgeon.user = request.user 
+                    surgeon.verification_status = Verification.PENDING.value
+                    surgeon.save()
 
-                education_formset.instance = surgeon
-                education_formset.save()
+                    education_formset.instance = surgeon
+                    education_formset.save()
 
-            messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
-            return redirect('surgeon_profile')
-        except Exception as e:
+                messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
+                return redirect('surgeon_profile')
+            except Exception as e:
                 messages.error(request, f"An error occurred: {str(e)}")
         else:
             messages.error(request, "Please check the form for errors.")
     else:
-        form = SurgeonForm(instance=surgeon)
+        form = SurgeonForm(instance=surgeon, user=request.user)
         education_formset = EducationFormSet(instance=surgeon)
 
         #if the profile is verified , allow editing but show a message
-    if surgeon.verification_status == Verification.VERIFIED.value:
-        messages.info(request,"You profile is verified, but you can edit and resubmit for verfication.")
-        #if the profile is rejected , allow editing but show a message
-    elif surgeon.verification_status == Verification.REJECTED.value:
-        messages.info(request,"You profile is rejected, but you can edit and resubmit for verfication.")
-        #if the profile is pending
-    else:
-        messages.info(request,"You profile is pending verification.")
+    if surgeon is not None:
+        if surgeon.verification_status == Verification.VERIFIED.value:
+            messages.info(request,"You profile is verified, but you can edit and resubmit for verfication.")
+            #if the profile is rejected , allow editing but show a message
+        elif surgeon.verification_status == Verification.REJECTED.value:
+            messages.info(request,"You profile is rejected, but you can edit and resubmit for verfication.")
+            #if the profile is pending
+        else:
+            messages.info(request,"You profile is pending verification.")
 
     #context
     context = {
