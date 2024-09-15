@@ -34,6 +34,7 @@ class City(models.Model):
     # Create or get the default city
     @classmethod
     def get_default_city(cls):         
+        default_country = Country.get_default_country()
         default_city, _ = cls.objects.get_or_create(name='Default City', country=default_country)
         return default_city
 
@@ -101,33 +102,33 @@ class Surgeon(models.Model):
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
-@classmethod
-def default_user_and_surgeon(cls):
+    @classmethod
+    def default_user_and_surgeon(cls):
         #create or get default user
-    default_user, created = User.objects.get_or_create(
-    username='default_user', 
-    defaults={
-        'first_name': 'Default',
-        'last_name': 'User',
-        'email': 'default@example.com',
-        'password':'defaultpassword' 
-    }
-)
+        default_user, created = User.objects.get_or_create(
+            username='default_user', 
+            defaults={
+                'first_name': 'Default',
+                'last_name': 'User',
+                'email': 'default@example.com',
+                'password':'defaultpassword' 
+            }
+        )
     #create or get the dafult surgon liked to the default user
-    default_surgeon,_ = cls.objects.get_or_create(
-        user=default_user,
-        defaults = {
-            'profile_picture':'default_profile_pic.jpg',
-            'clinic':Clinic.get_default_clinic(),
-            'city':City.get_default_city(),
-            'country': Country.get_default_country(),
-            'verification_status': Verification.PENDING,
-            'id_document':'default_id_document.jpg',
-            'slug':slugify(f"default-surgeon-{default_user.id}"),
-        }
-    )
-    Education.create_default_education(default_surgeon)
-    return default_surgeon
+        default_surgeon,_ = cls.objects.get_or_create(
+            user=default_user,
+            defaults = {
+                'profile_picture':'default_profile_pic.jpg',
+                'clinic':Clinic.get_default_clinic(),
+                'city':City.get_default_city(),
+                'country': Country.get_default_country(),
+                'verification_status': Verification.PENDING,
+                'id_document':'default_id_document.jpg',
+                'slug':slugify(f"default-surgeon-{default_user.id}"),
+            }
+        )
+        Education.create_default_education(default_surgeon)
+        return default_surgeon
 
 class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)

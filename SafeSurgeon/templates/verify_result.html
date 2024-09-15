@@ -5,18 +5,20 @@
     {% if surgeon %}
     <div class="card">
         <div class="card-header text-center">
+            {% if surgeon.profile_picture %}
             <img src="{{surgeon.profile_picture.url}}" alt="Profile Picture" class="rounded-circle"
-                style="width: 150px;">              
+                style="width: 150px;"> 
+            {% endif %}             
             <h2>{{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</h2>
             <h4>{{surgeon.clinic}}</h4>
             <p>{{surgeon.city.name}}, {{surgeon.country.name}}</p>
 
             {% if surgeon.verification_status == "VERIFIED" %}
-            <span class="badge bg-success">Verified</span>
+                <span class="badge bg-success">Verified</span>
             {% elif surgeon.verification_status == "PENDING" %}
-            <span class="badge bg-warning">Pending</span>
+                <span class="badge bg-warning">Pending</span>
             {% elif surgeon.verification_status == "REJECTED" %}
-            <span class="badge bg-danger">Rejected</span>
+                <span class="badge bg-danger">Rejected</span>
             {% endif %}
         </div>
         <!-- surgon education-->
@@ -31,23 +33,29 @@
                 </li>
                 {% endfor %}
             </ul>
-            {% else %}
-            <div class="card-body">
-                <p>No education history available.</p>
+        </div>
+        {% else %}
+        <div class="card-body">
+            <p>No education history available.</p>
+        </div>
+        {% endif %}
+    </div>
+    {% else %}
+    <div class="alert alert-danger text-center"></div>
+        <h2>No Surgeon Found</h2>
+        <p>
+            {% if search_params.user_first_name or search_params.user_last_name %}
+                Name: {{ search_params.user_first_name }} {{ search_params.user_last_name }} <br>
             {% endif %}
-            </div>
-            </div>
-            {% else %}
-            <div class="alert alert-danger text-center"></div>
-                <h2>No Surgeon Found</h2>
-                <p>
-                Name:{{search_params.first_name}} {{search_params.last_name}} <br>
-                Clinic:{{search_params.clinic}} <br>
-                City:{{search_params.city}} , Country:{{search_params.country}}
-                </p>
-
+            {% if search_params.clinic %}
+                Clinic: {{ search_params.clinic }} <br>
+            {% endif %}
+            {% if search_params.city or search_params.country %}
+                City: {{ search_params.city }}, Country: {{ search_params.country }}
+            {% endif %}
+        </p>
             <span class="badge bg-danger">Not Verified</span>
         </div>
         {% endif %}
     </div>
-{% endblock %}
+    {% endblock %}

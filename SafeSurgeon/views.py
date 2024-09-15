@@ -35,17 +35,22 @@ def verify(request):
         try:
             country = Country.objects.get(id=country_id) if country_id else None
         except Country.DoesNotExist:
-             Country = None
+             country = None
         try:
             city = City.objects.get(id=city_id) if city_id else None
         except City.DoesNotExist:
-            City = None
+            city = None
         # Pass country and city names to the redirect, not their IDs
         country_name = country.name if country else ''
         city_name = city.name if city else ''
    
         # Redirect to verify_result with search parameters
-        return redirect ('verify_result', user_first_name = user_first_name, user_last_name=user_last_name, clinic=clinic, city=city_name, country=country_name)
+        return redirect ('verify_result', 
+        user_first_name = user_first_name, 
+        user_last_name=user_last_name, 
+        clinic=clinic, 
+        city=city_name,
+        country=country_name)
     else:
         # GET request - display the form
         countries = Country.objects.all()
@@ -156,12 +161,13 @@ def signup_view(request):
 def verify_result(request, user_first_name, user_last_name, clinic, city, country):
     #Try to get the verification resutls from the database
     surgeon = Surgeon.objects.filter(
-        user_first_name__icontains=first_name,
-        user_last_name__icontains=last_name,
-        clinic__icontains=clinic,
+        user__first_name__icontains=user_first_name,
+        user__last_name__icontains=user_last_name,
+        clinic__name__icontains=clinic,
         city__name__icontains=city,
         country__name__icontains=country,
     ).first()
+
     
     if surgeon:
     #fetch surgeon education history if they exist
