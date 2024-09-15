@@ -93,31 +93,8 @@ class Surgeon(models.Model):
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
-    @classmethod
-    def default_user_and_surgeon(cls):
-        #create or get default user
-        default_user, created = User.objects.get_or_create(
-            username='default_user', 
-            defaults={
-                'first_name': 'Default',
-                'last_name': 'User',
-                'email': 'default@example.com',
-                'password':'defaultpassword' 
-            }
-        )
-    #create or get the dafult surgon liked to the default user
-        default_surgeon,_ = cls.objects.get_or_create(
-            user=default_user,
-            defaults = {
-                'profile_picture':'default_profile_pic.jpg',
-                'clinic':Clinic.get_default_clinic(),
-                'city':City.get_default_city(),
-                'country': Country.get_default_country(),
-                'verification_status': Verification.PENDING,
-                'id_document':'default_id_document.jpg',
-                'slug':slugify(f"default-surgeon-{default_user.id}"),
-            }
-        )
+  
+   
         Education.create_default_education(default_surgeon)
         return default_surgeon
 
@@ -141,17 +118,4 @@ class Education(models.Model):
     def __str__(self):
         return f"{self.institution} - {self.program} - {self.start_date} to {self.end_date}"
 
-    @classmethod      
-    #default education records
-    def create_default_education(cls, surgeon):
-        cls.objects.get_or_create(
-            surgeon=surgeon,
-            defaults={
-                'institution': "default university",
-                'program': "default program",
-                'institution_country': "institution country",
-                'start_date': '2001-02-02',
-                'end_date': '2004-02-02',
-            }
-        )
-        return default_education
+  
