@@ -36,13 +36,15 @@ class SurgeonForm(forms.ModelForm):
        
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
+        surgeon = kwargs.get('instance') 
+        
         super().__init__(*args, **kwargs)
 
         # Pre-fill 'first_name', 'last_name', 'email' if 'user' is provided
-        if user:
-            self.fields['first_name'].initial = user.first_name
-            self.fields['last_name'].initial = user.last_name
-            self.fields['email'].initial = user.email
+        if surgeon and surgeon.user:
+            self.fields['first_name'].initial = surgeon.user.first_name
+            self.fields['last_name'].initial = surgeon.user.last_name
+            self.fields['email'].initial = surgeon.user.email
 
         #filter cities on the selected country
         if 'country' in self.data:
@@ -51,9 +53,9 @@ class SurgeonForm(forms.ModelForm):
                 self.fields['city'].queryset=City.objects.filter(country_id=country_id).order_by('name')
             except (ValueError,TypeError):
                 self.fields['city'].queryset=City.objects.none()
-        elif self.instance and self.instance.country:
+        elif self.instance.pk and self.instance.country:
             #prepopulate cities based on stored countries if editing profile
-            self.fields['city'].queryset = City.objects.filter(country_id=self.instance.country.id).order_by('name')
+            self.fields['city'].queryset = City.objects.filter(country=self.instance.country.id).order_by('name')
         else:
             self.fields['city'].queryset = City.objects.none()
         

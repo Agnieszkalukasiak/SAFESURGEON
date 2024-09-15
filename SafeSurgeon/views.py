@@ -63,15 +63,17 @@ def verify(request):
 
 # API view to get cities for a country
 def get_cities(request, country_id):
-    cities = City.objects.filter(country_id=country_id).values('id', 'name')
-    return JsonResponse(list(cities), safe=False)
+    cities = City.objects.filter(country_id=country_id).order_by('name')
+    city_list = [{'id': city.id, 'name': city.name} for city in cities]
+    return JsonResponse({'cities': city_list})
 
 
 
 #surgon profile page
 @login_required
 def get_verified(request): 
-    surgeon = getattr(request.user, 'surgeon', None)   
+    surgeon = getattr(request.user, 'surgeon', None)
+    template = 'get_verified.html'  # Default template   
     #try to get an existing surgeon profile for logged-in user
     if surgeon is not None:
         # Determine which template to use based on verification status
@@ -84,14 +86,14 @@ def get_verified(request):
         elif surgeon is not None and surgeon.verification_status == Verification.PENDING.value:
             template = 'SafeSurgeon/pending_verification.html'
             messages.info(request, "Your profile is pending verification.")
-        else:
-            template = 'get_verified.html'
-            messages.info(request, "Please complete your surgeon profile for verification.")
+    else:
+        template = 'get_verified.html'
+          #  messages.info(request, "Please complete your surgeon profile for verification.")
 
 
     if request.method=='POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
-        education_formset= EducationFormSet (request.POST, request.FILES, instance.surgeon)
+        education_formset= EducationFormSet (request.POST, request.FILES, instance=surgeon)
     
         if form.is_valid() and education_formset.is_valid():
             try:
@@ -105,7 +107,7 @@ def get_verified(request):
                     education_formset.save()
 
                 messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
-                return redirect('surgeon_profile')
+                return redirect('get_verified')
             except Exception as e:
                 messages.error(request, f"An error occurred: {str(e)}")
         else:
@@ -161,12 +163,12 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)  # Log the user in
-            messages.success(request, "Registration successful. Please complete your profile.")
             return redirect('get_verified')
         else:
             messages.error(request, "Unsuccessful registration. Invalid information.")
     else:
-        form = SignUpForm()
+        form = SignUpForm()  
+    
     
     return render(request, 'signup.html', {'form': form})
       

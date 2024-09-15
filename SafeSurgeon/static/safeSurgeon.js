@@ -8,12 +8,6 @@
         const citySelect = document.getElementById('{{ form.city.id_for_label }}');
         const clinicSelect = document.getElementById('{{ form.clinic.id_for_label }}');
 
-     
-
-        citySelect.addEventListener('change', function() {
-            // AJAX call to get clinics for selected city
-            // Update clinicSelect options
-        });
 
         // Add education form dynamically
         const addEducationBtn = document.getElementById('add-education');
@@ -52,32 +46,44 @@ document.getElementById('surgeonForm').addEventListener('submit', function(e) {
     });
 });
 
-// setting for cities to drop down in countries
+// Ajax setting for cities to drop down in countries
 $(document).ready(function() {
-    $("#country_select").change(function () {
-        var countryId = $(this).val(); //Get teh selected country ID
-        if(countryId) {
-            $.ajax({
-                url: "{% url 'get_cities' country_id=0 %}".replace('0', countryId), 
-                method:'GET',
-                success: function (data) {
-                    var citySelect = $('#city_select');
-                    citySelect.empty();  // Clear current options
-                    citySelect.append('<option value="">Select a city</option>');  // Add default option
-                    $.each(data, function(index, city) {
-                        citySelect.append(new Option(city.name, city.id));  // Add cities dynamically
-                    });
-                },
-                error: function() {
-                    alert('Could not retrieve cities. Please try again.');
-                }
-            });
-        } else {
-            $('#city_select').empty().append('<option value="">Select a city</option>');
-        }
+    $("#id_country").change(function () {
+        var countryId = $(this).val();
+        var url= '/get_cities/' + countryId + '/'; //Get teh selected country ID
+        $.ajax({
+            url: url,
+            data: {
+                'country_id': countryId
+            },
+            success: function(data) {
+                var citySelect = $('#id_city');
+                citySelect.empty();  // Clear previous options
+                $.each(data.cities, function(index, city) {
+                    citySelect.append($('<option>', {
+                        value: city.id,
+                        text: city.name
+                    }));
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error("An error occurred: " + error);  // Log error if the AJAX call fails
+            }
+        });
     });
 });
-            
+
+
+
+
+
+
+
+
+    
+
+
+    
 
 
 //surgeon_profile and edit
@@ -109,28 +115,4 @@ document.getElementById('add-education').addEventListener('click', function() {
     newForm.innerHTML = newForm.innerHTML.replace(regex, 'education-' + formCount);
     document.querySelector('.education-form').parentNode.insertBefore(newForm, this);
     document.getElementById('id_education-TOTAL_FORMS').value = formCount + 1;
-});
-// for the verify page
-$(document).ready(function() {
-    $('#country-select').change(function() {
-        var countryId = $(this).val();
-        if (countryId) {
-            $.ajax({
-                url: '/get-cities/' + countryId + '/',
-                type: 'GET',
-                success: function(data) {
-                    $('#city-select').empty();
-                    $('#city-select').append('<option value="">Select a city</option>');
-                    $.each(data, function(key, value) {
-                        $('#city-select').append('<option value="' + value.id + '">' + value.name + '</option>');
-                    });
-                    $('#city-select').prop('disabled', false);
-                }
-            });
-        } else {
-            $('#city-select').empty();
-            $('#city-select').append('<option value="">Select a city</option>');
-            $('#city-select').prop('disabled', true);
-        }
-    });
-});
+}); 
