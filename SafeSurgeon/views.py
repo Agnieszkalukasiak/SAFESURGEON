@@ -88,7 +88,7 @@ def get_verified(request):
             messages.info(request, "Your profile is pending verification.")
     else:
         template = 'get_verified.html'
-          #  messages.info(request, "Please complete your surgeon profile for verification.")
+        messages.info(request, "Please complete your surgeon profile for verification.")
 
 
     if request.method=='POST':
@@ -126,11 +126,17 @@ def get_verified(request):
             #if the profile is pending
         else:
             messages.info(request,"You profile is pending verification.")
+   
+    # Fetch all countries and cities
+    countries = Country.objects.all()
+    cities = City.objects.all()
 
     #context
     context = {
         'form': form,
-        'education_formset': education_formset,    
+        'education_formset': education_formset,
+        'countries': countries,
+        'cities': cities,    
         }
     
     #dynamically render weather surgeon_profile or get_verified.html
@@ -165,9 +171,10 @@ def signup_view(request):
             login(request, user)  # Log the user in
             return redirect('get_verified')
         else:
-            messages.error(request, "Unsuccessful registration. Invalid information.")
+            messages.error(request, "_")
     else:
         form = SignUpForm()  
+ 
     
     
     return render(request, 'signup.html', {'form': form})

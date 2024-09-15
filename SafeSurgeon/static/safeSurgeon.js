@@ -47,27 +47,17 @@ document.getElementById('surgeonForm').addEventListener('submit', function(e) {
 });
 
 // Ajax setting for cities to drop down in countries
-$(document).ready(function() {
+$(document).change(function() {
     $("#id_country").change(function () {
         var countryId = $(this).val();
-        var url= '/get_cities/' + countryId + '/'; //Get teh selected country ID
         $.ajax({
-            url: url,
-            data: {
-                'country_id': countryId
-            },
-            success: function(data) {
-                var citySelect = $('#id_city');
-                citySelect.empty();  // Clear previous options
-                $.each(data.cities, function(index, city) {
-                    citySelect.append($('<option>', {
-                        value: city.id,
-                        text: city.name
-                    }));
+            url: "{% url 'get_cities' 0 %}".replace('0', countryId),
+            success: function (data) {
+                var citySelect = $("#id_city");
+                citySelect.empty();
+                $.each(data, function (index, city) {
+                    citySelect.append($('<option></option>').attr('value', city.id).text(city.name));
                 });
-            },
-            error: function(xhr, status, error) {
-                console.error("An error occurred: " + error);  // Log error if the AJAX call fails
             }
         });
     });

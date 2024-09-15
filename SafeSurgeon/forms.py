@@ -52,12 +52,10 @@ class SurgeonForm(forms.ModelForm):
                 country_id= int(self.data.get('country'))
                 self.fields['city'].queryset=City.objects.filter(country_id=country_id).order_by('name')
             except (ValueError,TypeError):
-                self.fields['city'].queryset=City.objects.none()
+                pass
         elif self.instance.pk and self.instance.country:
             #prepopulate cities based on stored countries if editing profile
-            self.fields['city'].queryset = City.objects.filter(country=self.instance.country.id).order_by('name')
-        else:
-            self.fields['city'].queryset = City.objects.none()
+            self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
            
 class EducationForm(forms.ModelForm):
