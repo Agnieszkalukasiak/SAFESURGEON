@@ -1,21 +1,4 @@
-document.getElementById('country').addEventListener('change', function(){ 
-    const countryId=this.value;
-    const citySelect=document.getEleementById('city');
-    citySelect.innerHTML = '<option value="">Select City</option>';
 
-    if(countryId){
-        fetch('/api/cities/${countryId}/')
-        .then(response=>response.json())
-        .then(cities => {
-            cities.forEach(city => {
-                const option=document.createElement('option');
-                option.value=city.id;
-                option.textContent = city.name;
-                citySelect.apoendChild(option);
-            });
-        });
-    }
-});
 
 // add to get_verified
 
@@ -25,10 +8,7 @@ document.getElementById('country').addEventListener('change', function(){
         const citySelect = document.getElementById('{{ form.city.id_for_label }}');
         const clinicSelect = document.getElementById('{{ form.clinic.id_for_label }}');
 
-        countrySelect.addEventListener('change', function() {
-            // AJAX call to get cities for selected country
-            // Update citySelect options
-        });
+     
 
         citySelect.addEventListener('change', function() {
             // AJAX call to get clinics for selected city
@@ -74,27 +54,30 @@ document.getElementById('surgeonForm').addEventListener('submit', function(e) {
 
 // setting for cities to drop down in countries
 $(document).ready(function() {
-    $("#id_country").change(function () {
+    $("#country_select").change(function () {
         var countryId = $(this).val(); //Get teh selected country ID
         if(countryId) {
             $.ajax({
-                url: '/get-cities/' + countryId + '/',
-                type:'GET',
+                url: "{% url 'get_cities' country_id=0 %}".replace('0', countryId), 
+                method:'GET',
                 success: function (data) {
-                    $("#id_city").html('');//clear the city dropown
-                    $.each(data, function(key,value){
-                        $("#id_city").append('<option value="' + value.id + '">'+value.name + '</option>');   
+                    var citySelect = $('#city_select');
+                    citySelect.empty();  // Clear current options
+                    citySelect.append('<option value="">Select a city</option>');  // Add default option
+                    $.each(data, function(index, city) {
+                        citySelect.append(new Option(city.name, city.id));  // Add cities dynamically
                     });
                 },
-                error:function(){
-                    console.log("Error loading cities.");
+                error: function() {
+                    alert('Could not retrieve cities. Please try again.');
                 }
-             });
+            });
         } else {
-            $("#id_city").html(''); //clear city drop down if no country selected
+            $('#city_select').empty().append('<option value="">Select a city</option>');
         }
     });
 });
+            
 
 
 //surgeon_profile and edit
