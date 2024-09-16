@@ -29,7 +29,7 @@ class EducationInline(admin.TabularInline):
     extra = 1 
 
 class ClinicInline(admin.TabularInline):  
-    model = Clinic
+    model = Surgeon.clinic.through 
     extra = 1 
 
 #surgeon admin
@@ -47,15 +47,15 @@ class SurgeonAdmin(SummernoteModelAdmin):
         'id_document', 
         'verification_status' 
         ) 
-    list_filter = ('verification_status', 'get_clinic','city',)
+    list_filter = ('verification_status', 'country','city',)
     search_fields = ('user__first_name', 'user__last_name', 'user__email','clinic__name', 'city__name')
     readonly_fields = ('get_first_name', 'get_last_name', 'get_email')
-    exclude = ('clinic',)
+
 
     #Grouping the fields into section in the admin panel
     fieldsets = (
         (None, {
-            'fields': ('user', 'profile_picture','get_clinic', 'city', 'country') 
+            'fields': ('user', 'profile_picture', 'city', 'country') 
         }),
         ('User Information', {
         'fields': ('get_first_name', 'get_last_name', 'get_email')
@@ -83,7 +83,7 @@ class SurgeonAdmin(SummernoteModelAdmin):
     get_country.short_description = 'Country'
 
     def get_clinic(self, obj):
-        return ", ".join([clinic.name for clinic in obj.clinics.all()])
+        return ", ".join([clinic.name for clinic in obj.clinic.all()])
     get_clinic.short_description = 'Clinic'
 
     # Education admin

@@ -99,9 +99,9 @@ class ClinicForm(forms.Form):
         
         return clinics
 
-ClinicFormSet = inlineformset_factory(
+ClinicFormSet = forms.inlineformset_factory(
     Surgeon, 
-    Surgeon.clinic.through,  # Use the through model for ManyToMany
+    Surgeon.clinic.through, 
     fields=('clinic',),
     extra=1,
     can_delete=True

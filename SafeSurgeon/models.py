@@ -31,8 +31,13 @@ class City(models.Model):
 
 class Clinic(models.Model):
     name = models.CharField(max_length=100,unique=True)
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='clinics')
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='clinics',null=True, blank=True)
     # other fields as needed
+
+    @classmethod
+    def get_default_clinic(cls):
+        default_clinic, created = cls.objects.get_or_create(name="Default Clinic",null=True, blank=True)
+        return default_clinic.id 
 
     def __str__(self):
         return f"{self.name} ({self.city})"
@@ -94,14 +99,6 @@ class Surgeon(models.Model):
    
         Education.create_default_education(default_surgeon)
         return default_surgeon
-
-ClinicFormSet = inlineformset_factory(
-    Surgeon, Clinic,
-    form=ClinicForm,
-    fields=('name',),  # Adjust fields as necessary
-    extra=1,
-    can_delete=True
-)
 
 class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)

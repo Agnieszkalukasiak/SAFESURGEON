@@ -141,7 +141,7 @@ def get_verified(request):
         'education_formset': education_formset,
         'countries': countries,
         'cities': cities,
-        'clinic_formset': clinic_form,    
+        'clinic_formset': clinic_formset,    
         }
     
     #dynamically render weather surgeon_profile or get_verified.html
