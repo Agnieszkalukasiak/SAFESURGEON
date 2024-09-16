@@ -88,12 +88,11 @@ def get_verified(request):
             messages.info(request, "Your profile is pending verification.")
     else:
         template = 'get_verified.html'
-        messages.info(request, "Please complete your surgeon profile for verification.")
-
-
+        
     if request.method=='POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
         education_formset= EducationFormSet (request.POST, request.FILES, instance=surgeon)
+        
     
         if form.is_valid() and education_formset.is_valid():
             try:

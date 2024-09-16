@@ -57,6 +57,13 @@ class SurgeonForm(forms.ModelForm):
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
+    def clean(self):
+        cleaned_data = super().clean()
+        clinic_name = cleaned_data.get('clinic_name')
+        if clinic_name:
+            clinic, created = Clinic.objects.get_or_create(name=clinic_name)
+            cleaned_data['clinic'] = clinic
+        return cleaned_data
            
 class EducationForm(forms.ModelForm):
     institution_country = forms.CharField(max_length=200)
