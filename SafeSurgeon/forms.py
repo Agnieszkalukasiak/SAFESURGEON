@@ -1,6 +1,6 @@
 from django import forms
 from django.core.validators import FileExtensionValidator
-from .models import Surgeon, Education, City, Country
+from .models import Surgeon, Education, City, Clinic, Country
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from cloudinary.forms import CloudinaryFileField
@@ -12,7 +12,6 @@ class SurgeonForm(forms.ModelForm):
 
     country = forms.ModelChoiceField(queryset=Country.objects.all(), required=True)
     city = forms.ModelChoiceField(queryset=City.objects.all(), required=True)
-    clinic = forms.CharField(max_length=100, required=True)
     profile_picture = CloudinaryFileField (
         options={
             'folder': 'profile_pictures',
@@ -32,9 +31,9 @@ class SurgeonForm(forms.ModelForm):
 
     class Meta:
         model=Surgeon
-        fields = ['profile_picture','country', 'city', 'clinic', 'id_document']
+        fields = ['profile_picture','country', 'city', 'id_document']
        
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):  
         user = kwargs.pop('user', None)
         surgeon = kwargs.get('instance') 
         
@@ -57,13 +56,50 @@ class SurgeonForm(forms.ModelForm):
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
+class ClinicForm(forms.Form):   
+    existing_clinic= forms.ModelMultipleChoiceField(
+        queryset=Clinic.objects.all(),
+        required=False,
+        empty_label="Select an existing clinic",
+        widget=forms.CheckboxSelectMultiple
+    )
+
+    new_clinic_name=forms.CharField(
+        widget=forms.Textarea(attrs={'rows': 3}),
+        required=False,
+        help_text="Enter each new clinic name on a new line"
+        )
+    def __init__(self, *args, **kwargs):
+        city = kwargs.pop('city', None)
+        super().__init__(*args, **kwargs)
+        if city:
+            self.fields['existing_clinics'].queryset=Clinic.objects.filter(city=city).order_by('name')
+
     def clean(self):
-        cleaned_data = super().clean()
-        clinic_name = cleaned_data.get('clinic_name')
-        if clinic_name:
-            clinic, created = Clinic.objects.get_or_create(name=clinic_name)
-            cleaned_data['clinic'] = clinic
+        cleaned_data=super().clean()
+        exisitng_clinic = cleaned_data.get ('exisitng_clinics')
+        new_clinic_name = cleaned_data.get ('new_clinic_names')
+
+        if not existing_clinics and not new_clinic_names:
+            raise forms.ValidationError("Please either select existing clinic or enter a new clinic name.")
+
+            # Split new clinic names by line
+        if new_clinic_names:
+            new_clinic_list = [name.strip() for name in new_clinic_names.split('\n') if name.strip()]
+            cleaned_data['new_clinic_list'] = new_clinic_list
+
         return cleaned_data
+
+    def save(self, city):
+        clinics = list(self.cleaned_data.get('existing_clinics', []))
+        
+        new_clinic_names = self.cleaned_data.get('new_clinic_list', [])
+        for name in new_clinic_names:
+            clinic, created = Clinic.objects.get_or_create(name=name, city=city)
+            clinics.append(clinic)
+        
+        return clinics
+
            
 class EducationForm(forms.ModelForm):
     institution_country = forms.CharField(max_length=200)

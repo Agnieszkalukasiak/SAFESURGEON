@@ -1,7 +1,6 @@
 
 
 // add to get_verified
-
     document.addEventListener('DOMContentLoaded', function() {
         // Dynamic form fields for country, city, and clinic
         const countrySelect = document.getElementById('{{ form.country.id_for_label }}');

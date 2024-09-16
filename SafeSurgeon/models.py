@@ -31,22 +31,19 @@ class City(models.Model):
 
 class Clinic(models.Model):
     name = models.CharField(max_length=100,unique=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='clinics')
+    # other fields as needed
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.name} ({self.city})"
 
-    @classmethod
-    def get_default_clinic(cls):
-        default_clinic,_ = cls.objects.get_or_create(
-            name="Default Clinic")
-        return default_clinic
 
 
 
 class Surgeon(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon")
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    clinic = models.ForeignKey(Clinic, on_delete=models.SET_DEFAULT, default=Clinic.get_default_clinic, related_name="surgeons",null=True, blank=True)
+    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     verification_status = models.CharField(
