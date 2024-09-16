@@ -11,7 +11,7 @@ import logging
 import sys
 
 from .models import Surgeon, Country, City, Clinic, Education, Verification
-from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm
+from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm, ClinicForm
 
 #create a logger for this view
 logger = logging.getLogger(__name__)
@@ -90,11 +90,12 @@ def get_verified(request):
         template = 'get_verified.html'
         
     if request.method=='POST':
+        clinic_form = ClinicForm(request.POST, city=surgeon.city if surgeon else None)
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
         education_formset= EducationFormSet (request.POST, request.FILES, instance=surgeon)
         
     
-        if form.is_valid() and education_formset.is_valid():
+        if form.is_valid() and education_formset.is_valid() and clinic_form.is_valid():
             try:
                 with transaction.atomic():
                     surgeon=form.save(commit=False)
@@ -105,6 +106,9 @@ def get_verified(request):
                     education_formset.instance = surgeon
                     education_formset.save()
 
+                    clinics = clinic_form.save(city=surgeon.city)
+                    surgeon.clinics.set(clinics)
+
                 messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
                 return redirect('get_verified')
             except Exception as e:
@@ -114,6 +118,7 @@ def get_verified(request):
     else:
         form = SurgeonForm(instance=surgeon, user=request.user)
         education_formset = EducationFormSet(instance=surgeon)
+        linic_form = ClinicForm(city=surgeon.city if surgeon else None)
 
         #if the profile is verified , allow editing but show a message
     if surgeon is not None:
@@ -135,7 +140,8 @@ def get_verified(request):
         'form': form,
         'education_formset': education_formset,
         'countries': countries,
-        'cities': cities,    
+        'cities': cities,
+        'clinic_form': clinic_form,    
         }
     
     #dynamically render weather surgeon_profile or get_verified.html
