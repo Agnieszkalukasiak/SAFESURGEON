@@ -43,7 +43,7 @@ class Clinic(models.Model):
 class Surgeon(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon")
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    clinics = models.ManyToManyField(Clinic, related_name="surgeons", blank=True)
+    clinic = models.ManyToManyField(Clinic, related_name="surgeons", blank=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     verification_status = models.CharField(
@@ -94,6 +94,14 @@ class Surgeon(models.Model):
    
         Education.create_default_education(default_surgeon)
         return default_surgeon
+
+ClinicFormSet = inlineformset_factory(
+    Surgeon, Clinic,
+    form=ClinicForm,
+    fields=('name',),  # Adjust fields as necessary
+    extra=1,
+    can_delete=True
+)
 
 class Education(models.Model):
     surgeon  = models.ForeignKey(Surgeon, related_name='education', on_delete=models.CASCADE)

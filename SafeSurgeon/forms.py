@@ -56,7 +56,7 @@ class SurgeonForm(forms.ModelForm):
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
-class ClinisForm(forms.Form):   
+class ClinicForm(forms.Form):   
     existing_clinics= forms.ModelMultipleChoiceField(
         queryset=Clinic.objects.all(),
         required=False,
@@ -76,8 +76,8 @@ class ClinisForm(forms.Form):
 
     def clean(self):
         cleaned_data=super().clean()
-        exisitng_clinic = cleaned_data.get ('exisitng_clinics')
-        new_clinic_name = cleaned_data.get ('new_clinic_names')
+        existing_clinics = cleaned_data.get ('exisitng_clinics')
+        new_clinic_names = cleaned_data.get ('new_clinic_names')
 
         if not existing_clinics and not new_clinic_names:
             raise forms.ValidationError("Please either select existing clinic or enter a new clinic name.")
@@ -99,6 +99,13 @@ class ClinisForm(forms.Form):
         
         return clinics
 
+ClinicFormSet = inlineformset_factory(
+    Surgeon, 
+    Surgeon.clinic.through,  # Use the through model for ManyToMany
+    fields=('clinic',),
+    extra=1,
+    can_delete=True
+)
            
 class EducationForm(forms.ModelForm):
     institution_country = forms.CharField(max_length=200)

@@ -20,38 +20,42 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(Clinic)
 class ClinicAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ['name']
+    list_display = ('name', 'city')
+    search_fields = ['name', 'city__name']
 
 #inline education
 class EducationInline(admin.TabularInline):  
     model = Education
     extra = 1 
 
+class ClinicInline(admin.TabularInline):  
+    model = Clinic
+    extra = 1 
+
 #surgeon admin
 @admin.register(Surgeon)
 class SurgeonAdmin(SummernoteModelAdmin):
-    inlines = [EducationInline]
+    inlines = [EducationInline, ClinicInline]
     list_display = (
         'profile_picture', 
         'get_first_name',
         'get_last_name',
         'get_email', 
-        'clinic', 
+        'get_clinic', 
         'city', 
         'country', 
         'id_document', 
         'verification_status' 
         ) 
-    list_filter = ('verification_status', 'clinic','city',)
+    list_filter = ('verification_status', 'get_clinic','city',)
     search_fields = ('user__first_name', 'user__last_name', 'user__email','clinic__name', 'city__name')
     readonly_fields = ('get_first_name', 'get_last_name', 'get_email')
-
+    exclude = ('clinic',)
 
     #Grouping the fields into section in the admin panel
     fieldsets = (
         (None, {
-            'fields': ('user', 'profile_picture','clinic', 'city', 'country') 
+            'fields': ('user', 'profile_picture','get_clinic', 'city', 'country') 
         }),
         ('User Information', {
         'fields': ('get_first_name', 'get_last_name', 'get_email')
@@ -77,6 +81,10 @@ class SurgeonAdmin(SummernoteModelAdmin):
     def get_country(self, obj):
         return obj.city.country.name if obj.city and obj.city.country else None
     get_country.short_description = 'Country'
+
+    def get_clinic(self, obj):
+        return ", ".join([clinic.name for clinic in obj.clinics.all()])
+    get_clinic.short_description = 'Clinic'
 
     # Education admin
     @admin.register(Education)
