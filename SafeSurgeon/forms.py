@@ -56,8 +56,8 @@ class SurgeonForm(forms.ModelForm):
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
-class CliniForm(forms.Form):   
-    existing_clinic= forms.ModelMultipleChoiceField(
+class ClinisForm(forms.Form):   
+    existing_clinics= forms.ModelMultipleChoiceField(
         queryset=Clinic.objects.all(),
         required=False,
         widget=forms.CheckboxSelectMultiple

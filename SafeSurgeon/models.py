@@ -43,7 +43,7 @@ class Clinic(models.Model):
 class Surgeon(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="surgeon")
     profile_picture = CloudinaryField('profile picture', folder='profilePicture', default='default_profile_pic', null=True, blank=True)
-    clinic = models.ManyToManyField(Clinic, related_name="surgeons", blank=True)
+    clinics = models.ManyToManyField(Clinic, related_name="surgeons", blank=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     country = models. ForeignKey(Country, on_delete=models.CASCADE, related_name="surgeons",null=True, blank=True)
     verification_status = models.CharField(
