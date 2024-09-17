@@ -56,10 +56,12 @@
         </div>
         <div class="mb-3">
             <h2>Clinics</h2>
-            {{clinic_formset.management_form}}
+            <div id="clinic-management-form">
+                {{clinic_formset.management_form}}
+            </div>
             <div id="clinic-forms">
                 {%for clinic_form in clinic_formset%}
-                <div class="clinic_form mb-4">
+                <div class="clinic_form mb-4" id="clinic-form-{{forloop.counter0}}">
                     <h3>Clinic Entry{{forloop.counter}}</h3>
                     {{clinic_form.non_field_errors}}
                     <div class="mb-3">
@@ -156,24 +158,66 @@
 </div>
 {% endif %}
 
-{% if education_formset.errors %}
-<div class="alert alert-danger">
-    <ul>
-    {% for form in education_formset %}
-        {% for error in form.errors %}
-            <li>{{ error }}</li>
-        {% endfor %}
-    {% endfor %}
-    </ul>
-</div>
-{% endif %}
 
-<!-- external js-->
-<script src="{% static 'js/clinic_form.js' %}"></script>
+<script>
+    console.log("Inline script running");
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("DOM loaded from inline script");
+        const addClinicButton = document.getElementById('add-clinic');
+        const clinicFormsContainer = document.getElementById('clinic-forms');
+        const managementForm = document.querySelector('input[name$=TOTAL_FORMS]');
+    
+        console.log("Add Clinic button:", addClinicButton);
+        console.log("Clinic Forms Container:", clinicFormsContainer);
+        console.log("Management Form:", managementForm);
+    
+        if (addClinicButton && clinicFormsContainer && managementForm) {
+            addClinicButton.addEventListener('click', function() {
+                console.log("Add Clinic button clicked");
+                alert("Add Clinic button clicked!");
+    
+                let formCount = parseInt(managementForm.value);
+                console.log("Current form count:", formCount);
+    
+                if (clinicFormsContainer.children.length > 0) {
+                    const lastForm = clinicFormsContainer.children[clinicFormsContainer.children.length - 1];
+                    const newForm = lastForm.cloneNode(true);
+                    console.log("New form cloned");
+    
+                    newForm.innerHTML = newForm.innerHTML.replace(/clinic_set-\d+/g, `clinic_set-${formCount}`);
+                    newForm.innerHTML = newForm.innerHTML.replace(/-\d+-/g, `-${formCount}-`);
+                    console.log("Form index updated");
+    
+                    newForm.querySelectorAll('input:not([type=hidden]), select').forEach(input => {
+                        input.value = '';
+                    });
+                    console.log("Input values cleared");
+    
+                    formCount++;
+                    managementForm.value = formCount;
+                    console.log("Total forms updated to:", managementForm.value);
+    
+                    clinicFormsContainer.appendChild(newForm);
+                    console.log("New form appended");
+                } else {
+                    console.error("No existing clinic forms to clone");
+                }
+            });
+        } else {
+            console.error("Required elements not found");
+            console.log("Add Clinic button:", addClinicButton);
+            console.log("Clinic Forms Container:", clinicFormsContainer);
+            console.log("Management Form:", managementForm);
+        }
+    });
+    </script>
+{% endblock %}
 
+{% block extra_js %}
+    <script src="{% static 'js/clinic_form.js' %}"></script>
+    <script src="{% static 'js/clinic_add_button.js' %}"></script>
     <script>
         //  base URL for AJAX calls
         var baseUrl = "{% url 'get_cities' 0 %}".slice(0, -2);  
     </script>
-
 {% endblock %}
