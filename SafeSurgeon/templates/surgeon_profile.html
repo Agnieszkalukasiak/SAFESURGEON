@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-5">
+    <div class="container mt-5">
     <div class="card">
         <div class="card-header">
             <h2 class="card-title">
@@ -15,8 +15,15 @@
             </h2>
         </div>
     <div class="card-body">
+         <!-- Messages -->
         {% if messages %}
+            <div class="messages">
             {% for message in messages%}
+            <div class="alert alert-{{message.tags}}">{{message}}</div>
+            {%endfor%}
+            </div>div>
+                {% endif %}
+            
             <div class="row">
             <div class="col-md-4">
                 {% if surgeon.profile_picture %}
@@ -26,20 +33,30 @@
                 {% endif%}
             </div>
             <div class="col-md-8">
-                <h3>Name: {{ surgeon.first_name }} {{ surgeon.last_name }}</h3>
-                <p><strong>Email:</strong> {{ surgeon.email }}</p>
-                <p><strong>Clinic:</strong> {{ surgeon.clinic.name }}</p>
-                <p><strong>City:</strong> {{ surgeon.clinic.city.name }}</p>
-                <p><strong>Country:</strong> {{ surgeon.clinic.city.country.name }}</p>
+                <!--user information accessed via the user-->
+                <h3>Name: {{ surgeon.first_name }} {{ surgeon.user.last_name }}</h3>
+                <p><strong>Email:</strong> {{ surgeon.user.email }}</p>
 
+                <!-- Clinic Information (ManyToManyField) -->
+                <h4>Clinics:</h4>
+                <ul>
+                    {% for clinic in surgeon.clinic.all %}
+                        <li>
+                            <strong>Clinic Name:</strong> {{ clinic.name }}<br>
+                            <strong>City:</strong> {{ clinic.city.name }}<br>
+                            <strong>Country:</strong> {{ clinic.city.country.name }}
+                        </li>
+                    {% endfor %}
+                
+                    <!--education information-->
                 <h4 class="mt-4">Education</h4>
                 {% for edu in surgeon.education.all %}
                     <div>
-                        <p><strong>Insitution:</strong>{{profile.insitution}}</p>
-                        <p><strong>Program:</strong>{{profile.program}}</p>
-                        <p><strong>Country:</strong>{{profile.country}}</p>
-                        <p><strong>Year Start:</strong>{{profile.year_start}}</p>
-                        <p><strong>Year End:</strong>{{profile.year_end}}</p>
+                        <p><strong>Insitution:</strong>{{edu.insitution}}</p>
+                        <p><strong>Program:</strong>{{edu.program}}</p>
+                        <p><strong>Country:</strong>{{edu.country}}</p>
+                        <p><strong>Year Start:</strong>{{edu.year_start}}</p>
+                        <p><strong>Year End:</strong>{{edu.year_end}}</p>
                     </div>
                     {% if not forloop.last %}<hr>{% endif %}
                 {% empty %}
@@ -68,17 +85,15 @@
                     {{ form.as_p }}
                     
                     <h3>Education</h3>
-                    {{ education_formset.managment_form }}
+                    {{ education_formset.management_form }}
                     {% for education_form in education_formset %}
                         <div class="education-form">
                             {{education_form.as_p}}
                     {% if education_form.instance.pk %}
                                 <p>Current certificate: {{ education_form.instance.certificate.name }}</p>
                             {% endif %}
-                            <hr>
                         </div>
-                    {% endfor %}
-                    
+                    {% endfor %}          
                     <button type="button" id="add-education" class="btn btn-secondary">Add Education</button>
                     <button type="submit" class="btn btn-primary">Update Profile</button>
                 </form>
@@ -86,4 +101,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

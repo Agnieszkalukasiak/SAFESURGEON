@@ -23,14 +23,14 @@
         <h2>Personal Information</h2>
         {{ form.non_field_errors }}
         <div class="mb-3">
-            {{ form.user_first_name.label_tag }}
-            {{ form.user_first_name }}
-            {{ form.user_first_name.errors }}
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+            {{ form.first_name.errors }}
         </div>
         <div class="mb-3">
-            {{ form.user_last_name.label_tag }}
-            {{ form.user_last_name }}
-            {{ form.user_last_name.errors }}
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+            {{ form.last_name.errors }}
         </div>
         <div class="mb-3">
             {{ form.email.label_tag }}
@@ -64,19 +64,19 @@
                     {{clinic_form.non_field_errors}}
                     <div class="mb-3">
                     {{clinic_form.clinic.label_tag}}
-                    {{ form_form.clinic }}
-                    {{ form_form.clinic.errors }}
+                    {{ clinic_form.clinic }}
+                    {{ clinic_form.clinic.errors }}
                 </div>
                 {% if clinic_formset.can_delete%}
                 <div class="mb-3">
-                {{clinic_form:DELETE.label_tag}}
+                {{clinic_form.DELETE.label_tag}}
                 {{clinic_form.DELETE}}      
                 </div>
                 {%endif%}
                 </div>
                 {% endfor %}
             </div>
-            <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>>
+            <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
         
         <h2>Education</h2>
         {{ education_formset.management_form }}

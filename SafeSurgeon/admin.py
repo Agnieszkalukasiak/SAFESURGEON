@@ -37,7 +37,7 @@ class ClinicInline(admin.TabularInline):
 class SurgeonAdmin(SummernoteModelAdmin):
     inlines = [EducationInline, ClinicInline]
     list_display = (
-        'verification_status'
+        'verification_status',
         'get_first_name',
         'get_last_name',      
         'get_clinic', 

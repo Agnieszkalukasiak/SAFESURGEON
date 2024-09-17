@@ -11,7 +11,7 @@ import logging
 import sys
 
 from .models import Surgeon, Country, City, Clinic, Education, Verification
-from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm, ClinicForm
+from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm, ClinicForm, ClinicFormSet
 
 #create a logger for this view
 logger = logging.getLogger(__name__)
@@ -82,13 +82,13 @@ def get_verified(request):
     else:
         # if the surgeon exist, check their verification status
         if surgeon is not None and surgeon.verification_status == Verification.VERIFIED.value:
-            template = 'SafeSurgeon/surgeon_profile.html'
+            template = 'surgeon_profile.html'
             messages.info(request, "Your profile is verified. Welcome back!")
         elif surgeon is not None and surgeon.verification_status == Verification.REJECTED.value:
-            template = 'SafeSurgeon/surgeon_profile.html'
+            template = 'surgeon_profile.html'
             messages.info(request, "Your profile was rejected. Please edit and resubmit for verification.")
         elif surgeon is not None and surgeon.verification_status == Verification.PENDING.value:
-            template = 'SafeSurgeon/pending_verification.html'
+            template = 'surgeon_profile.html'
             messages.info(request, "Your profile is pending verification.")
         else:
             template = 'get_verified.html'
@@ -168,11 +168,14 @@ def login_view(request):
             else:
                 messages.error(request, "Invalid username or password.")
         else:
-            messages.error(request, "Invalid username or password.")
+            # Only one message per invalid form submission
+            if not messages.get_messages(request):
+                messages.error(request, "Invalid username or password.")
     else:
-        form = AuthenticationForm()
+        form = AuthenticationForm() if request.method != 'POST' else form
+    return render(request, 'login.html', {'form': form})
     
-        return render(request, 'login.html', {'form': form})
+
 
 def signup_view(request):
     if request.method == 'POST':

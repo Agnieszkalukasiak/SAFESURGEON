@@ -18,11 +18,22 @@ class Country(models.Model):
 
     def __str__(self):
         return self.name
+    
+    @classmethod
+    def get_default_country(cls):
+        return cls.objects.filter(name='Sweden').first()
+
+    def __str__(self):
+        return self.name
    
     
 class City(models.Model):
     name = models.CharField(max_length=100)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="cities")
+
+    @classmethod
+    def get_default_city(cls):
+        return cls.objects.filter(name='Stockholm').first()
 
     def __str__(self):
         return f"{self.name}"
