@@ -73,10 +73,14 @@ def get_cities(request, country_id):
 @login_required
 def get_verified(request): 
     surgeon = getattr(request.user, 'surgeon', None)
-    template = 'get_verified.html'  # Default template   
-    #try to get an existing surgeon profile for logged-in user
-    if surgeon is not None:
-        # Determine which template to use based on verification status
+
+    #if no surgeon exist,create a new one and redirect to profile creation
+    if surgeon is None:
+        surgeon = Surgeon.objects.create(user=request.user)
+        template='get_verified.html'
+
+    else:
+        # if the surgeon exist, check their verification status
         if surgeon is not None and surgeon.verification_status == Verification.VERIFIED.value:
             template = 'SafeSurgeon/surgeon_profile.html'
             messages.info(request, "Your profile is verified. Welcome back!")
@@ -86,8 +90,9 @@ def get_verified(request):
         elif surgeon is not None and surgeon.verification_status == Verification.PENDING.value:
             template = 'SafeSurgeon/pending_verification.html'
             messages.info(request, "Your profile is pending verification.")
-    else:
-        template = 'get_verified.html'
+        else:
+            template = 'get_verified.html'
+    
         
     if request.method=='POST':
         clinic_formset = ClinicFormSet(request.POST, instance=surgeon)
@@ -103,11 +108,12 @@ def get_verified(request):
                     surgeon.verification_status = Verification.PENDING.value
                     surgeon.save()
 
+                #save education formset
                     education_formset.instance = surgeon
                     education_formset.save()
-
+                #save clinic formset
                     clinic_formset.instance = surgeon
-                    clinic_formset.set(clinics)
+                    clinic_formset.save()
 
                 messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
                 return redirect('get_verified')
