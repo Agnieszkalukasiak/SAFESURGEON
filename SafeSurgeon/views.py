@@ -97,11 +97,10 @@ def get_verified(request):
     #handle form submission to create a profile     
     if request.method=='POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
-        clinic_form = ClinicForm(request.POST, city=city)
         clinic_formset = ClinicFormSet(request.POST, instance=surgeon)      
         education_formset= EducationFormSet (request.POST, request.FILES, instance=surgeon)      
     
-        if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid() and clinic_form.is_valid():
+        if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid() :
             try:
                 with transaction.atomic():
                 #create surgon instance when the form is submitted
@@ -117,8 +116,7 @@ def get_verified(request):
                     clinic_formset.instance = surgeon
                     clinic_formset.save()
                 
-                # Save new clinics 
-                    clinic_form.save(surgeon, city)
+                
 
                 messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
                 return redirect('get_verified')
@@ -131,13 +129,12 @@ def get_verified(request):
         if surgeon:   
             form = SurgeonForm(instance=surgeon, user=request.user)
             education_formset = EducationFormSet(instance=surgeon)
-            clinic_formset = ClinicFormSet(instance=surgeon)
-            clinic_form = ClinicForm(city=city)
+            clinic_formset = ClinicFormSet( instance=surgeon)
+            
         else:
             form = SurgeonForm(user=request.user)
             education_formset = EducationFormSet()
-            clinic_formset = ClinicFormSet()
-            clinic_form = ClinicForm()    
+            clinic_formset = ClinicFormSet(instance=surgeon)
     
    
     # Fetch all countries and cities
@@ -150,10 +147,9 @@ def get_verified(request):
         'education_formset': education_formset,
         'countries': countries,
         'cities': cities,
-        'clinic_formset': clinic_formset,
-        'clinic_form': clinic_form,    
+        'clinic_formset': clinic_formset,        
         }
-    
+
     #dynamically render weather surgeon_profile or get_verified.html
     return render(request,template, context)
 

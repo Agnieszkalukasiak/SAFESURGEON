@@ -63,7 +63,7 @@
                     <h3>Clinic Entry{{forloop.counter}}</h3>
                     {{clinic_form.non_field_errors}}
                     <div class="mb-3">
-                    {{clinic_form.clinic.label_tag}}
+                    {{ clinic_form.clinic.label_tag }}
                     {{ clinic_form.clinic }}
                     {{ clinic_form.clinic.errors }}
                 </div>
@@ -175,5 +175,5 @@
         //  base URL for AJAX calls
         var baseUrl = "{% url 'get_cities' 0 %}".slice(0, -2);  
     </script>
-    
+
 {% endblock %}

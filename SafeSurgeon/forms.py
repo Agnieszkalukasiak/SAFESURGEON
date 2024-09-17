@@ -57,23 +57,31 @@ class SurgeonForm(forms.ModelForm):
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
 
-class ClinicForm(forms.Form):   
+class ClinicForm(forms.ModelForm):   
     existing_clinics= forms.ModelMultipleChoiceField(
         queryset=Clinic.objects.all(),
         required=False,
-        widget=forms.CheckboxSelectMultiple
+        label="Select Existing Clinic"
     )
 
     new_clinic_name=forms.CharField(
-        widget=forms.Textarea(attrs={'rows': 3}),
         required=False,
-        help_text="Enter each new clinic name on a new line"
+        widget=forms.TextInput(attrs={'placeholder': 'Enter new clinic name'}),
+        label="Or Enter New Clinic Name"
         )
+
+
+    class Meta:
+        model = Surgeon.clinic.through
+        fields = ('clinic',)
+
     def __init__(self, *args, **kwargs):
         city = kwargs.pop('city', None)
         super().__init__(*args, **kwargs)
-        if city:
-            self.fields['existing_clinics'].queryset=Clinic.objects.filter(city=city).order_by('name')
+        self.fields['clinic'].label = "Select Existing Clinic"
+        if 'instance' in kwargs and kwargs['instance'].surgeon.city:
+            self.fields['clinic'].queryset = Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
+        
 
     def clean(self):
         cleaned_data=super().clean()
@@ -106,7 +114,8 @@ class ClinicForm(forms.Form):
 
 ClinicFormSet = forms.inlineformset_factory(
     Surgeon, 
-    Surgeon.clinic.through, 
+    Surgeon.clinic.through,
+    form=ClinicForm, 
     fields=('clinic',),
     extra=1,
     can_delete=True
