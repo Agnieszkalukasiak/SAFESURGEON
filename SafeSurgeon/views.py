@@ -185,8 +185,7 @@ def signup_view(request):
             messages.error(request, "_")
     else:
         form = SignUpForm()  
- 
-    
+  
     
     return render(request, 'signup.html', {'form': form})
       

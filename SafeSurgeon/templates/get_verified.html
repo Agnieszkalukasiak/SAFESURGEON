@@ -37,6 +37,11 @@
             {{ form.email }}
             {{ form.email.errors }}
         </div>
+        <div class="mb-3">
+            {{ form.profile_picture.label_tag }}
+            {{ form.profile_picture }}
+            {{ form.profile_picture.errors }}
+        </div>
         
         <h2>Location</h2>
         <div class="mb-3">
@@ -50,22 +55,28 @@
             {{ form.city.errors }}
         </div>
         <div class="mb-3">
-            {{ form.clinic.label_tag }}
-            {{ form.clinic }}
-            {{ form.clinic.errors }}
-        </div>
-        
-        <h2>Documents</h2>
-        <div class="mb-3">
-            {{ form.profile_picture.label_tag }}
-            {{ form.profile_picture }}
-            {{ form.profile_picture.errors }}
-        </div>
-        <div class="mb-3">
-            {{ form.id_document.label_tag }}
-            {{ form.id_document }}
-            {{ form.id_document.errors }}
-        </div>
+            <h2>Clinics</h2>
+            {{clinic_formset.management_form}}
+            <div id="clinic-forms">
+                {%for clinic_form in clinic_formset%}
+                <div class="clinic_form mb-4">
+                    <h3>Clinic Entry{{forloop.counter}}</h3>
+                    {{clinic_form.non_field_errors}}
+                    <div class="mb-3">
+                    {{clinic_form.clinic.label_tag}}
+                    {{ form_form.clinic }}
+                    {{ form_form.clinic.errors }}
+                </div>
+                {% if clinic_formset.can_delete%}
+                <div class="mb-3">
+                {{clinic_form:DELETE.label_tag}}
+                {{clinic_form.DELETE}}      
+                </div>
+                {%endif%}
+                </div>
+                {% endfor %}
+            </div>
+            <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>>
         
         <h2>Education</h2>
         {{ education_formset.management_form }}
@@ -114,13 +125,18 @@
             {% endfor %}
         </div>
         <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
+        <div class="mb-3">
+            {{ form.id_document.label_tag }}
+            {{ form.id_document }}
+            {{ form.id_document.errors }}
+        </div>
         
         <div class="mb-3">
             <button type="submit" class="btn btn-primary">Submit for Verification</button>
                 <div id="thankYouMessage" style="display: none;">
                     Thank you for your submission. We will email you once your verification process is completed. Thank you!
             </div>
-        </div>
+        </div>      
     </form>
 {% if form.errors %}
 <div class="alert alert-danger">

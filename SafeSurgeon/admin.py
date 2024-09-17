@@ -37,18 +37,18 @@ class ClinicInline(admin.TabularInline):
 class SurgeonAdmin(SummernoteModelAdmin):
     inlines = [EducationInline, ClinicInline]
     list_display = (
-        'profile_picture', 
+        'verification_status'
         'get_first_name',
-        'get_last_name',
-        'get_email', 
+        'get_last_name',      
         'get_clinic', 
         'city', 
-        'country', 
+        'country',
+        'profile_picture',  
         'id_document', 
-        'verification_status' 
+        'get_email',
         ) 
     list_filter = ('verification_status', 'country','city',)
-    search_fields = ('user__first_name', 'user__last_name', 'user__email','clinic__name', 'city__name')
+    search_fields = ('user__first_name', 'user__last_name','clinic__name', 'city__name')
     readonly_fields = ('get_first_name', 'get_last_name', 'get_email')
 
 
@@ -65,7 +65,7 @@ class SurgeonAdmin(SummernoteModelAdmin):
         }),
     )
 
-    #Method to display the country via city relations
+   
     def get_first_name(self, obj):
         return obj.user.first_name
     get_first_name.short_description = 'First Name'
