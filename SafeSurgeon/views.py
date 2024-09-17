@@ -74,11 +74,10 @@ def get_cities(request, country_id):
 def get_verified(request): 
     surgeon = getattr(request.user, 'surgeon', None)
 
-    #if no surgeon exist,create a new one and redirect to profile creation
+    #if no surgeon exist, they need to create a form
     if surgeon is None:
-        surgeon = Surgeon.objects.create(user=request.user)
-        template='get_verified.html'
-
+        template = 'get_verified.html'
+        pending_verification = False 
     else:
         # if the surgeon exist, check their verification status
         if surgeon is not None and surgeon.verification_status == Verification.VERIFIED.value:
@@ -88,21 +87,22 @@ def get_verified(request):
             template = 'surgeon_profile.html'
             messages.info(request, "Your profile was rejected. Please edit and resubmit for verification.")
         elif surgeon is not None and surgeon.verification_status == Verification.PENDING.value:
-            template = 'surgeon_profile.html'
+            template = 'Pending'
             messages.info(request, "Your profile is pending verification.")
         else:
             template = 'get_verified.html'
-    
-        
+            pending_verfication=False
+
+    #handle form submission to create a profile     
     if request.method=='POST':
-        clinic_formset = ClinicFormSet(request.POST, instance=surgeon)
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
-        education_formset= EducationFormSet (request.POST, request.FILES, instance=surgeon)
-        
+        clinic_formset = ClinicFormSet(request.POST, instance=surgeon)      
+        education_formset= EducationFormSet (request.POST, request.FILES, instance=surgeon)      
     
         if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
             try:
                 with transaction.atomic():
+                #create surgon instance when the form is submitted
                     surgeon=form.save(commit=False)
                     surgeon.user = request.user 
                     surgeon.verification_status = Verification.PENDING.value
@@ -122,20 +122,16 @@ def get_verified(request):
         else:
             messages.error(request, "Please check the form for errors.")
     else:
-        form = SurgeonForm(instance=surgeon, user=request.user)
-        education_formset = EducationFormSet(instance=surgeon)
-        clinic_formset = ClinicFormSet(instance=surgeon)
-
-        #if the profile is verified , allow editing but show a message
-    if surgeon is not None:
-        if surgeon.verification_status == Verification.VERIFIED.value:
-            messages.info(request,"You profile is verified, but you can edit and resubmit for verfication.")
-            #if the profile is rejected , allow editing but show a message
-        elif surgeon.verification_status == Verification.REJECTED.value:
-            messages.info(request,"You profile is rejected, but you can edit and resubmit for verfication.")
-            #if the profile is pending
+        #if no POST request, redender empty form if no surgeon exist or the form for editing
+        if surgeon:   
+            form = SurgeonForm(instance=surgeon, user=request.user)
+            education_formset = EducationFormSet(instance=surgeon)
+            clinic_formset = ClinicFormSet(instance=surgeon)
         else:
-            messages.info(request,"You profile is pending verification.")
+            form = SurgeonForm(user=request.user)
+            education_formset = EducationFormSet()
+            clinic_formset = ClinicFormSet()    
+    
    
     # Fetch all countries and cities
     countries = Country.objects.all()
@@ -174,7 +170,7 @@ def login_view(request):
     else:
         form = AuthenticationForm() if request.method != 'POST' else form
     return render(request, 'login.html', {'form': form})
-    
+
 
 
 def signup_view(request):
