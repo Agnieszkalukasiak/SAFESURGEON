@@ -97,7 +97,7 @@ class ClinicForm(forms.Form):
 
         #create new clinics and link to surgon's city
         for name in new_clinic_name:
-            clinic, created = Clinic.objects.get_or_create(name=name, city=surgeon.city)
+            clinic, created = Clinic.objects.get_or_create(name=name, city=city)
             clinics.append(clinic)
         #associate all clinics new and exiting with the surgon 
         surgeon.clinic.set(clinics)
