@@ -56,6 +56,7 @@ class SurgeonForm(forms.ModelForm):
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
+
 class ClinicForm(forms.Form):   
     existing_clinics= forms.ModelMultipleChoiceField(
         queryset=Clinic.objects.all(),
@@ -90,7 +91,7 @@ class ClinicForm(forms.Form):
 
         return cleaned_data
 
-    def save(self, city):
+    def save(self, surgeon, city):
         clinics = list(self.cleaned_data.get('existing_clinics', []))
         new_clinic_names = self.cleaned_data.get('new_clinic_list', [])
 
@@ -100,7 +101,7 @@ class ClinicForm(forms.Form):
             clinics.append(clinic)
         #associate all clinics new and exiting with the surgon 
         surgeon.clinic.set(clinics)
-        
+
         return clinics
 
 ClinicFormSet = forms.inlineformset_factory(

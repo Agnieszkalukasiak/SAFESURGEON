@@ -67,17 +67,25 @@
                     {{ clinic_form.clinic }}
                     {{ clinic_form.clinic.errors }}
                 </div>
-                {% if clinic_formset.can_delete%}
+                <!-- new clinic -->
                 <div class="mb-3">
-                {{clinic_form.DELETE.label_tag}}
-                {{clinic_form.DELETE}}      
+                    {{ clinic_form.new_clinic_name.label_tag }}  
+                    {{ clinic_form.new_clinic_name }}  
+                    {{ clinic_form.new_clinic_name.errors }}
                 </div>
-                {%endif%}
+    
+                {% if clinic_formset.can_delete %}
+                <div class="mb-3">
+                    {{ clinic_form.DELETE.label_tag }}
+                    {{ clinic_form.DELETE }}
                 </div>
-                {% endfor %}
+                {% endif %}
             </div>
-            <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
-        
+            {% endfor %}
+        </div>
+        <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
+    </div>
+               
         <h2>Education</h2>
         {{ education_formset.management_form }}
         <div id="education-forms">
@@ -159,13 +167,13 @@
     </ul>
 </div>
 {% endif %}
-<script src="{% static 'path/to/your/js/file.js' %}"></script>
-    <script>
-        // Set the correct base URL for AJAX calls
-        var baseUrl = "{% url 'get_cities' 0 %}".slice(0, -2);  // Remove the '0/' at the end
-    </script>
-{% endblock %}
 
-{% block extra_js %}
-<script src="{% static 'SafeSurgeon/static/safeSurgeon.js' %}"></script> 
+<!-- external js-->
+<script src="{% static 'js/clinic_form.js' %}"></script>
+
+    <script>
+        //  base URL for AJAX calls
+        var baseUrl = "{% url 'get_cities' 0 %}".slice(0, -2);  
+    </script>
+    
 {% endblock %}

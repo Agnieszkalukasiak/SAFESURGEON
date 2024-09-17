@@ -160,7 +160,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f"Welcome back, {username}!")
-                return redirect('surgeon_profile')
+                return redirect('get_verified')
             else:
                 messages.error(request, "Invalid username or password.")
         else:
