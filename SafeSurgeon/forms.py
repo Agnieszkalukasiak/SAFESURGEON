@@ -79,10 +79,11 @@ class ClinicForm(forms.Form):
         existing_clinics = cleaned_data.get ('exisitng_clinics')
         new_clinic_names = cleaned_data.get ('new_clinic_names')
 
+         # Ensuring at least one clinic is selected or provided
         if not existing_clinics and not new_clinic_names:
             raise forms.ValidationError("Please either select existing clinic or enter a new clinic name.")
 
-            # Split new clinic names by line
+            # Split new clinic names by linea and store as a list
         if new_clinic_names:
             new_clinic_list = [name.strip() for name in new_clinic_names.split('\n') if name.strip()]
             cleaned_data['new_clinic_list'] = new_clinic_list
@@ -91,11 +92,14 @@ class ClinicForm(forms.Form):
 
     def save(self, city):
         clinics = list(self.cleaned_data.get('existing_clinics', []))
-        
         new_clinic_names = self.cleaned_data.get('new_clinic_list', [])
+
+        #create new clinics and link to surgon's city
         for name in new_clinic_names:
-            clinic, created = Clinic.objects.get_or_create(name=name, city=city)
+            clinic, created = Clinic.objects.get_or_create(name=name, city=surgeon.country)
             clinics.append(clinic)
+        #associate all clinics new and exiting with the surgon 
+        surgeon.clinic.set(clinics)
         
         return clinics
 
