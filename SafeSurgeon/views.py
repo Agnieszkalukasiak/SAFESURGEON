@@ -116,26 +116,13 @@ def get_verified(request):
 
                 #save education formset
                     education_formset.instance = surgeon
-                    education_formset.save()
+                    education_formset.save()            
                 
-                    for clinic_form in clinic_formset:
-                        if clinic_form.is_valid() and not clinic_form.cleaned_data.get('DELETE', False):
-                            if clinic_form.cleaned_data.get('existing_clinic'):
-                                surgeon.clinic.add(clinic_form.cleaned_data['existing_clinic'])
-                            elif clinic_form.cleaned_data.get('new_clinic_name'):
-                                new_clinic = Clinic.objects.create(
-                                    name=clinic_form.cleaned_data['new_clinic_name'],
-                                    city=surgeon.city
-                                )
-                                surgeon.clinic.add(new_clinic)              
                 
-                '''
                 #save clinic formset
                     clinic_formset.instance = surgeon
-                    clinic_formset.save()
-                '''
+                    clinic_formset.save()            
                 
-
                 messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
                 return redirect('get_verified')
             except Exception as e:
@@ -149,9 +136,9 @@ def get_verified(request):
     else:
         #if no POST request, redender empty form if no surgeon exist or the form for editing
         if surgeon:   
-            form = SurgeonForm(instance=surgeon, user=request.user)
-            education_formset = EducationFormSet(instance=surgeon)
-            clinic_formset = ClinicFormSet( instance=surgeon)
+            form = SurgeonForm(instance=surgeon, user=request.user) if surgeon else SurgeonForm(user=request.user)
+            education_formset = EducationFormSet(instance=surgeon) if surgeon else EducationFormSet()
+            clinic_formset = ClinicFormSet( instance=surgeon) if surgeon else ClinicFormSet()
             
         else:
             form = SurgeonForm(user=request.user)
