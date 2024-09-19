@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded: [Ajax_get_verified].js");
     const countrySelect = document.querySelector('select[name="country"]');
