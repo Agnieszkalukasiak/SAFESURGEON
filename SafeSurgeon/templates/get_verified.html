@@ -148,7 +148,7 @@
 </div>
 {% endif %}
 
-
+<!--
 <script>
     console.log("Inline script running");
     document.addEventListener('DOMContentLoaded', function() {
@@ -202,6 +202,31 @@
     });
     </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const countrySelect = document.querySelector('select[name="country"]');
+        const citySelect = document.querySelector('select[name="city"]');
+        const cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
+    
+        countrySelect.addEventListener('change', function() {
+            const countryId = this.value;
+            if (countryId) {
+                fetch(`${cityUrl}${countryId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        citySelect.innerHTML = '<option value="">---------</option>';
+                        data.cities.forEach(city => {
+                            const option = new Option(city.name, city.id);
+                            citySelect.add(option);
+                        });
+                    });
+            } else {
+                citySelect.innerHTML = '<option value="">---------</option>';
+            }
+        });
+    });
+    </script>
+-->
 
 {% endblock %}
 
@@ -210,9 +235,6 @@
     <script src="{% static 'js/clinic_form.js' %}"></script>
     <script src="{% static 'js/clinic_add_button.js' %}"></script>
     <script src="{% static 'js/education_add_button.js' %}"></script>
-   
-    <script>
-        //  base URL for AJAX calls
-        var baseUrl = "{% url 'get_cities' 0 %}".slice(0, -2);  
-    </script>
+    <script src="{% static 'js/Ajax_get_verified.js' %}"></script>
+
 {% endblock %}
