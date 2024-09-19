@@ -8,11 +8,7 @@
         const clinicSelect = document.getElementById('{{ form.clinic.id_for_label }}');
 
 
-        // Add education form dynamically
-        const addEducationBtn = document.getElementById('add-education');
-        const educationForms = document.getElementById('education-forms');
-        let formCount = parseInt(document.getElementById('id_education-TOTAL_FORMS').value);
-
+      
         addEducationBtn.addEventListener('click', function() {
             const newForm = educationForms.children[0].cloneNode(true);
             formCount++;

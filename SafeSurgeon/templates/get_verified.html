@@ -90,9 +90,9 @@
                
         <h2>Education</h2>
         {{ education_formset.management_form }}
-        <div id="education-forms">
+        <div id="education-managment-form">
             {% for education_form in education_formset %}
-                <div class="education-form mb-4">
+                <div class="education-forms mb-4">
                     <h3>Education Entry {{ forloop.counter }}</h3>
                     {{ education_form.non_field_errors }}
                     <div class="mb-3">
@@ -158,7 +158,7 @@
 </div>
 {% endif %}
 
-
+<!--
 <script>
     console.log("Inline script running");
     document.addEventListener('DOMContentLoaded', function() {
@@ -212,10 +212,12 @@
     });
     </script>
 {% endblock %}
+-->
 
 {% block extra_js %}
     <script src="{% static 'js/clinic_form.js' %}"></script>
     <script src="{% static 'js/clinic_add_button.js' %}"></script>
+    <script src="{% static 'js/education_add_button.js' %}"></script>
     <script>
         //  base URL for AJAX calls
         var baseUrl = "{% url 'get_cities' 0 %}".slice(0, -2);  
