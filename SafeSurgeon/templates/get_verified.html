@@ -23,26 +23,16 @@
         <h2>Personal Information</h2>
         {{ form.non_field_errors }}
         <div class="mb-3">
-            {{ form.first_name.label_tag }}
-            {{ form.first_name }}
-            {{ form.first_name.errors }}
+            {{ request.user.username }}
         </div>
         <div class="mb-3">
-            {{ form.last_name.label_tag }}
-            {{ form.last_name }}
-            {{ form.last_name.errors }}
-        </div>
-        <div class="mb-3">
-            {{ form.email.label_tag }}
-            {{ form.email }}
-            {{ form.email.errors }}
+            {{ request.user.email }}
         </div>
         <div class="mb-3">
             {{ form.profile_picture.label_tag }}
             {{ form.profile_picture }}
             {{ form.profile_picture.errors }}
         </div>
-        
         <h2>Location</h2>
         <div class="mb-3">
             {{ form.country.label_tag }}
@@ -89,10 +79,9 @@
     </div>
                
         <h2>Education</h2>
-        {{ education_formset.management_form }}
         <div id="education-managment-form">
-            {% for education_form in education_formset %}
-                <div class="education-forms mb-4">
+                {% for education_form in education_formset %}
+                <div class="education-form mb-4">
                     <h3>Education Entry {{ forloop.counter }}</h3>
                     {{ education_form.non_field_errors }}
                     <div class="mb-3">
@@ -132,6 +121,7 @@
                         </div>
                     {% endif %}
                 </div>
+            </div>
             {% endfor %}
         </div>
         <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
@@ -212,6 +202,7 @@
     });
     </script>
 -->
+
 {% endblock %}
 
 

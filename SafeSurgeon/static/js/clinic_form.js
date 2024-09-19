@@ -1,3 +1,5 @@
+console.log("This script is running");
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded: [clinic_form].js");
     const addClinicButton = document.getElementById('add-clinic');
