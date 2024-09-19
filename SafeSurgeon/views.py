@@ -117,10 +117,23 @@ def get_verified(request):
                 #save education formset
                     education_formset.instance = surgeon
                     education_formset.save()
+                
+                    for clinic_form in clinic_formset:
+                        if clinic_form.is_valid() and not clinic_form.cleaned_data.get('DELETE', False):
+                            if clinic_form.cleaned_data.get('existing_clinic'):
+                                surgeon.clinic.add(clinic_form.cleaned_data['existing_clinic'])
+                            elif clinic_form.cleaned_data.get('new_clinic_name'):
+                                new_clinic = Clinic.objects.create(
+                                    name=clinic_form.cleaned_data['new_clinic_name'],
+                                    city=surgeon.city
+                                )
+                                surgeon.clinic.add(new_clinic)              
+                
+                '''
                 #save clinic formset
                     clinic_formset.instance = surgeon
                     clinic_formset.save()
-                
+                '''
                 
 
                 messages.success(request, "Your profile had been submitted for verification. We will email you when your verification process is completed.")
@@ -128,7 +141,11 @@ def get_verified(request):
             except Exception as e:
                 messages.error(request, f"An error occurred: {str(e)}")
         else:
-            messages.error(request, "Please check the form for errors.")
+            # Print errors for debugging
+            print("Form errors:", form.errors)
+            print("Clinic formset errors:", clinic_formset.errors)
+            print("Education formset errors:", education_formset.errors)
+            messages.error(request, "Please check the form for errors.")        
     else:
         #if no POST request, redender empty form if no surgeon exist or the form for editing
         if surgeon:   

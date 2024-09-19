@@ -26,7 +26,7 @@ class SurgeonForm(forms.ModelForm):
         'resource_type': 'auto',
         'public_id': None,
     },
-    required=True)
+    required=False)
 
 
     class Meta:
@@ -81,7 +81,7 @@ class ClinicForm(forms.ModelForm):
         self.fields['clinic'].label = "Select Existing Clinic"
         if 'instance' in kwargs and kwargs['instance'].surgeon.city:
             self.fields['clinic'].queryset = Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
-        
+
 
     def clean(self):
         cleaned_data=super().clean()
@@ -96,6 +96,7 @@ class ClinicForm(forms.ModelForm):
         if new_clinic_name:
             new_clinic_list = [name.strip() for name in new_clinic_name.split('\n') if name.strip()]
             cleaned_data['new_clinic_list'] = new_clinic_list
+
 
         return cleaned_data
 
