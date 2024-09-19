@@ -72,3 +72,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+/*clinic select */
+document.addEventListener('DOMContentLoaded', function() {
+    const citySelect = document.querySelector('select[name="city"]');
+    const clinicSelects = document.querySelectorAll('select[name$="-clinic"]');
+    const clinicUrl = window.clinicUrl;
+
+    citySelect.addEventListener('change', function() {
+        const cityId = this.value;
+        if (cityId) {
+            fetch(`${clinicUrl}${cityId}`)
+                .then(response => response.json())
+                .then(data => {
+                    clinicSelects.forEach(clinicSelect => {
+                        clinicSelect.innerHTML = '<option value="">---------</option>';
+                        data.clinics.forEach(clinic => {
+                            const option = new Option(clinic.name, clinic.id);
+                            clinicSelect.add(option);
+                        });
+                    });
+                });
+        } else {
+            clinicSelects.forEach(clinicSelect => {
+                clinicSelect.innerHTML = '<option value="">---------</option>';
+            });
+        }
+    });
+});

@@ -68,6 +68,11 @@ def get_cities(request, country_id):
     return JsonResponse({'cities': city_list})
 
 
+def get_clinics(request, city_id):
+    clinics = Clinic.objects.filter(city_id=city_id).order_by('name')
+    clinic_list = [{'id': clinic.id, 'name': clinic.name} for clinic in clinics]
+    return JsonResponse({'clinics': clinic_list})
+
 
 #surgon profile page
 @login_required

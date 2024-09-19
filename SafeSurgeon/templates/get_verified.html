@@ -150,31 +150,34 @@
 
 <!---
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const countrySelect = document.querySelector('select[name="country"]');
-        const citySelect = document.querySelector('select[name="city"]');
-        const cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
-    
-        countrySelect.addEventListener('change', function() {
-            const countryId = this.value;
-            if (countryId) {
-                fetch(`${cityUrl}${countryId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        citySelect.innerHTML = '<option value="">---------</option>';
-                        data.cities.forEach(city => {
-                            const option = new Option(city.name, city.id);
-                            citySelect.add(option);
+document.addEventListener('DOMContentLoaded', function() {
+    const citySelect = document.querySelector('select[name="city"]');
+    const clinicSelects = document.querySelectorAll('select[name$="-clinic"]');
+    const clinicUrl = window.clinicUrl;
+
+    citySelect.addEventListener('change', function() {
+        const cityId = this.value;
+        if (cityId) {
+            fetch(`${clinicUrl}${cityId}`)
+                .then(response => response.json())
+                .then(data => {
+                    clinicSelects.forEach(clinicSelect => {
+                        clinicSelect.innerHTML = '<option value="">---------</option>';
+                        data.clinics.forEach(clinic => {
+                            const option = new Option(clinic.name, clinic.id);
+                            clinicSelect.add(option);
                         });
                     });
-            } else {
-                citySelect.innerHTML = '<option value="">---------</option>';
-            }
-        });
+                });
+        } else {
+            clinicSelects.forEach(clinicSelect => {
+                clinicSelect.innerHTML = '<option value="">---------</option>';
+            });
+        }
     });
-    </script>
+});
+</script>
 -->
-
 {% endblock %}
 
 
@@ -184,6 +187,9 @@
     <script src="{% static 'js/education_add_button.js' %}"></script>
     <script>
         window.cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
+    </script>
+    <script>
+        window.clinicUrl = "{% url 'get_clinics' 0 %}".slice(0, -1);
     </script>
     
 
