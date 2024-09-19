@@ -211,13 +211,15 @@
         }
     });
     </script>
-{% endblock %}
 -->
+{% endblock %}
+
 
 {% block extra_js %}
     <script src="{% static 'js/clinic_form.js' %}"></script>
     <script src="{% static 'js/clinic_add_button.js' %}"></script>
     <script src="{% static 'js/education_add_button.js' %}"></script>
+   
     <script>
         //  base URL for AJAX calls
         var baseUrl = "{% url 'get_cities' 0 %}".slice(0, -2);  

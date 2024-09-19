@@ -1,5 +1,6 @@
 
     document.addEventListener('DOMContentLoaded', function(){
+    console.log("Script loaded: [education_add_button].js");
     const addEducationButton = document.getElementById('add-education');
     const educationFormsContainer = document.getElementById('education-forms');
     const managementForm = document.getElementById('education-management-form');

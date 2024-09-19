@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script loaded: [clinic_form].js");
     const addClinicButton = document.getElementById('add-clinic');
     const clinicFormsDiv = document.getElementById('clinic-forms');
     let totalForms = document.getElementById('id_clinic_set-TOTAL_FORMS');
