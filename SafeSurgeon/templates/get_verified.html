@@ -235,6 +235,9 @@
     <script src="{% static 'js/clinic_form.js' %}"></script>
     <script src="{% static 'js/clinic_add_button.js' %}"></script>
     <script src="{% static 'js/education_add_button.js' %}"></script>
+    <script>
+        window.cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
+    </script>
     <script src="{% static 'js/Ajax_get_verified.js' %}"></script>
 
 {% endblock %}
