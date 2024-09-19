@@ -11,8 +11,7 @@
     
     if (addClinicButton && clinicFormsContainer && managementForm) {
         addClinicButton.addEventListener('click', function() {
-            console.log("Add Clinic button clicked");
-            alert("Add Clinic button clicked!");
+            
     
             let formCount = parseInt(managementForm.value);
             console.log("Current form count:", formCount);
