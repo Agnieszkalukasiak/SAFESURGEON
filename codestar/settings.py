@@ -36,8 +36,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-agnieszkalu-safesurgeon-ntsasceksaz.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
  'safesurgeon-f2f78c12cdcc.herokuapp.com', ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
+]
 
 
 # Application definition
@@ -62,7 +66,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 LOGIN_URL = 'login' 
-LOGIN_REDIRECT_URL = 'surgeon_profile','verify'
+LOGIN_REDIRECT_URL = 'surgeon_profile'
 LOGOUT_REDIRECT_URL = '/'
 
 # Cloudinary configuration
@@ -86,6 +90,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -128,49 +135,6 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ''))
 }
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",
-    "https://*.herokuapp.com"
-]
-
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
