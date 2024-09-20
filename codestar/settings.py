@@ -39,9 +39,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
  'safesurgeon-f2f78c12cdcc.herokuapp.com', ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
-]
+
 
 
 # Application definition
