@@ -73,13 +73,13 @@ def get_clinics(request, city_id):
     clinic_list = [{'id': clinic.id, 'name': clinic.name} for clinic in clinics]
     return JsonResponse({'clinics': clinic_list})
 
-
+'''
 #surgon profile page
 @login_required
 def get_verified(request): 
     surgeon = getattr(request.user, 'surgeon', None)
     #city = surgeon.city if surgeon else None
-'''
+
     #if no surgeon exist, they need to create a form
     if surgeon is None:
         template = 'get_verified.html'
@@ -329,6 +329,7 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 
         context = {
         'surgeon': surgeon, #the surgeon info
+        'clinic': clinic, #the surgeon info
         'education': education_history, #education of the surgeon
         'verification_status': surgeon.verification_status, #verification status
     }

@@ -22,7 +22,9 @@
             <div class="alert alert-{{message.tags}}">{{message}}</div>
             {%endfor%}
             </div>div>
-                {% endif %}
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             
             <div class="row">
             <div class="col-md-4">
@@ -34,7 +36,7 @@
             </div>
             <div class="col-md-8">
                 <!--user information accessed via the user-->
-                <h3>Name: {{ surgeon.first_name }} {{ surgeon.user.last_name }}</h3>
+                <h3>Name: {{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</h3>
                 <p><strong>Email:</strong> {{ surgeon.user.email }}</p>
 
                 <!-- Clinic Information (ManyToManyField) -->
@@ -52,11 +54,11 @@
                 <h4 class="mt-4">Education</h4>
                 {% for edu in surgeon.education.all %}
                     <div>
-                        <p><strong>Insitution:</strong>{{edu.insitution}}</p>
+                        <p><strong>Institution:</strong>{{edu.institution}}</p>
                         <p><strong>Program:</strong>{{edu.program}}</p>
-                        <p><strong>Country:</strong>{{edu.country}}</p>
-                        <p><strong>Year Start:</strong>{{edu.year_start}}</p>
-                        <p><strong>Year End:</strong>{{edu.year_end}}</p>
+                        <p><strong>Institution_Country:</strong>{{edu.institution_country}}</p>
+                        <p><strong>End Date:</strong>{{edu.start_date}}</p>
+                        <p><strong>Start Date:</strong>{{edu.end_date}}</p>
                     </div>
                     {% if not forloop.last %}<hr>{% endif %}
                 {% empty %}
