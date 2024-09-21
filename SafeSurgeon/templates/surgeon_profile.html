@@ -94,8 +94,11 @@
                             {% endif %}
                         </div>
                     {% endfor %}          
-                    <button type="button" id="add-education" class="btn btn-secondary">Add Education</button>
-                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                    <div class="container mt-3 mb-5">
+                        <div class="text-center">
+                            <a href="{% url 'edit_surgeon_profile' surgeon.id %}" class="btn btn-primary btn-lg">Edit and Resubmit for Verification</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
