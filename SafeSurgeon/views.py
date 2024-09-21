@@ -73,8 +73,8 @@ def get_clinics(request, city_id):
     clinic_list = [{'id': clinic.id, 'name': clinic.name} for clinic in clinics]
     return JsonResponse({'clinics': clinic_list})
 
-'''
-#surgon profile page
+
+
 @login_required
 def get_verified(request): 
     surgeon = getattr(request.user, 'surgeon', None)
@@ -158,7 +158,7 @@ def get_verified(request):
 
     #dynamically render weather surgeon_profile or get_verified.html
     return render(request,template, context)
-'''
+
 
 @login_required
 def get_verified(request): 
@@ -348,25 +348,29 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
         }
     return render  (request, 'verify_result.html', context)
     
-
+'''
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
-    
+
+
+    #handles the post
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
         clinic_formset=ClinicFormSet(request.POST,request.FILES, instance=surgeon)
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon)
 
-    if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
-        form.save()
-        clinic_formset.save()
-        education_formset.save()
-        message.success(request, 'Profile updated sucessfully.')
-        return redirect('surgeon_profile', surgeon_id=surgeon.id)
+        if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
+            form.save()
+            clinic_formset.save()
+            education_formset.save()
+            messages.success(request, 'Profile updated successfully. Your changes are pending review.')
+            return render('pending.html')
     else:
+        #prepopulate he form with pre existing data
         form = SurgeonForm(instance=surgeon)
         clinic_formset = ClinicFormSet(instance=surgeon)
         education_formset = EducationFormSet(instance=surgeon)
+     
 
     context ={
         'surgeon':surgeon,
@@ -375,6 +379,6 @@ def edit_surgeon_profile(request, surgeon_id):
         'education_formset':education_formset
     }
 
-    return render(request, 'edit_surgeon_profile.html', context)
-
+    return render(request,'edit_surgeon_profile.html', context)
+'''
   
