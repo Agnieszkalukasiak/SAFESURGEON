@@ -4,6 +4,8 @@ from .models import Surgeon, Education, City, Clinic, Country
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from cloudinary.forms import CloudinaryFileField
+from cloudinary_storage.storage import RawMediaCloudinaryStorage
+
 
 class SurgeonForm(forms.ModelForm):
     first_name = forms.CharField(required=False, disabled=True)
@@ -126,8 +128,6 @@ class EducationForm(forms.ModelForm):
     institution = forms.CharField(max_length=200, required=False)
     program = forms.CharField(max_length=200, required=False)
     institution_country = forms.CharField(max_length=200,required=False)
-    start_date = forms.DateInput(attrs={'type': 'date'}),
-    end_date = forms.DateInput(attrs={'type': 'date'}),
     certificate = CloudinaryFileField(
         options={
             'folder': 'certificate',
@@ -139,10 +139,10 @@ class EducationForm(forms.ModelForm):
     class Meta:
         model = Education
         fields = ['institution','institution_country', 'program', 'start_date', 'end_date', 'certificate']
-        #widgets = {
-         #   'start_date': forms.DateInput(attrs={'type': 'date'}),
-         #   'end_date': forms.DateInput(attrs={'type': 'date'}),
-    #}
+        widgets = {
+        'start_date': forms.DateInput(attrs={'type': 'date'}),
+        'end_date': forms.DateInput(attrs={'type': 'date'}),
+    }
 
 EducationFormSet = forms.inlineformset_factory(
     Surgeon, 

@@ -78,8 +78,8 @@ def get_clinics(request, city_id):
 @login_required
 def get_verified(request): 
     surgeon = getattr(request.user, 'surgeon', None)
-    city = surgeon.city if surgeon else None
-
+    #city = surgeon.city if surgeon else None
+'''
     #if no surgeon exist, they need to create a form
     if surgeon is None:
         template = 'get_verified.html'
@@ -141,11 +141,6 @@ def get_verified(request):
             form = SurgeonForm(instance=surgeon, user=request.user) if surgeon else SurgeonForm(user=request.user)
             education_formset = EducationFormSet(instance=surgeon) if surgeon else EducationFormSet()
             clinic_formset = ClinicFormSet( instance=surgeon) if surgeon else ClinicFormSet()
-            
-        else:
-            form = SurgeonForm(user=request.user)
-            education_formset = EducationFormSet()
-            clinic_formset = ClinicFormSet(instance=surgeon)
     
    
     # Fetch all countries and cities
@@ -163,7 +158,105 @@ def get_verified(request):
 
     #dynamically render weather surgeon_profile or get_verified.html
     return render(request,template, context)
+'''
 
+@login_required
+def get_verified(request): 
+    surgeon = getattr(request.user, 'surgeon', None)
+    
+    # Determine the appropriate template and set messages
+    if surgeon is None:
+        template = 'get_verified.html'
+        pending_verification = False
+    elif surgeon.verification_status == Verification.VERIFIED.value:
+        template = 'surgeon_profile.html'
+        messages.info(request, "Your profile is verified. Welcome back!")
+        return render(request, template, {'surgeon': surgeon})
+    elif surgeon.verification_status == Verification.REJECTED.value:
+        template = 'surgeon_profile.html'
+        messages.info(request, "Your profile was rejected. Please edit and resubmit for verification.")
+    elif surgeon.verification_status == Verification.PENDING.value:
+        template = 'pending.html'
+        messages.info(request, "Your profile is pending verification.")
+        return render(request, template, {'surgeon': surgeon})
+    else:
+        template = 'get_verified.html'
+        pending_verification = False
+
+    if request.method == 'POST':
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
+        education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon, prefix='education')
+        clinic_formset = ClinicFormSet(request.POST, instance=surgeon, prefix='clinic')
+        
+        if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
+            try:
+                with transaction.atomic():
+                    # Create or update the Surgeon instance
+                    if surgeon is None:
+                        surgeon = Surgeon(user=request.user)
+                    else:
+                        surgeon.user = request.user 
+                    surgeon = form.save(commit=False)# the user is set even for existing surgeons
+                    # Update surgeon fields from the form
+                    for field, value in form.cleaned_data.items():
+                        setattr(surgeon, field, value)
+
+                    surgeon.verification_status = Verification.PENDING.value
+                    surgeon.save()
+                    print("Surgeon saved successfully:", surgeon, "User:", surgeon.user)
+            
+
+                    # Save education formset
+                    print("Saving education formset")
+                    for education_form in education_formset:
+                        if education_form.is_valid() and education_form.cleaned_data and not education_form.cleaned_data.get('DELETE', False):
+                            education = education_form.save(commit=False)
+                            education.surgeon = surgeon
+                            education.save()
+                    print("Education formset saved successfully")
+
+                    # Save clinic formset
+                    print("Saving clinic formset")
+                    for clinic_form in clinic_formset:
+                        if clinic_form.is_valid() and clinic_form.cleaned_data and not clinic_form.cleaned_data.get('DELETE', False):
+                            clinic = clinic_form.save(commit=False)
+                            clinic.surgeon = surgeon
+                    
+                    # Handle new clinic creation
+                        if clinic_form.cleaned_data.get('new_clinic_name'):
+                            clinic.name = clinic_form.cleaned_data['new_clinic_name']
+                            clinic.city = surgeon.city  # Make sure surgeon.city is set correctly
+                    
+                        clinic.save()
+                print("Clinic formset saved successfully")
+                
+                messages.success(request, "Your profile has been submitted for verification. We will email you when your verification process is completed.")
+                return redirect('get_verified')
+            except Exception as e:
+                messages.error(request, f"An error occurred: {str(e)}")
+        else:
+            print("Form errors:", form.errors)
+            print("Education formset errors:", education_formset.errors)
+            print("Clinic formset errors:", clinic_formset.errors)
+            messages.error(request, "Please check the form for errors.")
+    else:
+        form = SurgeonForm(instance=surgeon, user=request.user)
+        education_formset = EducationFormSet(instance=surgeon, prefix='education')
+        clinic_formset = ClinicFormSet(instance=surgeon, prefix='clinic')
+
+    # Fetch all countries and cities
+    countries = Country.objects.all()
+    cities = City.objects.all()
+
+    context = {
+        'form': form,
+        'education_formset': education_formset,
+        'clinic_formset': clinic_formset,
+        'countries': countries,
+        'cities': cities,
+    }
+
+    return render(request, template, context)
 
 def login_view(request):
     if request.method == 'POST':

@@ -77,9 +77,15 @@
         </div>
         <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
     </div>
-               
+    <!--
+        <form method="post"> 
+        -->   
         <h2>Education</h2>
         <div id="education-managment-form">
+                {{ education_formset.management_form }}
+                <pre>
+                    Debug: {{ education_formset.management_form.as_p }}
+                </pre>
                 {% for education_form in education_formset %}
                 <div class="education-form mb-4">
                     <h3>Education Entry {{ forloop.counter }}</h3>
