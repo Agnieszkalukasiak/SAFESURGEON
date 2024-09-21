@@ -37,7 +37,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
- 'safesurgeon-f2f78c12cdcc.herokuapp.com', ]
+ 'safesurgeon-f2f78c12cdcc.herokuapp.com',
+ 'localhost',
+'127.0.0.1' ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
+    'https://safesurgeon-f2f78c12cdcc.herokuapp.com'
+]
 
 
 

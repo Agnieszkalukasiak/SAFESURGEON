@@ -123,7 +123,11 @@ ClinicFormSet = forms.inlineformset_factory(
 )
            
 class EducationForm(forms.ModelForm):
-    institution_country = forms.CharField(max_length=200)
+    institution = forms.CharField(max_length=200, required=False)
+    program = forms.CharField(max_length=200, required=False)
+    institution_country = forms.CharField(max_length=200,required=False)
+    start_date = forms.DateInput(attrs={'type': 'date'}),
+    end_date = forms.DateInput(attrs={'type': 'date'}),
     certificate = CloudinaryFileField(
         options={
             'folder': 'certificate',
@@ -134,17 +138,19 @@ class EducationForm(forms.ModelForm):
     )
     class Meta:
         model = Education
-        fields = ['institution_country','institution', 'program', 'start_date', 'end_date', 'certificate']
-        widgets = {
-            'start_date': forms.DateInput(attrs={'type': 'date'}),
-            'end_date': forms.DateInput(attrs={'type': 'date'}),
-    }
+        fields = ['institution','institution_country', 'program', 'start_date', 'end_date', 'certificate']
+        #widgets = {
+         #   'start_date': forms.DateInput(attrs={'type': 'date'}),
+         #   'end_date': forms.DateInput(attrs={'type': 'date'}),
+    #}
 
 EducationFormSet = forms.inlineformset_factory(
-    Surgeon, Education,
+    Surgeon, 
+    Education,
     form= EducationForm,
     fields=('institution', 'institution_country', 'program', 'start_date', 'end_date', 'certificate'),
-    extra=1, can_delete=True
+    extra=1, 
+    can_delete=True
 )
 
 class SignUpForm(UserCreationForm):

@@ -114,6 +114,8 @@ def get_verified(request):
                     surgeon.verification_status = Verification.PENDING.value
                     surgeon.save()
 
+                    
+
                 #save education formset
                     education_formset.instance = surgeon
                     education_formset.save()            
