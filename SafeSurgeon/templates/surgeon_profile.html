@@ -15,17 +15,14 @@
             </h2>
         </div>
     <div class="card-body">
-         <!-- Messages -->
+         <!---Messages -->        
         {% if messages %}
             <div class="messages">
             {% for message in messages%}
             <div class="alert alert-{{message.tags}}">{{message}}</div>
             {%endfor%}
-            </div>div>
-        {% endif %}
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            
+            </div>
+        {% endif %}         
             <div class="row">
             <div class="col-md-4">
                 {% if surgeon.profile_picture %}
@@ -40,7 +37,7 @@
                 <p><strong>Email:</strong> {{ surgeon.user.email }}</p>
 
                 <!-- Clinic Information (ManyToManyField) -->
-                <h4>Clinics:</h4>
+               <h4>Clinics:</h4>
                 <ul>
                     {% for clinic in surgeon.clinic.all %}
                         <li>
@@ -48,9 +45,9 @@
                             <strong>City:</strong> {{ clinic.city.name }}<br>
                             <strong>Country:</strong> {{ clinic.city.country.name }}
                         </li>
-                    {% endfor %}
-                
+                    {% endfor %}            
                     <!--education information-->
+
                 <h4 class="mt-4">Education</h4>
                 {% for edu in surgeon.education.all %}
                     <div>
@@ -74,6 +71,7 @@
 </div>
 
 <!-- Edit Profile Modal -->
+
 <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

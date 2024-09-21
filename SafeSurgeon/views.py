@@ -347,3 +347,34 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
             }
         }
     return render  (request, 'verify_result.html', context)
+    
+
+def edit_surgeon_profile(request, surgeon_id):
+    surgeon = get_object_or_404(Surgeon, id=surgeon_id)
+    
+    if request.method == 'POST':
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        clinic_formset=ClinicFormSet(request.POST,request.FILES, instance=surgeon)
+        education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon)
+
+    if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
+        form.save()
+        clinic_formset.save()
+        education_formset.save()
+        message.success(request, 'Profile updated sucessfully.')
+        return redirect('surgeon_profile', surgeon_id=surgeon.id)
+    else:
+        form = SurgeonForm(instance=surgeon)
+        clinic_formset = ClinicFormSet(instance=surgeon)
+        education_formset = EducationFormSet(instance=surgeon)
+
+    context ={
+        'surgeon':surgeon,
+        'form':form,
+        'clinic_formset':clinic_formset,
+        'education_formset':education_formset
+    }
+
+    return render(request, 'edit_surgeon_profile.html', context)
+
+  
