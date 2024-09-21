@@ -34,6 +34,7 @@ class SurgeonForm(forms.ModelForm):
     class Meta:
         model=Surgeon
         fields = ['profile_picture','country', 'city', 'id_document']
+        exclude = ['user', 'verification_status'] 
        
     def __init__(self, *args, **kwargs):  
         user = kwargs.pop('user', None)
@@ -102,7 +103,7 @@ class ClinicForm(forms.ModelForm):
 
         return cleaned_data
 
-    def save(self, surgeon, city):
+    def save(self, surgeon, city, commit=True):
         clinics = list(self.cleaned_data.get('existing_clinics', []))
         new_clinic_name = self.cleaned_data.get('new_clinic_list', [])
 
@@ -111,7 +112,8 @@ class ClinicForm(forms.ModelForm):
             clinic, created = Clinic.objects.get_or_create(name=name, city=city)
             clinics.append(clinic)
         #associate all clinics new and exiting with the surgon 
-        surgeon.clinic.set(clinics)
+        if commit:
+            surgeon.clinic.set(clinics)
 
         return clinics
 

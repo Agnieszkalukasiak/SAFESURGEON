@@ -191,19 +191,25 @@ def get_verified(request):
         if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
             try:
                 with transaction.atomic():
+                    print("Debug: request.user =", request.user)
+                    print("Debug: surgeon before save =", surgeon)
                     # Create or update the Surgeon instance
                     if surgeon is None:
                         surgeon = Surgeon(user=request.user)
+                        print("Debug: Created new surgeon instance")
                     else:
-                        surgeon.user = request.user 
-                    surgeon = form.save(commit=False)# the user is set even for existing surgeons
+                        surgeon.user = request.user
+                        print("Debug: Updated existing surgeon instance")
+                    
                     # Update surgeon fields from the form
                     for field, value in form.cleaned_data.items():
                         setattr(surgeon, field, value)
 
                     surgeon.verification_status = Verification.PENDING.value
                     surgeon.save()
-                    print("Surgeon saved successfully:", surgeon, "User:", surgeon.user)
+                    
+                    print("Debug: surgeon after save =", surgeon)
+                    print("Debug: surgeon.user after save =", surgeon.user)
             
 
                     # Save education formset
@@ -217,18 +223,28 @@ def get_verified(request):
 
                     # Save clinic formset
                     print("Saving clinic formset")
+                    clinics = [] #list to collect all clinics
+
                     for clinic_form in clinic_formset:
                         if clinic_form.is_valid() and clinic_form.cleaned_data and not clinic_form.cleaned_data.get('DELETE', False):
-                            clinic = clinic_form.save(commit=False)
-                            clinic.surgeon = surgeon
-                    
-                    # Handle new clinic creation
-                        if clinic_form.cleaned_data.get('new_clinic_name'):
-                            clinic.name = clinic_form.cleaned_data['new_clinic_name']
-                            clinic.city = surgeon.city  # Make sure surgeon.city is set correctly
-                    
-                        clinic.save()
-                print("Clinic formset saved successfully")
+                             # Save the clinics associated with the surgeon and city                      
+                            clinic_list = clinic_form.save(surgeon=surgeon, city=surgeon.city)
+            
+
+                        print("Clinic formset saved successfully")
+                         # Handle new clinic creation
+                        new_clinic_name = clinic_form.cleaned_data.get('new_clinic_name')
+                        if new_clinic_name:
+                        # Create a new clinic and associate it with the surgeon's city
+                            new_clinic, created = Clinic.objects.get_or_create(name=new_clinic_name, city=surgeon.city)
+
+                            # Add the newly created clinic to the clinics list
+                            clinics.append(new_clinic)
+                        if clinics:
+                            surgeon.clinic.set(clinics)  # This handles the many-to-many relationship
+                            print("Clinics associated with the surgeon successfully")
+                        
+                        print("Clinic formset saved successfully")
                 
                 messages.success(request, "Your profile has been submitted for verification. We will email you when your verification process is completed.")
                 return redirect('get_verified')
