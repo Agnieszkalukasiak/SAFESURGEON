@@ -100,3 +100,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+//* the js to the edit_clinic in edit_surgon_profile *//
+
+document.addEventListener('DOMContentLoaded', function() {
+    const deleteButtons = document.querySelectorAll('.delete-clinic');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const clinicId = this.getAttribute('data-clinic-id');
+            if (confirm('Are you sure you want to delete this clinic?')) {
+                fetch(`/delete-clinic/${clinicId}/`, { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            this.closest('.clinic-form').remove();
+                        } else {
+                            alert('Failed to delete clinic. Please try again.');
+                        }
+                    });
+            }
+        });
+    });
+});
