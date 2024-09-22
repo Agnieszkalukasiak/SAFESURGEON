@@ -393,7 +393,8 @@ def edit_surgeon_profile(request, surgeon_id):
             education_formset.save()
 
         message.sucess(request, 'Profile update sucessfully. Your chnage are pending verification')
-        return redirect('pending_verification')
+        
+        return render(request, 'pending.html',)
     
     else:
         form = SurgeonForm(instance = surgeon)
@@ -420,4 +421,4 @@ def delete_clinic(request, clinic_id):
     else:
         return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
 
-  
+
