@@ -364,7 +364,7 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
             'search_params': {
                 'user_first_name': user_first_name,
                 'user_last_name': user_last_name,
-                'clinics': clinics,
+                'clinic': clinic,
                 'city': city,
                 'country': country
             }
