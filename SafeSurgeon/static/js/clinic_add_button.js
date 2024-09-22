@@ -109,7 +109,12 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const clinicId = this.getAttribute('data-clinic-id');
             if (confirm('Are you sure you want to delete this clinic?')) {
-                fetch(`/delete-clinic/${clinicId}/`, { method: 'POST' })
+                fetch(`/delete-clinic/${clinicId}/`, { 
+                    method: 'POST',
+                    headers:{
+                        'X-CSRFToken':csrftoken
+                    } 
+                })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {

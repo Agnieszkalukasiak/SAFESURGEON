@@ -366,41 +366,35 @@ def edit_surgeon_profile(request, surgeon_id):
 
         if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():       
             surgeon=form.save(commit=False)
-           # form.save()
-            #clinic_formset.save()
-            #education_formset.save()
-            #messages.success(request, 'Profile updated successfully. Your changes are pending review.')
-            #return render('pending.html')
-    #else:
-        #prepopulate the form with pre existing data
-        #form = SurgeonForm(instance=surgeon)
-        #clinic_formset = ClinicFormSet(instance=surgeon)
-        #education_formset = EducationFormSet(instance=surgeon)
+            surgeon.verfication_status='pending'
+            surgeon.save()
 
-        #handle clinic formset
-        clinic=[]
+        # Handle clinics from the formset (both existing and new clinics)
+        clinics = []
         for clinic_form in clinic_formset:
-            if clinic_form.is_valid()  and clinic_form.cleaned_data.get('name'):
-                clinic = clinic_form.save(commit=False)
-                clinic.city = surgeon.city 
-                clinic.save()
-                clinics.append(clinic)
-                
+            if clinic_form.cleaned_data.get('existing_clinics'):
+        # Add selected existing clinics
+                clinics += clinic_form.cleaned_data.get('existing_clinics')
 
-        surgeon.clinic.set(clinics)
+            if clinic_form.cleaned_data.get('new_clinic_name'):
+                    # Create and add new clinic
+                new_clinic_name = clinic_form.cleaned_data['new_clinic_name']
+                new_clinic = Clinic.objects.create(
+                    name=new_clinic_name,
+                    city=surgeon.city  #clinic  associated with the surgeon's city
+                )
+                clinics.append(new_clinic)
 
+            # Link all clinics to the surgeon (set the relationship)
+            surgeon.clinic.set(clinics)
+            clinic_formset.save()  # Save any updates made to clinics
 
-        #handle education formset
-        education_instance = education_formset.save(commit=False)
-        for education in education_instances:
-            education.surgeon = surgeon
-            education.save()
-        
-        surgeon.verification_status = 'pending'
-        surgeon.save()
+            #handle education formset
+            education_formset.save()
 
         message.sucess(request, 'Profile update sucessfully. Your chnage are pending verification')
         return redirect('pending_verification')
+    
     else:
         form = SurgeonForm(instance = surgeon)
         clinic_formset = ClinicFormSet(instance=surgeon)

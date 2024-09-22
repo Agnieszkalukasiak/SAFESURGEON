@@ -28,7 +28,7 @@
                 {% if clinic_form.instance.pk %}
                     <h4>Exisiting Clinic</h4>
                 {{clinic_form.clinic}}
-                <button type="button" class="btn btn-danger delete-clinic" data-clinic-id="{{ clinic_form.instance.clinic.id }}">Delete Clinic</button>
+                <button type="button" class="btn btn-danger delete-clinic" data-clinic-id="{{ clinic_form.initial.id }}">Delete Clinic</button>
             {% else %}
                 <h4>Update Clinic</h4>
                 {{ clinic_form.existing_clinics }}
@@ -41,7 +41,7 @@
         <h3>Education</h3>
         {{ education_formset.management_form }}
         {% for education_form in education_formset %}
-            <div class="clinic-form mb-3">
+            <div class="education-form mb-3">
                 {{ education_form.id }}
                 {% if education_form.instance.pk %}
                     <h4>Exisiting Education</h4>
@@ -55,9 +55,25 @@
 
         <div class="mt-4">
             <button type="submit" class="btn btn-primary">Submit for Verification</button>
-            <a href="{'surgeon_profile' surgeon.id %}" class="btn btn-secondary">Cancel</a>
+            <a href="{% url 'get_verified' surgeon.id %}" class="btn btn-secondary">Cancel</a>
         </div>
     </form>
 </div>
+
+{% endblock %}
+
+
+
+{% block extra_js %}
+<script> var csrftoken = '{{ csrf_token }}'; </script>
+    <script src="{% static 'js/clinic_form.js' %}"></script>
+    <script src="{% static 'js/clinic_add_button.js' %}"></script>
+    <script src="{% static 'js/education_add_button.js' %}"></script>
+    <script>
+        window.cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
+    </script>
+    <script>
+        window.clinicUrl = "{% url 'get_clinics' 0 %}".slice(0, -1);
+    </script>
 
 {% endblock %}
