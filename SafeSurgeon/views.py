@@ -395,7 +395,6 @@ def edit_surgeon_profile(request, surgeon_id):
     return render(request,'edit_surgeon_profile.html', context)
 
     @require_POST
-
     def delete_clinic(request, clinic_id):
         clinic = get_object_or_404(Clinic, id=clinic_id)
         surgeon = request.user.surgeon
