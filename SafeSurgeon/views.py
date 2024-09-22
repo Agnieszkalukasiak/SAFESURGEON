@@ -48,7 +48,7 @@ def verify(request):
         return redirect ('verify_result', 
         user_first_name = user_first_name, 
         user_last_name=user_last_name, 
-        clinic=clinic_name, 
+        clinic=clinic, 
         city=city_name,
         country=country_name)
     else:
@@ -326,34 +326,54 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
         clinic__name__icontains=clinic,
         city__name__icontains=city,
         country__name__icontains=country,
-    ).first()
+    ).prefetch_related('clinic').first()
+
+     # Debug output
+    if surgeon:
+        print(f"Found surgeon: {surgeon}")
+        clinics = surgeon.clinic.all()
+        print(f"Surgeon's clinics: {clinics}")
+        for clinic in clinics:
+            print(f"Clinic name: {clinic.name}")
+            print(f"Clinic city: {clinic.city}")
+            if clinic.city:
+                print(f"Clinic city name: {clinic.city.name}")
+            else:
+                print("Clinic has no associated city object")
 
     
     if surgeon:
     #fetch surgeon education history if they exist
         education_history = surgeon.education.all() if surgeon else None
+        
+        
 
         context = {
         'surgeon': surgeon, #the surgeon info
-        'clinic': clinic, #the surgeon info
+        'clinics': clinics , #the surgeon info
+        'clinic_name': clinics[0].name if clinics else 'None',
+        'clinic_city': clinics[0].city.name if clinics and clinics[0].city else 'None',
         'education': education_history, #education of the surgeon
-        'verification_status': surgeon.verification_status, #verification status
-    }
+        'verification_status': surgeon.verification_status, 
+        }
     else:
         #if no surgeon found , return a Not verified message
-        context={
+        context = {
             'surgeon': None,
             'verification_status': 'Not Verified',
-            'search_params':{
-                'user_first_name':user_first_name,
-                'user_last_name':user_last_name,
-                'clinic': clinic,
+            'search_params': {
+                'user_first_name': user_first_name,
+                'user_last_name': user_last_name,
+                'clinics': clinics,
                 'city': city,
                 'country': country
             }
         }
+
+        print("Context being sent to template:", context)
+
     return render  (request, 'verify_result.html', context)
-    
+   
 
 
 def edit_surgeon_profile(request, surgeon_id):

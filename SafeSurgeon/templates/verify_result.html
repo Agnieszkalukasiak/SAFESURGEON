@@ -10,7 +10,7 @@
                 style="width: 150px;"> 
             {% endif %}             
             <h2>{{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</h2>
-            <h4>{{surgeon.clinic}}</h4>
+            <p><strong>Clinic Name:</strong> {{ clinic_name }}</p>
             <p>{{surgeon.city.name}}, {{surgeon.country.name}}</p>
 
             {% if surgeon.verification_status == "VERIFIED" %}
