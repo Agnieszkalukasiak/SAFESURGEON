@@ -102,7 +102,7 @@ def get_verified(request):
     #handle form submission to create a profile     
     if request.method=='POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
-        clinic_formset = ClinicFormSet(request.POST, instance=surgeon)      
+        clinic_formset = ClinicFormSet(request.POST,request.FILES, instance=surgeon)      
         education_formset= EducationFormSet (request.POST, request.FILES, instance=surgeon)      
     
         if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid() :
@@ -113,6 +113,11 @@ def get_verified(request):
                     surgeon.user = request.user 
                     surgeon.verification_status = Verification.PENDING.value
                     surgeon.save()
+                
+                if not clinic_formset.is_valid():
+                    print("Clinic formset errors:", clinic_formset.errors)
+                for form in clinic_formset:
+                    print(form.errors)
 
                     
 
@@ -348,7 +353,7 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
         }
     return render  (request, 'verify_result.html', context)
     
-'''
+
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
 
@@ -380,5 +385,5 @@ def edit_surgeon_profile(request, surgeon_id):
     }
 
     return render(request,'edit_surgeon_profile.html', context)
-'''
+
   

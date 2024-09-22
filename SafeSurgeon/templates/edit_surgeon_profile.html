@@ -1,4 +1,5 @@
-{% extends 'base.html' %}
+
+% extends 'base.html' %
 {% load static %}
 
 {% block content %}
@@ -23,11 +24,22 @@
         {{ clinic_formset.management_form }}
         {% for clinic_form in clinic_formset %}
             <div class="clinic-form mb-3">
-                {{ clinic_form.as_p }}
+                {{ clinic_form.id }}
+                {% clinic_form.instance.pk %}
+                    <h4>Exisiting Clinic</h4>
+                {{clinic_form.clinic}}
+                <button type="button" class="btn btn-danger delete-clinic" data-clinic-id="{{ clinic_form.instance.clinic.id }}">Delete Clinic</button>
+            {% else %}
+                <h4>Update Clinic</h4>
+                {{ clinic_form.existing_clinics }}
+                {{ clinic_form.new_clinic_name }}
+            {% endif %}
             </div>
         {% endfor %}
         <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Clinic</button>
         
+
+
         <h3>Education</h3>
         {{ education_formset.management_form }}
         {% for education_form in education_formset %}
@@ -43,6 +55,5 @@
         </div>
     </form>
 </div>
-
 
 {% endblock %}
