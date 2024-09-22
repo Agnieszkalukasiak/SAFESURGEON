@@ -48,7 +48,7 @@ def verify(request):
         return redirect ('verify_result', 
         user_first_name = user_first_name, 
         user_last_name=user_last_name, 
-        clinic=clinic, 
+        clinic=clinic_name, 
         city=city_name,
         country=country_name)
     else:
@@ -60,6 +60,7 @@ def verify(request):
             'cities': cities,
         }
         return render(request, 'verify.html', context)
+
 
 # API view to get cities for a country
 def get_cities(request, country_id):
@@ -353,8 +354,7 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
         }
     return render  (request, 'verify_result.html', context)
     
-'''
-TO WORK ON IN THE FUTURE
+
 
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
@@ -426,6 +426,6 @@ def delete_clinic(request, clinic_id):
         return JsonResponse({'success':True})
     else:
         return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
-'''
+
 
 

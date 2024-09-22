@@ -72,7 +72,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 LOGIN_URL = 'login' 
 LOGIN_REDIRECT_URL = 'surgeon_profile'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'home'
 
 # Cloudinary configuration
 CLOUDINARY_STORAGE = {
@@ -98,7 +98,7 @@ MIDDLEWARE = [
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),

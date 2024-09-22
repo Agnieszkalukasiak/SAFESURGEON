@@ -23,7 +23,9 @@
         <h2>Personal Information</h2>
         {{ form.non_field_errors }}
         <div class="mb-3">
-            {{ request.user.username }}
+            {{ request.user.first_name }}
+            {{ request.user.last_name }}
+
         </div>
         <div class="mb-3">
             {{ request.user.email }}
@@ -53,7 +55,7 @@
                 {%for clinic_form in clinic_formset%}
                 <div class="clinic_form mb-4" id="clinic-form-{{forloop.counter0}}">
                     <h3>Clinic Entry{{forloop.counter}}</h3>
-                    {{clinic_form.non_field_errors}}
+                    {{ clinic_form.non_field_errors }}
                     <div class="mb-3">
                     {{ clinic_form.clinic.label_tag }}
                     {{ clinic_form.clinic }}

@@ -1,5 +1,5 @@
 
-
+/*
 // add to get_verified
     document.addEventListener('DOMContentLoaded', function() {
         // Dynamic form fields for country, city, and clinic
@@ -109,3 +109,4 @@ document.getElementById('add-education').addEventListener('click', function() {
     document.querySelector('.education-form').parentNode.insertBefore(newForm, this);
     document.getElementById('id_education-TOTAL_FORMS').value = formCount + 1;
 }); 
+*/

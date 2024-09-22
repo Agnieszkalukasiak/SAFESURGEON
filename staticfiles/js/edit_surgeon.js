@@ -1,3 +1,7 @@
+/*
+
+To WORK ON IN HE FUTURE
+
 document.addEventListener('DOMContentLoaded', function() {
     const deleteButtons = document.querySelectorAll('.delete-clinic');
     deleteButtons.forEach(button => {
@@ -51,4 +55,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('add-education').addEventListener('click', function() {
         addFormset(this, 'education_formset');
     });
-}); 
+}); */
