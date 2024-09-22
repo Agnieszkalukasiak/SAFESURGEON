@@ -364,18 +364,26 @@ def edit_surgeon_profile(request, surgeon_id):
         clinic_formset=ClinicFormSet(request.POST,request.FILES, instance=surgeon)
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon)
 
-        if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
-            form.save()
-            clinic_formset.save()
-            education_formset.save()
-            messages.success(request, 'Profile updated successfully. Your changes are pending review.')
-            return render('pending.html')
-    else:
-        #prepopulate he form with pre existing data
-        form = SurgeonForm(instance=surgeon)
-        clinic_formset = ClinicFormSet(instance=surgeon)
-        education_formset = EducationFormSet(instance=surgeon)
-     
+        if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():       
+            surgeon=form.save()
+           # form.save()
+            #clinic_formset.save()
+            #education_formset.save()
+            #messages.success(request, 'Profile updated successfully. Your changes are pending review.')
+            #return render('pending.html')
+    #else:
+        #prepopulate the form with pre existing data
+        #form = SurgeonForm(instance=surgeon)
+        #clinic_formset = ClinicFormSet(instance=surgeon)
+        #education_formset = EducationFormSet(instance=surgeon)
+
+        #handke clinic formset
+        clinic=[]
+        for clinic_form in clinic_formset:
+            if clinic_form.is_valid():
+                clinic.extend(clinic_form.save(surgeon=surgeon, city=surgeon.city, commit=False))
+
+        surgeon.clinic.set(clinics)
 
     context ={
         'surgeon':surgeon,
@@ -385,5 +393,17 @@ def edit_surgeon_profile(request, surgeon_id):
     }
 
     return render(request,'edit_surgeon_profile.html', context)
+
+    @require_POST
+
+    def delete_clinic(request, clinic_id):
+        clinic = get_object_or_404(Clinic, id=clinic_id)
+        surgeon = request.user.surgeon
+
+        if clinic in surgeon.clinic.all():
+            surgeon.clinic.remove(clinic)
+            return JsonResponse({'success':True})
+        else:
+            return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
 
   
