@@ -1,5 +1,5 @@
 
-% extends 'base.html' %
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -37,7 +37,7 @@
             </div>
         {% endfor %}
         <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Clinic</button>
-        
+        -->
         <h3>Education</h3>
         {{ education_formset.management_form }}
         {% for education_form in education_formset %}
@@ -45,10 +45,10 @@
                 {{ education_form.id }}
                 {% if education_form.instance.pk %}
                     <h4>Exisiting Education</h4>
-                {{else}}
+                {% else %}
                     <h4>Update Education</h4>
                 {% endif %}
-                    {{ education_form.as_p }}
+                    {{ education_form.as_p}}                 
                  </div>
             {% endfor %}
         <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Education</button>
