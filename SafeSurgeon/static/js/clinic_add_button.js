@@ -112,7 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetch(`/delete-clinic/${clinicId}/`, { 
                     method: 'POST',
                     headers:{
-                        'X-CSRFToken':csrftoken
+                        'X-CSRFToken': csrftoken,  
+                        'Content-Type': 'application/json'
                     } 
                 })
                     .then(response => response.json())
@@ -123,10 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             alert('Failed to delete clinic. Please try again.');
                         }
                     });
-            }
+                }
+            });
         });
     });
-});
 
 // for edit_surgon_profile, add another clinic or education.
 document.addEventListener('DOMContentLoaded', function() {

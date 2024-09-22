@@ -25,9 +25,10 @@
         {% for clinic_form in clinic_formset %}
             <div class="clinic-form mb-3">
                 {{ clinic_form.id }}
+                Debug: {{ clinic_form.instance.pk }}, {{ clinic_form.instance.name }}
                 {% if clinic_form.instance.pk %}
                     <h4>Exisiting Clinic</h4>
-                {{clinic_form.clinic}}
+                {{clinic_form.instance.name}}
                 <button type="button" class="btn btn-danger delete-clinic" data-clinic-id="{{ clinic_form.initial.id }}">Delete Clinic</button>
             {% else %}
                 <h4>Update Clinic</h4>
@@ -53,10 +54,11 @@
             {% endfor %}
         <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Education</button>
 
-        <div class="mt-4">
+        <div class="mb-4">
             <button type="submit" class="btn btn-primary">Submit for Verification</button>
-            <a href="{% url 'surgeon_profile' surgeon.id %}" class="btn btn-secondary">Cancel</a>
-        </div>
+                <div id="thankYouMessage" style="display: none;">
+                    Thank you for your submission. We will email you once your verification process is completed. Thank you!
+            </div>
     </form>
 </div>
 

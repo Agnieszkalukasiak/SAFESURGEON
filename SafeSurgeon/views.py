@@ -353,10 +353,10 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
         }
     return render  (request, 'verify_result.html', context)
     
-
+#(version1 last)
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
-
+    current_clinics = surgeon.clinic.all()
 
     #handles the post
     if request.method == 'POST':
@@ -395,11 +395,83 @@ def edit_surgeon_profile(request, surgeon_id):
         message.sucess(request, 'Profile update sucessfully. Your chnage are pending verification')
         
         return render(request, 'pending.html',)
-    
+
     else:
-        form = SurgeonForm(instance = surgeon)
+        # GET request handling
+        form = SurgeonForm(instance=surgeon)
         clinic_formset = ClinicFormSet(instance=surgeon)
         education_formset = EducationFormSet(instance=surgeon)
+    
+    context ={
+        'surgeon':surgeon,
+        'form':form,
+        'clinic_formset':clinic_formset,
+        'education_formset':education_formset,
+        'current_clinics': current_clinics 
+    
+    }
+
+    return render(request,'edit_surgeon_profile.html', context)
+
+
+
+''' version 2
+def edit_surgeon_profile(request, surgeon_id):
+    surgeon = get_object_or_404(Surgeon, id=surgeon_id)
+
+
+    #handles the post
+    if request.method == 'POST':
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        clinic_formset=ClinicFormSet(request.POST,request.FILES, instance=surgeon)
+        education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon)
+
+        if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():       
+            surgeon=form.save(commit=False)
+            form.save()
+            clinic_formset.save()
+            education_formset.save()
+            messages.success(request, 'Profile updated successfully. Your changes are pending review.')
+            return render('pending.html')
+    else:
+        #prepopulate the  form with pre existing data
+        form = SurgeonForm(instance=surgeon)
+        clinic_formset = ClinicFormSet(instance=surgeon)
+        education_formset = EducationFormSet(instance=surgeon)
+
+        #handle clinic formset
+        clinics=[]
+        for clinic_form in clinic_formset:
+            if clinic_form.is_valid()  and clinic_form.cleaned_data.get('name'):
+                clinic = clinic_form.save(commit=False)
+                clinic.city = surgeon.city 
+                clinic.save()
+                clinics.append(clinic)
+                
+
+        surgeon.clinic.set(clinics)
+
+        #handle education formset
+        education_formset.save()
+
+        # Get the existing education instances for the surgeon
+        education_instances = Education.objects.filter(surgeon=surgeon)
+
+
+        #hation_instance = education_formset.save(commit=False)
+        for education in education_instances:
+            education.surgeon = surgeon
+            education.save()
+        
+            surgeon.verification_status = 'pending'
+            surgeon.save()
+
+            message.sucess(request, 'Profile update sucessfully. Your chnage are pending verification')
+            return render(request, 'pending.html',)
+        else:
+            form = SurgeonForm(instance = surgeon)
+            clinic_formset = ClinicFormSet(instance=surgeon)
+            education_formset = EducationFormSet(instance=surgeon)
 
     context ={
         'surgeon':surgeon,
@@ -410,6 +482,8 @@ def edit_surgeon_profile(request, surgeon_id):
 
     return render(request,'edit_surgeon_profile.html', context)
 
+
+'''
 @require_POST
 def delete_clinic(request, clinic_id):
     clinic = get_object_or_404(Clinic, id=clinic_id)
@@ -420,5 +494,6 @@ def delete_clinic(request, clinic_id):
         return JsonResponse({'success':True})
     else:
         return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
+
 
 
