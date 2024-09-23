@@ -1,7 +1,12 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
+
+
+<!---
+
 <div class="container mt-5">
     <h2>Edit Surgeon Profile</h2>
 
@@ -36,21 +41,21 @@
         <p>No current clinics associated.</p>
     {% endfor %}
 
-    <!-- Section to add a new clinic -->
-<!-- Section to select existing clinics -->
+    <!-- Section to add a new clinic --
+<!-- Section to select existing clinics -
 <div class="existing-clinics">
     <label for="{{ clinic_form.existing_clinics.id_for_label }}">Select Existing Clinic:</label>
     {{ clinic_form.existing_clinics }}
 </div>
 
-<!-- Section to add a new clinic -->
+<!-- Section to add a new clinic 
 <div class="new-clinic">
     <label for="{{ clinic_form.new_clinic_name.id_for_label }}">Or Enter New Clinic Name:</label>
     {{ clinic_form.new_clinic_name }}
     <small class="form-text text-muted">Enter the name of a new clinic to add it to your profile.</small>
 </div>
 
-<!-- Button to add another clinic--> 
+<!-- Button to add another clinic 
 <button type="button" id="add-clinic">Add Another Clinic</button>
 
 
@@ -78,11 +83,11 @@
     </form>
 </div>
 
-{% endblock %}
 
 
 
-{% block extra_js %}
+
+
 <script> var csrftoken = '{{ csrf_token }}'; </script>
 <script src="{% static 'js/clinic_form.js' %}"></script>
 <script src="{% static 'js/clinic_add_button.js' %}"></script>
@@ -94,4 +99,103 @@
     window.clinicUrl = "{% url 'get_clinics' 0 %}".slice(0, -1);
 </script>
 
+
+-->
+
+
+
+<div class="container mt-4">
+    <h2>Edit Surgeon Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <h3>Personal Information</h3>
+        {{ form.as_p }}
+        
+        <h3>Clinics</h3>
+        {{ clinic_formset.management_form }}
+        <div id="current-clinics">
+            <h4>Current Clinics</h4>
+            {% for clinic in surgeon.clinics.all %}
+                <div class="current-clinic">
+                    <input type="checkbox" name="delete_clinic_{{ clinic.id }}" id="delete_clinic_{{ clinic.id }}">
+                    <label for="delete_clinic_{{ clinic.id }}">{{ clinic.name }} - Delete?</label>
+                </div>
+            {% empty %}
+                <p>No clinics currently associated.</p>
+            {% endfor %}
+        </div>
+        
+        <div id="add-clinic-section">
+            <h4>Add New Clinic</h4>
+            <select name="existing_clinic" id="existing_clinic">
+                <option value="">Select an existing clinic</option>
+                {% for clinic in all_clinics %}
+                    {% if clinic not in surgeon.clinics.all %}
+                        <option value="{{ clinic.id }}">{{ clinic.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <p>OR</p>
+            <input type="text" name="new_clinic_name" id="new_clinic_name" placeholder="Enter new clinic name">
+            <button type="button" id="add-clinic" class="btn btn-secondary mt-2">Add Clinic</button>
+        </div>
+
+
+
+        <h3 class="mt-4">Education</h3>
+        {{ education_formset.management_form }}
+        <div id="education-formset">
+            {% for education_form in education_formset %}
+                <div class="education-form">
+                    {{ education_form.as_p }}
+                    {% if education_form.instance.pk %}
+                        <div class="form-check">
+                            {{ education_form.DELETE }} {{ education_form.DELETE.label }}
+                        </div>
+                    {% endif %}
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" id="add-education" class="btn btn-secondary mt-2">Add Another Education Entry</button>
+        
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const clinicFormset = document.getElementById('clinic-formset');
+        const educationFormset = document.getElementById('education-formset');
+        
+        document.getElementById('add-clinic').addEventListener('click', function() {
+            const form_idx = document.getElementById('id_clinics-TOTAL_FORMS').value;
+            const newForm = clinicFormset.children[clinicFormset.children.length - 1].cloneNode(true);
+            newForm.innerHTML = newForm.innerHTML.replace(/-(\d+)-/g, `-${form_idx}-`);
+            newForm.querySelectorAll('input, select, textarea').forEach(input => {
+                input.value = '';
+                if (input.type === 'checkbox') input.checked = false;
+            });
+            clinicFormset.appendChild(newForm);
+            document.getElementById('id_clinics-TOTAL_FORMS').value = parseInt(form_idx) + 1;
+        });
+
+        document.getElementById('add-education').addEventListener('click', function() {
+            const form_idx = document.getElementById('id_education-TOTAL_FORMS').value;
+            const newForm = educationFormset.children[educationFormset.children.length - 1].cloneNode(true);
+            newForm.innerHTML = newForm.innerHTML.replace(/-(\d+)-/g, `-${form_idx}-`);
+            newForm.querySelectorAll('input, select, textarea').forEach(input => {
+                input.value = '';
+                if (input.type === 'checkbox') input.checked = false;
+            });
+            educationFormset.appendChild(newForm);
+            document.getElementById('id_education-TOTAL_FORMS').value = parseInt(form_idx) + 1;
+        });
+    });
+</script>
 {% endblock %}

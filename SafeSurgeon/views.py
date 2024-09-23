@@ -379,7 +379,6 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
-    city = surgeon.city 
 
     #handles the post
     if request.method == 'POST':
@@ -394,30 +393,32 @@ def edit_surgeon_profile(request, surgeon_id):
 
             clinics = []
             for clinic_form in clinic_formset:
-                if clinic_form.is_valid() and clinic_form.has_changed():
-                    clinic_data = clinic_form.cleaned_data
-
-                    if clinic_data.get('existing_clinics'):
-                        # Existing clinic selected
-                        linics += clinic_data['existing_clinics']
-                    elif clinic_data.get('new_clinic_name'):
-                        # New clinic name provided
-                        new_clinic_name = clinic_data['new_clinic_name']
-                        new_clinic, created = Clinic.objects.get_or_create(name=clinic_data['new_clinic_name'])
-                        clinics.append(new_clinic)
-
-                    # Handle deletion if applicable
+                if clinic_form.is_valid():
                     if clinic_form.cleaned_data.get('DELETE'):
-                        surgeon.clinics.remove(clinic_form.instance)
+                        if clinic_form.instance.pk:
+                            clinic_form.instance.delete()
+                    else:
+                        clinic=clinic_form.save(commit=False)
+                        if clinic.pk is None:
+                            clinic.save()
+                            clinics.append(clinic)
 
-            # Link all clinic to the surgeon (set the relationship)
             surgeon.clinic.set(clinics)
-            clinic_formset.save()  # Save any updates made to clinics
-
+      
             #handle education formset
-            education_formset.save()
+            education_formset.save(commit=False)
+            for education_form in education_formset:
+                if education_form.is_valid():
+                    if education_form.cleaned_data.get('DELETE'):
+                        if education_form.instance.pk:
+                             education_form.instance.delete()
+                    else:
+                        education = education_form.save(commit=False)
+                        education.surgeon=surgeon
+                        education.save(9)
 
-            message.sucess(request, 'Profile update sucessfully. Your chnage are pending verification')
+
+            messages.success(request, 'Profile update sucessfully. Your chnage are pending verification')
         
             return render(request, 'pending.html',)
 
@@ -427,16 +428,11 @@ def edit_surgeon_profile(request, surgeon_id):
         clinic_formset = ClinicFormSet(instance=surgeon)
         education_formset = EducationFormSet(instance=surgeon)
 
-    # Define current clinics for rendering (might need to adjust this)
-    current_clinics = surgeon.clinics.all() if hasattr(surgeon, 'clinics') else []
-    
     context ={
         'surgeon':surgeon,
         'form':form,
         'clinic_formset':clinic_formset,
         'education_formset':education_formset,
-        'current_clinics': current_clinics 
-    
     }
 
     return render(request,'edit_surgeon_profile.html', context)
@@ -456,6 +452,5 @@ def delete_clinic(request, clinic_id):
         return JsonResponse({'success':True})
     else:
         return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
-
 
 
