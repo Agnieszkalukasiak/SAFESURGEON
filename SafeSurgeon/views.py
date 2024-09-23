@@ -380,6 +380,14 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
 
+    # Fetch clinics associated with the surgeon
+    clinics = surgeon.clinic.all()
+
+     # Debug: Print out the current clinics associated with the surgeon
+    print("Surgeon:", surgeon)
+    print("Clinics associated with surgeon:", surgeon.clinic.all())  # This will print a queryset of clinics
+
+
     #handles the post
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
@@ -433,6 +441,8 @@ def edit_surgeon_profile(request, surgeon_id):
         'form':form,
         'clinic_formset':clinic_formset,
         'education_formset':education_formset,
+        'clinics': clinics,
+        
     }
 
     return render(request,'edit_surgeon_profile.html', context)
