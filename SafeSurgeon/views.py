@@ -382,6 +382,7 @@ def edit_surgeon_profile(request, surgeon_id):
 
     # Fetch clinics associated with the surgeon
     clinics = surgeon.clinic.all()
+   
 
      # Debug: Print out the current clinics associated with the surgeon
     print("Surgeon:", surgeon)
@@ -391,8 +392,8 @@ def edit_surgeon_profile(request, surgeon_id):
     #handles the post
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
-        clinic_formset=ClinicFormSet(request.POST,request.FILES, instance=surgeon)
-        education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon)
+        clinic_formset=ClinicFormSet(request.POST,request.FILES, instance=surgeon, )
+        education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon,)
 
         if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():       
             surgeon=form.save(commit=False)

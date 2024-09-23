@@ -123,7 +123,7 @@ ClinicFormSet = forms.inlineformset_factory(
     Surgeon.clinic.through,
     form=ClinicForm,
     fields=('clinic',),
-    extra=1,
+    extra=0,
     can_delete=True
 )
            
@@ -152,7 +152,7 @@ EducationFormSet = forms.inlineformset_factory(
     Education,
     form= EducationForm,
     fields=('institution', 'institution_country', 'program', 'start_date', 'end_date', 'certificate'),
-    extra=1, 
+    extra=0, 
     can_delete=True
 )
 
