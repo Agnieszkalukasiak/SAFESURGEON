@@ -193,6 +193,7 @@ def get_verified(request):
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon, user=request.user)
         education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon, prefix='education')
         clinic_formset = ClinicFormSet(request.POST, instance=surgeon, prefix='clinic')
+
         
         if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
             try:
@@ -378,7 +379,7 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
-    current_clinics = surgeon.clinic.all()
+    city = surgeon.city 
 
     #handles the post
     if request.method == 'POST':
@@ -391,38 +392,43 @@ def edit_surgeon_profile(request, surgeon_id):
             surgeon.verfication_status='pending'
             surgeon.save()
 
-        # Handle clinics from the formset (both existing and new clinics)
-        clinics = []
-        for clinic_form in clinic_formset:
-            if clinic_form.cleaned_data.get('existing_clinics'):
-        # Add selected existing clinics
-                clinics += clinic_form.cleaned_data.get('existing_clinics')
+            clinics = []
+            for clinic_form in clinic_formset:
+                if clinic_form.is_valid() and clinic_form.has_changed():
+                    clinic_data = clinic_form.cleaned_data
 
-            if clinic_form.cleaned_data.get('new_clinic_name'):
-                    # Create and add new clinic
-                new_clinic_name = clinic_form.cleaned_data['new_clinic_name']
-                new_clinic = Clinic.objects.create(
-                    name=new_clinic_name,
-                    city=surgeon.city  #clinic  associated with the surgeon's city
-                )
-                clinics.append(new_clinic)
+                    if clinic_data.get('existing_clinics'):
+                        # Existing clinic selected
+                        linics += clinic_data['existing_clinics']
+                    elif clinic_data.get('new_clinic_name'):
+                        # New clinic name provided
+                        new_clinic_name = clinic_data['new_clinic_name']
+                        new_clinic, created = Clinic.objects.get_or_create(name=clinic_data['new_clinic_name'])
+                        clinics.append(new_clinic)
 
-            # Link all clinics to the surgeon (set the relationship)
+                    # Handle deletion if applicable
+                    if clinic_form.cleaned_data.get('DELETE'):
+                        surgeon.clinics.remove(clinic_form.instance)
+
+            # Link all clinic to the surgeon (set the relationship)
             surgeon.clinic.set(clinics)
             clinic_formset.save()  # Save any updates made to clinics
 
             #handle education formset
             education_formset.save()
 
-        message.sucess(request, 'Profile update sucessfully. Your chnage are pending verification')
+            message.sucess(request, 'Profile update sucessfully. Your chnage are pending verification')
         
-        return render(request, 'pending.html',)
+            return render(request, 'pending.html',)
 
     else:
         # GET request handling
         form = SurgeonForm(instance=surgeon)
         clinic_formset = ClinicFormSet(instance=surgeon)
         education_formset = EducationFormSet(instance=surgeon)
+
+    # Define current clinics for rendering (might need to adjust this)
+    current_clinics = surgeon.clinics.all() if hasattr(surgeon, 'clinics') else []
     
     context ={
         'surgeon':surgeon,
@@ -439,7 +445,11 @@ def edit_surgeon_profile(request, surgeon_id):
 @require_POST
 def delete_clinic(request, clinic_id):
     clinic = get_object_or_404(Clinic, id=clinic_id)
-    surgeon = request.user.surgeon
+    try:
+        surgeon = request.user.surgeon
+    except Surgeon.DoesNotExist:
+        return JsonResponse({'success': False, 'error': 'Surgeon profile not found'})
+
 
     if clinic in surgeon.clinic.all():
         surgeon.clinic.remove(clinic)

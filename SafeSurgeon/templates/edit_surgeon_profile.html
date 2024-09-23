@@ -1,55 +1,59 @@
-
-
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
 <div class="container mt-5">
     <h2>Edit Surgeon Profile</h2>
-    
+
     {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-            {% endfor %}
-        </div>
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
     {% endif %}
-    
+
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        
+
         <h3>Personal Information</h3>
         {{ form.as_p }}
 
-        <h3>Current Clinics</h3>
-{% for clinic in current_clinics %}
-    <div>
-        {{ clinic.name }}
-        <button type="button" class="btn btn-danger delete-clinic" data-clinic-id="{{ clinic.id }}">Delete Clinic</button>
-    </div>
-{% empty %}
-    <p>No current clinics associated.</p>
-{% endfor %}
-        
-        <h3>Clinics</h3>
-        {{ clinic_formset.management_form }}
-        {% for clinic_form in clinic_formset %}
-            <div class="clinic-form mb-3">
-                {{ clinic_form.id }}
-                Debug: {{ clinic_form.instance.pk }}, {{ clinic_form.instance.name }}
-                {% if clinic_form.instance.pk %}
-                    <h4>Exisiting Clinic</h4>
-                {{clinic_form.instance.name}}
-                <button type="button" class="btn btn-danger delete-clinic" data-clinic-id="{{ clinic_form.initial.id }}">Delete Clinic</button>
-            {% else %}
+      
 
-                <h4>Update Clinic</h4>
-                {{ clinic_form.existing_clinics }}
-                {{ clinic_form.new_clinic_name }}
-            {% endif %}
+        <h3>Update Clinics</h3>        
+        {{ clinic_formset.management_form }}
+        {% for clinic in current_clinics %}
+        <div class="clinic-item">
+            <P>{{ surgeon.clinic.name }}</P>
+            <input type="checkbox" name="delete_clinic" value="{{ clinic.id }}" id="delete_clinic_{{ clinic.id }}">
+            <label for="delete_clinic_{{ clinic.id }}">
+                    <span class="text-danger">(Check to delete)</span>
+                </label>
             </div>
-        {% endfor %}
-        <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Clinic</button>
+        </div>
+    {% empty %}
+        <p>No current clinics associated.</p>
+    {% endfor %}
+
+    <!-- Section to add a new clinic -->
+<!-- Section to select existing clinics -->
+<div class="existing-clinics">
+    <label for="{{ clinic_form.existing_clinics.id_for_label }}">Select Existing Clinic:</label>
+    {{ clinic_form.existing_clinics }}
+</div>
+
+<!-- Section to add a new clinic -->
+<div class="new-clinic">
+    <label for="{{ clinic_form.new_clinic_name.id_for_label }}">Or Enter New Clinic Name:</label>
+    {{ clinic_form.new_clinic_name }}
+    <small class="form-text text-muted">Enter the name of a new clinic to add it to your profile.</small>
+</div>
+
+<!-- Button to add another clinic--> 
+<button type="button" id="add-clinic">Add Another Clinic</button>
+
+
         
         <h3>Education</h3>
         {{ education_formset.management_form }}
@@ -80,15 +84,14 @@
 
 {% block extra_js %}
 <script> var csrftoken = '{{ csrf_token }}'; </script>
-    <script src="{% static 'js/clinic_form.js' %}"></script>
-    <script src="{% static 'js/clinic_add_button.js' %}"></script>
-    <script src="{% static 'js/education_add_button.js' %}"></script>
-    <script>
-        window.cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
-    </script>
-    <script>
-        window.clinicUrl = "{% url 'get_clinics' 0 %}".slice(0, -1);
-    </script>
+<script src="{% static 'js/clinic_form.js' %}"></script>
+<script src="{% static 'js/clinic_add_button.js' %}"></script>
+<script src="{% static 'js/education_add_button.js' %}"></script>
+<script>
+    window.cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
+</script>
+<script>
+    window.clinicUrl = "{% url 'get_clinics' 0 %}".slice(0, -1);
+</script>
 
 {% endblock %}
-

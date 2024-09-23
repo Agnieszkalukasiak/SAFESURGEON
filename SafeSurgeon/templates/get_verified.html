@@ -52,7 +52,7 @@
                 {{clinic_formset.management_form}}
             </div>
             <div id="clinic-forms">
-                {%for clinic_form in clinic_formset%}
+                  {%for clinic_form in clinic_formset%} 
                 <div class="clinic_form mb-4" id="clinic-form-{{forloop.counter0}}">
                     <h3>Clinic Entry{{forloop.counter}}</h3>
                     {{ clinic_form.non_field_errors }}
@@ -167,6 +167,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const citySelect = document.querySelector('select[name="city"]');
     const clinicSelects = document.querySelectorAll('select[name$="-clinic"]');
     const clinicUrl = window.clinicUrl;
+
+     // Function to save clinic selections
+     function saveClinicSelections() {
+        const selections = {};
+        clinicSelects.forEach((select, index) => {
+            selections[index] = select.value;
+        });
+        localStorage.setItem('clinicSelections', JSON.stringify(selections));
+    }
+
+    // Function to load saved selections
+    function loadClinicSelections() {
+        const savedSelections = JSON.parse(localStorage.getItem('clinicSelections') || '{}');
+        clinicSelects.forEach((select, index) => {
+            if (savedSelections[index] && select.querySelector(`option[value="${savedSelections[index]}"]`)) {
+                select.value = savedSelections[index];
+            }
+        });
+    }
 
     citySelect.addEventListener('change', function() {
         const cityId = this.value;

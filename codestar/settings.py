@@ -151,7 +151,7 @@ DATABASES = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_USE_SESSIONS = True
+CSRF_USE_SESSIONS = False
 
 LOGGING = {
     'version': 1,

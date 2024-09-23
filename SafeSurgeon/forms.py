@@ -73,7 +73,6 @@ class ClinicForm(forms.ModelForm):
         label="Or Enter New Clinic Name"
         )
 
-
     class Meta:
         model = Surgeon.clinic.through
         fields = ('clinic',)
@@ -87,9 +86,11 @@ class ClinicForm(forms.ModelForm):
             Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
 
     def clean(self):
-        cleaned_data=super().clean()
+        cleaned_data = super().clean()
         existing_clinics = cleaned_data.get ('existing_clinics')
         new_clinic_name = cleaned_data.get ('new_clinic_name')
+
+    
 
          # Ensuring at least one clinic is selected or provided
         if not existing_clinics and not new_clinic_name:
