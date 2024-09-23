@@ -194,7 +194,7 @@ def get_verified(request):
         education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon, prefix='education')
         clinic_formset = ClinicFormSet(request.POST, instance=surgeon, prefix='clinic')
 
-        
+    
         if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
             try:
                 with transaction.atomic():
@@ -399,7 +399,7 @@ def edit_surgeon_profile(request, surgeon_id):
             surgeon=form.save(commit=False)
             surgeon.verfication_status='pending'
             surgeon.save()
-
+            '''
             clinics = []
             for clinic_form in clinic_formset:
                 if clinic_form.is_valid():
@@ -411,6 +411,16 @@ def edit_surgeon_profile(request, surgeon_id):
                         if clinic.pk is None:
                             clinic.save()
                             clinics.append(clinic)
+                '''
+            # Handle clinic formset
+            clinics_to_keep = []
+            for clinic_form in clinic_formset:
+                if clinic_form.is_valid() and not clinic_form.cleaned_data.get('DELETE'):
+                    clinic = clinic_form.save(commit=False)
+                    if clinic.pk is None:
+                        clinic.save()
+                    clinics_to_keep.append(clinic)
+
 
             surgeon.clinic.set(clinics)
       
@@ -424,7 +434,7 @@ def edit_surgeon_profile(request, surgeon_id):
                     else:
                         education = education_form.save(commit=False)
                         education.surgeon=surgeon
-                        education.save(9)
+                        education.save()
 
 
             messages.success(request, 'Profile update sucessfully. Your chnage are pending verification')

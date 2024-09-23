@@ -4,17 +4,18 @@
 
 {% block content %}
 
-<div class="container mt-4">
-    <h2>Edit Surgeon Profile</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+<h2>Edit Profile for {{ surgeon.user.get_full_name }}</h2>
+<p>Email: {{ surgeon.user.email }}</p>
+<p>Country: {{ surgeon.country.name }}</p>
+<p>City {{ surgeon.city.name }}</p>
+
+<form method="post" action="{% url 'edit_surgeon_profile' %}">
+    {% csrf_token %}
+
+
         
-        <h3>Personal Information</h3>
-        {{ form.as_p }}
-        
-        <h4>{{ country.name }}</h4> 
-        
-        <h2>Clinics</h2>   
+        <h2>Clinics</h2>  
+        <!---
         <div id="current-clinic">  
         {% for clinic in clinics %}
             <div class="current-clinic">
@@ -26,6 +27,7 @@
                 <p>No clinics currently associated.</p>
             {% endfor %}
         </div>
+    -->
         
             <div id="add-clinic-section">
             <h3>Add New Clinic</h3>
@@ -46,6 +48,14 @@
                     {{ clinic_form.new_clinic_name }}  
                     {{ clinic_form.new_clinic_name.errors }}
                 </div>
+                {% if clinic_formset.can_delete %}
+                <div class="mb-3">
+                    {{ clinic_form.DELETE.label_tag }}
+                    {{ clinic_form.DELETE }}
+                </div>
+                {% endif %}
+            </div>
+         
             {% endfor %}
         </div>
         <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
@@ -54,7 +64,8 @@
         
 
     <h4 class="mt-4">Education</h4>
-        {% for edu in surgeon.education.all %}
+    <!--- 
+    {% for edu in surgeon.education.all %}
             <div>
                 <p><strong>Institution:</strong>{{edu.institution}}</p>
                 <p><strong>Program:</strong>{{edu.program}}</p>
@@ -62,7 +73,7 @@
                 <p><strong>End Date:</strong>{{edu.start_date}}</p>
                 <p><strong>Start Date:</strong>{{edu.end_date}}</p>
 
-                <!-- Checkbox for deleting the entire education entry -->
+                 Checkbox for deleting the entire education entry 
             <div class="mb-3">
                 <label for="delete_edu_{{ edu.id }}">Delete this education entry</label>
                 <input type="checkbox" name="delete_education" value="{{ edu.id }}" id="delete_edu_{{ edu.id }}">
@@ -72,6 +83,7 @@
     {% empty %}
         <p>No education information available.</p>
     {% endfor %}
+        -->
 
         <h4>Add Education</h4>
 
@@ -85,9 +97,20 @@
                     {% endif %}
                     <hr>
                 </div>
+                {% if education_formset.can_delete %}
+                <div class="mb-3">
+                    {{ education_form.DELETE.label_tag }}
+                    {{ education_form.DELETE }}
+                </div>
+            {% endif %}
             {% endfor %}
         </div>
-        <button type="button" id="add-education" class="btn btn-secondary mt-2">Add Another Education Entry</button>
+    </div>
+ 
+</div>
+<button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
+        </div>
+        
         
         <div class="mt-4">
             <button type="submit" class="btn btn-primary">Save Changes</button>

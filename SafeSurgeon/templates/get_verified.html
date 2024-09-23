@@ -57,9 +57,9 @@
                     <h3>Clinic Entry{{forloop.counter}}</h3>
                     {{ clinic_form.non_field_errors }}
                     <div class="mb-3">
-                    {{ clinic_form.clinic.label_tag }}
-                    {{ clinic_form.clinic }}
-                    {{ clinic_form.clinic.errors }}
+                        {{ clinic_form.clinic.label_tag }}
+                        {{ clinic_form.clinic }}
+                        {{ clinic_form.clinic.errors }}
                 </div>
                 <!-- new clinic -->
                 <div class="mb-3">
@@ -166,23 +166,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const citySelect = document.querySelector('select[name="city"]');
     const clinicSelects = document.querySelectorAll('select[name$="-clinic"]');
+    const newClinicInputs = document.querySelectorAll('input[name$="-new_clinic_name"]');
     const clinicUrl = window.clinicUrl;
 
-     // Function to save clinic selections
-     function saveClinicSelections() {
+    function saveClinicSelections() {
         const selections = {};
         clinicSelects.forEach((select, index) => {
-            selections[index] = select.value;
+            selections[index] = {
+                clinic: select.value,
+                new_clinic: newClinicInputs[index].value
+            };
         });
         localStorage.setItem('clinicSelections', JSON.stringify(selections));
     }
 
-    // Function to load saved selections
     function loadClinicSelections() {
         const savedSelections = JSON.parse(localStorage.getItem('clinicSelections') || '{}');
         clinicSelects.forEach((select, index) => {
-            if (savedSelections[index] && select.querySelector(`option[value="${savedSelections[index]}"]`)) {
-                select.value = savedSelections[index];
+            if (savedSelections[index]) {
+                if (savedSelections[index].clinic && select.querySelector(`option[value="${savedSelections[index].clinic}"]`)) {
+                    select.value = savedSelections[index].clinic;
+                }
+                if (savedSelections[index].new_clinic) {
+                    newClinicInputs[index].value = savedSelections[index].new_clinic;
+                }
             }
         });
     }
@@ -207,6 +214,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    // Load saved selections when the page loads
+    loadClinicSelections();
+
+    // Save selections when the form is submitted
+    document.querySelector('form').addEventListener('submit', saveClinicSelections);
 });
 </script>
 

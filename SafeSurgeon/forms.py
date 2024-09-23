@@ -83,7 +83,7 @@ class ClinicForm(forms.ModelForm):
         self.fields['clinic'].label = "Select Existing Clinic"
         if 'instance' in kwargs and kwargs['instance'].surgeon.city:
             self.fields['clinic'].queryset = Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
-            Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
+            #Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
 
     def clean(self):
         cleaned_data = super().clean()
@@ -123,8 +123,9 @@ ClinicFormSet = forms.inlineformset_factory(
     Surgeon.clinic.through,
     form=ClinicForm,
     fields=('clinic',),
-    extra=0,
+    extra=1,
     can_delete=True
+
 )
            
 class EducationForm(forms.ModelForm):
@@ -152,7 +153,7 @@ EducationFormSet = forms.inlineformset_factory(
     Education,
     form= EducationForm,
     fields=('institution', 'institution_country', 'program', 'start_date', 'end_date', 'certificate'),
-    extra=0, 
+    extra=1, 
     can_delete=True
 )
 
