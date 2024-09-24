@@ -212,6 +212,9 @@ def get_verified(request):
 
     
         if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
+            print("Form is valid.")
+            print("Existing Clinics:", form.cleaned_data.get('existing_clinics'))
+            print("New Clinic Name:", form.cleaned_data.get('new_clinic_name'))       
             try:
                 with transaction.atomic():
                     print("Debug: request.user =", request.user)
@@ -252,8 +255,9 @@ def get_verified(request):
                         if clinic_form.is_valid() and clinic_form.cleaned_data and not clinic_form.cleaned_data.get('DELETE', False):
                              # Save the clinics associated with the surgeon and city                      
                             clinic_list = clinic_form.save(surgeon=surgeon, city=surgeon.city)
-                            clinic.save()
-                            clinics.append(clinic)
+                            #clinic.save()
+                            #clinics.append(clinic)
+                            clinics.extend(clinic_list) 
 
                         print("Clinic formset saved successfully")
                          # Handle new clinic creation

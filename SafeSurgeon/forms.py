@@ -60,14 +60,14 @@ class SurgeonForm(forms.ModelForm):
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
-
+'''
 class ClinicForm(forms.ModelForm):   
-    existing_clinics= forms.ModelMultipleChoiceField(
+    existing_clinics= forms.ModelChoiceField(
         queryset=Clinic.objects.all(),
         required=False,
-        label="Select Existing Clinic"
+        label="Select Existing Clinic",
+        widget=forms.Select(attrs={'class': 'form-control'}) 
     )
-
     new_clinic_name=forms.CharField(
         required=False,
         widget=forms.TextInput(attrs={'placeholder': 'Enter new clinic name'}),
@@ -76,7 +76,8 @@ class ClinicForm(forms.ModelForm):
 
     class Meta:
         model = Surgeon.clinic.through
-        fields = ('clinic',)
+        #fields = ('clinic',)
+        fields = []
        
 
     def __init__(self, *args, **kwargs):
@@ -113,16 +114,81 @@ class ClinicForm(forms.ModelForm):
         return cleaned_data
 
     def save(self, surgeon, city, commit=True):
-        clinics = list(self.cleaned_data.get('existing_clinics', []))
-        new_clinic_name = self.cleaned_data.get('new_clinic_list', [])
+        clinics = []
+        #clinics = list(self.cleaned_data.get('existing_clinics', []))
+        #new_clinic_name = self.cleaned_data.get('new_clinic_list', [])
+        existing_clinic = self.cleaned_data.get('existing_clinics', None)
+        if existing_clinic:
+            clinics.append(existing_clinic)
 
         #create new clinics and link to surgon's city
-        for name in new_clinic_name:
-            clinic, created = Clinic.objects.get_or_create(name=name, city=city)
+        #for name in new_clinic_name:
+        #    clinic, created = Clinic.objects.get_or_create(name=name, city=city)
+        #   clinics.append(clinic)
+
+        # If a new clinic name is provided, create it and link it to the surgeon's city
+        if new_clinic_name:
+            clinic, created = Clinic.objects.get_or_create(name=new_clinic_name, city=city)
             clinics.append(clinic)
+
         #associate all clinics new and exiting with the surgon 
-        if commit:
+        if commit and clinics:
             surgeon.clinic.set(clinics)
+
+        return clinics
+'''
+class ClinicForm(forms.ModelForm):
+    existing_clinics = forms.ModelChoiceField(
+        queryset=Clinic.objects.all(),
+        required=False,
+        label="Select Existing Clinic",
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+    new_clinic_name = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'placeholder': 'Enter new clinic name'}),
+        label="Or Enter New Clinic Name"
+    )
+
+    class Meta:
+        model = Surgeon.clinic.through  # Assuming this is correct for the M2M relationship
+        fields = []  # No direct fields required here since we're using custom ones.
+
+    def clean(self):
+        cleaned_data = super().clean()
+        existing_clinics = cleaned_data.get('existing_clinics')
+        new_clinic_name = cleaned_data.get('new_clinic_name')
+
+        # Ensure that at least one clinic is selected or provided
+        if not existing_clinics and not new_clinic_name:
+            raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
+        
+        # If a new clinic name is provided, clean it up for saving
+        if new_clinic_name:
+            cleaned_data['new_clinic_list'] = [new_clinic_name.strip()]  # Put new clinic into a list for processing later
+        
+        return cleaned_data
+
+    def save(self, surgeon, city, commit=True):
+        # Prepare an empty list of clinics to associate with the surgeon
+        clinics = []
+        
+        # Get selected existing clinic
+        existing_clinic = self.cleaned_data.get('existing_clinics')
+        if existing_clinic:
+            clinics.append(existing_clinic)
+
+        # Get new clinic names from the cleaned data
+        new_clinic_list = self.cleaned_data.get('new_clinic_list', [])
+        if new_clinic_list:
+            for clinic_name in new_clinic_list:
+                # Create new clinics if they don't exist, and link them to the surgeon's city
+                clinic, created = Clinic.objects.get_or_create(name=clinic_name, city=city)
+                clinics.append(clinic)
+
+        # Save all selected clinics (both new and existing) to the surgeon's profile
+        if commit and clinics:
+            surgeon.clinic.set(clinics)  # Using set to replace existing clinics
 
         return clinics
 

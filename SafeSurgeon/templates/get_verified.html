@@ -57,9 +57,11 @@
                     <h3>Clinic Entry{{forloop.counter}}</h3>
                     {{ clinic_form.non_field_errors }}
                     <div class="mb-3">
+                        
                         {{ clinic_form.clinic.label_tag }}
                         {{ clinic_form.clinic }}
                         {{ clinic_form.clinic.errors }}
+                   
                 </div>
                 <!-- new clinic -->
                 <div class="mb-3">

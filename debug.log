@@ -973,3 +973,241 @@ INFO 2024-09-24 05:00:18,371 autoreload 12251 140301312486464 /workspace/SAFESUR
 INFO 2024-09-24 05:00:18,831 autoreload 12337 139664522263616 Watching for file changes with StatReloader
 INFO 2024-09-24 05:03:44,439 autoreload 12337 139664522263616 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
 INFO 2024-09-24 05:03:44,895 autoreload 12552 140033710656576 Watching for file changes with StatReloader
+INFO 2024-09-24 06:25:24,622 autoreload 2164 139739012856896 Watching for file changes with StatReloader
+DEBUG 2024-09-24 06:26:52,387 connectionpool 2164 139738522555968 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 06:26:53,865 connectionpool 2164 139738522555968 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 06:26:54,899 connectionpool 2164 139738522555968 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 06:26:55,782 connectionpool 2164 139738522555968 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-24 06:46:57,501 autoreload 2030 140611843058752 Watching for file changes with StatReloader
+DEBUG 2024-09-24 06:49:08,622 connectionpool 2030 140610711316032 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 06:49:09,333 connectionpool 2030 140610711316032 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 06:49:10,212 connectionpool 2030 140610711316032 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-24 06:50:59,837 autoreload 2030 140611843058752 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 06:51:00,316 autoreload 2315 139821974678592 Watching for file changes with StatReloader
+INFO 2024-09-24 06:51:07,482 autoreload 2315 139821974678592 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 06:51:07,953 autoreload 2330 139886252903488 Watching for file changes with StatReloader
+INFO 2024-09-24 06:54:05,034 autoreload 2330 139886252903488 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 06:54:05,498 autoreload 2487 140526229527616 Watching for file changes with StatReloader
+INFO 2024-09-24 07:03:40,882 autoreload 2487 140526229527616 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:03:41,330 autoreload 2963 140631311027264 Watching for file changes with StatReloader
+INFO 2024-09-24 07:04:41,065 autoreload 2963 140631311027264 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:04:41,520 autoreload 3022 140229308914752 Watching for file changes with StatReloader
+DEBUG 2024-09-24 07:05:21,270 connectionpool 3022 140228861879872 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 07:05:22,527 connectionpool 3022 140228861879872 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-24 07:07:08,693 autoreload 3022 140229308914752 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:07:09,161 autoreload 3229 139700029557824 Watching for file changes with StatReloader
+INFO 2024-09-24 07:07:33,632 autoreload 3229 139700029557824 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:07:34,088 autoreload 3279 139750138592320 Watching for file changes with StatReloader
+INFO 2024-09-24 07:09:18,516 autoreload 3279 139750138592320 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:09:18,974 autoreload 3375 139737232202816 Watching for file changes with StatReloader
+INFO 2024-09-24 07:09:48,508 autoreload 3375 139737232202816 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:09:48,978 autoreload 3419 140637508455488 Watching for file changes with StatReloader
+INFO 2024-09-24 07:10:28,634 autoreload 3419 140637508455488 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:10:29,090 autoreload 3464 140438204804160 Watching for file changes with StatReloader
+INFO 2024-09-24 07:10:51,542 autoreload 3464 140438204804160 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:10:51,994 autoreload 3504 140711429659712 Watching for file changes with StatReloader
+INFO 2024-09-24 07:16:09,996 autoreload 3504 140711429659712 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 07:16:10,467 autoreload 3785 139862166133824 Watching for file changes with StatReloader
+INFO 2024-09-24 07:22:15,252 autoreload 3785 139862166133824 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:22:15,752 autoreload 4139 139967251311680 Watching for file changes with StatReloader
+INFO 2024-09-24 07:22:21,005 autoreload 4139 139967251311680 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:22:21,467 autoreload 4153 140367902469184 Watching for file changes with StatReloader
+DEBUG 2024-09-24 07:23:18,176 connectionpool 4153 140367796631104 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 07:23:19,003 connectionpool 4153 140367796631104 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:23:20,184 connectionpool 4153 140367796631104 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:23:20,707 connectionpool 4153 140367796631104 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:27:37,558 connectionpool 4153 140367315859008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:27:38,769 connectionpool 4153 140367315859008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:27:39,486 connectionpool 4153 140367315859008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+ERROR 2024-09-24 07:27:42,446 log 4153 140367307466304 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140367307466304_sync_3" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 308, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/html.py", line 466, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 107, in as_widget
+    return widget.render(
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 758, in get_context
+    context = super().get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 717, in get_context
+    context["widget"]["optgroups"] = self.optgroups(
+                                     ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 657, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1403, in __iter__
+    for obj in queryset:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 516, in _iterator
+    yield from iterable
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 121, in __iter__
+    for row in compiler.results_iter(results):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 97, in inner
+    with self:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: cursor "_django_curs_140367307466304_sync_3" does not exist
+
+DEBUG 2024-09-24 07:29:55,892 connectionpool 4153 140366191760960 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:29:56,561 connectionpool 4153 140366191760960 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-24 07:36:57,668 autoreload 4153 140367902469184 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 07:36:58,205 autoreload 4965 139889462877248 Watching for file changes with StatReloader
+INFO 2024-09-24 07:37:05,499 autoreload 4965 139889462877248 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 07:37:05,975 autoreload 4983 140500637477952 Watching for file changes with StatReloader
+DEBUG 2024-09-24 07:38:10,630 connectionpool 4983 140500166231616 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 07:38:12,410 connectionpool 4983 140500166231616 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:38:13,606 connectionpool 4983 140500166231616 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:38:14,559 connectionpool 4983 140500166231616 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:41:00,765 connectionpool 4983 140500157838912 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:41:01,836 connectionpool 4983 140500157838912 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:41:02,918 connectionpool 4983 140500157838912 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:41:34,136 connectionpool 4983 140499579037248 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:41:35,112 connectionpool 4983 140499579037248 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+WARNING 2024-09-24 07:47:22,372 log 4983 140499562251840 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2024-09-24 07:47:39,045 views 4983 140499050559040 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:47:39,100 views 4983 140499050559040 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:47:39,100 views 4983 140499050559040 GET request received
+INFO 2024-09-24 07:48:06,364 views 4983 140499042166336 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:48:06,419 views 4983 140499042166336 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:48:06,419 views 4983 140499042166336 GET request received
+INFO 2024-09-24 07:48:49,391 views 4983 140499033773632 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:48:49,442 views 4983 140499033773632 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:48:49,521 views 4983 140499033773632 Form is valid: False
+INFO 2024-09-24 07:48:49,572 views 4983 140499033773632 Clinic formset is valid: False
+INFO 2024-09-24 07:48:49,627 views 4983 140499033773632 Education formset is valid: True
+ERROR 2024-09-24 07:48:49,627 views 4983 140499033773632 Form validation failed
+ERROR 2024-09-24 07:48:49,628 views 4983 140499033773632 Form errors: <ul class="errorlist"><li>city<ul class="errorlist"><li>Select a valid choice. That choice is not one of the available choices.</li></ul></li></ul>
+ERROR 2024-09-24 07:48:49,628 views 4983 140499033773632 Clinic formset errors: [{'id': ['This field is required.']}, {'clinic': ['This field is required.']}]
+ERROR 2024-09-24 07:48:49,628 views 4983 140499033773632 Education formset errors: [{}]
+INFO 2024-09-24 07:49:38,026 views 4983 140499025380928 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:49:38,083 views 4983 140499025380928 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:49:38,197 views 4983 140499025380928 Form is valid: True
+INFO 2024-09-24 07:49:38,253 views 4983 140499025380928 Clinic formset is valid: False
+INFO 2024-09-24 07:49:38,313 views 4983 140499025380928 Education formset is valid: True
+ERROR 2024-09-24 07:49:38,313 views 4983 140499025380928 Form validation failed
+ERROR 2024-09-24 07:49:38,313 views 4983 140499025380928 Form errors: 
+ERROR 2024-09-24 07:49:38,313 views 4983 140499025380928 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 07:49:38,313 views 4983 140499025380928 Education formset errors: [{}]
+INFO 2024-09-24 07:51:24,088 views 4983 140499016988224 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:51:24,150 views 4983 140499016988224 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:51:24,263 views 4983 140499016988224 Form is valid: True
+INFO 2024-09-24 07:51:24,319 views 4983 140499016988224 Clinic formset is valid: False
+INFO 2024-09-24 07:51:24,378 views 4983 140499016988224 Education formset is valid: True
+ERROR 2024-09-24 07:51:24,378 views 4983 140499016988224 Form validation failed
+ERROR 2024-09-24 07:51:24,378 views 4983 140499016988224 Form errors: 
+ERROR 2024-09-24 07:51:24,379 views 4983 140499016988224 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 07:51:24,379 views 4983 140499016988224 Education formset errors: [{}]
+INFO 2024-09-24 07:51:59,343 views 4983 140498488510016 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:51:59,396 views 4983 140498488510016 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:51:59,397 views 4983 140498488510016 GET request received
+INFO 2024-09-24 07:52:19,576 views 4983 140498480117312 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:52:19,628 views 4983 140498480117312 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:52:19,628 views 4983 140498480117312 GET request received
+INFO 2024-09-24 07:52:51,684 views 4983 140498471724608 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:52:51,734 views 4983 140498471724608 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:52:51,831 views 4983 140498471724608 Form is valid: True
+INFO 2024-09-24 07:52:51,880 views 4983 140498471724608 Clinic formset is valid: False
+INFO 2024-09-24 07:52:51,931 views 4983 140498471724608 Education formset is valid: False
+ERROR 2024-09-24 07:52:51,931 views 4983 140498471724608 Form validation failed
+ERROR 2024-09-24 07:52:51,931 views 4983 140498471724608 Form errors: 
+ERROR 2024-09-24 07:52:51,931 views 4983 140498471724608 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 07:52:51,931 views 4983 140498471724608 Education formset errors: [{'start_date': ['This field is required.'], 'end_date': ['This field is required.']}]
+INFO 2024-09-24 07:54:01,157 views 4983 140497960031808 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 07:54:01,214 views 4983 140497960031808 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 07:54:01,325 views 4983 140497960031808 Form is valid: True
+INFO 2024-09-24 07:54:01,382 views 4983 140497960031808 Clinic formset is valid: False
+INFO 2024-09-24 07:54:01,440 views 4983 140497960031808 Education formset is valid: True
+ERROR 2024-09-24 07:54:01,440 views 4983 140497960031808 Form validation failed
+ERROR 2024-09-24 07:54:01,441 views 4983 140497960031808 Form errors: 
+ERROR 2024-09-24 07:54:01,441 views 4983 140497960031808 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 07:54:01,441 views 4983 140497960031808 Education formset errors: [{}]
+INFO 2024-09-24 07:56:15,496 autoreload 4983 140500637477952 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 07:56:15,964 autoreload 7044 139948154661952 Watching for file changes with StatReloader
