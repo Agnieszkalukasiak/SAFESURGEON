@@ -156,13 +156,22 @@ class ClinicForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
+        print("Cleaned data: ", cleaned_data)
         existing_clinics = cleaned_data.get('existing_clinics')
         new_clinic_name = cleaned_data.get('new_clinic_name')
-
-        # Ensure that at least one clinic is selected or provided
-        if not existing_clinics and not new_clinic_name:
-            raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
+        print("Existing clinic: ", existing_clinics)
         
+
+
+        existing_clinic = cleaned_data.get("clinic")
+        print("Clinic: ", existing_clinic)
+        # Ensure that at least one clinic is selected or provided
+        # if not existing_clinics and not new_clinic_name:
+        #     raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
+        
+        if not existing_clinic and not new_clinic_name:
+            raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
+
         # If a new clinic name is provided, clean it up for saving
         if new_clinic_name:
             cleaned_data['new_clinic_list'] = [new_clinic_name.strip()]  # Put new clinic into a list for processing later
@@ -174,7 +183,8 @@ class ClinicForm(forms.ModelForm):
         clinics = []
         
         # Get selected existing clinic
-        existing_clinic = self.cleaned_data.get('existing_clinics')
+        # existing_clinic = self.cleaned_data.get('existing_clinics')
+        existing_clinic = self.cleaned_data.get("clinic")
         if existing_clinic:
             clinics.append(existing_clinic)
 
