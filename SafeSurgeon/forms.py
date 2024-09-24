@@ -7,6 +7,7 @@ from cloudinary.forms import CloudinaryFileField
 from cloudinary_storage.storage import RawMediaCloudinaryStorage
 
 
+
 class SurgeonForm(forms.ModelForm):
     first_name = forms.CharField(required=False, disabled=True)
     last_name = forms.CharField(required=False, disabled=True)
@@ -76,13 +77,20 @@ class ClinicForm(forms.ModelForm):
     class Meta:
         model = Surgeon.clinic.through
         fields = ('clinic',)
+       
 
     def __init__(self, *args, **kwargs):
         city = kwargs.pop('city', None)
         super().__init__(*args, **kwargs)
         self.fields['clinic'].label = "Select Existing Clinic"
-        if 'instance' in kwargs and kwargs['instance'].surgeon.city:
-            self.fields['clinic'].queryset = Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
+           # Check if we're working with a Surgeon instance, not a Clinic
+        instance = kwargs.get('instance', None)
+        if instance and hasattr(instance, 'city') and instance.city:
+        # Now filter the Clinic objects based on the surgeon's city
+            self.fields['clinic'].queryset = Clinic.objects.filter(city=instance.city).order_by('name')
+        
+        #if 'instance' in kwargs and kwargs['instance'].surgeon.city:
+            #self.fields['clinic'].queryset = Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
             #Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
 
     def clean(self):
@@ -118,8 +126,8 @@ class ClinicForm(forms.ModelForm):
 
         return clinics
 
-ClinicFormSet = forms.inlineformset_factory(
-    Surgeon, 
+ClinicFormSet = forms.modelformset_factory(
+    #Surgeon, 
     Surgeon.clinic.through,
     form=ClinicForm,
     fields=('clinic',),
@@ -127,6 +135,7 @@ ClinicFormSet = forms.inlineformset_factory(
     can_delete=True
 
 )
+
            
 class EducationForm(forms.ModelForm):
     institution = forms.CharField(max_length=200, required=False)

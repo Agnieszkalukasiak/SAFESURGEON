@@ -1,0 +1,975 @@
+INFO 2024-09-24 00:43:36,761 autoreload 5094 140002194246720 Watching for file changes with StatReloader
+INFO 2024-09-24 00:43:41,732 views 5094 140002132551232 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 00:43:41,785 views 5094 140002132551232 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 00:43:41,813 views 5094 140002132551232 Form is valid: False
+INFO 2024-09-24 00:43:41,889 views 5094 140002132551232 Clinic formset is valid: False
+INFO 2024-09-24 00:43:41,944 views 5094 140002132551232 Education formset is valid: True
+ERROR 2024-09-24 00:43:41,944 views 5094 140002132551232 Form validation failed
+ERROR 2024-09-24 00:43:41,947 views 5094 140002132551232 Form errors: <ul class="errorlist"><li>country<ul class="errorlist"><li>This field is required.</li></ul></li><li>city<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+ERROR 2024-09-24 00:43:41,947 views 5094 140002132551232 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 00:43:41,948 views 5094 140002132551232 Education formset errors: [{}]
+INFO 2024-09-24 00:43:45,833 views 5094 140002122044992 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 00:43:45,881 views 5094 140002122044992 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 00:43:45,881 views 5094 140002122044992 GET request received
+INFO 2024-09-24 00:43:59,281 autoreload 5094 140002194246720 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2024-09-24 00:43:59,740 autoreload 5139 139651522894912 Watching for file changes with StatReloader
+INFO 2024-09-24 00:49:52,759 views 5139 139651461199424 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 00:49:52,816 views 5139 139651461199424 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 00:49:52,816 views 5139 139651461199424 GET request received
+INFO 2024-09-24 00:51:48,494 views 5139 139651450693184 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 00:51:48,555 views 5139 139651450693184 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 00:51:48,555 views 5139 139651450693184 GET request received
+INFO 2024-09-24 00:55:03,047 views 5139 139651442284096 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 00:55:03,107 views 5139 139651442284096 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 00:55:03,108 views 5139 139651442284096 GET request received
+INFO 2024-09-24 00:56:11,229 views 5139 139651433875008 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 00:56:11,289 views 5139 139651433875008 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 00:56:11,415 views 5139 139651433875008 Form is valid: True
+INFO 2024-09-24 00:56:11,509 views 5139 139651433875008 Clinic formset is valid: False
+INFO 2024-09-24 00:56:11,572 views 5139 139651433875008 Education formset is valid: True
+ERROR 2024-09-24 00:56:11,572 views 5139 139651433875008 Form validation failed
+ERROR 2024-09-24 00:56:11,573 views 5139 139651433875008 Form errors: 
+ERROR 2024-09-24 00:56:11,573 views 5139 139651433875008 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 00:56:11,574 views 5139 139651433875008 Education formset errors: [{}]
+INFO 2024-09-24 01:00:48,502 views 5139 139651425465920 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:00:48,563 views 5139 139651425465920 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:00:48,680 views 5139 139651425465920 Form is valid: True
+INFO 2024-09-24 01:00:48,767 views 5139 139651425465920 Clinic formset is valid: False
+INFO 2024-09-24 01:00:48,828 views 5139 139651425465920 Education formset is valid: True
+ERROR 2024-09-24 01:00:48,828 views 5139 139651425465920 Form validation failed
+ERROR 2024-09-24 01:00:48,828 views 5139 139651425465920 Form errors: 
+ERROR 2024-09-24 01:00:48,828 views 5139 139651425465920 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 01:00:48,829 views 5139 139651425465920 Education formset errors: [{}]
+INFO 2024-09-24 01:01:02,267 views 5139 139651417056832 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:01:02,318 views 5139 139651417056832 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:01:02,318 views 5139 139651417056832 GET request received
+INFO 2024-09-24 01:01:24,816 views 5139 139651408647744 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:01:24,870 views 5139 139651408647744 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:01:24,870 views 5139 139651408647744 GET request received
+INFO 2024-09-24 01:01:41,499 views 5139 139650928735808 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:01:41,553 views 5139 139650928735808 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:01:41,554 views 5139 139650928735808 GET request received
+INFO 2024-09-24 01:01:44,412 views 5139 139650920343104 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:01:44,464 views 5139 139650920343104 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:01:44,464 views 5139 139650920343104 GET request received
+INFO 2024-09-24 01:02:03,353 views 5139 139650911950400 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:02:03,410 views 5139 139650911950400 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:02:03,410 views 5139 139650911950400 GET request received
+INFO 2024-09-24 01:02:38,953 views 5139 139650903557696 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:02:39,010 views 5139 139650903557696 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:02:39,010 views 5139 139650903557696 GET request received
+INFO 2024-09-24 01:03:37,819 views 5139 139650895164992 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:03:37,882 views 5139 139650895164992 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:03:37,882 views 5139 139650895164992 GET request received
+INFO 2024-09-24 01:03:52,428 views 5139 139650886772288 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 01:03:52,488 views 5139 139650886772288 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 01:03:52,610 views 5139 139650886772288 Form is valid: True
+INFO 2024-09-24 01:03:52,828 views 5139 139650886772288 Clinic formset is valid: False
+INFO 2024-09-24 01:03:52,895 views 5139 139650886772288 Education formset is valid: True
+ERROR 2024-09-24 01:03:52,895 views 5139 139650886772288 Form validation failed
+ERROR 2024-09-24 01:03:52,895 views 5139 139650886772288 Form errors: 
+ERROR 2024-09-24 01:03:52,895 views 5139 139650886772288 Clinic formset errors: [{'__all__': ['Please either select existing clinic or enter a new clinic name.']}, {}]
+ERROR 2024-09-24 01:03:52,895 views 5139 139650886772288 Education formset errors: [{}]
+INFO 2024-09-24 01:07:42,550 autoreload 5139 139651522894912 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:07:43,010 autoreload 6451 140464443984960 Watching for file changes with StatReloader
+INFO 2024-09-24 01:08:18,619 autoreload 6451 140464443984960 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:08:19,069 autoreload 6493 140016521079872 Watching for file changes with StatReloader
+INFO 2024-09-24 01:09:01,783 autoreload 6493 140016521079872 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:09:02,270 autoreload 6534 139773445839936 Watching for file changes with StatReloader
+INFO 2024-09-24 01:10:12,298 autoreload 6534 139773445839936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 01:10:12,788 autoreload 6603 140189873523776 Watching for file changes with StatReloader
+INFO 2024-09-24 01:10:22,093 autoreload 6603 140189873523776 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 01:10:22,605 autoreload 6621 139663246482496 Watching for file changes with StatReloader
+INFO 2024-09-24 01:11:19,485 autoreload 6621 139663246482496 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 01:11:19,988 autoreload 6677 139759653571648 Watching for file changes with StatReloader
+ERROR 2024-09-24 01:11:22,545 log 6677 139759591876160 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 382, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'inlineformset_factory' is not defined
+INFO 2024-09-24 01:12:00,817 autoreload 6677 139759653571648 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 01:12:01,311 autoreload 6727 140232753032256 Watching for file changes with StatReloader
+ERROR 2024-09-24 01:12:06,831 log 6727 140232691336768 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 01:15:20,889 log 6727 140232680830528 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 01:21:34,793 log 6727 140232672421440 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 01:21:36,931 log 6727 140232664012352 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 01:24:12,608 autoreload 6727 140232753032256 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:24:13,063 autoreload 7358 139794487557184 Watching for file changes with StatReloader
+INFO 2024-09-24 01:24:36,322 autoreload 7456 139797962710080 Watching for file changes with StatReloader
+INFO 2024-09-24 01:24:50,637 autoreload 7456 139797962710080 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:24:50,675 autoreload 7358 139794487557184 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:24:51,126 autoreload 7513 140210475605056 Watching for file changes with StatReloader
+INFO 2024-09-24 01:24:51,181 autoreload 7514 140285726219328 Watching for file changes with StatReloader
+INFO 2024-09-24 01:26:07,111 autoreload 7514 140285726219328 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:26:07,182 autoreload 7513 140210475605056 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:26:07,565 autoreload 7633 140054134082624 Watching for file changes with StatReloader
+INFO 2024-09-24 01:26:07,652 autoreload 7634 140089993395264 Watching for file changes with StatReloader
+INFO 2024-09-24 01:26:52,622 autoreload 8202 139842406644800 Watching for file changes with StatReloader
+INFO 2024-09-24 01:27:01,813 autoreload 8202 139842406644800 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:27:02,258 autoreload 8257 140188872358976 Watching for file changes with StatReloader
+INFO 2024-09-24 01:41:43,602 autoreload 9666 139923554049088 Watching for file changes with StatReloader
+INFO 2024-09-24 01:42:32,139 autoreload 10244 140165919456320 Watching for file changes with StatReloader
+INFO 2024-09-24 01:42:53,558 autoreload 10244 140165919456320 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:42:54,008 autoreload 10310 140495755836480 Watching for file changes with StatReloader
+ERROR 2024-09-24 01:42:57,471 log 10310 140495626958400 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 01:43:58,100 autoreload 10310 140495755836480 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:43:58,577 autoreload 10411 140482085338176 Watching for file changes with StatReloader
+INFO 2024-09-24 01:44:26,972 autoreload 10411 140482085338176 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:44:27,427 autoreload 10483 140160131333184 Watching for file changes with StatReloader
+ERROR 2024-09-24 01:45:03,060 log 10483 140160069637696 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 01:49:17,867 log 10483 140160059131456 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 01:49:20,776 log 10483 140160050722368 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 01:50:42,044 log 10483 140160042313280 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 01:53:39,352 autoreload 10483 140160131333184 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 01:53:39,812 autoreload 11129 139869274946624 Watching for file changes with StatReloader
+INFO 2024-09-24 01:55:37,421 autoreload 11129 139869274946624 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 01:55:37,894 autoreload 11267 139860136401984 Watching for file changes with StatReloader
+ERROR 2024-09-24 01:56:24,477 log 11267 139859813451328 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 02:00:40,917 autoreload 11267 139860136401984 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:00:41,370 autoreload 11665 140334880328768 Watching for file changes with StatReloader
+INFO 2024-09-24 02:02:10,636 autoreload 11665 140334880328768 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:02:11,089 autoreload 11784 140177919609920 Watching for file changes with StatReloader
+ERROR 2024-09-24 02:02:17,636 log 11784 140177857914432 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 385, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 02:02:20,058 log 11784 140177847408192 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 385, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 02:02:25,577 autoreload 11784 140177919609920 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:02:26,034 autoreload 11868 140354451143744 Watching for file changes with StatReloader
+ERROR 2024-09-24 02:02:32,345 log 11868 140354389448256 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 385, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 02:03:45,776 autoreload 12648 139903519145024 Watching for file changes with StatReloader
+ERROR 2024-09-24 02:03:58,226 log 11868 140354378942016 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 385, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 02:04:00,383 log 11868 140354162521664 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 385, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 02:07:45,260 autoreload 11868 140354451143744 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:07:45,741 autoreload 13016 139773156162624 Watching for file changes with StatReloader
+INFO 2024-09-24 02:08:15,283 autoreload 13016 139773156162624 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:08:15,766 autoreload 13089 139866354908224 Watching for file changes with StatReloader
+INFO 2024-09-24 02:09:32,892 autoreload 13089 139866354908224 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:09:33,365 autoreload 13195 139675632544832 Watching for file changes with StatReloader
+INFO 2024-09-24 02:09:45,180 autoreload 13297 140155492518976 Watching for file changes with StatReloader
+INFO 2024-09-24 02:10:45,060 autoreload 13297 140155492518976 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:10:45,264 autoreload 13195 139675632544832 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:10:45,543 autoreload 13426 140668806454336 Watching for file changes with StatReloader
+INFO 2024-09-24 02:10:45,753 autoreload 13428 139720052202560 Watching for file changes with StatReloader
+INFO 2024-09-24 02:11:55,553 autoreload 13426 140668806454336 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:11:55,854 autoreload 13428 139720052202560 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:11:56,034 autoreload 13574 140135207279680 Watching for file changes with StatReloader
+INFO 2024-09-24 02:11:56,339 autoreload 13576 140394937510976 Watching for file changes with StatReloader
+INFO 2024-09-24 02:12:01,293 autoreload 13574 140135207279680 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:12:01,780 autoreload 13688 140291151596608 Watching for file changes with StatReloader
+ERROR 2024-09-24 02:12:08,400 log 13688 140291089901120 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 02:12:28,588 log 13688 140290970068544 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 02:12:28,693 log 13688 140290961675840 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 02:13:00,915 autoreload 13688 140291151596608 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 02:13:01,403 autoreload 13908 140502599543872 Watching for file changes with StatReloader
+ERROR 2024-09-24 02:13:03,220 log 13908 140502469965376 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 02:13:04,820 log 13908 140502459475520 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 02:49:34,681 autoreload 1804 140322429045824 Watching for file changes with StatReloader
+INFO 2024-09-24 02:50:36,684 autoreload 1804 140322429045824 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 02:50:37,150 autoreload 1896 139685532453952 Watching for file changes with StatReloader
+INFO 2024-09-24 02:50:46,347 autoreload 1896 139685532453952 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 02:50:46,806 autoreload 1916 139724190592064 Watching for file changes with StatReloader
+INFO 2024-09-24 02:58:25,976 autoreload 1916 139724190592064 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 02:58:26,433 autoreload 2290 139686361619520 Watching for file changes with StatReloader
+INFO 2024-09-24 02:58:47,757 autoreload 2290 139686361619520 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 02:58:48,217 autoreload 2324 140486066080832 Watching for file changes with StatReloader
+INFO 2024-09-24 02:58:57,406 autoreload 2324 140486066080832 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 02:58:57,870 autoreload 2342 140055470263360 Watching for file changes with StatReloader
+INFO 2024-09-24 03:00:20,869 autoreload 2342 140055470263360 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:00:21,327 autoreload 2418 140382087707712 Watching for file changes with StatReloader
+ERROR 2024-09-24 03:00:56,294 log 2418 140381341611584 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 03:03:25,808 log 2418 140380787955264 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 269, in get_verified
+    clinic_formset = ClinicFormSet(instance=surgeon, prefix='clinic')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 672, in __init__
+    super().__init__(
+TypeError: BaseFormSet.__init__() got an unexpected keyword argument 'instance'
+INFO 2024-09-24 03:10:15,924 autoreload 2418 140382087707712 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:10:16,392 autoreload 2950 140371058314304 Watching for file changes with StatReloader
+INFO 2024-09-24 03:12:34,190 autoreload 2950 140371058314304 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:12:34,648 autoreload 3068 140590541827136 Watching for file changes with StatReloader
+INFO 2024-09-24 03:13:10,138 autoreload 3068 140590541827136 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:13:10,597 autoreload 3106 140649510059072 Watching for file changes with StatReloader
+DEBUG 2024-09-24 03:15:44,024 connectionpool 3106 140647763801664 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 03:15:45,054 connectionpool 3106 140647763801664 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 03:15:45,887 connectionpool 3106 140647763801664 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+ERROR 2024-09-24 03:17:25,011 log 3106 140647210145344 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 03:21:14,706 log 3106 140647201752640 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 03:21:16,838 log 3106 140647193359936 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 03:21:44,984 log 3106 140647184967232 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 03:21:47,334 log 3106 140647176574528 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 03:27:28,789 log 3106 140646690059840 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+ERROR 2024-09-24 03:27:30,470 log 3106 140646681667136 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 383, in edit_surgeon_profile
+    ClinicFormSet = inlineformset_factory(Surgeon, Clinic, form=ClinicForm, extra=1, can_delete=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1294, in inlineformset_factory
+    fk = _get_foreign_key(parent_model, model, fk_name=fk_name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1242, in _get_foreign_key
+    raise ValueError(
+ValueError: 'SafeSurgeon.Clinic' has no ForeignKey to 'SafeSurgeon.Surgeon'.
+INFO 2024-09-24 03:34:32,754 autoreload 3106 140649510059072 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:34:33,234 autoreload 4264 139978787503168 Watching for file changes with StatReloader
+INFO 2024-09-24 03:39:50,610 autoreload 4996 140427306658880 Watching for file changes with StatReloader
+INFO 2024-09-24 03:40:20,467 autoreload 4264 139978787503168 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:40:20,932 autoreload 5069 139748577573952 Watching for file changes with StatReloader
+INFO 2024-09-24 03:40:21,041 autoreload 4996 140427306658880 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:40:21,509 autoreload 5072 140667125652544 Watching for file changes with StatReloader
+INFO 2024-09-24 03:40:46,956 autoreload 5072 140667125652544 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:40:47,309 autoreload 5069 139748577573952 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:40:47,418 autoreload 5144 140313322007616 Watching for file changes with StatReloader
+INFO 2024-09-24 03:40:47,776 autoreload 5146 140691100724288 Watching for file changes with StatReloader
+WARNING 2024-09-24 03:41:26,262 log 5144 140312999609920 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2024-09-24 03:42:01,273 log 5144 140312982824512 Forbidden (CSRF token from POST incorrect.): /signup/
+ERROR 2024-09-24 03:42:28,659 log 5144 140312404022848 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 269, in get_verified
+    clinic_formset = ClinicFormSet(instance=surgeon, prefix='clinic')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 672, in __init__
+    super().__init__(
+TypeError: BaseFormSet.__init__() got an unexpected keyword argument 'instance'
+INFO 2024-09-24 03:46:06,638 autoreload 5144 140313322007616 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 03:46:07,109 autoreload 5764 140666208050240 Watching for file changes with StatReloader
+INFO 2024-09-24 03:46:35,637 autoreload 5764 140666208050240 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 03:46:36,098 autoreload 5835 140223419382848 Watching for file changes with StatReloader
+INFO 2024-09-24 03:47:14,740 autoreload 5835 140223419382848 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 03:47:15,202 autoreload 5916 140138105179200 Watching for file changes with StatReloader
+INFO 2024-09-24 03:48:52,602 autoreload 5916 140138105179200 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 03:48:53,069 autoreload 6041 140454775077952 Watching for file changes with StatReloader
+INFO 2024-09-24 03:49:12,485 autoreload 6041 140454775077952 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 03:49:12,942 autoreload 6107 140677156064320 Watching for file changes with StatReloader
+INFO 2024-09-24 03:50:44,242 autoreload 6107 140677156064320 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 03:50:44,705 autoreload 6226 140494054218816 Watching for file changes with StatReloader
+INFO 2024-09-24 03:51:06,146 autoreload 6226 140494054218816 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 03:51:06,609 autoreload 6289 139971812838464 Watching for file changes with StatReloader
+WARNING 2024-09-24 03:52:53,973 log 6289 139971331597888 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2024-09-24 03:53:08,004 views 6289 139970819905088 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 03:53:08,052 views 6289 139970819905088 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 03:53:08,052 views 6289 139970819905088 GET request received
+ERROR 2024-09-24 03:53:09,418 log 6289 139970819905088 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 473, in edit_surgeon_profile
+    return render(request,'edit_surgeon_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/formsets.py", line 121, in __len__
+    return len(self.forms)
+               ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/formsets.py", line 206, in forms
+    self._construct_form(i, **self.get_form_kwargs(i))
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 731, in _construct_form
+    form = super()._construct_form(i, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/formsets.py", line 244, in _construct_form
+    form = self.form(**defaults)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/forms.py", line 86, in __init__
+    if 'instance' in kwargs and kwargs['instance'].surgeon.city:
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Clinic' object has no attribute 'surgeon'. Did you mean: 'surgeons'?
+INFO 2024-09-24 03:59:38,275 autoreload 6289 139971812838464 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 03:59:38,784 autoreload 7028 139892738272320 Watching for file changes with StatReloader
+INFO 2024-09-24 03:59:42,151 views 7028 139892676576832 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 03:59:42,206 views 7028 139892676576832 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 03:59:42,206 views 7028 139892676576832 GET request received
+WARNING 2024-09-24 04:00:46,777 log 7028 139892411573824 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2024-09-24 04:01:07,449 log 7028 139891899881024 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2024-09-24 04:01:31,483 log 7028 139891874702912 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2024-09-24 04:11:03,661 autoreload 7028 139892738272320 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:11:04,127 autoreload 8033 139894381960256 Watching for file changes with StatReloader
+INFO 2024-09-24 04:11:13,422 autoreload 8033 139894381960256 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:11:13,885 autoreload 8087 140187947846720 Watching for file changes with StatReloader
+INFO 2024-09-24 04:11:33,306 autoreload 8087 140187947846720 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:11:33,768 autoreload 8150 139839972277312 Watching for file changes with StatReloader
+INFO 2024-09-24 04:11:36,995 autoreload 8150 139839972277312 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:11:37,456 autoreload 8181 139721003727936 Watching for file changes with StatReloader
+ERROR 2024-09-24 04:11:40,924 log 8181 139720942032448 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 196, in get_verified
+    clinic_formset = ClinicFormSet(request.POST,queryset=surgeon.clinic.all(), prefix='clinic') #instance=surgeon,
+                                                         ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+INFO 2024-09-24 04:17:31,102 autoreload 8181 139721003727936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:17:31,573 autoreload 8513 140358715243584 Watching for file changes with StatReloader
+ERROR 2024-09-24 04:17:42,563 log 8513 140358653548096 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 196, in get_verified
+    clinic_formset = ClinicFormSet(request.POST,queryset=surgeon.clinic.all(), prefix='clinic') #instance=surgeon,
+                                                         ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+ERROR 2024-09-24 04:17:44,645 log 8513 140358643041856 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 269, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic',queryset=surgeon.clinic.all())#instance=surgeon,
+                                                            ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+INFO 2024-09-24 04:26:36,470 autoreload 8513 140358715243584 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:26:36,934 autoreload 9031 140031486458944 Watching for file changes with StatReloader
+ERROR 2024-09-24 04:26:46,604 log 9031 140031424763456 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 269, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())#instance=surgeon,
+                                                             ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+INFO 2024-09-24 04:39:32,880 autoreload 9031 140031486458944 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:39:33,352 autoreload 9776 140025771183168 Watching for file changes with StatReloader
+INFO 2024-09-24 04:39:37,584 autoreload 9776 140025771183168 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:39:38,049 autoreload 9808 140620208573504 Watching for file changes with StatReloader
+ERROR 2024-09-24 04:39:42,426 log 9808 140620146878016 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 278, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())#instance=surgeon,
+                                                             ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+ERROR 2024-09-24 04:39:43,376 log 9808 140620137420352 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 278, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())#instance=surgeon,
+                                                             ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+INFO 2024-09-24 04:47:36,419 autoreload 9808 140620208573504 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:47:36,920 autoreload 10254 139824577559616 Watching for file changes with StatReloader
+ERROR 2024-09-24 04:47:44,940 log 10254 139824515864128 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 279, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())#instance=surgeon,
+                                                             ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+ERROR 2024-09-24 04:47:47,918 log 10254 139824506406464 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 279, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())#instance=surgeon,
+                                                             ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+ERROR 2024-09-24 04:48:02,082 log 10254 139824128321088 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 279, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())#instance=surgeon,
+                                                             ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'clinic'
+INFO 2024-09-24 04:49:45,825 autoreload 10254 139824577559616 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:49:46,305 autoreload 10519 140611001486400 Watching for file changes with StatReloader
+INFO 2024-09-24 04:49:49,550 autoreload 10519 140611001486400 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:49:50,013 autoreload 10552 139887733222464 Watching for file changes with StatReloader
+INFO 2024-09-24 04:51:40,726 autoreload 10552 139887733222464 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:51:41,206 autoreload 10749 139661903653952 Watching for file changes with StatReloader
+INFO 2024-09-24 04:51:53,553 autoreload 10749 139661903653952 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:51:54,012 autoreload 10821 140708629343296 Watching for file changes with StatReloader
+INFO 2024-09-24 04:54:08,039 autoreload 11478 139816793721920 Watching for file changes with StatReloader
+INFO 2024-09-24 04:54:28,010 autoreload 10821 140708629343296 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:54:28,350 autoreload 11478 139816793721920 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:54:28,474 autoreload 11543 140483999829056 Watching for file changes with StatReloader
+INFO 2024-09-24 04:54:28,819 autoreload 11545 140589753490496 Watching for file changes with StatReloader
+INFO 2024-09-24 04:57:53,330 autoreload 11543 140483999829056 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:57:53,820 autoreload 11980 140704239340608 Watching for file changes with StatReloader
+INFO 2024-09-24 04:58:21,339 autoreload 11980 140704239340608 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:58:21,842 autoreload 12048 140549397199936 Watching for file changes with StatReloader
+INFO 2024-09-24 04:58:44,292 autoreload 12048 140549397199936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:58:44,751 autoreload 12115 139865348791360 Watching for file changes with StatReloader
+INFO 2024-09-24 04:59:16,310 autoreload 12115 139865348791360 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:59:16,777 autoreload 12188 140260842748992 Watching for file changes with StatReloader
+INFO 2024-09-24 04:59:33,158 autoreload 12188 140260842748992 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 04:59:33,632 autoreload 12251 140301312486464 Watching for file changes with StatReloader
+INFO 2024-09-24 05:00:18,371 autoreload 12251 140301312486464 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 05:00:18,831 autoreload 12337 139664522263616 Watching for file changes with StatReloader
+INFO 2024-09-24 05:03:44,439 autoreload 12337 139664522263616 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 05:03:44,895 autoreload 12552 140033710656576 Watching for file changes with StatReloader
