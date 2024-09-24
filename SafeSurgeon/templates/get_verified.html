@@ -19,7 +19,11 @@
 
     <form method="post" enctype="multipart/form-data" id="verification-form">
         {% csrf_token %}
-        
+
+        <div class="alert alert-danger">
+            {{ form.non_field_errors }}
+        </div>
+
         <h2>Personal Information</h2>
         {{ form.non_field_errors }}
         <div class="mb-3">
@@ -87,7 +91,9 @@
         --> 
         <div class="mb-3">  
         <h2>Add Education</h2>
-        {{ education_formset.non_field_errors }} 
+        <div class="alert alert-danger">
+            {{ education_formset.non_field_errors }}
+        </div>
         <div id="education-managment-form">
                 {{ education_formset.management_form }}
              

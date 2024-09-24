@@ -1218,3 +1218,8 @@ WARNING 2024-09-24 08:06:14,880 log 7044 139946937542208 Forbidden (CSRF token f
 INFO 2024-09-24 08:06:17,482 views 7044 139946929149504 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-24 08:06:17,563 views 7044 139946929149504 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
 INFO 2024-09-24 08:06:17,564 views 7044 139946929149504 GET request received
+DEBUG 2024-09-24 08:18:45,842 connectionpool 7044 139945335322176 Resetting dropped connection: api.cloudinary.com
+DEBUG 2024-09-24 08:18:47,243 connectionpool 7044 139945335322176 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 08:18:48,541 connectionpool 7044 139945335322176 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 08:23:39,160 connectionpool 7044 139944236402240 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 08:23:40,340 connectionpool 7044 139944236402240 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
