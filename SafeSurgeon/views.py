@@ -418,6 +418,8 @@ def edit_surgeon_profile(request, surgeon_id):
 
     #handles the post
     if request.method == 'POST':
+        print("POST data:", request.POST)
+    
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
         clinic_formset=ClinicFormSet(request.POST,request.FILES, queryset=surgeon.clinic.all() )
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon,)
@@ -433,14 +435,41 @@ def edit_surgeon_profile(request, surgeon_id):
                 surgeon.verfication_status='pending'
                 surgeon.save()
 
-            # Handle clinic formset
+                city = surgeon.city  
+
+            #Handle clinic formset
                 clinics_to_keep = []
                 for clinic_form in clinic_formset:
                     if clinic_form.is_valid() and not clinic_form.cleaned_data.get('DELETE'):
-                        clinic = clinic_form.save(commit=False)
+                        clinic = clinic_form.save(surgeon=surgeon, city=city, commit=True)
+                        clinic.surgeon = surgeon  
+                        clinic.city = clinic_form.cleaned_data.get('city') 
                         if clinic.pk is None:
-                            clinic.save()
-                        clinics_to_keep.append(clinic)
+                            
+
+                            clinic = clinic_form.save(surgeon=surgeon, city=city, commit=True)
+                            clinics_to_keep.append(clinic)
+
+                        #clinic.save()
+             
+                        #clinics_to_keep.extend(clinics)
+
+                #clinics_to_keep = []
+                #for clinic_form in clinic_formset:
+                    #if clinic_form.is_valid() and not clinic_form.cleaned_data.get('DELETE'):
+                        #if clinic_form.cleaned_data.get('new_clinic_name'):
+                            #new_clinic, created = Clinic.objects.get_or_create(
+                                #name=clinic_form.cleaned_data['new_clinic_name'],
+                                #city=city
+                            #)
+                            #clinic_form.cleaned_data['clinic'] = new_clinic
+                            #clinic_form.instance.clinic = new_clinic
+                
+                        #clinic = clinic_form.save(surgeon=surgeon, city=city, commit=True)
+                        #clinics_to_keep.append(clinic)
+
+               
+                        
 
                                       
                 surgeon.clinic.set(clinics_to_keep)

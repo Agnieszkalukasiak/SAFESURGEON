@@ -2505,3 +2505,105 @@ Traceback (most recent call last):
     except IntegrityError as e:
            ^^^^^^^^^^^^^^
 NameError: name 'IntegrityError' is not defined. Did you mean: 'InterruptedError'?
+INFO 2024-09-24 12:03:48,720 autoreload 3160 140328228039744 Watching for file changes with StatReloader
+DEBUG 2024-09-24 12:05:17,033 connectionpool 3160 140327746774592 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 12:05:18,532 connectionpool 3160 140327746774592 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 12:05:19,278 connectionpool 3160 140327746774592 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 12:05:20,230 connectionpool 3160 140327746774592 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-24 12:06:28,638 views 3160 140326698210880 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:06:28,695 views 3160 140326698210880 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 12:06:28,695 views 3160 140326698210880 GET request received
+INFO 2024-09-24 12:07:19,062 views 3160 140326689818176 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:07:19,114 views 3160 140326689818176 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 12:07:19,224 views 3160 140326689818176 Form is valid: True
+INFO 2024-09-24 12:07:19,330 views 3160 140326689818176 Clinic formset is valid: True
+INFO 2024-09-24 12:07:19,385 views 3160 140326689818176 Education formset is valid: True
+ERROR 2024-09-24 12:07:19,413 views 3160 140326689818176 Unexpected error: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+INFO 2024-09-24 12:14:09,772 autoreload 3160 140328228039744 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:14:10,242 autoreload 3619 139914994596928 Watching for file changes with StatReloader
+INFO 2024-09-24 12:14:14,959 views 3619 139914864752192 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:14:15,018 views 3619 139914864752192 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 12:14:15,131 views 3619 139914864752192 Form is valid: True
+INFO 2024-09-24 12:14:15,243 views 3619 139914864752192 Clinic formset is valid: True
+INFO 2024-09-24 12:14:15,304 views 3619 139914864752192 Education formset is valid: True
+ERROR 2024-09-24 12:14:15,332 views 3619 139914864752192 Unexpected error: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+INFO 2024-09-24 12:19:21,319 autoreload 3619 139914994596928 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:19:21,821 autoreload 3836 139791814319168 Watching for file changes with StatReloader
+INFO 2024-09-24 12:19:33,138 autoreload 3836 139791814319168 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:19:33,594 autoreload 3852 140093244177472 Watching for file changes with StatReloader
+INFO 2024-09-24 12:19:36,944 views 3852 140093109040704 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:19:36,996 views 3852 140093109040704 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 12:19:37,103 views 3852 140093109040704 Form is valid: True
+INFO 2024-09-24 12:19:37,202 views 3852 140093109040704 Clinic formset is valid: True
+INFO 2024-09-24 12:19:37,256 views 3852 140093109040704 Education formset is valid: True
+ERROR 2024-09-24 12:19:37,282 views 3852 140093109040704 Unexpected error: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+INFO 2024-09-24 12:24:05,209 autoreload 3852 140093244177472 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:24:05,716 autoreload 4042 140322169805888 Watching for file changes with StatReloader
+INFO 2024-09-24 12:28:46,289 autoreload 4042 140322169805888 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:28:46,745 autoreload 4246 140712829062208 Watching for file changes with StatReloader
+INFO 2024-09-24 12:28:50,629 views 4246 140712767366720 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:28:50,685 views 4246 140712767366720 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 12:28:50,792 views 4246 140712767366720 Form is valid: True
+INFO 2024-09-24 12:28:50,897 views 4246 140712767366720 Clinic formset is valid: True
+INFO 2024-09-24 12:28:50,955 views 4246 140712767366720 Education formset is valid: True
+INFO 2024-09-24 12:28:51,301 views 4246 140712767366720 Updated clinics: <QuerySet [<Clinic: Miau (Stockholm)>]>
+INFO 2024-09-24 12:28:51,328 views 4246 140712767366720 Profile updated successfully
+INFO 2024-09-24 12:29:03,249 autoreload 4246 140712829062208 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:29:03,714 autoreload 4279 140208395865152 Watching for file changes with StatReloader
+INFO 2024-09-24 12:29:11,993 autoreload 4279 140208395865152 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:29:12,449 autoreload 4295 140592030743616 Watching for file changes with StatReloader
+INFO 2024-09-24 12:29:50,796 views 4295 140591576897088 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:29:50,850 views 4295 140591576897088 Clinics associated with surgeon: <QuerySet [<Clinic: Miau (Stockholm)>]>
+INFO 2024-09-24 12:29:50,851 views 4295 140591576897088 GET request received
+INFO 2024-09-24 12:30:48,839 views 4295 140591568504384 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:30:48,896 views 4295 140591568504384 Clinics associated with surgeon: <QuerySet [<Clinic: Miau (Stockholm)>]>
+INFO 2024-09-24 12:30:49,018 views 4295 140591568504384 Form is valid: True
+INFO 2024-09-24 12:30:49,135 views 4295 140591568504384 Clinic formset is valid: False
+INFO 2024-09-24 12:30:49,137 views 4295 140591568504384 Education formset is valid: True
+ERROR 2024-09-24 12:30:49,137 views 4295 140591568504384 Form validation failed
+ERROR 2024-09-24 12:30:49,138 views 4295 140591568504384 Form errors: 
+ERROR 2024-09-24 12:30:49,138 views 4295 140591568504384 Clinic formset errors: [{}, {'clinic': ['This field is required.']}]
+ERROR 2024-09-24 12:30:49,138 views 4295 140591568504384 Education formset errors: [{}]
+INFO 2024-09-24 12:31:51,657 views 4295 140591560111680 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:31:51,709 views 4295 140591560111680 Clinics associated with surgeon: <QuerySet [<Clinic: Miau (Stockholm)>]>
+INFO 2024-09-24 12:31:51,709 views 4295 140591560111680 GET request received
+DEBUG 2024-09-24 12:34:37,862 connectionpool 4295 140589437806144 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 12:34:39,256 connectionpool 4295 140589437806144 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 12:34:40,041 connectionpool 4295 140589437806144 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 12:34:41,293 connectionpool 4295 140589437806144 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-24 12:46:47,825 autoreload 4295 140592030743616 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 12:46:48,293 autoreload 5073 140312397876288 Watching for file changes with StatReloader
+WARNING 2024-09-24 12:47:26,187 log 5073 140312336180800 Forbidden (CSRF token from POST incorrect.): /surgeon/37/edit/
+INFO 2024-09-24 12:48:17,856 views 5073 140311917475392 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:48:17,909 views 5073 140311917475392 Clinics associated with surgeon: <QuerySet [<Clinic: Miau (Stockholm)>]>
+INFO 2024-09-24 12:48:17,909 views 5073 140311917475392 GET request received
+INFO 2024-09-24 12:48:47,971 views 5073 140311909082688 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 12:48:48,029 views 5073 140311909082688 Clinics associated with surgeon: <QuerySet [<Clinic: Miau (Stockholm)>]>
+INFO 2024-09-24 12:48:48,150 views 5073 140311909082688 Form is valid: True
+INFO 2024-09-24 12:48:48,268 views 5073 140311909082688 Clinic formset is valid: True
+INFO 2024-09-24 12:48:48,269 views 5073 140311909082688 Education formset is valid: True
+ERROR 2024-09-24 12:48:48,542 views 5073 140311909082688 Unexpected error: Field 'id' expected a number but got [<Clinic: MOnsterMunch (Stockholm)>].
+DEBUG 2024-09-24 13:11:53,295 connectionpool 5073 140308100662848 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 13:11:54,752 connectionpool 5073 140308100662848 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/image/upload HTTP/11" 200 None
+INFO 2024-09-24 13:12:04,247 views 5073 140307588970048 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 13:12:04,324 views 5073 140307588970048 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-24 13:12:04,324 views 5073 140307588970048 GET request received
+INFO 2024-09-24 13:12:14,870 views 5073 140307580577344 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 13:12:14,928 views 5073 140307580577344 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-24 13:12:14,928 views 5073 140307580577344 GET request received
+WARNING 2024-09-24 13:12:26,425 log 5073 140307572184640 Not Found: /surgeon
+INFO 2024-09-24 13:12:57,608 views 5073 140307035313728 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 13:12:57,665 views 5073 140307035313728 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-24 13:12:57,665 views 5073 140307035313728 GET request received
+INFO 2024-09-24 13:16:30,888 autoreload 5073 140312397876288 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 13:16:31,408 autoreload 6315 139958628482112 Watching for file changes with StatReloader
+INFO 2024-09-24 13:17:03,943 autoreload 6315 139958628482112 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 13:17:04,399 autoreload 6351 140398979984448 Watching for file changes with StatReloader
+INFO 2024-09-24 13:17:39,886 autoreload 6351 140398979984448 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 13:17:40,343 autoreload 6398 140483641105472 Watching for file changes with StatReloader
+INFO 2024-09-24 13:17:46,972 views 6398 140483560494656 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 13:17:47,028 views 6398 140483560494656 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-24 13:17:47,028 views 6398 140483560494656 GET request received
+INFO 2024-09-24 13:18:02,871 views 6398 140483321906752 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 13:18:02,923 views 6398 140483321906752 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-24 13:18:02,923 views 6398 140483321906752 GET request received
