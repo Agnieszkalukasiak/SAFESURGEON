@@ -47,14 +47,15 @@
             {{ form.city.errors }}
         </div>
         <div class="mb-3">
-            <h2>Clinics</h2>
+            <h2>Add Clinics</h2>
+            {{ clinic_formset.non_field_errors }} 
             <div id="clinic-management-form">
                 {{clinic_formset.management_form}}
             </div>
             <div id="clinic-forms">
                   {%for clinic_form in clinic_formset%} 
                 <div class="clinic_form mb-4" id="clinic-form-{{forloop.counter0}}">
-                    <h3>Clinic Entry{{forloop.counter}}</h3>
+                <!---  <h3>Clinic Entry{{forloop.counter}}</h3>-->
                     {{ clinic_form.non_field_errors }}
                     <div class="mb-3">
                         
@@ -83,16 +84,18 @@
     </div>
     <!--
         <form method="post"> 
-        -->   
-        <h2>Education</h2>
+        --> 
+        <div class="mb-3">  
+        <h2>Add Education</h2>
+        {{ education_formset.non_field_errors }} 
         <div id="education-managment-form">
                 {{ education_formset.management_form }}
-                <pre>
-                    Debug: {{ education_formset.management_form.as_p }}
-                </pre>
+             
+                <!--{{ education_formset.management_form.as_p }}-->
+                
                 {% for education_form in education_formset %}
                 <div class="education-form mb-4">
-                    <h3>Education Entry {{ forloop.counter }}</h3>
+                  <!--- <h3>Education Entry {{ forloop.counter }}</h3>-->
                     {{ education_form.non_field_errors }}
                     <div class="mb-3">
                         {{ education_form.institution.label_tag }}
@@ -145,14 +148,10 @@
             {{ form.id_document }}
             {{ form.id_document.errors }}
         </div>
-        
-        <div class="mb-3">
             <button type="submit" class="btn btn-primary">Submit for Verification</button>
-                <div id="thankYouMessage" style="display: none;">
-                    Thank you for your submission. We will email you once your verification process is completed. Thank you!
-            </div>
-        </div>      
-    </form>
+        </div>
+      </div>
+</form>
 {% if form.errors %}
 <div class="alert alert-danger">
     <ul>
@@ -223,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Save selections when the form is submitted
     document.querySelector('form').addEventListener('submit', saveClinicSelections);
 });
+
 </script>
 
 {% endblock %}

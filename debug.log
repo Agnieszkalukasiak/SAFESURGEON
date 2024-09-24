@@ -1211,3 +1211,10 @@ ERROR 2024-09-24 07:54:01,441 views 4983 140497960031808 Clinic formset errors: 
 ERROR 2024-09-24 07:54:01,441 views 4983 140497960031808 Education formset errors: [{}]
 INFO 2024-09-24 07:56:15,496 autoreload 4983 140500637477952 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
 INFO 2024-09-24 07:56:15,964 autoreload 7044 139948154661952 Watching for file changes with StatReloader
+DEBUG 2024-09-24 07:59:35,784 connectionpool 7044 139947432449600 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-24 07:59:37,384 connectionpool 7044 139947432449600 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-24 07:59:38,453 connectionpool 7044 139947432449600 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+WARNING 2024-09-24 08:06:14,880 log 7044 139946937542208 Forbidden (CSRF token from POST incorrect.): /surgeon/37/edit/
+INFO 2024-09-24 08:06:17,482 views 7044 139946929149504 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 08:06:17,563 views 7044 139946929149504 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 08:06:17,564 views 7044 139946929149504 GET request received
