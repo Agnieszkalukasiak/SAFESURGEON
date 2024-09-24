@@ -22,6 +22,11 @@
             </div>
             <div id="clinic-forms">
                   {%for clinic_form in clinic_formset%} 
+
+                  {% for hidden in clinic_form.hidden_fields %}
+                  {{hidden}}
+                  {% endfor %}
+                    
                 <div class="clinic_form mb-4" >
                     {{ clinic_form.non_field_errors }}
                     <div class="mb-3">

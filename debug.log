@@ -1600,3 +1600,908 @@ Traceback (most recent call last):
   File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'edit_surgeon_profile' with arguments '('',)' not found. 2 pattern(s) tried: ['surgeon/(?P<surgeon_id>[0-9]+)/edit/\\Z', 'edit_surgeon_profile/(?P<surgeon_id>[0-9]+)/\\Z']
+ERROR 2024-09-24 09:57:42,780 log 3000 139870953522752 Internal Server Error: /surgeon_profile/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit_surgeon_profile' with arguments '('',)' not found. 2 pattern(s) tried: ['surgeon/(?P<surgeon_id>[0-9]+)/edit/\\Z', 'edit_surgeon_profile/(?P<surgeon_id>[0-9]+)/\\Z']
+INFO 2024-09-24 10:01:53,468 views 3000 139870399866432 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:01:53,525 views 3000 139870399866432 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:01:53,525 views 3000 139870399866432 GET request received
+ERROR 2024-09-24 10:02:31,439 log 3000 139870391473728 Internal Server Error: /surgeon_profile/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit_surgeon_profile' with arguments '('',)' not found. 2 pattern(s) tried: ['surgeon/(?P<surgeon_id>[0-9]+)/edit/\\Z', 'edit_surgeon_profile/(?P<surgeon_id>[0-9]+)/\\Z']
+INFO 2024-09-24 10:03:14,662 views 3000 139869904959040 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:03:14,719 views 3000 139869904959040 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:03:14,719 views 3000 139869904959040 GET request received
+INFO 2024-09-24 10:03:27,223 views 3000 139869896566336 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:03:27,275 views 3000 139869896566336 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:03:27,385 views 3000 139869896566336 Form is valid: True
+INFO 2024-09-24 10:03:27,464 views 3000 139869896566336 Clinic formset is valid: False
+INFO 2024-09-24 10:03:27,517 views 3000 139869896566336 Education formset is valid: True
+ERROR 2024-09-24 10:03:27,517 views 3000 139869896566336 Form validation failed
+ERROR 2024-09-24 10:03:27,518 views 3000 139869896566336 Form errors: 
+ERROR 2024-09-24 10:03:27,518 views 3000 139869896566336 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:03:27,518 views 3000 139869896566336 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:03:38,979 views 3000 139869888173632 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:03:39,029 views 3000 139869888173632 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:03:39,129 views 3000 139869888173632 Form is valid: True
+INFO 2024-09-24 10:03:39,279 views 3000 139869888173632 Clinic formset is valid: False
+INFO 2024-09-24 10:03:39,329 views 3000 139869888173632 Education formset is valid: True
+ERROR 2024-09-24 10:03:39,329 views 3000 139869888173632 Form validation failed
+ERROR 2024-09-24 10:03:39,330 views 3000 139869888173632 Form errors: 
+ERROR 2024-09-24 10:03:39,330 views 3000 139869888173632 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:03:39,330 views 3000 139869888173632 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:16:05,154 autoreload 3000 139873947184192 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:16:05,627 autoreload 5646 139899969469504 Watching for file changes with StatReloader
+INFO 2024-09-24 10:16:10,886 autoreload 5646 139899969469504 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:16:11,353 autoreload 5676 140297589754944 Watching for file changes with StatReloader
+INFO 2024-09-24 10:16:20,336 views 5676 140297455531584 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:16:20,463 views 5676 140297455531584 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:16:20,463 views 5676 140297455531584 GET request received
+INFO 2024-09-24 10:16:27,583 views 5676 140297438746176 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:16:27,635 views 5676 140297438746176 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:16:27,635 views 5676 140297438746176 GET request received
+INFO 2024-09-24 10:16:46,619 views 5676 140297430353472 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:16:46,670 views 5676 140297430353472 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:16:46,775 views 5676 140297430353472 Form is valid: True
+INFO 2024-09-24 10:16:46,853 views 5676 140297430353472 Clinic formset is valid: False
+INFO 2024-09-24 10:16:46,908 views 5676 140297430353472 Education formset is valid: True
+ERROR 2024-09-24 10:16:46,908 views 5676 140297430353472 Form validation failed
+ERROR 2024-09-24 10:16:46,908 views 5676 140297430353472 Form errors: 
+ERROR 2024-09-24 10:16:46,908 views 5676 140297430353472 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:16:46,908 views 5676 140297430353472 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:17:14,544 autoreload 5676 140297589754944 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:17:15,002 autoreload 5762 140165370465344 Watching for file changes with StatReloader
+INFO 2024-09-24 10:17:21,058 views 5762 140165299312192 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:17:21,112 views 5762 140165299312192 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:17:21,112 views 5762 140165299312192 GET request received
+INFO 2024-09-24 10:17:30,646 views 5762 140165289854528 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:17:30,698 views 5762 140165289854528 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:17:30,803 views 5762 140165289854528 Form is valid: True
+INFO 2024-09-24 10:17:30,880 views 5762 140165289854528 Clinic formset is valid: False
+INFO 2024-09-24 10:17:30,934 views 5762 140165289854528 Education formset is valid: True
+ERROR 2024-09-24 10:17:30,935 views 5762 140165289854528 Form validation failed
+ERROR 2024-09-24 10:17:30,935 views 5762 140165289854528 Form errors: 
+ERROR 2024-09-24 10:17:30,935 views 5762 140165289854528 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:17:30,935 views 5762 140165289854528 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:22:40,253 autoreload 2677 140088757451840 Watching for file changes with StatReloader
+INFO 2024-09-24 10:23:05,757 views 2677 140088595961408 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:23:05,809 views 2677 140088595961408 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:23:05,809 views 2677 140088595961408 GET request received
+WARNING 2024-09-24 10:24:46,497 log 2677 140087966803520 Forbidden (CSRF token from POST incorrect.): /surgeon/37/edit/
+INFO 2024-09-24 10:24:52,133 views 2677 140087958410816 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:24:52,190 views 2677 140087958410816 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:24:52,190 views 2677 140087958410816 GET request received
+INFO 2024-09-24 10:24:56,194 views 2677 140087471896128 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:24:56,243 views 2677 140087471896128 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:24:56,345 views 2677 140087471896128 Form is valid: True
+INFO 2024-09-24 10:24:56,420 views 2677 140087471896128 Clinic formset is valid: False
+INFO 2024-09-24 10:24:56,472 views 2677 140087471896128 Education formset is valid: True
+ERROR 2024-09-24 10:24:56,473 views 2677 140087471896128 Form validation failed
+ERROR 2024-09-24 10:24:56,474 views 2677 140087471896128 Form errors: 
+ERROR 2024-09-24 10:24:56,474 views 2677 140087471896128 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:24:56,474 views 2677 140087471896128 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:26:25,482 autoreload 2677 140088757451840 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:26:25,947 autoreload 2900 140711152950336 Watching for file changes with StatReloader
+INFO 2024-09-24 10:26:31,746 views 2900 140711091254848 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:26:31,805 views 2900 140711091254848 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:26:31,805 views 2900 140711091254848 GET request received
+INFO 2024-09-24 10:26:33,606 views 2900 140711080748608 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:26:33,656 views 2900 140711080748608 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:26:33,656 views 2900 140711080748608 GET request received
+INFO 2024-09-24 10:26:39,999 views 2900 140711091254848 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:26:40,050 views 2900 140711091254848 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:26:42,471 views 2900 140711091254848 Form is valid: True
+INFO 2024-09-24 10:26:42,471 views 2900 140711091254848 Clinic formset is valid: False
+INFO 2024-09-24 10:26:42,525 views 2900 140711091254848 Education formset is valid: True
+ERROR 2024-09-24 10:26:42,525 views 2900 140711091254848 Form validation failed
+ERROR 2024-09-24 10:26:42,526 views 2900 140711091254848 Form errors: 
+ERROR 2024-09-24 10:26:42,526 views 2900 140711091254848 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:26:42,526 views 2900 140711091254848 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:27:21,935 views 2900 140711072339520 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:27:21,987 views 2900 140711072339520 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:27:21,988 views 2900 140711072339520 GET request received
+INFO 2024-09-24 10:27:32,293 views 2900 140711063930432 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:27:32,345 views 2900 140711063930432 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:27:34,788 views 2900 140711063930432 Form is valid: True
+INFO 2024-09-24 10:27:34,788 views 2900 140711063930432 Clinic formset is valid: False
+INFO 2024-09-24 10:27:34,842 views 2900 140711063930432 Education formset is valid: True
+ERROR 2024-09-24 10:27:34,842 views 2900 140711063930432 Form validation failed
+ERROR 2024-09-24 10:27:34,842 views 2900 140711063930432 Form errors: 
+ERROR 2024-09-24 10:27:34,842 views 2900 140711063930432 Clinic formset errors: [{'id': ['This field is required.']}]
+ERROR 2024-09-24 10:27:34,842 views 2900 140711063930432 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:28:04,824 views 2900 140710711916096 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:28:04,874 views 2900 140710711916096 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:28:04,874 views 2900 140710711916096 GET request received
+INFO 2024-09-24 10:28:07,910 views 2900 140710703523392 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:28:07,959 views 2900 140710703523392 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:28:07,960 views 2900 140710703523392 GET request received
+INFO 2024-09-24 10:29:00,999 views 2900 140710695130688 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:29:01,053 views 2900 140710695130688 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:29:03,606 views 2900 140710695130688 Form is valid: True
+INFO 2024-09-24 10:29:03,606 views 2900 140710695130688 Clinic formset is valid: False
+INFO 2024-09-24 10:29:03,663 views 2900 140710695130688 Education formset is valid: True
+ERROR 2024-09-24 10:29:03,663 views 2900 140710695130688 Form validation failed
+ERROR 2024-09-24 10:29:03,663 views 2900 140710695130688 Form errors: 
+ERROR 2024-09-24 10:29:03,664 views 2900 140710695130688 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:29:03,664 views 2900 140710695130688 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:30:19,151 autoreload 2900 140711152950336 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 10:30:19,612 autoreload 3185 139972092255296 Watching for file changes with StatReloader
+INFO 2024-09-24 10:31:00,269 autoreload 3185 139972092255296 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 10:31:00,722 autoreload 3241 139763688500288 Watching for file changes with StatReloader
+INFO 2024-09-24 10:31:12,019 autoreload 3241 139763688500288 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-24 10:31:12,471 autoreload 3258 140495546661952 Watching for file changes with StatReloader
+INFO 2024-09-24 10:31:17,946 views 3258 140495484966464 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:31:17,999 views 3258 140495484966464 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:31:18,000 views 3258 140495484966464 GET request received
+INFO 2024-09-24 10:32:34,728 autoreload 3258 140495546661952 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:32:35,189 autoreload 3408 140161132411968 Watching for file changes with StatReloader
+INFO 2024-09-24 10:32:38,759 views 3408 140161070716480 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:32:38,812 views 3408 140161070716480 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:32:38,812 views 3408 140161070716480 GET request received
+INFO 2024-09-24 10:32:54,213 views 3408 140161043392064 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:32:54,262 views 3408 140161043392064 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:32:56,542 views 3408 140161043392064 Form is valid: True
+INFO 2024-09-24 10:32:56,542 views 3408 140161043392064 Clinic formset is valid: False
+INFO 2024-09-24 10:32:56,593 views 3408 140161043392064 Education formset is valid: True
+ERROR 2024-09-24 10:32:56,594 views 3408 140161043392064 Form validation failed
+ERROR 2024-09-24 10:32:56,594 views 3408 140161043392064 Form errors: 
+ERROR 2024-09-24 10:32:56,594 views 3408 140161043392064 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:32:56,594 views 3408 140161043392064 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:33:06,874 autoreload 3408 140161132411968 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:33:07,335 autoreload 3453 140411344309312 Watching for file changes with StatReloader
+INFO 2024-09-24 10:33:22,703 autoreload 3453 140411344309312 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:33:23,154 autoreload 3473 139828033965120 Watching for file changes with StatReloader
+INFO 2024-09-24 10:33:39,528 autoreload 3473 139828033965120 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:33:39,979 autoreload 3500 140638396333120 Watching for file changes with StatReloader
+INFO 2024-09-24 10:33:41,936 views 3500 140638334637632 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:33:41,988 views 3500 140638334637632 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:33:41,988 views 3500 140638334637632 GET request received
+INFO 2024-09-24 10:33:44,989 views 3500 140638324131392 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:33:45,038 views 3500 140638324131392 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:33:45,039 views 3500 140638324131392 GET request received
+ERROR 2024-09-24 10:33:48,660 log 3500 140638324131392 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 504, in edit_surgeon_profile
+    return render(request,'edit_surgeon_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/html.py", line 466, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 107, in as_widget
+    return widget.render(
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 758, in get_context
+    context = super().get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 717, in get_context
+    context["widget"]["optgroups"] = self.optgroups(
+                                     ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 657, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1403, in __iter__
+    for obj in queryset:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 516, in _iterator
+    yield from iterable
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 121, in __iter__
+    for row in compiler.results_iter(results):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2096, in cursor_iter
+    cursor.close()
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140638324131392_sync_4" does not exist
+
+ERROR 2024-09-24 10:33:48,711 log 3500 140638334637632 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140638334637632_sync_9" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 97, in inner
+    with self:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: cursor "_django_curs_140638334637632_sync_9" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 504, in edit_surgeon_profile
+    return render(request,'edit_surgeon_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/html.py", line 466, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 107, in as_widget
+    return widget.render(
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 758, in get_context
+    context = super().get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 717, in get_context
+    context["widget"]["optgroups"] = self.optgroups(
+                                     ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 657, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1403, in __iter__
+    for obj in queryset:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 516, in _iterator
+    yield from iterable
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 121, in __iter__
+    for row in compiler.results_iter(results):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2096, in cursor_iter
+    cursor.close()
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140638334637632_sync_9" does not exist
+
+INFO 2024-09-24 10:33:56,483 autoreload 3500 140638396333120 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:33:56,936 autoreload 3522 140257960397888 Watching for file changes with StatReloader
+INFO 2024-09-24 10:35:40,355 autoreload 3522 140257960397888 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-24 10:35:40,808 autoreload 3609 140716838857792 Watching for file changes with StatReloader
+INFO 2024-09-24 10:37:34,032 views 3609 140716777162304 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:37:34,089 views 3609 140716777162304 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:37:34,089 views 3609 140716777162304 GET request received
+INFO 2024-09-24 10:37:44,526 views 3609 140716541994560 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:37:44,582 views 3609 140716541994560 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:37:47,237 views 3609 140716541994560 Form is valid: True
+INFO 2024-09-24 10:37:47,237 views 3609 140716541994560 Clinic formset is valid: False
+INFO 2024-09-24 10:37:47,296 views 3609 140716541994560 Education formset is valid: True
+ERROR 2024-09-24 10:37:47,296 views 3609 140716541994560 Form validation failed
+ERROR 2024-09-24 10:37:47,297 views 3609 140716541994560 Form errors: 
+ERROR 2024-09-24 10:37:47,297 views 3609 140716541994560 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:37:47,297 views 3609 140716541994560 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:52:21,223 autoreload 4257 140206907370560 Watching for file changes with StatReloader
+INFO 2024-09-24 10:52:23,790 views 4257 140206845675072 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:52:23,867 views 4257 140206845675072 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:52:26,367 views 4257 140206845675072 Form is valid: True
+INFO 2024-09-24 10:52:26,367 views 4257 140206845675072 Clinic formset is valid: False
+INFO 2024-09-24 10:52:26,430 views 4257 140206845675072 Education formset is valid: True
+ERROR 2024-09-24 10:52:26,430 views 4257 140206845675072 Form validation failed
+ERROR 2024-09-24 10:52:26,431 views 4257 140206845675072 Form errors: 
+ERROR 2024-09-24 10:52:26,432 views 4257 140206845675072 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 10:52:26,432 views 4257 140206845675072 Education formset errors: [{}, {}]
+INFO 2024-09-24 10:52:27,120 views 4257 140206835168832 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 10:52:27,172 views 4257 140206835168832 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 10:52:27,172 views 4257 140206835168832 GET request received
+ERROR 2024-09-24 10:52:30,290 log 4257 140206845675072 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140206845675072_sync_8" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 97, in inner
+    with self:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: cursor "_django_curs_140206845675072_sync_8" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 498, in edit_surgeon_profile
+    return render(request,'edit_surgeon_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/html.py", line 466, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 107, in as_widget
+    return widget.render(
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 758, in get_context
+    context = super().get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 717, in get_context
+    context["widget"]["optgroups"] = self.optgroups(
+                                     ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 657, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1403, in __iter__
+    for obj in queryset:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 516, in _iterator
+    yield from iterable
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 121, in __iter__
+    for row in compiler.results_iter(results):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2096, in cursor_iter
+    cursor.close()
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140206845675072_sync_8" does not exist
+
+ERROR 2024-09-24 10:52:30,447 log 4257 140206835168832 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140206835168832_sync_3" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 97, in inner
+    with self:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: cursor "_django_curs_140206835168832_sync_3" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 498, in edit_surgeon_profile
+    return render(request,'edit_surgeon_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/html.py", line 466, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 107, in as_widget
+    return widget.render(
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 758, in get_context
+    context = super().get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 717, in get_context
+    context["widget"]["optgroups"] = self.optgroups(
+                                     ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 657, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1403, in __iter__
+    for obj in queryset:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 516, in _iterator
+    yield from iterable
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 121, in __iter__
+    for row in compiler.results_iter(results):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2096, in cursor_iter
+    cursor.close()
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140206835168832_sync_3" does not exist
+
+ERROR 2024-09-24 10:52:51,367 log 4257 140205818361408 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 293, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())
+                                                             ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 617, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 1022, in __init__
+    raise ValueError(
+ValueError: "<Surgeon:   - Pending>" needs to have a value for field "id" before this many-to-many relationship can be used.
+INFO 2024-09-24 11:00:34,780 autoreload 3359 140528182058048 Watching for file changes with StatReloader
+ERROR 2024-09-24 11:01:08,659 log 3359 140527991232064 Internal Server Error: /surgeon_profile/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit_surgeon_profile' with arguments '('',)' not found. 2 pattern(s) tried: ['surgeon/(?P<surgeon_id>[0-9]+)/edit/\\Z', 'edit_surgeon_profile/(?P<surgeon_id>[0-9]+)/\\Z']
+INFO 2024-09-24 11:01:17,717 views 3359 140527429215808 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:01:17,766 views 3359 140527429215808 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:01:17,766 views 3359 140527429215808 GET request received
+INFO 2024-09-24 11:01:23,203 views 3359 140527420823104 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:01:23,256 views 3359 140527420823104 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:01:25,762 views 3359 140527420823104 Form is valid: True
+INFO 2024-09-24 11:01:25,763 views 3359 140527420823104 Clinic formset is valid: False
+INFO 2024-09-24 11:01:25,819 views 3359 140527420823104 Education formset is valid: True
+ERROR 2024-09-24 11:01:25,819 views 3359 140527420823104 Form validation failed
+ERROR 2024-09-24 11:01:25,820 views 3359 140527420823104 Form errors: 
+ERROR 2024-09-24 11:01:25,820 views 3359 140527420823104 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 11:01:25,820 views 3359 140527420823104 Education formset errors: [{}, {}]
+INFO 2024-09-24 11:02:35,219 views 3359 140527412430400 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:02:35,273 views 3359 140527412430400 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:02:35,273 views 3359 140527412430400 GET request received
+INFO 2024-09-24 11:02:38,965 views 3359 140527404037696 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:02:39,020 views 3359 140527404037696 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:02:39,020 views 3359 140527404037696 GET request received
+INFO 2024-09-24 11:02:44,852 views 3359 140527395644992 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:02:44,907 views 3359 140527395644992 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:02:47,484 views 3359 140527395644992 Form is valid: True
+INFO 2024-09-24 11:02:47,484 views 3359 140527395644992 Clinic formset is valid: False
+INFO 2024-09-24 11:02:47,540 views 3359 140527395644992 Education formset is valid: True
+ERROR 2024-09-24 11:02:47,540 views 3359 140527395644992 Form validation failed
+ERROR 2024-09-24 11:02:47,541 views 3359 140527395644992 Form errors: 
+ERROR 2024-09-24 11:02:47,541 views 3359 140527395644992 Clinic formset errors: [{'id': ['This field is required.']}, {}]
+ERROR 2024-09-24 11:02:47,541 views 3359 140527395644992 Education formset errors: [{}, {}]
+INFO 2024-09-24 11:04:32,275 views 3359 140527387252288 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:04:32,331 views 3359 140527387252288 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:04:32,331 views 3359 140527387252288 GET request received
+INFO 2024-09-24 11:04:38,479 views 3359 140526900737600 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:04:38,536 views 3359 140526900737600 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:04:38,536 views 3359 140526900737600 GET request received
+INFO 2024-09-24 11:08:25,963 views 3359 140526892344896 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:08:26,026 views 3359 140526892344896 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:08:26,026 views 3359 140526892344896 GET request received
+INFO 2024-09-24 11:09:11,751 views 3359 140526867166784 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:09:11,805 views 3359 140526867166784 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:09:11,805 views 3359 140526867166784 GET request received
+INFO 2024-09-24 11:09:25,523 views 3359 140526363866688 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-24 11:09:25,582 views 3359 140526363866688 Clinics associated with surgeon: <QuerySet [<Clinic: Add (Malmö)>]>
+INFO 2024-09-24 11:09:28,403 views 3359 140526363866688 Form is valid: True
+INFO 2024-09-24 11:09:28,403 views 3359 140526363866688 Clinic formset is valid: True
+INFO 2024-09-24 11:09:28,464 views 3359 140526363866688 Education formset is valid: True
+ERROR 2024-09-24 11:09:28,690 log 3359 140526363866688 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 440, in edit_surgeon_profile
+    clinic = clinic_form.save(commit=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 467, in edit_surgeon_profile
+    except IntegrityError as e:
+           ^^^^^^^^^^^^^^
+NameError: name 'IntegrityError' is not defined. Did you mean: 'InterruptedError'?

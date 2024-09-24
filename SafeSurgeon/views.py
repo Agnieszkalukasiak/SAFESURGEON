@@ -464,9 +464,7 @@ def edit_surgeon_profile(request, surgeon_id):
                     logger.info("Profile updated successfully")
                     return render(request, 'pending.html',)
 
-            except IntegrityError as e:
-                logger.error(f"Error saving form: {str(e)}")
-                messages.error(request, f"An error occurred while saving: {str(e)}")
+           
             except ValueError as e:
                 logger.error(f"Value error: {str(e)}")
                 messages.error(request, "Invalid data provided. Please check your input and try again.")
