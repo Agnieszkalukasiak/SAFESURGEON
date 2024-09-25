@@ -11,11 +11,18 @@ import logging
 import sys
 
 
+
 from .models import Surgeon, Country, City, Clinic, Education, Verification
 from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm, ClinicForm, ClinicFormSet
 
 #create a logger for this view
 logger = logging.getLogger(__name__)
+
+
+logger.debug("This is a debug message at the top of views.py")
+logger.info("This is an info message at the top of views.py")
+logger.warning("This is a warning message at the top of views.py")
+logger.error("This is an error message at the top of views.py")
 
 
 # Create your views here for home page
@@ -402,12 +409,13 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 
     return render  (request, 'verify_result.html', context)
    
-
+'''
+#THIS IS THE CORRECT ONE!!!!
 logger = logging.getLogger(__name__)
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
     logger.info(f"Editing profile for surgeon: {surgeon}")
-
+    
 
     #Fetch clinics associated with the surgeon
     clinics = surgeon.clinic.all()
@@ -421,7 +429,7 @@ def edit_surgeon_profile(request, surgeon_id):
         logger.info(f"FILES data: {request.FILES}")
     
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
-        clinic_formset=ClinicFormSet(request.POST,queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon) )
+        clinic_formset=ClinicFormSet(request.POST ,queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon) )
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon,)
 
 
@@ -441,18 +449,18 @@ def edit_surgeon_profile(request, surgeon_id):
                     surgeon.save()
                     
 
-                    city = surgeon.city 
+                    #city = surgeon.city 
                 
                  # Handle clinic formset(THE BEST OPTION SO FAR)   
                     instances = clinic_formset.save(commit=False)
                     for instance in instances:
                         instance.surgeon = surgeon
                         instance.save()
-                        logger.debug(f"Saved clinic instance: {instance}")
+                    
 
-                    for obj in clinic_formset.deleted_objects:
-                        logger.debug(f"Deleting clinic instance: {obj}")
-                        obj.delete()
+                    #for obj in clinic_formset.deleted_objects:
+                        #logger.debug(f"Deleting clinic instance: {obj}")
+                        #obj.delete()
                 
                 # Handle deletions remove the relationship, not the clinic
                 for deleted_form in clinic_formset.deleted_forms:
@@ -474,12 +482,12 @@ def edit_surgeon_profile(request, surgeon_id):
                 
 
                 education_formset.save()
-                logger.debug(f"Created and added new clinic: {new_clinic}")
+                
             
                 logger.info("Transaction committed successfully")
                 messages.success(request, 'Profile updated successfully. Your changes are pending verification.')
                 logger.debug("Redirecting to surgeon profile page")
-                return render('pending.html',)
+                return render(request, 'pending.html')
             except Exception as e:
                 logger.exception(f"An error occurred while saving: {e}")
                 messages.error(request, 'Please correct the errors below.')
@@ -507,7 +515,10 @@ def edit_surgeon_profile(request, surgeon_id):
     }
     logger.debug("Rendering edit_surgeon_profile.html")
     return render(request,'edit_surgeon_profile.html', context)
-   
+'''
+
+
+
 
 '''  
             #Handle clinic formset
@@ -621,3 +632,67 @@ def contact(request):
         return redirect('contact')
     
     return render(request, 'contact.html')
+
+
+def edit_surgeon_profile(request, surgeon_id):
+    surgeon = get_object_or_404(Surgeon, id=surgeon_id)
+    logger.info(f"Editing profile for surgeon: {surgeon}")
+
+    if request.method == 'POST':
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        clinic_formset = ClinicFormSet(request.POST, queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon))
+        education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon)
+
+        if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
+            try:
+                with transaction.atomic():
+                    surgeon = form.save(commit=False)
+                    surgeon.verfication_status = 'pending'
+                    surgeon.save()
+
+                    # Handle clinic associations
+                    current_clinics = set(surgeon.clinic.all())
+                    updated_clinics = set()
+
+                    for clinic_form in clinic_formset:
+                        if clinic_form.cleaned_data.get('DELETE'):
+                            if clinic_form.instance.pk:
+                                clinic = clinic_form.cleaned_data.get('clinic')
+                                if clinic:
+                                    surgeon.clinic.remove(clinic)
+                                    logger.debug(f"Removed clinic association: Surgeon {surgeon.id} - Clinic {clinic.id}")
+                        else:
+                            if clinic_form.cleaned_data.get('clinic'):
+                                updated_clinics.add(clinic_form.cleaned_data['clinic'])
+                            elif clinic_form.cleaned_data.get('new_clinic_name'):
+                                new_clinic = Clinic.objects.create(
+                                    name=clinic_form.cleaned_data['new_clinic_name'],
+                                    city=surgeon.city
+                                )
+                                updated_clinics.add(new_clinic)
+                                logger.debug(f"Created new clinic: {new_clinic}")
+
+                    # Update surgeon's clinics
+                    surgeon.clinic.set(updated_clinics)
+                    logger.debug(f"Updated surgeon's clinics: {updated_clinics}")
+
+                    education_formset.save()
+
+                logger.info("Transaction committed successfully")
+                messages.success(request, 'Profile updated successfully. Your changes are pending verification.')
+                return redirect('surgeon_profile', surgeon_id=surgeon.id)
+            except Exception as e:
+                logger.exception(f"An error occurred while saving: {e}")
+                messages.error(request, f'An error occurred: {str(e)}')
+    else:
+        form = SurgeonForm(instance=surgeon)
+        clinic_formset = ClinicFormSet(queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon))
+        education_formset = EducationFormSet(instance=surgeon)
+
+    context = {
+        'surgeon': surgeon,
+        'form': form,
+        'clinic_formset': clinic_formset,
+        'education_formset': education_formset,
+    }
+    return render(request, 'edit_surgeon_profile.html', context)
