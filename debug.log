@@ -3654,3 +3654,70 @@ INFO 2024-09-25 13:48:13,236 views 8306 140598640113216 Form is valid: True
 INFO 2024-09-25 13:48:13,501 views 8306 140598640113216 Clinic formset is valid: True
 INFO 2024-09-25 13:48:13,564 views 8306 140598640113216 Education formset is valid: True
 ERROR 2024-09-25 13:48:13,594 views 8306 140598640113216 An error occurred: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+INFO 2024-09-25 13:55:18,192 autoreload 8306 140598773898304 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:55:18,673 autoreload 9176 140353300917312 Watching for file changes with StatReloader
+INFO 2024-09-25 13:55:26,869 views 9176 140353239221824 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:55:26,969 views 9176 140353239221824 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+ERROR 2024-09-25 13:55:27,355 log 9176 140353239221824 Internal Server Error: /surgeon/62/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 489, in edit_surgeon_profile
+    return render(request,'edit_surgeon_profile', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: edit_surgeon_profile
+INFO 2024-09-25 13:55:45,474 autoreload 9176 140353300917312 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:55:45,932 autoreload 10037 139892192341056 Watching for file changes with StatReloader
+INFO 2024-09-25 13:56:10,425 autoreload 10037 139892192341056 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:56:10,886 autoreload 10078 139668687264832 Watching for file changes with StatReloader
+INFO 2024-09-25 13:56:17,112 autoreload 10078 139668687264832 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:56:17,554 autoreload 10097 140395982842944 Watching for file changes with StatReloader
+INFO 2024-09-25 13:56:20,242 views 10097 140395921147456 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:56:20,326 views 10097 140395921147456 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+INFO 2024-09-25 13:57:42,912 autoreload 10097 140395982842944 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:57:43,375 autoreload 10185 140230001355840 Watching for file changes with StatReloader
+INFO 2024-09-25 13:57:57,730 autoreload 10185 140230001355840 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:57:58,178 autoreload 10207 140496709790784 Watching for file changes with StatReloader
+INFO 2024-09-25 13:58:08,354 autoreload 10282 140454603336768 Watching for file changes with StatReloader
+INFO 2024-09-25 13:58:13,397 views 10207 140496648095296 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:58:13,497 views 10207 140496648095296 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+INFO 2024-09-25 13:58:47,119 views 10207 140496567531072 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:58:47,203 views 10207 140496567531072 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+INFO 2024-09-25 13:58:47,203 views 10207 140496567531072 POST data: <QueryDict: {'csrfmiddlewaretoken': ['3zdFCUBnVXFPykca3xB9itnYcdFDINFJoFxNW1zVOqA7TyRIU5Lw51HwOz5MR5HR'], 'profile_picture': [''], 'country': ['1'], 'city': ['1'], 'id_document': [''], 'form-TOTAL_FORMS': ['3'], 'form-INITIAL_FORMS': ['2'], 'form-MIN_NUM_FORMS': ['0'], 'form-MAX_NUM_FORMS': ['1000'], 'form-0-id': ['40'], 'form-0-clinic': ['25'], 'form-0-new_clinic_name': [''], 'form-1-id': ['41'], 'form-1-clinic': ['5'], 'form-1-new_clinic_name': [''], 'form-2-id': [''], 'form-2-clinic': [''], 'form-2-new_clinic_name': [''], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['oxford'], 'education-0-institution_country': ['Poland'], 'education-0-program': ['laser surgery'], 'education-0-start_date': ['2024-09-19'], 'education-0-end_date': ['2024-09-27'], 'education-0-certificate': [''], 'education-0-id': ['57'], 'education-0-surgeon': ['62'], 'education-1-institution': [''], 'education-1-institution_country': [''], 'education-1-program': [''], 'education-1-start_date': [''], 'education-1-end_date': [''], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['62']}>
+INFO 2024-09-25 13:58:47,203 views 10207 140496567531072 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 13:58:47,317 views 10207 140496567531072 Form is valid: True
+INFO 2024-09-25 13:58:47,576 views 10207 140496567531072 Clinic formset is valid: True
+INFO 2024-09-25 13:58:47,635 views 10207 140496567531072 Education formset is valid: True
+ERROR 2024-09-25 13:58:47,664 views 10207 140496567531072 An error occurred: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+INFO 2024-09-25 14:00:23,439 autoreload 10207 140496709790784 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:00:23,903 autoreload 10552 140554685213760 Watching for file changes with StatReloader
+INFO 2024-09-25 14:01:54,221 autoreload 10552 140554685213760 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:01:54,674 autoreload 10636 140313830116416 Watching for file changes with StatReloader
+INFO 2024-09-25 14:02:41,419 autoreload 10636 140313830116416 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:02:41,875 autoreload 10699 139952353602624 Watching for file changes with StatReloader
+INFO 2024-09-25 14:02:55,220 autoreload 10699 139952353602624 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:02:55,678 autoreload 10719 140387174599744 Watching for file changes with StatReloader
+INFO 2024-09-25 14:04:02,703 autoreload 10719 140387174599744 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:04:03,158 autoreload 10790 140401556008000 Watching for file changes with StatReloader
+INFO 2024-09-25 14:05:54,714 autoreload 10790 140401556008000 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:05:55,162 autoreload 10896 140651679067200 Watching for file changes with StatReloader
+INFO 2024-09-25 14:06:29,759 autoreload 10896 140651679067200 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:06:30,212 autoreload 10935 140500892793920 Watching for file changes with StatReloader
+INFO 2024-09-25 14:06:49,630 autoreload 10935 140500892793920 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:06:50,081 autoreload 10963 139844486310976 Watching for file changes with StatReloader
+INFO 2024-09-25 14:11:01,342 autoreload 10963 139844486310976 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:11:01,793 autoreload 11206 140512228269120 Watching for file changes with StatReloader
+INFO 2024-09-25 14:11:10,075 autoreload 11206 140512228269120 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 14:11:10,529 autoreload 11222 140620162522176 Watching for file changes with StatReloader

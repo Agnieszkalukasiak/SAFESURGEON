@@ -432,46 +432,65 @@ def edit_surgeon_profile(request, surgeon_id):
        
         #validation
         if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
+            logger.debug("All forms are valid, proceeding with save operations")
             try:
-                surgeon=form.save(commit=False)
-                surgeon.verfication_status='pending'
-                surgeon.save()
+                with transaction.atomic():
+                    logger.debug("Starting database transaction")
+                    surgeon=form.save(commit=False)
+                    surgeon.verfication_status='pending'
+                    surgeon.save()
                     
 
-                city = surgeon.city 
+                    city = surgeon.city 
                 
                  # Handle clinic formset(THE BEST OPTION SO FAR)   
-                instances = clinic_formset.save(commit=False)
-                for instance in instances:
-                    instance.surgeon = surgeon
-                    instance.save()
-                for obj in clinic_formset.deleted_objects:
-                    obj.delete()
+                    instances = clinic_formset.save(commit=False)
+                    for instance in instances:
+                        instance.surgeon = surgeon
+                        instance.save()
+                        logger.debug(f"Saved clinic instance: {instance}")
+
+                    for obj in clinic_formset.deleted_objects:
+                        logger.debug(f"Deleting clinic instance: {obj}")
+                        obj.delete()
                 
                 # Handle deletions remove the relationship, not the clinic
-                #for deleted_form in clinic_formset.deleted_forms:
-                    #if deleted_form.instance.pk:
-                        #surgeon.clinic.remove(deleted_form.cleaned_data.get('clinic'))
+                for deleted_form in clinic_formset.deleted_forms:
+                    if deleted_form.instance.pk:
+                        clinic = deleted_form.cleaned_data.get('clinic')
+                        if clinic:
+                            logger.debug(f"Removing clinic association: Surgeon {surgeon.id} - Clinic {clinic.id}")
+                            surgeon.clinic.remove(clinic)
+                        else:
+                            logger.warning(f"Attempt to remove clinic association failed: No clinic found in form {deleted_form}")
+
 
                 # Handle new clinic creation if needed
                 for form in clinic_formset:
                     if form.cleaned_data.get('new_clinic_name'):
                         new_clinic = Clinic.objects.create(name=form.cleaned_data['new_clinic_name'], city=surgeon.city)
                         surgeon.clinic.add(new_clinic)
+                        logger.debug(f"Created and added new clinic: {new_clinic}")
                 
 
                 education_formset.save()
+                logger.debug(f"Created and added new clinic: {new_clinic}")
             
+                logger.info("Transaction committed successfully")
                 messages.success(request, 'Profile updated successfully. Your changes are pending verification.')
-                return render('pending',)
+                logger.debug("Redirecting to surgeon profile page")
+                return render('pending.html',)
             except Exception as e:
-                logger.error(f"An error occurred: {e}")
+                logger.exception(f"An error occurred while saving: {e}")
                 messages.error(request, 'Please correct the errors below.')
         else:
-            print("Form errors:", form.errors)
-            print("Clinic formset errors:", clinic_formset.errors)
-            print("Education formset errors:", education_formset.errors)
+            logger.warning("Form validation failed")
+            logger.debug(f"Form errors: {form.errors}")
+            logger.debug(f"Clinic formset errors: {clinic_formset.errors}")
+            logger.debug(f"Education formset errors: {education_formset.errors}")
+            messages.error(request, 'Please correct the errors below.')
     else:
+        logger.debug("Processing GET request")
         initial_data = {
             'country': surgeon.country.id if surgeon.country else None,
             'city': surgeon.city.id if surgeon.city else None,
@@ -486,7 +505,9 @@ def edit_surgeon_profile(request, surgeon_id):
         'clinic_formset': clinic_formset,
         'education_formset': education_formset,
     }
-    return render(request,'pending.html', context)
+    logger.debug("Rendering edit_surgeon_profile.html")
+    return render(request,'edit_surgeon_profile.html', context)
+   
 
 '''  
             #Handle clinic formset
