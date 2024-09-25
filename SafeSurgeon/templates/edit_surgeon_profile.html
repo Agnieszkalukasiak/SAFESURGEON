@@ -21,7 +21,7 @@
                 {{clinic_formset.management_form}}
             </div>
             <div id="clinic-forms">
-                  {%for clinic_form in clinic_formset%} 
+                {%for clinic_form in clinic_formset%} 
 
                   {% for hidden in clinic_form.hidden_fields %}
                   {{hidden}}
@@ -33,7 +33,7 @@
                         <h3>Clinic Entry{{forloop.counter}}</h3>
                         {{ clinic_form.non_field_errors }}
                     <div class="mb-3">
-                        {{ clinic_form.clinic.label_tag }}
+                        {{ clinic_form.label_tag }}
                         {{ clinic_form.clinic }}
                         {{ clinic_form.clinic.errors }}
                 </div>

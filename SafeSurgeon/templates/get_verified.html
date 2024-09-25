@@ -50,6 +50,8 @@
             {{ form.city }}         
             {{ form.city.errors }}
         </div>
+        logger.info(f"Surgeon form initial data: {form.initial}")
+        logger.info(f"Surgeon city: {surgeon.city}, country: {surgeon.country}")
         <div class="mb-3">
             <h2>Add Clinics</h2>
             {{ clinic_formset.non_field_errors }} 

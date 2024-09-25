@@ -2607,3 +2607,132 @@ INFO 2024-09-24 13:17:47,028 views 6398 140483560494656 GET request received
 INFO 2024-09-24 13:18:02,871 views 6398 140483321906752 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-24 13:18:02,923 views 6398 140483321906752 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
 INFO 2024-09-24 13:18:02,923 views 6398 140483321906752 GET request received
+INFO 2024-09-25 00:49:06,284 autoreload 2020 140345364642880 Watching for file changes with StatReloader
+INFO 2024-09-25 00:49:51,038 autoreload 2020 140345364642880 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 00:49:51,505 autoreload 2088 140578468801600 Watching for file changes with StatReloader
+INFO 2024-09-25 00:50:56,502 autoreload 2088 140578468801600 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 00:50:56,954 autoreload 2190 139989563472960 Watching for file changes with StatReloader
+INFO 2024-09-25 00:51:02,203 autoreload 2190 139989563472960 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 00:51:02,672 autoreload 2204 140562617171008 Watching for file changes with StatReloader
+INFO 2024-09-25 00:51:41,952 views 2204 140562283861568 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 00:51:42,006 views 2204 140562283861568 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 00:51:42,006 views 2204 140562283861568 GET request received
+INFO 2024-09-25 00:54:41,291 views 2204 140561210119744 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 00:54:41,341 views 2204 140561210119744 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 00:54:41,341 views 2204 140561210119744 GET request received
+INFO 2024-09-25 01:04:27,812 views 2204 140560723605056 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:04:27,867 views 2204 140560723605056 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:04:27,978 views 2204 140560723605056 Form is valid: True
+INFO 2024-09-25 01:04:28,033 views 2204 140560723605056 Clinic formset is valid: False
+INFO 2024-09-25 01:04:28,089 views 2204 140560723605056 Education formset is valid: True
+ERROR 2024-09-25 01:04:28,089 views 2204 140560723605056 Form validation failed
+ERROR 2024-09-25 01:04:28,089 views 2204 140560723605056 Form errors: 
+ERROR 2024-09-25 01:04:28,090 views 2204 140560723605056 Clinic formset errors: [{'clinic': ['This field is required.'], 'id': ['Select a valid choice. That choice is not one of the available choices.'], '__all__': ['Please either select an existing clinic or enter a new clinic name.']}, {}]
+ERROR 2024-09-25 01:04:28,090 views 2204 140560723605056 Education formset errors: [{}, {}]
+INFO 2024-09-25 01:11:02,052 autoreload 2204 140562617171008 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:11:02,514 autoreload 3304 140711411743808 Watching for file changes with StatReloader
+INFO 2024-09-25 01:11:38,092 autoreload 3304 140711411743808 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:11:38,548 autoreload 3348 140238753287232 Watching for file changes with StatReloader
+INFO 2024-09-25 01:12:32,230 autoreload 3348 140238753287232 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:12:32,677 autoreload 3408 139797992614976 Watching for file changes with StatReloader
+INFO 2024-09-25 01:12:49,036 autoreload 3408 139797992614976 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:12:49,492 autoreload 3436 140029780245568 Watching for file changes with StatReloader
+INFO 2024-09-25 01:12:53,546 views 3436 140029718550080 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:12:53,599 views 3436 140029718550080 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:12:53,599 views 3436 140029718550080 GET request received
+INFO 2024-09-25 01:13:15,129 views 3436 140029708043840 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:13:15,181 views 3436 140029708043840 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:13:15,308 views 3436 140029708043840 Form is valid: True
+INFO 2024-09-25 01:13:15,434 views 3436 140029708043840 Clinic formset is valid: False
+INFO 2024-09-25 01:13:15,491 views 3436 140029708043840 Education formset is valid: True
+ERROR 2024-09-25 01:13:15,491 views 3436 140029708043840 Form validation failed
+ERROR 2024-09-25 01:13:15,492 views 3436 140029708043840 Form errors: 
+ERROR 2024-09-25 01:13:15,492 views 3436 140029708043840 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 01:13:15,492 views 3436 140029708043840 Education formset errors: [{}, {}]
+INFO 2024-09-25 01:13:30,448 views 3436 140029699634752 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:13:30,507 views 3436 140029699634752 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:13:30,626 views 3436 140029699634752 Form is valid: True
+INFO 2024-09-25 01:13:30,743 views 3436 140029699634752 Clinic formset is valid: False
+INFO 2024-09-25 01:13:30,803 views 3436 140029699634752 Education formset is valid: True
+ERROR 2024-09-25 01:13:30,803 views 3436 140029699634752 Form validation failed
+ERROR 2024-09-25 01:13:30,803 views 3436 140029699634752 Form errors: 
+ERROR 2024-09-25 01:13:30,803 views 3436 140029699634752 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 01:13:30,803 views 3436 140029699634752 Education formset errors: [{}, {}]
+INFO 2024-09-25 01:26:44,282 autoreload 3436 140029780245568 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:26:44,780 autoreload 4135 140663770631232 Watching for file changes with StatReloader
+INFO 2024-09-25 01:28:31,057 autoreload 4135 140663770631232 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:28:31,511 autoreload 4260 140571352906816 Watching for file changes with StatReloader
+INFO 2024-09-25 01:30:26,875 autoreload 4260 140571352906816 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:30:27,326 autoreload 4398 140440299945024 Watching for file changes with StatReloader
+INFO 2024-09-25 01:30:31,420 views 4398 140440238249536 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:30:31,503 views 4398 140440238249536 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:30:31,504 views 4398 140440238249536 GET request received
+INFO 2024-09-25 01:30:35,468 views 4398 140440227743296 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:30:35,521 views 4398 140440227743296 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:30:35,521 views 4398 140440227743296 GET request received
+INFO 2024-09-25 01:30:44,258 views 4398 140440219334208 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:30:44,313 views 4398 140440219334208 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:30:44,431 views 4398 140440219334208 Form is valid: True
+INFO 2024-09-25 01:30:44,544 views 4398 140440219334208 Clinic formset is valid: False
+INFO 2024-09-25 01:30:44,602 views 4398 140440219334208 Education formset is valid: True
+ERROR 2024-09-25 01:30:44,602 views 4398 140440219334208 Form validation failed
+ERROR 2024-09-25 01:30:44,603 views 4398 140440219334208 Form errors: 
+ERROR 2024-09-25 01:30:44,603 views 4398 140440219334208 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 01:30:44,603 views 4398 140440219334208 Education formset errors: [{}, {}]
+INFO 2024-09-25 01:31:12,235 autoreload 4398 140440299945024 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:31:12,693 autoreload 4461 139957382609984 Watching for file changes with StatReloader
+INFO 2024-09-25 01:31:25,022 autoreload 4461 139957382609984 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 01:31:25,476 autoreload 4482 140124136488000 Watching for file changes with StatReloader
+INFO 2024-09-25 01:31:32,621 views 4482 140124074792512 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:31:32,679 views 4482 140124074792512 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:31:32,679 views 4482 140124074792512 GET request received
+INFO 2024-09-25 01:32:14,234 views 4482 140123819722304 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:32:14,287 views 4482 140123819722304 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:32:14,287 views 4482 140123819722304 GET request received
+INFO 2024-09-25 01:46:52,706 views 4482 140121059866176 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:46:52,789 views 4482 140121059866176 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:46:52,789 views 4482 140121059866176 GET request received
+INFO 2024-09-25 01:46:54,423 views 4482 140121051473472 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:46:54,478 views 4482 140121051473472 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:46:54,478 views 4482 140121051473472 GET request received
+INFO 2024-09-25 01:47:07,891 autoreload 6039 139807348468800 Watching for file changes with StatReloader
+INFO 2024-09-25 01:48:40,518 autoreload 3246 140652785073216 Watching for file changes with StatReloader
+INFO 2024-09-25 01:49:00,995 views 3246 140652679235136 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:49:01,053 views 3246 140652679235136 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:49:01,053 views 3246 140652679235136 GET request received
+INFO 2024-09-25 01:49:20,977 views 3246 140652192986688 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:49:21,032 views 3246 140652192986688 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:49:21,146 views 3246 140652192986688 Form is valid: True
+INFO 2024-09-25 01:49:21,259 views 3246 140652192986688 Clinic formset is valid: False
+INFO 2024-09-25 01:49:21,317 views 3246 140652192986688 Education formset is valid: True
+ERROR 2024-09-25 01:49:21,317 views 3246 140652192986688 Form validation failed
+ERROR 2024-09-25 01:49:21,319 views 3246 140652192986688 Form errors: 
+ERROR 2024-09-25 01:49:21,319 views 3246 140652192986688 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 01:49:21,319 views 3246 140652192986688 Education formset errors: [{}, {}]
+INFO 2024-09-25 01:51:03,707 views 3246 140652184593984 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:51:03,763 views 3246 140652184593984 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:51:03,870 views 3246 140652184593984 Form is valid: True
+INFO 2024-09-25 01:51:03,976 views 3246 140652184593984 Clinic formset is valid: False
+INFO 2024-09-25 01:51:04,032 views 3246 140652184593984 Education formset is valid: True
+ERROR 2024-09-25 01:51:04,032 views 3246 140652184593984 Form validation failed
+ERROR 2024-09-25 01:51:04,032 views 3246 140652184593984 Form errors: 
+ERROR 2024-09-25 01:51:04,032 views 3246 140652184593984 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 01:51:04,032 views 3246 140652184593984 Education formset errors: [{}, {}]
+INFO 2024-09-25 01:51:30,914 views 3246 140652176201280 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:51:30,969 views 3246 140652176201280 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:51:31,079 views 3246 140652176201280 Form is valid: True
+INFO 2024-09-25 01:51:31,189 views 3246 140652176201280 Clinic formset is valid: False
+INFO 2024-09-25 01:51:31,246 views 3246 140652176201280 Education formset is valid: True
+ERROR 2024-09-25 01:51:31,246 views 3246 140652176201280 Form validation failed
+ERROR 2024-09-25 01:51:31,246 views 3246 140652176201280 Form errors: 
+ERROR 2024-09-25 01:51:31,246 views 3246 140652176201280 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 01:51:31,246 views 3246 140652176201280 Education formset errors: [{}, {}]
+INFO 2024-09-25 01:51:55,416 views 3246 140652167808576 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:51:55,467 views 3246 140652167808576 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:51:55,467 views 3246 140652167808576 GET request received
+INFO 2024-09-25 01:53:35,842 views 3246 140652159415872 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:53:35,905 views 3246 140652159415872 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:53:35,906 views 3246 140652159415872 GET request received
+INFO 2024-09-25 01:54:08,295 views 3246 140652151023168 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 01:54:08,346 views 3246 140652151023168 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 01:54:08,346 views 3246 140652151023168 GET request received

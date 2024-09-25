@@ -406,7 +406,7 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 logger = logging.getLogger(__name__)
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
-    
+
 
     # Fetch clinics associated with the surgeon
     clinics = surgeon.clinic.all()
@@ -429,14 +429,16 @@ def edit_surgeon_profile(request, surgeon_id):
         logger.info(f"Clinic formset is valid: {clinic_formset.is_valid()}")
         logger.info(f"Education formset is valid: {education_formset.is_valid()}")
         
+        #validation
         if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
             try:
                 surgeon=form.save(commit=False)
                 surgeon.verfication_status='pending'
                 surgeon.save()
 
-                city = surgeon.city  
+                #city = surgeon.city  
 
+                
             #Handle clinic formset
                 clinics_to_keep = []
                 for clinic_form in clinic_formset:
@@ -444,16 +446,16 @@ def edit_surgeon_profile(request, surgeon_id):
                         clinic = clinic_form.save(surgeon=surgeon, city=city, commit=True)
                         clinic.surgeon = surgeon  
                         clinic.city = clinic_form.cleaned_data.get('city') 
+                        clinic = clinic_form.save(surgeon=surgeon, city=city, commit=True)
                         if clinic.pk is None:
-                            
+                            clinic.save()
+                        clinics_to_keep.append(clinic)
 
-                            clinic = clinic_form.save(surgeon=surgeon, city=city, commit=True)
-                            clinics_to_keep.append(clinic)
+                surgeon.clinic.set(clinics_to_keep)
+                #debugger
+                logger.info(f"Updated clinics: {surgeon.clinic.all()}")
 
-                        #clinic.save()
-             
-                        #clinics_to_keep.extend(clinics)
-
+                #second option
                 #clinics_to_keep = []
                 #for clinic_form in clinic_formset:
                     #if clinic_form.is_valid() and not clinic_form.cleaned_data.get('DELETE'):
@@ -467,14 +469,7 @@ def edit_surgeon_profile(request, surgeon_id):
                 
                         #clinic = clinic_form.save(surgeon=surgeon, city=city, commit=True)
                         #clinics_to_keep.append(clinic)
-
-               
-                        
-
-                                      
-                surgeon.clinic.set(clinics_to_keep)
-                #debugger
-                logger.info(f"Updated clinics: {surgeon.clinic.all()}")
+             
       
             #handle education formset
         
@@ -541,4 +536,4 @@ def delete_clinic(request, clinic_id):
     else:
         return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
 
-
+        
