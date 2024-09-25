@@ -410,7 +410,7 @@ def edit_surgeon_profile(request, surgeon_id):
 
 
     #Fetch clinics associated with the surgeon
-    clinics = surgeon.clinic.all()
+    #clinics = surgeon.clinic.all()
    
     #Debug: Print out the current clinics associated with the surgeon
     #logger.info(f"Clinics associated with surgeon: {clinics}")
@@ -424,6 +424,7 @@ def edit_surgeon_profile(request, surgeon_id):
         clinic_formset=ClinicFormSet(request.POST,queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon) )
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon,)
 
+
         #debugger
         logger.info(f"Form is valid: {form.is_valid()}")
         logger.info(f"Clinic formset is valid: {clinic_formset.is_valid()}")
@@ -435,30 +436,36 @@ def edit_surgeon_profile(request, surgeon_id):
                 surgeon=form.save(commit=False)
                 surgeon.verfication_status='pending'
                 surgeon.save()
-            
-            
+                    
 
-                city = surgeon.city 
-
-                 # Handle clinic formset
+                #city = surgeon.city 
+                
+                 # Handle clinic formset(THE BEST OPTION SO FAR)
+                
                 instances = clinic_formset.save(commit=False)
                 for instance in instances:
                     instance.surgeon = surgeon
                     instance.save()
                 for obj in clinic_formset.deleted_objects:
                     obj.delete()
-            
+                
+
                 education_formset.save()
             
                 messages.success(request, 'Profile updated successfully. Your changes are pending verification.')
-                return redirect('surgeon_profile', surgeon_id=surgeon.id)
+                return render('pending',)
             except Exception as e:
+                logger.error(f"An error occurred: {e}")
                 messages.error(request, 'Please correct the errors below.')
         else:
-                print("Form errors:", form.errors)
-                print("Clinic formset errors:", clinic_formset.errors)
-                print("Education formset errors:", education_formset.errors)
+            print("Form errors:", form.errors)
+            print("Clinic formset errors:", clinic_formset.errors)
+            print("Education formset errors:", education_formset.errors)
     else:
+        initial_data = {
+            'country': surgeon.country.id if surgeon.country else None,
+            'city': surgeon.city.id if surgeon.city else None,
+        }
         form = SurgeonForm(instance=surgeon)
         clinic_formset = ClinicFormSet(queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon))
         education_formset = EducationFormSet(instance=surgeon)
