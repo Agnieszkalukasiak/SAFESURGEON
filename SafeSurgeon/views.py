@@ -406,39 +406,72 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 logger = logging.getLogger(__name__)
 def edit_surgeon_profile(request, surgeon_id):
     surgeon = get_object_or_404(Surgeon, id=surgeon_id)
+    logger.info(f"Editing profile for surgeon: {surgeon}")
 
 
-    # Fetch clinics associated with the surgeon
+    #Fetch clinics associated with the surgeon
     clinics = surgeon.clinic.all()
    
-
-     # Debug: Print out the current clinics associated with the surgeon
-    logger.info(f"Editing profile for surgeon: {surgeon}")
-    logger.info(f"Clinics associated with surgeon: {clinics}")
+    #Debug: Print out the current clinics associated with the surgeon
+    #logger.info(f"Clinics associated with surgeon: {clinics}")
 
     #handles the post
     if request.method == 'POST':
-        print("POST data:", request.POST)
+        logger.info(f"POST data: {request.POST}")
+        logger.info(f"FILES data: {request.FILES}")
     
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
-        clinic_formset=ClinicFormSet(request.POST,request.FILES, queryset=surgeon.clinic.all() )
+        clinic_formset=ClinicFormSet(request.POST,queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon) )
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon,)
 
         #debugger
         logger.info(f"Form is valid: {form.is_valid()}")
         logger.info(f"Clinic formset is valid: {clinic_formset.is_valid()}")
         logger.info(f"Education formset is valid: {education_formset.is_valid()}")
-        
+       
         #validation
         if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
             try:
                 surgeon=form.save(commit=False)
                 surgeon.verfication_status='pending'
                 surgeon.save()
+            
+            
 
-                #city = surgeon.city  
+                city = surgeon.city 
 
-                
+                 # Handle clinic formset
+                instances = clinic_formset.save(commit=False)
+                for instance in instances:
+                    instance.surgeon = surgeon
+                    instance.save()
+                for obj in clinic_formset.deleted_objects:
+                    obj.delete()
+            
+                education_formset.save()
+            
+                messages.success(request, 'Profile updated successfully. Your changes are pending verification.')
+                return redirect('surgeon_profile', surgeon_id=surgeon.id)
+            except Exception as e:
+                messages.error(request, 'Please correct the errors below.')
+        else:
+                print("Form errors:", form.errors)
+                print("Clinic formset errors:", clinic_formset.errors)
+                print("Education formset errors:", education_formset.errors)
+    else:
+        form = SurgeonForm(instance=surgeon)
+        clinic_formset = ClinicFormSet(queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon))
+        education_formset = EducationFormSet(instance=surgeon)
+
+    context = {
+        'surgeon': surgeon,
+        'form': form,
+        'clinic_formset': clinic_formset,
+        'education_formset': education_formset,
+    }
+    return render(request,'edit_surgeon_profile.html', context)
+
+'''  
             #Handle clinic formset
                 clinics_to_keep = []
                 for clinic_form in clinic_formset:
@@ -487,17 +520,11 @@ def edit_surgeon_profile(request, surgeon_id):
                     messages.success(request, 'Profile update sucessfully. Your chnage are pending verification')
                     logger.info("Profile updated successfully")
                     return render(request, 'pending.html',)
-
-           
-            except ValueError as e:
-                logger.error(f"Value error: {str(e)}")
-                messages.error(request, "Invalid data provided. Please check your input and try again.")
             except Exception as e:
                 logger.error(f"Unexpected error: {str(e)}")
                 messages.error(request, "An unexpected error occurred. Please try again later.")
         else:
             logger.error("Form validation failed")
-            logger.error(f"Form errors: {form.errors}")
             logger.error(f"Clinic formset errors: {clinic_formset.errors}")
             logger.error(f"Education formset errors: {education_formset.errors}")
             messages.error(request, "Please correct the errors below.")
@@ -514,12 +541,11 @@ def edit_surgeon_profile(request, surgeon_id):
         'form':form,
         'clinic_formset':clinic_formset,
         'education_formset':education_formset,
-        'clinics': clinics,
-        
+        'clinics': clinics,  
     }
 
     return render(request,'edit_surgeon_profile.html', context)
-
+'''
 
 @require_POST
 def delete_clinic(request, clinic_id):

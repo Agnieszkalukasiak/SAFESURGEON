@@ -2744,3 +2744,357 @@ INFO 2024-09-25 02:14:56,564 autoreload 6120 139811065121856 /workspace/SAFESURG
 INFO 2024-09-25 02:14:57,017 autoreload 6213 140249552268352 Watching for file changes with StatReloader
 INFO 2024-09-25 02:15:41,714 autoreload 6213 140249552268352 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
 INFO 2024-09-25 02:15:42,179 autoreload 6333 139986228780096 Watching for file changes with StatReloader
+INFO 2024-09-25 02:21:52,622 autoreload 7685 140411776146496 Watching for file changes with StatReloader
+INFO 2024-09-25 02:22:29,185 autoreload 6333 139986228780096 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-25 02:22:29,210 autoreload 7685 140411776146496 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-25 02:22:29,645 autoreload 7771 140156856736832 Watching for file changes with StatReloader
+INFO 2024-09-25 02:22:29,672 autoreload 7772 140055952161856 Watching for file changes with StatReloader
+INFO 2024-09-25 02:23:14,492 autoreload 7772 140055952161856 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-25 02:23:14,954 autoreload 8061 140533611785280 Watching for file changes with StatReloader
+INFO 2024-09-25 03:48:11,391 autoreload 1526 139686496762944 Watching for file changes with StatReloader
+INFO 2024-09-25 04:31:59,269 autoreload 2142 140319476091968 Watching for file changes with StatReloader
+INFO 2024-09-25 04:32:21,906 views 2142 140319299450432 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 04:32:21,964 views 2142 140319299450432 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 04:32:21,964 views 2142 140319299450432 GET request received
+INFO 2024-09-25 04:32:35,039 views 2142 140319291057728 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 04:32:35,090 views 2142 140319291057728 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 04:32:35,195 views 2142 140319291057728 Form is valid: True
+INFO 2024-09-25 04:32:35,299 views 2142 140319291057728 Clinic formset is valid: False
+INFO 2024-09-25 04:32:35,353 views 2142 140319291057728 Education formset is valid: True
+ERROR 2024-09-25 04:32:35,353 views 2142 140319291057728 Form validation failed
+ERROR 2024-09-25 04:32:35,354 views 2142 140319291057728 Form errors: 
+ERROR 2024-09-25 04:32:35,354 views 2142 140319291057728 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 04:32:35,354 views 2142 140319291057728 Education formset errors: [{}, {}]
+INFO 2024-09-25 06:24:52,098 autoreload 2792 140232515972160 Watching for file changes with StatReloader
+INFO 2024-09-25 06:24:57,635 views 2792 140232444819008 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:24:57,819 views 2792 140232444819008 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:24:57,949 views 2792 140232444819008 Form is valid: True
+INFO 2024-09-25 06:24:58,059 views 2792 140232444819008 Clinic formset is valid: False
+INFO 2024-09-25 06:24:58,136 views 2792 140232444819008 Education formset is valid: True
+ERROR 2024-09-25 06:24:58,136 views 2792 140232444819008 Form validation failed
+ERROR 2024-09-25 06:24:58,138 views 2792 140232444819008 Form errors: 
+ERROR 2024-09-25 06:24:58,138 views 2792 140232444819008 Clinic formset errors: [{'id': ['Select a valid choice. That choice is not one of the available choices.']}, {}]
+ERROR 2024-09-25 06:24:58,138 views 2792 140232444819008 Education formset errors: [{}, {}]
+INFO 2024-09-25 06:25:30,629 views 2792 140232191096384 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:25:30,685 views 2792 140232191096384 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:25:30,685 views 2792 140232191096384 GET request received
+INFO 2024-09-25 06:25:52,301 views 2792 140232182703680 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:25:52,355 views 2792 140232182703680 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:25:52,355 views 2792 140232182703680 GET request received
+INFO 2024-09-25 06:28:35,177 views 2792 140232174310976 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:28:35,240 views 2792 140232174310976 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:28:35,360 views 2792 140232174310976 Form is valid: True
+INFO 2024-09-25 06:28:35,360 views 2792 140232174310976 Clinic formset is valid: False
+INFO 2024-09-25 06:28:35,422 views 2792 140232174310976 Education formset is valid: True
+ERROR 2024-09-25 06:28:35,422 views 2792 140232174310976 Form validation failed
+ERROR 2024-09-25 06:28:35,422 views 2792 140232174310976 Form errors: 
+ERROR 2024-09-25 06:28:35,423 views 2792 140232174310976 Clinic formset errors: []
+ERROR 2024-09-25 06:28:35,423 views 2792 140232174310976 Education formset errors: [{}]
+INFO 2024-09-25 06:29:14,730 views 2792 140231621736000 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:29:14,779 views 2792 140231621736000 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:29:14,878 views 2792 140231621736000 Form is valid: True
+INFO 2024-09-25 06:29:14,878 views 2792 140231621736000 Clinic formset is valid: False
+INFO 2024-09-25 06:29:14,930 views 2792 140231621736000 Education formset is valid: True
+ERROR 2024-09-25 06:29:14,930 views 2792 140231621736000 Form validation failed
+ERROR 2024-09-25 06:29:14,931 views 2792 140231621736000 Form errors: 
+ERROR 2024-09-25 06:29:14,931 views 2792 140231621736000 Clinic formset errors: []
+ERROR 2024-09-25 06:29:14,931 views 2792 140231621736000 Education formset errors: [{}]
+INFO 2024-09-25 06:29:26,336 views 2792 140231613343296 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:29:26,392 views 2792 140231613343296 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:29:26,421 views 2792 140231613343296 Form is valid: False
+INFO 2024-09-25 06:29:26,421 views 2792 140231613343296 Clinic formset is valid: False
+INFO 2024-09-25 06:29:26,479 views 2792 140231613343296 Education formset is valid: True
+ERROR 2024-09-25 06:29:26,479 views 2792 140231613343296 Form validation failed
+ERROR 2024-09-25 06:29:26,479 views 2792 140231613343296 Form errors: <ul class="errorlist"><li>country<ul class="errorlist"><li>This field is required.</li></ul></li><li>city<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+ERROR 2024-09-25 06:29:26,479 views 2792 140231613343296 Clinic formset errors: []
+ERROR 2024-09-25 06:29:26,479 views 2792 140231613343296 Education formset errors: [{}]
+INFO 2024-09-25 06:31:45,563 autoreload 2792 140232515972160 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:31:46,024 autoreload 3161 140209173576768 Watching for file changes with StatReloader
+INFO 2024-09-25 06:31:53,531 views 3161 140209111881280 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:31:53,590 views 3161 140209111881280 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:31:53,622 views 3161 140209111881280 Form is valid: False
+ERROR 2024-09-25 06:31:53,755 log 3161 140209111881280 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 429, in edit_surgeon_profile
+    logger.info(f"Clinic formset is valid: {clinic_formset.is_valid()}")
+                                            ^^^^^^^^^^^^^^
+NameError: name 'clinic_formset' is not defined. Did you mean: 'ClinicFormSet'?
+INFO 2024-09-25 06:33:33,713 views 3161 140209101375040 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:33:33,774 views 3161 140209101375040 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:33:33,774 views 3161 140209101375040 GET request received
+INFO 2024-09-25 06:33:55,666 views 3161 140209092965952 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:33:55,722 views 3161 140209092965952 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 06:33:55,751 views 3161 140209092965952 Form is valid: False
+ERROR 2024-09-25 06:33:55,880 log 3161 140209092965952 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 429, in edit_surgeon_profile
+    logger.info(f"Clinic formset is valid: {clinic_formset.is_valid()}")
+                                            ^^^^^^^^^^^^^^
+NameError: name 'clinic_formset' is not defined. Did you mean: 'ClinicFormSet'?
+INFO 2024-09-25 06:34:45,593 autoreload 3161 140209173576768 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:34:46,066 autoreload 3322 140456101911616 Watching for file changes with StatReloader
+INFO 2024-09-25 06:34:48,825 views 3322 140455966668352 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:34:48,924 views 3322 140455966668352 Education formset is valid: True
+ERROR 2024-09-25 06:34:48,926 views 3322 140455966668352 Form validation failed
+ERROR 2024-09-25 06:34:48,929 views 3322 140455966668352 Form errors: <ul class="errorlist"><li>country<ul class="errorlist"><li>This field is required.</li></ul></li><li>city<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+ERROR 2024-09-25 06:34:49,008 log 3322 140455966668352 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 501, in edit_surgeon_profile
+    logger.error(f"Clinic formset errors: {clinic_formset.errors}")
+                                           ^^^^^^^^^^^^^^
+NameError: name 'clinic_formset' is not defined. Did you mean: 'ClinicFormSet'?
+INFO 2024-09-25 06:34:50,896 views 3322 140455958275648 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:34:50,897 views 3322 140455958275648 GET request received
+INFO 2024-09-25 06:35:13,914 views 3322 140455949882944 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:35:13,997 views 3322 140455949882944 Education formset is valid: True
+ERROR 2024-09-25 06:35:13,997 views 3322 140455949882944 Form validation failed
+ERROR 2024-09-25 06:35:13,998 views 3322 140455949882944 Form errors: <ul class="errorlist"><li>country<ul class="errorlist"><li>This field is required.</li></ul></li><li>city<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+ERROR 2024-09-25 06:35:14,070 log 3322 140455949882944 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 501, in edit_surgeon_profile
+    logger.error(f"Clinic formset errors: {clinic_formset.errors}")
+                                           ^^^^^^^^^^^^^^
+NameError: name 'clinic_formset' is not defined. Did you mean: 'ClinicFormSet'?
+INFO 2024-09-25 06:35:51,213 autoreload 3322 140456101911616 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:35:51,666 autoreload 3385 140339397925952 Watching for file changes with StatReloader
+INFO 2024-09-25 06:36:22,088 autoreload 3385 140339397925952 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:36:22,531 autoreload 3415 140646145961024 Watching for file changes with StatReloader
+INFO 2024-09-25 06:36:29,819 views 3415 140646016874048 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:36:29,916 views 3415 140646016874048 Education formset is valid: True
+ERROR 2024-09-25 06:36:29,918 views 3415 140646016874048 Education formset errors: [{}, {}]
+INFO 2024-09-25 06:37:13,815 views 3415 140645473707584 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:37:13,815 views 3415 140645473707584 GET request received
+INFO 2024-09-25 06:37:34,140 views 3415 140645465314880 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:37:34,220 views 3415 140645465314880 Education formset is valid: True
+ERROR 2024-09-25 06:37:34,220 views 3415 140645465314880 Education formset errors: [{}]
+INFO 2024-09-25 06:47:54,438 autoreload 3415 140646145961024 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:47:54,906 autoreload 3888 139754888920128 Watching for file changes with StatReloader
+INFO 2024-09-25 06:50:04,656 autoreload 3888 139754888920128 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:50:05,107 autoreload 3997 140238651042880 Watching for file changes with StatReloader
+INFO 2024-09-25 06:52:59,418 autoreload 3997 140238651042880 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:52:59,880 autoreload 4156 140214983588928 Watching for file changes with StatReloader
+INFO 2024-09-25 06:53:09,176 autoreload 4156 140214983588928 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 06:53:09,630 autoreload 4173 140596164131904 Watching for file changes with StatReloader
+INFO 2024-09-25 06:53:13,331 views 4173 140596102436416 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:53:13,331 views 4173 140596102436416 GET request received
+INFO 2024-09-25 06:59:34,624 views 4173 140596022867520 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 06:59:34,624 views 4173 140596022867520 POST data: <QueryDict: {'csrfmiddlewaretoken': ['yL2oj3GhKTizAza8vfnJZbghogoDZXfgJHPEq5QewysOrEoSqOe7Ail8zS4Fj2py'], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Kth'], 'education-0-institution_country': ['uk'], 'education-0-program': ['Math'], 'education-0-start_date': ['2024-09-20'], 'education-0-end_date': ['2024-09-24'], 'education-0-certificate': [''], 'education-0-DELETE': ['on'], 'education-0-id': ['55'], 'education-0-surgeon': ['37'], 'education-1-institution': ['Cambridge'], 'education-1-institution_country': ['Poland'], 'education-1-program': [''], 'education-1-start_date': ['2024-09-12'], 'education-1-end_date': ['2024-09-27'], 'education-1-certificate': ['Screenshot 2024-09-25 at 10.14.34.png'], 'education-1-id': [''], 'education-1-surgeon': ['37']}>
+INFO 2024-09-25 06:59:34,624 views 4173 140596022867520 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 06:59:34,654 views 4173 140596022867520 Form is valid: False
+ERROR 2024-09-25 06:59:34,741 log 4173 140596022867520 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 430, in edit_surgeon_profile
+    logger.info(f"Clinic formset is valid: {clinic_formset.is_valid()}")
+                                            ^^^^^^^^^^^^^^
+NameError: name 'clinic_formset' is not defined. Did you mean: 'ClinicFormSet'?
+INFO 2024-09-25 07:00:07,018 autoreload 4173 140596164131904 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:00:07,474 autoreload 4468 140334858042432 Watching for file changes with StatReloader
+INFO 2024-09-25 07:00:13,010 views 4468 140334796346944 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:00:13,010 views 4468 140334796346944 POST data: <QueryDict: {'csrfmiddlewaretoken': ['yL2oj3GhKTizAza8vfnJZbghogoDZXfgJHPEq5QewysOrEoSqOe7Ail8zS4Fj2py'], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Kth'], 'education-0-institution_country': ['uk'], 'education-0-program': ['Math'], 'education-0-start_date': ['2024-09-20'], 'education-0-end_date': ['2024-09-24'], 'education-0-certificate': [''], 'education-0-DELETE': ['on'], 'education-0-id': ['55'], 'education-0-surgeon': ['37'], 'education-1-institution': ['Cambridge'], 'education-1-institution_country': ['Poland'], 'education-1-program': [''], 'education-1-start_date': ['2024-09-12'], 'education-1-end_date': ['2024-09-27'], 'education-1-certificate': ['Screenshot 2024-09-25 at 10.14.34.png'], 'education-1-id': [''], 'education-1-surgeon': ['37']}>
+INFO 2024-09-25 07:00:13,010 views 4468 140334796346944 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 07:00:13,041 views 4468 140334796346944 Form is valid: False
+INFO 2024-09-25 07:00:13,101 views 4468 140334796346944 Education formset is valid: True
+ERROR 2024-09-25 07:00:13,101 views 4468 140334796346944 Education formset errors: [{}]
+INFO 2024-09-25 07:00:15,503 views 4468 140334786889280 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:00:15,503 views 4468 140334786889280 GET request received
+INFO 2024-09-25 07:00:16,655 views 4468 140334796346944 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:00:16,655 views 4468 140334796346944 GET request received
+INFO 2024-09-25 07:00:32,209 views 4468 140334786889280 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:00:32,209 views 4468 140334786889280 POST data: <QueryDict: {'csrfmiddlewaretoken': ['HNIDGXeWG8rfR3DH2dF1c3bmQmuTAV0SSJvTNZoTsNBuI8RrXMwpNagd1YaVU0aa'], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Kth'], 'education-0-institution_country': ['uk'], 'education-0-program': ['Math'], 'education-0-start_date': ['2024-09-20'], 'education-0-end_date': ['2024-09-24'], 'education-0-certificate': [''], 'education-0-DELETE': ['on'], 'education-0-id': ['55'], 'education-0-surgeon': ['37'], 'education-1-institution': ['Cambridge'], 'education-1-institution_country': ['Poland'], 'education-1-program': ['laser surgery'], 'education-1-start_date': ['2024-09-13'], 'education-1-end_date': ['2024-09-27'], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['37']}>
+INFO 2024-09-25 07:00:32,209 views 4468 140334786889280 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 07:00:32,238 views 4468 140334786889280 Form is valid: False
+INFO 2024-09-25 07:00:32,295 views 4468 140334786889280 Education formset is valid: True
+ERROR 2024-09-25 07:00:32,295 views 4468 140334786889280 Education formset errors: [{}]
+INFO 2024-09-25 07:05:58,109 autoreload 4468 140334858042432 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:05:58,565 autoreload 4709 139839877483584 Watching for file changes with StatReloader
+INFO 2024-09-25 07:06:30,187 autoreload 4709 139839877483584 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:06:30,640 autoreload 4744 140025636183104 Watching for file changes with StatReloader
+INFO 2024-09-25 07:13:04,778 views 4744 140025574487616 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:13:04,778 views 4744 140025574487616 POST data: <QueryDict: {'csrfmiddlewaretoken': ['HNIDGXeWG8rfR3DH2dF1c3bmQmuTAV0SSJvTNZoTsNBuI8RrXMwpNagd1YaVU0aa'], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Kth'], 'education-0-institution_country': ['uk'], 'education-0-program': ['Math'], 'education-0-start_date': ['2024-09-20'], 'education-0-end_date': ['2024-09-24'], 'education-0-certificate': [''], 'education-0-DELETE': ['on'], 'education-0-id': ['55'], 'education-0-surgeon': ['37'], 'education-1-institution': ['Cambridge'], 'education-1-institution_country': ['Poland'], 'education-1-program': ['laser surgery'], 'education-1-start_date': ['2024-09-13'], 'education-1-end_date': ['2024-09-27'], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['37']}>
+INFO 2024-09-25 07:13:04,778 views 4744 140025574487616 FILES data: <MultiValueDict: {}>
+ERROR 2024-09-25 07:13:04,855 log 4744 140025574487616 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 429, in edit_surgeon_profile
+    logger.info(f"Form is valid: {form.is_valid()}")
+                                  ^^^^
+UnboundLocalError: cannot access local variable 'form' where it is not associated with a value
+INFO 2024-09-25 07:15:17,235 autoreload 4744 140025636183104 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:15:17,718 autoreload 5134 139718701018176 Watching for file changes with StatReloader
+INFO 2024-09-25 07:15:46,128 autoreload 5134 139718701018176 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:15:46,574 autoreload 5164 140682869386304 Watching for file changes with StatReloader
+INFO 2024-09-25 07:15:51,762 views 5164 140682807690816 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:15:51,821 views 5164 140682807690816 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 07:15:51,822 views 5164 140682807690816 POST data: <QueryDict: {'csrfmiddlewaretoken': ['HNIDGXeWG8rfR3DH2dF1c3bmQmuTAV0SSJvTNZoTsNBuI8RrXMwpNagd1YaVU0aa'], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Kth'], 'education-0-institution_country': ['uk'], 'education-0-program': ['Math'], 'education-0-start_date': ['2024-09-20'], 'education-0-end_date': ['2024-09-24'], 'education-0-certificate': [''], 'education-0-DELETE': ['on'], 'education-0-id': ['55'], 'education-0-surgeon': ['37'], 'education-1-institution': ['Cambridge'], 'education-1-institution_country': ['Poland'], 'education-1-program': ['laser surgery'], 'education-1-start_date': ['2024-09-13'], 'education-1-end_date': ['2024-09-27'], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['37']}>
+INFO 2024-09-25 07:15:51,822 views 5164 140682807690816 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 07:15:51,853 views 5164 140682807690816 Form is valid: False
+INFO 2024-09-25 07:15:51,854 views 5164 140682807690816 Clinic formset is valid: False
+INFO 2024-09-25 07:15:51,916 views 5164 140682807690816 Education formset is valid: True
+ERROR 2024-09-25 07:15:51,916 views 5164 140682807690816 Form validation failed
+ERROR 2024-09-25 07:15:51,916 views 5164 140682807690816 Clinic formset errors: []
+ERROR 2024-09-25 07:15:51,917 views 5164 140682807690816 Education formset errors: [{}]
+INFO 2024-09-25 07:16:27,924 views 5164 140682710734400 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:16:27,970 views 5164 140682710734400 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 07:16:27,971 views 5164 140682710734400 GET request received
+INFO 2024-09-25 07:16:49,201 views 5164 140682677163584 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:16:49,255 views 5164 140682677163584 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 07:16:49,255 views 5164 140682677163584 GET request received
+INFO 2024-09-25 07:17:44,575 views 5164 140682123540032 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:17:44,636 views 5164 140682123540032 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 07:17:44,636 views 5164 140682123540032 GET request received
+INFO 2024-09-25 07:18:07,929 views 5164 140682115147328 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:18:08,017 views 5164 140682115147328 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 07:18:08,017 views 5164 140682115147328 GET request received
+INFO 2024-09-25 07:19:41,822 autoreload 5164 140682869386304 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:19:42,284 autoreload 5386 140138980613184 Watching for file changes with StatReloader
+INFO 2024-09-25 07:19:46,470 views 5386 140138918917696 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:19:46,528 views 5386 140138918917696 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 07:19:46,528 views 5386 140138918917696 GET request received
+INFO 2024-09-25 07:21:54,237 autoreload 5386 140138980613184 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-25 07:21:54,697 autoreload 5486 140365801303104 Watching for file changes with StatReloader
+INFO 2024-09-25 07:22:01,945 autoreload 5486 140365801303104 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-25 07:22:02,407 autoreload 5503 139632926129216 Watching for file changes with StatReloader
+INFO 2024-09-25 07:22:07,669 views 5503 139632864433728 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:22:07,730 views 5503 139632864433728 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
+INFO 2024-09-25 07:22:07,730 views 5503 139632864433728 GET request received
+INFO 2024-09-25 07:25:48,560 autoreload 5503 139632926129216 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:25:49,030 autoreload 5690 140398808812608 Watching for file changes with StatReloader
+INFO 2024-09-25 07:29:29,909 autoreload 5690 140398808812608 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:29:30,359 autoreload 5870 139969351216192 Watching for file changes with StatReloader
+INFO 2024-09-25 07:30:17,082 autoreload 5870 139969351216192 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:30:17,534 autoreload 5932 139795563703360 Watching for file changes with StatReloader
+INFO 2024-09-25 07:32:52,546 autoreload 5932 139795563703360 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:32:52,994 autoreload 6049 140363015642176 Watching for file changes with StatReloader
+INFO 2024-09-25 07:35:48,049 autoreload 6049 140363015642176 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:35:48,508 autoreload 6176 140368147254336 Watching for file changes with StatReloader
+INFO 2024-09-25 07:36:01,916 autoreload 6176 140368147254336 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:36:02,365 autoreload 6195 140434844879936 Watching for file changes with StatReloader
+INFO 2024-09-25 07:36:05,075 views 6195 140434783184448 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-25 07:36:05,337 log 6195 140434783184448 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view SafeSurgeon.views.edit_surgeon_profile didn't return an HttpResponse object. It returned None instead.
+INFO 2024-09-25 07:36:30,008 autoreload 6195 140434844879936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:36:30,474 autoreload 6237 140240986000448 Watching for file changes with StatReloader
+INFO 2024-09-25 07:36:35,794 autoreload 6237 140240986000448 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:36:36,256 autoreload 6258 140515375684672 Watching for file changes with StatReloader
+INFO 2024-09-25 07:36:42,751 views 6258 140515313989184 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-25 07:36:42,823 log 6258 140515313989184 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view SafeSurgeon.views.edit_surgeon_profile didn't return an HttpResponse object. It returned None instead.
+INFO 2024-09-25 07:36:43,132 views 6258 140515304531520 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-25 07:36:43,202 log 6258 140515304531520 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view SafeSurgeon.views.edit_surgeon_profile didn't return an HttpResponse object. It returned None instead.
+INFO 2024-09-25 07:36:47,706 autoreload 6258 140515375684672 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:36:48,163 autoreload 6282 139825417657408 Watching for file changes with StatReloader
+INFO 2024-09-25 07:37:08,593 autoreload 6282 139825417657408 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:37:09,069 autoreload 6306 140090031160384 Watching for file changes with StatReloader
+INFO 2024-09-25 07:37:10,857 views 6306 140089969464896 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-25 07:37:10,934 log 6306 140089969464896 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view SafeSurgeon.views.edit_surgeon_profile didn't return an HttpResponse object. It returned None instead.
+INFO 2024-09-25 07:37:12,507 views 6306 140089887815232 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-25 07:37:12,581 log 6306 140089887815232 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view SafeSurgeon.views.edit_surgeon_profile didn't return an HttpResponse object. It returned None instead.
+INFO 2024-09-25 07:37:15,344 views 6306 140089879422528 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-25 07:37:15,415 log 6306 140089879422528 Internal Server Error: /surgeon/37/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view SafeSurgeon.views.edit_surgeon_profile didn't return an HttpResponse object. It returned None instead.
+INFO 2024-09-25 07:40:47,060 autoreload 6306 140090031160384 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:40:47,537 autoreload 6474 139674132970560 Watching for file changes with StatReloader
+INFO 2024-09-25 07:40:50,796 views 6474 139674071275072 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:40:52,489 views 6474 139674060768832 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:41:23,322 autoreload 6474 139674132970560 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 07:41:23,788 autoreload 6521 140102643919936 Watching for file changes with StatReloader
+INFO 2024-09-25 07:41:26,664 views 6521 140102582224448 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:41:31,922 views 6521 140102504281664 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:41:49,942 views 6521 140102495888960 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:41:49,942 views 6521 140102495888960 POST data: <QueryDict: {'csrfmiddlewaretoken': ['8FgfhMYmsEprErLB5dz006iDKIpfbdcg732ynfjSewT0H7jDq5ARJwU7eTqqgOO8'], 'profile_picture': [''], 'country': ['1'], 'city': ['2'], 'id_document': [''], 'form-TOTAL_FORMS': ['2'], 'form-INITIAL_FORMS': ['1'], 'form-MIN_NUM_FORMS': ['0'], 'form-MAX_NUM_FORMS': ['1000'], 'form-0-id': ['38'], 'form-0-clinic': ['12'], 'form-0-new_clinic_name': [''], 'form-1-id': [''], 'form-1-clinic': [''], 'form-1-new_clinic_name': [''], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Kth'], 'education-0-institution_country': ['uk'], 'education-0-program': ['Math'], 'education-0-start_date': ['2024-09-20'], 'education-0-end_date': ['2024-09-24'], 'education-0-certificate': [''], 'education-0-DELETE': ['on'], 'education-0-id': ['55'], 'education-0-surgeon': ['37'], 'education-1-institution': ['Cambridge'], 'education-1-institution_country': [''], 'education-1-program': [''], 'education-1-start_date': [''], 'education-1-end_date': [''], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['37']}>
+INFO 2024-09-25 07:41:49,942 views 6521 140102495888960 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 07:41:50,059 views 6521 140102495888960 Form is valid: True
+INFO 2024-09-25 07:41:50,202 views 6521 140102495888960 Clinic formset is valid: True
+INFO 2024-09-25 07:41:50,262 views 6521 140102495888960 Education formset is valid: False
+INFO 2024-09-25 07:42:13,160 views 6521 140102487496256 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 07:42:13,160 views 6521 140102487496256 POST data: <QueryDict: {'csrfmiddlewaretoken': ['hXILplftLGzjbEyZOyx1AWIAgVU0rkBhglu4vOAZxy3Sek619qySjmk4K6VbwVd9'], 'profile_picture': [''], 'country': ['1'], 'city': ['2'], 'id_document': [''], 'form-TOTAL_FORMS': ['2'], 'form-INITIAL_FORMS': ['1'], 'form-MIN_NUM_FORMS': ['0'], 'form-MAX_NUM_FORMS': ['1000'], 'form-0-id': ['38'], 'form-0-clinic': ['12'], 'form-0-new_clinic_name': [''], 'form-1-id': [''], 'form-1-clinic': [''], 'form-1-new_clinic_name': [''], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Kth'], 'education-0-institution_country': ['uk'], 'education-0-program': ['Math'], 'education-0-start_date': ['2024-09-20'], 'education-0-end_date': ['2024-09-24'], 'education-0-certificate': [''], 'education-0-DELETE': ['on'], 'education-0-id': ['55'], 'education-0-surgeon': ['37'], 'education-1-institution': ['Cambridge'], 'education-1-institution_country': [''], 'education-1-program': [''], 'education-1-start_date': ['2024-09-05'], 'education-1-end_date': ['2024-09-27'], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['37']}>
+INFO 2024-09-25 07:42:13,160 views 6521 140102487496256 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 07:42:13,256 views 6521 140102487496256 Form is valid: True
+INFO 2024-09-25 07:42:13,378 views 6521 140102487496256 Clinic formset is valid: True
+INFO 2024-09-25 07:42:13,427 views 6521 140102487496256 Education formset is valid: True
