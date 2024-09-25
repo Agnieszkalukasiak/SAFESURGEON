@@ -445,8 +445,8 @@ def edit_surgeon_profile(request, surgeon_id):
                 for instance in instances:
                     instance.surgeon = surgeon
                     instance.save()
-                    for obj in clinic_formset.deleted_objects:
-                        obj.delete()
+                for obj in clinic_formset.deleted_objects:
+                    obj.delete()
                 
                 # Handle deletions remove the relationship, not the clinic
                 #for deleted_form in clinic_formset.deleted_forms:
@@ -486,7 +486,7 @@ def edit_surgeon_profile(request, surgeon_id):
         'clinic_formset': clinic_formset,
         'education_formset': education_formset,
     }
-    return render(request,'edit_surgeon_profile.html', context)
+    return render(request,'pending.html', context)
 
 '''  
             #Handle clinic formset

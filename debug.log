@@ -3614,3 +3614,43 @@ INFO 2024-09-25 13:40:27,320 views 6448 140038264313408 Education formset is val
 ERROR 2024-09-25 13:40:27,349 views 6448 140038264313408 An error occurred: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
 INFO 2024-09-25 13:40:43,275 autoreload 6448 140038570458176 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
 INFO 2024-09-25 13:40:43,844 autoreload 6762 139674704772160 Watching for file changes with StatReloader
+INFO 2024-09-25 13:41:26,577 views 6762 139674643076672 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:41:26,653 views 6762 139674643076672 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+INFO 2024-09-25 13:41:26,653 views 6762 139674643076672 POST data: <QueryDict: {'csrfmiddlewaretoken': ['Wz57QjP2QOiLl55Ani4nDpcmFvEYf690GqWcXPyvNZabnUleqHeFOgiqINQD3HOy'], 'profile_picture': [''], 'country': ['1'], 'city': ['1'], 'id_document': [''], 'form-TOTAL_FORMS': ['3'], 'form-INITIAL_FORMS': ['2'], 'form-MIN_NUM_FORMS': ['0'], 'form-MAX_NUM_FORMS': ['1000'], 'form-0-id': ['40'], 'form-0-clinic': ['13'], 'form-0-new_clinic_name': [''], 'form-1-id': ['41'], 'form-1-clinic': ['4'], 'form-1-new_clinic_name': [''], 'form-2-id': [''], 'form-2-clinic': [''], 'form-2-new_clinic_name': [''], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['Oxford'], 'education-0-institution_country': ['Poland'], 'education-0-program': ['laser surgery'], 'education-0-start_date': ['2024-09-19'], 'education-0-end_date': ['2024-09-27'], 'education-0-certificate': [''], 'education-0-id': ['57'], 'education-0-surgeon': ['62'], 'education-1-institution': [''], 'education-1-institution_country': [''], 'education-1-program': [''], 'education-1-start_date': [''], 'education-1-end_date': [''], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['62']}>
+INFO 2024-09-25 13:41:26,654 views 6762 139674643076672 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 13:41:26,757 views 6762 139674643076672 Form is valid: True
+INFO 2024-09-25 13:41:26,986 views 6762 139674643076672 Clinic formset is valid: True
+INFO 2024-09-25 13:41:27,042 views 6762 139674643076672 Education formset is valid: True
+ERROR 2024-09-25 13:41:27,069 views 6762 139674643076672 An error occurred: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+INFO 2024-09-25 13:41:56,340 autoreload 7812 140629318560832 Watching for file changes with StatReloader
+INFO 2024-09-25 13:42:04,180 views 6762 139674632570432 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:42:04,259 views 6762 139674632570432 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+WARNING 2024-09-25 13:42:13,195 log 6762 139674416838208 Not Found: /surgeon
+INFO 2024-09-25 13:42:52,336 views 6762 139673879967296 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:42:52,420 views 6762 139673879967296 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+INFO 2024-09-25 13:43:49,732 views 6762 139673871574592 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:43:49,814 views 6762 139673871574592 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+INFO 2024-09-25 13:43:49,814 views 6762 139673871574592 POST data: <QueryDict: {'csrfmiddlewaretoken': ['uLfhL31xHhBzufybeCenpp4WN9m4eXy3qktYbWGvYsaR4epVKxPOH42JJEOBIhwj'], 'profile_picture': [''], 'country': ['1'], 'city': ['1'], 'id_document': [''], 'form-TOTAL_FORMS': ['3'], 'form-INITIAL_FORMS': ['2'], 'form-MIN_NUM_FORMS': ['0'], 'form-MAX_NUM_FORMS': ['1000'], 'form-0-id': ['40'], 'form-0-clinic': ['22'], 'form-0-new_clinic_name': [''], 'form-1-id': ['41'], 'form-1-clinic': ['5'], 'form-1-new_clinic_name': [''], 'form-2-id': [''], 'form-2-clinic': [''], 'form-2-new_clinic_name': [''], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['oxford'], 'education-0-institution_country': ['Poland'], 'education-0-program': ['laser surgery'], 'education-0-start_date': ['2024-09-19'], 'education-0-end_date': ['2024-09-27'], 'education-0-certificate': [''], 'education-0-id': ['57'], 'education-0-surgeon': ['62'], 'education-1-institution': [''], 'education-1-institution_country': [''], 'education-1-program': [''], 'education-1-start_date': [''], 'education-1-end_date': [''], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['62']}>
+INFO 2024-09-25 13:43:49,814 views 6762 139673871574592 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 13:43:49,922 views 6762 139673871574592 Form is valid: True
+INFO 2024-09-25 13:43:50,166 views 6762 139673871574592 Clinic formset is valid: True
+INFO 2024-09-25 13:43:50,223 views 6762 139673871574592 Education formset is valid: True
+ERROR 2024-09-25 13:43:50,251 views 6762 139673871574592 An error occurred: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
+INFO 2024-09-25 13:45:13,524 autoreload 6762 139674704772160 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:45:13,984 autoreload 8130 140148941077568 Watching for file changes with StatReloader
+INFO 2024-09-25 13:47:02,477 autoreload 8130 140148941077568 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:47:02,928 autoreload 8226 140594616937536 Watching for file changes with StatReloader
+INFO 2024-09-25 13:47:50,696 autoreload 8226 140594616937536 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:47:51,144 autoreload 8271 140679160040512 Watching for file changes with StatReloader
+INFO 2024-09-25 13:48:04,480 autoreload 8271 140679160040512 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:48:04,927 autoreload 8292 140113176345664 Watching for file changes with StatReloader
+INFO 2024-09-25 13:48:07,138 autoreload 8292 140113176345664 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 13:48:07,590 autoreload 8306 140598773898304 Watching for file changes with StatReloader
+INFO 2024-09-25 13:48:13,024 views 8306 140598640113216 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 13:48:13,116 views 8306 140598640113216 Clinics associated with surgeon: <QuerySet [<Clinic: dogandcats (Stockholm)>, <Clinic: test (Stockholm)>]>
+INFO 2024-09-25 13:48:13,116 views 8306 140598640113216 POST data: <QueryDict: {'csrfmiddlewaretoken': ['80Q7UW6wzJAyI9LyZCPrWPFgm30W9MJW4z4OkPLuQU9Qi8CivxqSeuD3iystD6Hc'], 'profile_picture': [''], 'country': ['1'], 'city': ['1'], 'id_document': [''], 'form-TOTAL_FORMS': ['3'], 'form-INITIAL_FORMS': ['2'], 'form-MIN_NUM_FORMS': ['0'], 'form-MAX_NUM_FORMS': ['1000'], 'form-0-id': ['40'], 'form-0-clinic': ['22'], 'form-0-new_clinic_name': [''], 'form-1-id': ['41'], 'form-1-clinic': ['5'], 'form-1-new_clinic_name': [''], 'form-2-id': [''], 'form-2-clinic': [''], 'form-2-new_clinic_name': [''], 'education-TOTAL_FORMS': ['2'], 'education-INITIAL_FORMS': ['1'], 'education-MIN_NUM_FORMS': ['0'], 'education-MAX_NUM_FORMS': ['1000'], 'education-0-institution': ['oxford'], 'education-0-institution_country': ['Poland'], 'education-0-program': ['laser surgery'], 'education-0-start_date': ['2024-09-19'], 'education-0-end_date': ['2024-09-27'], 'education-0-certificate': [''], 'education-0-id': ['57'], 'education-0-surgeon': ['62'], 'education-1-institution': [''], 'education-1-institution_country': [''], 'education-1-program': [''], 'education-1-start_date': [''], 'education-1-end_date': [''], 'education-1-certificate': [''], 'education-1-id': [''], 'education-1-surgeon': ['62']}>
+INFO 2024-09-25 13:48:13,116 views 8306 140598640113216 FILES data: <MultiValueDict: {}>
+INFO 2024-09-25 13:48:13,236 views 8306 140598640113216 Form is valid: True
+INFO 2024-09-25 13:48:13,501 views 8306 140598640113216 Clinic formset is valid: True
+INFO 2024-09-25 13:48:13,564 views 8306 140598640113216 Education formset is valid: True
+ERROR 2024-09-25 13:48:13,594 views 8306 140598640113216 An error occurred: ClinicForm.save() missing 2 required positional arguments: 'surgeon' and 'city'
