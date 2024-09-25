@@ -5087,3 +5087,47 @@ Traceback (most recent call last):
   File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'surgeon_profile' with keyword arguments '{'surgeon_id': 62}' not found. 1 pattern(s) tried: ['surgeon_profile/\\Z']
+INFO 2024-09-25 15:42:02,813 autoreload 3159 140624242613312 Watching for file changes with StatReloader
+DEBUG 2024-09-25 15:42:02,836 views 3159 140624242613312 This is a debug message at the top of views.py
+INFO 2024-09-25 15:42:02,836 views 3159 140624242613312 This is an info message at the top of views.py
+WARNING 2024-09-25 15:42:02,836 views 3159 140624242613312 This is a warning message at the top of views.py
+ERROR 2024-09-25 15:42:02,836 views 3159 140624242613312 This is an error message at the top of views.py
+INFO 2024-09-25 15:42:25,436 views 3159 140623797544512 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 15:42:55,362 views 3159 140623789151808 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-25 15:42:55,888 views 3159 140623789151808 Updated surgeon's clinics: {<Clinic: ppp (Stockholm)>}
+INFO 2024-09-25 15:42:55,980 views 3159 140623789151808 Transaction committed successfully
+ERROR 2024-09-25 15:42:55,980 views 3159 140623789151808 An error occurred while saving: Reverse for 'surgeon_profile' with keyword arguments '{'surgeon_id': 62}' not found. 1 pattern(s) tried: ['surgeon_profile/\\Z']
+Traceback (most recent call last):
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 683, in edit_surgeon_profile
+    return redirect('surgeon_profile', surgeon_id=surgeon.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'surgeon_profile' with keyword arguments '{'surgeon_id': 62}' not found. 1 pattern(s) tried: ['surgeon_profile/\\Z']
+INFO 2024-09-25 15:49:28,751 autoreload 3159 140624242613312 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 15:49:29,227 autoreload 3532 139685655366720 Watching for file changes with StatReloader
+DEBUG 2024-09-25 15:49:29,257 views 3532 139685655366720 This is a debug message at the top of views.py
+INFO 2024-09-25 15:49:29,257 views 3532 139685655366720 This is an info message at the top of views.py
+WARNING 2024-09-25 15:49:29,257 views 3532 139685655366720 This is a warning message at the top of views.py
+ERROR 2024-09-25 15:49:29,257 views 3532 139685655366720 This is an error message at the top of views.py
+INFO 2024-09-25 15:49:36,504 autoreload 3532 139685655366720 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 15:49:36,961 autoreload 3547 140674840656960 Watching for file changes with StatReloader
+DEBUG 2024-09-25 15:49:36,981 views 3547 140674840656960 This is a debug message at the top of views.py
+INFO 2024-09-25 15:49:36,982 views 3547 140674840656960 This is an info message at the top of views.py
+WARNING 2024-09-25 15:49:36,982 views 3547 140674840656960 This is a warning message at the top of views.py
+ERROR 2024-09-25 15:49:36,982 views 3547 140674840656960 This is an error message at the top of views.py
+WARNING 2024-09-25 15:50:06,788 log 3547 140674778961472 Forbidden (CSRF token from POST incorrect.): /surgeon/62/edit/
+INFO 2024-09-25 15:50:09,154 views 3547 140674769503808 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 15:50:18,293 views 3547 140674760046144 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-25 15:50:18,777 views 3547 140674760046144 Updated surgeon's clinics: {<Clinic: ppp (Stockholm)>}
+INFO 2024-09-25 15:50:18,810 views 3547 140674760046144 Transaction committed successfully
+INFO 2024-09-25 15:50:38,231 views 3547 140674751637056 Editing profile for surgeon: Henio Tideman - Verified
