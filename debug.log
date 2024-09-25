@@ -5131,3 +5131,19 @@ INFO 2024-09-25 15:50:18,293 views 3547 140674760046144 Editing profile for surg
 DEBUG 2024-09-25 15:50:18,777 views 3547 140674760046144 Updated surgeon's clinics: {<Clinic: ppp (Stockholm)>}
 INFO 2024-09-25 15:50:18,810 views 3547 140674760046144 Transaction committed successfully
 INFO 2024-09-25 15:50:38,231 views 3547 140674751637056 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 16:03:35,659 autoreload 3547 140674840656960 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 16:03:36,133 autoreload 5111 140436085288000 Watching for file changes with StatReloader
+DEBUG 2024-09-25 16:03:36,160 views 5111 140436085288000 This is a debug message at the top of views.py
+INFO 2024-09-25 16:03:36,160 views 5111 140436085288000 This is an info message at the top of views.py
+WARNING 2024-09-25 16:03:36,160 views 5111 140436085288000 This is a warning message at the top of views.py
+ERROR 2024-09-25 16:03:36,160 views 5111 140436085288000 This is an error message at the top of views.py
+INFO 2024-09-25 16:04:06,348 views 5111 140435979449920 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-25 16:04:39,252 views 5111 140435498464832 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-25 16:04:39,715 views 5111 140435498464832 Updated surgeon's clinics: {<Clinic: test (Stockholm)>}
+INFO 2024-09-25 16:04:39,800 views 5111 140435498464832 Transaction committed successfully
+INFO 2024-09-25 16:24:47,555 autoreload 5111 140436085288000 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 16:24:48,015 autoreload 6126 140175261178944 Watching for file changes with StatReloader
+INFO 2024-09-25 16:29:10,291 autoreload 6126 140175261178944 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 16:29:10,733 autoreload 6394 140281150700608 Watching for file changes with StatReloader
+INFO 2024-09-25 16:30:11,155 autoreload 6394 140281150700608 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 16:30:11,598 autoreload 6469 140375214709824 Watching for file changes with StatReloader

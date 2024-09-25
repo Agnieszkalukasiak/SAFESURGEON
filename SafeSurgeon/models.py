@@ -7,10 +7,22 @@ from django.core.exceptions import ValidationError
 
 # Create your models here.
 
-class Verification(models.TextChoices):
-    PENDING = 'PENDING', 'Pending'
-    VERIFIED = 'VERIFIED', 'Verified'
-    REJECTED = 'REJECTED', 'Rejected'
+#class Verification(models.TextChoices):
+    #PENDING = 'PENDING', 'Pending'
+    #VERIFIED = 'VERIFIED', 'Verified'
+    #REJECTED = 'REJECTED', 'Rejected'
+
+class Verification(model.Models):
+    surgeon=models.ForeignKey(surgeon, on_delete=models.CASCADE, related_name='verification')
+    status=model.CharField(
+        max_length=20,
+        choices=[
+            ('PENDING','Pending'),
+            ('VERIFIED','Verified'),
+            ('REJECTED', 'Rejected'),
+        ],
+        default='PENDING'
+    )
 
 
 class Country(models.Model):
