@@ -410,17 +410,17 @@ def edit_surgeon_profile(request, surgeon_id):
 
 
     #Fetch clinics associated with the surgeon
-    #clinics = surgeon.clinic.all()
+    clinics = surgeon.clinic.all()
    
     #Debug: Print out the current clinics associated with the surgeon
-    #logger.info(f"Clinics associated with surgeon: {clinics}")
+    logger.info(f"Clinics associated with surgeon: {clinics}")
 
     #handles the post
     if request.method == 'POST':
         logger.info(f"POST data: {request.POST}")
         logger.info(f"FILES data: {request.FILES}")
     
-        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
+        form = SurgeonForm(request.POST or None, request.FILES, instance=surgeon)
         clinic_formset=ClinicFormSet(request.POST,queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon) )
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon,)
 
@@ -438,16 +438,26 @@ def edit_surgeon_profile(request, surgeon_id):
                 surgeon.save()
                     
 
-                #city = surgeon.city 
+                city = surgeon.city 
                 
-                 # Handle clinic formset(THE BEST OPTION SO FAR)
-                
+                 # Handle clinic formset(THE BEST OPTION SO FAR)   
                 instances = clinic_formset.save(commit=False)
                 for instance in instances:
                     instance.surgeon = surgeon
                     instance.save()
-                for obj in clinic_formset.deleted_objects:
-                    obj.delete()
+                    for obj in clinic_formset.deleted_objects:
+                        obj.delete()
+                
+                # Handle deletions remove the relationship, not the clinic
+                #for deleted_form in clinic_formset.deleted_forms:
+                    #if deleted_form.instance.pk:
+                        #surgeon.clinic.remove(deleted_form.cleaned_data.get('clinic'))
+
+                # Handle new clinic creation if needed
+                for form in clinic_formset:
+                    if form.cleaned_data.get('new_clinic_name'):
+                        new_clinic = Clinic.objects.create(name=form.cleaned_data['new_clinic_name'], city=surgeon.city)
+                        surgeon.clinic.add(new_clinic)
                 
 
                 education_formset.save()
