@@ -1,55 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}About Us{% endblock %}
+{% block title %}Contact Us{% endblock %}
 
 {% block content %}
 <div class="container my-5">
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <h1 class="text-center mb-4">About Us</h1>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="text-center mb-4">Contact Us</h1>
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Our Story</h2>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula, libero vel egestas fringilla, 
-                        purus sit amet ante vel odio condimentum lorem.
-                    </p>
-                    <h2 class="card-title mt-4">Our Mission</h2>
-                    <p class="card-text">
-                        Nullam ac tortor vitae purus faucibus ornare suspendisse. Fusce id velit ut tortor pretium viverra 
-                        suspendisse potenti nullam.
-                    </p>
-                    <h2 class="card-title mt-4">Our Team</h2>
-                    <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <img src="{% static 'images/team-member-1.jpg' %}" class="card-img-top" alt="Team Member 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">John Doe</h5>
-                                    <p class="card-text">Founder & CEO</p>
-                                </div>
-                            </div>
+                    <form method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <img src="{% static 'images/team-member-2.jpg' %}" class="card-img-top" alt="Team Member 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Jane Smith</h5>
-                                    <p class="card-text">Lead Developer</p>
-                                </div>
-                            </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                <img src="{% static 'images/team-member-3.jpg' %}" class="card-img-top" alt="Team Member 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Mike Johnson</h5>
-                                    <p class="card-text">Marketing Director</p>
-                                </div>
-                            </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

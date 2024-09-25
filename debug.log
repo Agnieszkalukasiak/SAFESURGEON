@@ -2736,3 +2736,11 @@ INFO 2024-09-25 01:53:35,906 views 3246 140652159415872 GET request received
 INFO 2024-09-25 01:54:08,295 views 3246 140652151023168 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-25 01:54:08,346 views 3246 140652151023168 Clinics associated with surgeon: <QuerySet [<Clinic: MOnsterMunch (Stockholm)>]>
 INFO 2024-09-25 01:54:08,346 views 3246 140652151023168 GET request received
+INFO 2024-09-25 02:06:56,557 autoreload 3246 140652785073216 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-25 02:06:57,023 autoreload 5582 139966594911296 Watching for file changes with StatReloader
+INFO 2024-09-25 02:14:36,721 autoreload 5582 139966594911296 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 02:14:37,176 autoreload 6120 139811065121856 Watching for file changes with StatReloader
+INFO 2024-09-25 02:14:56,564 autoreload 6120 139811065121856 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-25 02:14:57,017 autoreload 6213 140249552268352 Watching for file changes with StatReloader
+INFO 2024-09-25 02:15:41,714 autoreload 6213 140249552268352 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-25 02:15:42,179 autoreload 6333 139986228780096 Watching for file changes with StatReloader

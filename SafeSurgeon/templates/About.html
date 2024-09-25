@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <h1 class="text-center mb-4">About Us</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Our Story</h2>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula, libero vel egestas fringilla, 
+                        purus sit amet ante vel odio condimentum lorem.
+                    </p>
+                    <h2 class="card-title mt-4">Our Mission</h2>
+                    <p class="card-text">
+                        Nullam ac tortor vitae purus faucibus ornare suspendisse. Fusce id velit ut tortor pretium viverra 
+                        suspendisse potenti nullam.
+                    </p>
+                    <h2 class="card-title mt-4">Our Team</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <img src="{% static 'images/team-member-1.jpg' %}" class="card-img-top" alt="Team Member 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">John Doe</h5>
+                                    <p class="card-text">Founder & CEO</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <img src="{% static 'images/team-member-2.jpg' %}" class="card-img-top" alt="Team Member 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jane Smith</h5>
+                                    <p class="card-text">Lead Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <img src="{% static 'images/team-member-3.jpg' %}" class="card-img-top" alt="Team Member 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mike Johnson</h5>
+                                    <p class="card-text">Marketing Director</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

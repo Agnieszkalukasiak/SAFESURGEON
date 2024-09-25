@@ -536,4 +536,24 @@ def delete_clinic(request, clinic_id):
     else:
         return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
 
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
         
+        # Send email
+        send_mail(
+            f'Contact Form: {subject}',
+            f'From: {name} <{email}>\n\n{message}',
+            email,
+            ['lukasiak@me.com'],  
+            fail_silently=False,
+        )
+        
+        messages.success(request, 'Your message has been sent. Thank you!')
+        return redirect('contact')
+    
+    return render(request, 'contact.html')
