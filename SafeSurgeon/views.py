@@ -420,7 +420,7 @@ def edit_surgeon_profile(request, surgeon_id):
         logger.info(f"POST data: {request.POST}")
         logger.info(f"FILES data: {request.FILES}")
     
-        form = SurgeonForm(request.POST or None, request.FILES, instance=surgeon)
+        form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
         clinic_formset=ClinicFormSet(request.POST,queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon) )
         education_formset=EducationFormSet(request.POST, request.FILES, instance=surgeon,)
 
