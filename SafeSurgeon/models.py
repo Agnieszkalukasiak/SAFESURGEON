@@ -42,7 +42,7 @@ class City(models.Model):
 class Clinic(models.Model):
     name = models.CharField(max_length=100,unique=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='clinics',null=True, blank=True)
-    # other fields as needed
+   
 
     @classmethod
     def get_default_clinic(cls):

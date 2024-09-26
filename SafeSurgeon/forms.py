@@ -156,18 +156,24 @@ class ClinicForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
+        clinic = cleaned_data.get('clinic')
         print("Cleaned data: ", cleaned_data)
         existing_clinics = cleaned_data.get('existing_clinics')
         new_clinic_name = cleaned_data.get('new_clinic_name')
         print("Existing clinic: ", existing_clinics)
         
 
-
         existing_clinic = cleaned_data.get("clinic")
         print("Clinic: ", existing_clinic)
+
         # Ensure that at least one clinic is selected or provided
-        
-        if not existing_clinic and not new_clinic_name:
+        #if not existing_clinic and not new_clinic_name:
+            #raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
+
+         # This allows the form to be valid if either field is filled or both are empty
+        if clinic or new_clinic_name or self.cleaned_data.get('DELETE'):
+            return cleaned_data
+        else:
             raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
 
         # If a new clinic name is provided, clean it up for saving
@@ -179,6 +185,8 @@ class ClinicForm(forms.ModelForm):
     def save(self, surgeon, city, commit=True):
         # Prepare an empty list of clinics to associate with the surgeon
         clinics = []
+
+        '''
         
         # Get selected existing clinic
         # existing_clinic = self.cleaned_data.get('existing_clinics')
@@ -197,6 +205,26 @@ class ClinicForm(forms.ModelForm):
         # Save all selected clinics (both new and existing) to the surgeon's profile
         if commit and clinics:
             surgeon.clinic.set(clinics)  # Using set to replace existing clinics
+        '''
+
+        # Handle existing clinic
+        clinic = self.cleaned_data.get("clinic")
+        if clinic:
+            clinics.append(clinic)
+
+    # Handle new clinic
+        new_clinic_name = self.cleaned_data.get('new_clinic_name')
+        if new_clinic_name:
+                new_clinic, created = Clinic.objects.get_or_create(name=new_clinic_name, city=city)
+                clinics.append(new_clinic)
+
+        if commit and clinics:
+        # Clear existing relationships to avoid duplicates
+            Surgeon.clinic.through.objects.filter(surgeon=surgeon).delete()
+        
+        # Create new relationships
+            for clinic in clinics:
+                Surgeon.clinic.through.objects.create(surgeon=surgeon, clinic=clinic)
 
         return clinics
 
@@ -206,7 +234,9 @@ ClinicFormSet = forms.modelformset_factory(
     form=ClinicForm,
     fields=('clinic',),
     extra=1,
-    can_delete=True
+    can_delete=True,
+    validate_min=False,
+    min_num=0 
 
 )
 

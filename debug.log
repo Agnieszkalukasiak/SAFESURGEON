@@ -6684,3 +6684,57 @@ INFO 2024-09-26 08:00:48,075 views 8348 139866373334592 Editing profile for surg
 INFO 2024-09-26 08:04:55,091 views 8348 139865853249088 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-26 08:05:07,117 views 8348 139865844856384 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-26 08:05:23,978 views 8348 139865836463680 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-26 08:12:00,029 connectionpool 8348 139865291200064 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-26 08:12:01,849 connectionpool 8348 139865291200064 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-26 08:12:03,245 connectionpool 8348 139865291200064 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-26 08:12:04,342 connectionpool 8348 139865291200064 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-26 08:29:05,608 autoreload 8348 139867163700288 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 08:29:06,089 autoreload 11634 140458941156416 Watching for file changes with StatReloader
+ERROR 2024-09-26 08:29:40,510 log 11634 140458641581632 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 209, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=Clinic.objects.none())  # No clinics associated if surgeon is None
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseFormSet.__init__() got an unexpected keyword argument 'queryset'
+INFO 2024-09-26 08:30:14,288 autoreload 11634 140458941156416 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 08:30:14,805 autoreload 11827 140443404237888 Watching for file changes with StatReloader
+INFO 2024-09-26 09:40:02,193 autoreload 2393 140360126565440 Watching for file changes with StatReloader
+INFO 2024-09-26 09:41:43,764 autoreload 2393 140360126565440 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:41:44,244 autoreload 2485 140669578247232 Watching for file changes with StatReloader
+INFO 2024-09-26 09:42:07,595 autoreload 2485 140669578247232 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:42:08,058 autoreload 2517 140090562526272 Watching for file changes with StatReloader
+INFO 2024-09-26 09:42:16,237 autoreload 2517 140090562526272 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:42:16,698 autoreload 2536 140260412046400 Watching for file changes with StatReloader
+INFO 2024-09-26 09:42:19,821 autoreload 2536 140260412046400 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:42:20,282 autoreload 2550 140475361778752 Watching for file changes with StatReloader
+INFO 2024-09-26 09:42:24,417 autoreload 2550 140475361778752 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:42:24,875 autoreload 2564 139863587486784 Watching for file changes with StatReloader
+INFO 2024-09-26 09:42:53,271 autoreload 2564 139863587486784 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:42:53,726 autoreload 2594 139769421900864 Watching for file changes with StatReloader
+INFO 2024-09-26 09:47:36,015 autoreload 2594 139769421900864 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:47:36,477 autoreload 2807 140014748712000 Watching for file changes with StatReloader
+INFO 2024-09-26 09:48:27,127 autoreload 2807 140014748712000 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 09:48:27,591 autoreload 2853 140006850370624 Watching for file changes with StatReloader
+INFO 2024-09-26 09:53:08,320 autoreload 2853 140006850370624 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 09:53:08,792 autoreload 3056 139711947533376 Watching for file changes with StatReloader
+INFO 2024-09-26 10:04:23,250 autoreload 3056 139711947533376 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 10:04:23,725 autoreload 3499 139657345817664 Watching for file changes with StatReloader
+INFO 2024-09-26 10:06:03,118 autoreload 3499 139657345817664 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 10:06:03,589 autoreload 3588 140260873243712 Watching for file changes with StatReloader
+DEBUG 2024-09-26 10:07:54,163 connectionpool 3588 140260176541248 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-26 10:07:55,276 connectionpool 3588 140260176541248 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-26 10:08:26,751 autoreload 3588 140260873243712 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 10:08:27,229 autoreload 3714 140255224818752 Watching for file changes with StatReloader
+INFO 2024-09-26 10:09:18,041 autoreload 3714 140255224818752 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 10:09:18,504 autoreload 3757 140131466030144 Watching for file changes with StatReloader
+INFO 2024-09-26 10:09:38,826 autoreload 3757 140131466030144 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 10:09:39,288 autoreload 3780 140437485546560 Watching for file changes with StatReloader
