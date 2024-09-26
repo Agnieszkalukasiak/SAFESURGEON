@@ -17,6 +17,7 @@ urlpatterns = [
     path('edit_surgeon_profile/<int:surgeon_id>/', views.edit_surgeon_profile, name='edit_surgeon_profile'),
     path('delete_clinic/<int:clinic_id>/', views.delete_clinic, name='delete_clinic'),
     path('surgeon/<int:surgeon_id>/edit/', views.edit_surgeon_profile, name='edit_surgeon_profile'),
+    path('pending_update/', TemplateView.as_view(template_name='pending_update.html'), name='pending_update'),
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
     path('contact/', views.contact, name='contact'), 
 ]

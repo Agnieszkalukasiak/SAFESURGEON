@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+<h1>Verification Pending</h1>
+<p>Thank you. Dr. {{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</p>
+{% if surgeon.verification %}
+    <p>Current status: {{ surgeon.verification.get_status_display }}</p>
+    <p>Last updated: {{ surgeon.verification.updated_at }}</p>
+{% else %}
+    <p>Verification status: Pending</p>
+{% endif %}
+<p>We will review your updates and get back to you shortly.</p>
+<a href="{% url 'surgeon_profile' surgeon.id %}">Return to Profile</a>
+{% endblock %}

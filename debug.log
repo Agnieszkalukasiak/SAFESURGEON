@@ -5214,3 +5214,89 @@ DEBUG 2024-09-26 00:40:39,681 views 4593 140281575681088 This is a debug message
 INFO 2024-09-26 00:40:39,681 views 4593 140281575681088 This is an info message at the top of views.py
 WARNING 2024-09-26 00:40:39,681 views 4593 140281575681088 This is a warning message at the top of views.py
 ERROR 2024-09-26 00:40:39,681 views 4593 140281575681088 This is an error message at the top of views.py
+INFO 2024-09-26 00:50:00,741 autoreload 4593 140281575681088 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 00:50:01,222 autoreload 6006 140515641084992 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:50:01,249 views 6006 140515641084992 This is a debug message at the top of views.py
+INFO 2024-09-26 00:50:01,250 views 6006 140515641084992 This is an info message at the top of views.py
+WARNING 2024-09-26 00:50:01,250 views 6006 140515641084992 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:50:01,250 views 6006 140515641084992 This is an error message at the top of views.py
+INFO 2024-09-26 00:50:04,143 views 6006 140515579389504 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 00:50:22,392 views 6006 140515568883264 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-26 00:50:22,864 views 6006 140515568883264 Updated surgeon's clinics: {<Clinic: MOnsterMunch (Stockholm)>}
+INFO 2024-09-26 00:50:22,892 views 6006 140515568883264 Transaction committed successfully
+ERROR 2024-09-26 00:50:22,893 views 6006 140515568883264 An error occurred while saving: Reverse for 'surgeon_profile' with arguments '(62,)' not found. 1 pattern(s) tried: ['surgeon_profile/\\Z']
+Traceback (most recent call last):
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 683, in edit_surgeon_profile
+    return render(request, 'pending_update.html', {'surgeon': surgeon})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 54, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'surgeon_profile' with arguments '(62,)' not found. 1 pattern(s) tried: ['surgeon_profile/\\Z']
+INFO 2024-09-26 00:53:10,998 autoreload 6006 140515641084992 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-26 00:53:11,470 autoreload 6158 140363669449792 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:53:11,495 views 6158 140363669449792 This is a debug message at the top of views.py
+INFO 2024-09-26 00:53:11,495 views 6158 140363669449792 This is an info message at the top of views.py
+WARNING 2024-09-26 00:53:11,495 views 6158 140363669449792 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:53:11,495 views 6158 140363669449792 This is an error message at the top of views.py
+INFO 2024-09-26 00:53:39,977 autoreload 6158 140363669449792 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-26 00:53:40,442 autoreload 6188 139737004981312 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:53:40,460 views 6188 139737004981312 This is a debug message at the top of views.py
+INFO 2024-09-26 00:53:40,460 views 6188 139737004981312 This is an info message at the top of views.py
+WARNING 2024-09-26 00:53:40,460 views 6188 139737004981312 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:53:40,460 views 6188 139737004981312 This is an error message at the top of views.py
+INFO 2024-09-26 00:53:55,822 autoreload 6188 139737004981312 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-26 00:53:56,286 autoreload 6237 140694089067584 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:53:56,315 views 6237 140694089067584 This is a debug message at the top of views.py
+INFO 2024-09-26 00:53:56,316 views 6237 140694089067584 This is an info message at the top of views.py
+WARNING 2024-09-26 00:53:56,316 views 6237 140694089067584 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:53:56,316 views 6237 140694089067584 This is an error message at the top of views.py
+INFO 2024-09-26 00:54:07,269 views 6237 140694027372096 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 00:54:14,902 autoreload 6237 140694089067584 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-26 00:54:15,367 autoreload 6264 139905207065664 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:54:15,390 views 6264 139905207065664 This is a debug message at the top of views.py
+INFO 2024-09-26 00:54:15,390 views 6264 139905207065664 This is an info message at the top of views.py
+WARNING 2024-09-26 00:54:15,391 views 6264 139905207065664 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:54:15,391 views 6264 139905207065664 This is an error message at the top of views.py
+INFO 2024-09-26 00:55:28,420 autoreload 6264 139905207065664 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 00:55:28,880 autoreload 6325 140324926250048 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:55:28,900 views 6325 140324926250048 This is a debug message at the top of views.py
+INFO 2024-09-26 00:55:28,900 views 6325 140324926250048 This is an info message at the top of views.py
+WARNING 2024-09-26 00:55:28,900 views 6325 140324926250048 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:55:28,900 views 6325 140324926250048 This is an error message at the top of views.py
+INFO 2024-09-26 00:55:59,131 views 6325 140324864554560 Editing profile for surgeon: Henio Tideman - Pending

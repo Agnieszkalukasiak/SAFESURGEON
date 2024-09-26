@@ -680,7 +680,7 @@ def edit_surgeon_profile(request, surgeon_id):
 
                 logger.info("Transaction committed successfully")
                 messages.success(request, 'Profile updated successfully. Your changes are pending verification.')
-                return render(request, 'pending.html', {'surgeon': surgeon})
+                return render(request, 'pending_update.html', {'surgeon': surgeon})
             except Exception as e:
                 logger.exception(f"An error occurred while saving: {e}")
                 messages.error(request, f'An error occurred: {str(e)}')
