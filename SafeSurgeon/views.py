@@ -647,7 +647,7 @@ def edit_surgeon_profile(request, surgeon_id):
             try:
                 with transaction.atomic():
                     surgeon = form.save(commit=False)
-                    surgeon.verfication_status = Verification.PENDING 
+                    surgeon.verification_status = Verification.PENDING  
                     surgeon.save()
 
                     # Handle clinic associations

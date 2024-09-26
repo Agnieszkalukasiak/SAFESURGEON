@@ -5147,3 +5147,70 @@ INFO 2024-09-25 16:29:10,291 autoreload 6126 140175261178944 /workspace/SAFESURG
 INFO 2024-09-25 16:29:10,733 autoreload 6394 140281150700608 Watching for file changes with StatReloader
 INFO 2024-09-25 16:30:11,155 autoreload 6394 140281150700608 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
 INFO 2024-09-25 16:30:11,598 autoreload 6469 140375214709824 Watching for file changes with StatReloader
+INFO 2024-09-25 23:52:12,680 autoreload 2027 140001675754560 Watching for file changes with StatReloader
+INFO 2024-09-25 23:52:42,973 autoreload 2027 140001675754560 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 23:52:43,417 autoreload 2071 140295167478848 Watching for file changes with StatReloader
+INFO 2024-09-25 23:52:54,628 autoreload 2071 140295167478848 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 23:52:55,069 autoreload 2091 140224644734016 Watching for file changes with StatReloader
+INFO 2024-09-25 23:57:53,507 autoreload 2091 140224644734016 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 23:57:53,952 autoreload 2349 139801872030784 Watching for file changes with StatReloader
+INFO 2024-09-25 23:59:22,544 autoreload 2349 139801872030784 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 23:59:22,995 autoreload 2431 140592610290752 Watching for file changes with StatReloader
+INFO 2024-09-25 23:59:44,249 autoreload 2431 140592610290752 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-25 23:59:44,688 autoreload 2457 140118323354688 Watching for file changes with StatReloader
+INFO 2024-09-26 00:01:45,365 autoreload 2457 140118323354688 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:01:45,813 autoreload 2569 140402996067392 Watching for file changes with StatReloader
+INFO 2024-09-26 00:02:01,041 autoreload 2569 140402996067392 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:02:01,486 autoreload 2633 139886504979520 Watching for file changes with StatReloader
+INFO 2024-09-26 00:19:39,225 autoreload 2633 139886504979520 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:19:39,692 autoreload 3468 140335609482304 Watching for file changes with StatReloader
+INFO 2024-09-26 00:19:43,877 autoreload 3468 140335609482304 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:19:44,337 autoreload 3481 140558758607936 Watching for file changes with StatReloader
+INFO 2024-09-26 00:19:59,568 autoreload 3481 140558758607936 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:20:00,022 autoreload 3504 140398115433536 Watching for file changes with StatReloader
+INFO 2024-09-26 00:20:29,314 autoreload 3504 140398115433536 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:20:29,765 autoreload 3539 140307434933312 Watching for file changes with StatReloader
+INFO 2024-09-26 00:33:57,469 autoreload 3539 140307434933312 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:33:57,934 autoreload 4182 139961526590528 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:33:57,958 views 4182 139961526590528 This is a debug message at the top of views.py
+INFO 2024-09-26 00:33:57,958 views 4182 139961526590528 This is an info message at the top of views.py
+WARNING 2024-09-26 00:33:57,958 views 4182 139961526590528 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:33:57,958 views 4182 139961526590528 This is an error message at the top of views.py
+INFO 2024-09-26 00:34:26,533 autoreload 4182 139961526590528 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:34:26,991 autoreload 4215 140516012768320 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:34:27,020 views 4215 140516012768320 This is a debug message at the top of views.py
+INFO 2024-09-26 00:34:27,021 views 4215 140516012768320 This is an info message at the top of views.py
+WARNING 2024-09-26 00:34:27,021 views 4215 140516012768320 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:34:27,021 views 4215 140516012768320 This is an error message at the top of views.py
+INFO 2024-09-26 00:35:31,945 autoreload 4215 140516012768320 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-26 00:35:32,416 autoreload 4277 139819583949888 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:35:32,439 views 4277 139819583949888 This is a debug message at the top of views.py
+INFO 2024-09-26 00:35:32,439 views 4277 139819583949888 This is an info message at the top of views.py
+WARNING 2024-09-26 00:35:32,439 views 4277 139819583949888 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:35:32,439 views 4277 139819583949888 This is an error message at the top of views.py
+INFO 2024-09-26 00:37:12,850 autoreload 4277 139819583949888 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 00:37:13,323 autoreload 4369 140018890738752 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:37:13,343 views 4369 140018890738752 This is a debug message at the top of views.py
+INFO 2024-09-26 00:37:13,343 views 4369 140018890738752 This is an info message at the top of views.py
+WARNING 2024-09-26 00:37:13,343 views 4369 140018890738752 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:37:13,343 views 4369 140018890738752 This is an error message at the top of views.py
+INFO 2024-09-26 00:37:37,360 views 4369 140018700965440 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 00:38:12,166 views 4369 140018148439616 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-26 00:38:12,639 views 4369 140018148439616 Updated surgeon's clinics: {<Clinic: Miau (Stockholm)>}
+INFO 2024-09-26 00:38:12,749 views 4369 140018148439616 Transaction committed successfully
+INFO 2024-09-26 00:39:55,809 autoreload 4369 140018890738752 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 00:39:56,294 autoreload 4540 140639149206592 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:39:56,322 views 4540 140639149206592 This is a debug message at the top of views.py
+INFO 2024-09-26 00:39:56,323 views 4540 140639149206592 This is an info message at the top of views.py
+WARNING 2024-09-26 00:39:56,323 views 4540 140639149206592 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:39:56,323 views 4540 140639149206592 This is an error message at the top of views.py
+INFO 2024-09-26 00:40:04,107 views 4540 140639087511104 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 00:40:11,394 views 4540 140639077004864 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-26 00:40:11,811 views 4540 140639077004864 Updated surgeon's clinics: {<Clinic: Miau (Stockholm)>}
+INFO 2024-09-26 00:40:11,925 views 4540 140639077004864 Transaction committed successfully
+INFO 2024-09-26 00:40:39,152 autoreload 4540 140639149206592 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 00:40:39,654 autoreload 4593 140281575681088 Watching for file changes with StatReloader
+DEBUG 2024-09-26 00:40:39,681 views 4593 140281575681088 This is a debug message at the top of views.py
+INFO 2024-09-26 00:40:39,681 views 4593 140281575681088 This is an info message at the top of views.py
+WARNING 2024-09-26 00:40:39,681 views 4593 140281575681088 This is a warning message at the top of views.py
+ERROR 2024-09-26 00:40:39,681 views 4593 140281575681088 This is an error message at the top of views.py
