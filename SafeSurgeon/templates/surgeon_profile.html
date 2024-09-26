@@ -6,11 +6,22 @@
     <div class="card">
         <div class="card-header">
             <h2 class="card-title">
+                {% if surgeon.verification_status == 'verified' %}
+                    <span class="badge bg-success">Verified</span>
+                {% elif surgeon.verification_status == 'rejected' %}
+                    <span class="badge bg-danger">Rejected</span>
+                    <p>Your profile has been rejected. Please edit and resubmit your profile for verification.</p>
+                {% else %}
+                    <span class="badge bg-warning">Pending Verification</span>
+                {% endif %}
+                <!---
                 {% if surgeon.is_verified %}
                     <span class="badge bg-success">Verified</span>
                 {% else %}
                     <span class="badge bg-warning">Not Verified</span>
-                {% endif %}
+                {% endif %}-->
+
+
                 Surgeon Profile
             </h2>
         </div>

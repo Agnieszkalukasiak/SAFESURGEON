@@ -19,11 +19,6 @@ from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm, Cli
 logger = logging.getLogger(__name__)
 
 
-logger.debug("This is a debug message at the top of views.py")
-logger.info("This is an info message at the top of views.py")
-logger.warning("This is a warning message at the top of views.py")
-logger.error("This is an error message at the top of views.py")
-
 
 # Create your views here for home page
 def home(request):
