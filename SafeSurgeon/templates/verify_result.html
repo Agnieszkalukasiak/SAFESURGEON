@@ -3,18 +3,18 @@
 {% block content %}
 <div class="container mt-5">
     {% if surgeon %}
-    <div class="card">
+    <div class="card shadow-lg">
         <div class="card-header text-center">
             {% if surgeon.profile_picture %}
             <img src="{{surgeon.profile_picture.url}}" alt="Profile Picture" class="rounded-circle"
                 style="width: 150px;"> 
             {% endif %}             
             <h2>{{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</h2>
-            <p><strong>Clinic Name:</strong> {{ clinic_name }}</p>
-            <p>{{surgeon.city.name}}, {{surgeon.country.name}}</p>
+            <p class="fs-4"></pclass><strong>Clinic:{{ clinic_name }}</strong></p>
+            <p class="fs-4">{{surgeon.city.name}}, {{surgeon.country.name}}</p>
 
             {% if surgeon.verification_status == "VERIFIED" %}
-                <span class="badge bg-success">Verified</span>
+                <span class="badge bg-success fs-4 p-3">Verified</span>
             {% elif surgeon.verification_status == "PENDING" %}
                 <span class="badge bg-warning">Pending</span>
             {% elif surgeon.verification_status == "REJECTED" %}
@@ -25,7 +25,7 @@
         {% if education %}
         <div class="card-body">
             <h3>Education</h3>
-            <ul>
+            <ul class="list-group list-group-flush">
                 {%for edu in education%}
                 <li>
                     <strong>{{edu.institution}}</strong> <strong> - {{edu.program}}</strong> <br>
@@ -35,7 +35,7 @@
             </ul>
         </div>
         {% else %}
-        <div class="card-body">
+        <div class="alert alert-info" role="alert">
             <p>No education history available.</p>
         </div>
         {% endif %}

@@ -50,8 +50,7 @@
             {{ form.city }}         
             {{ form.city.errors }}
         </div>
-        logger.info(f"Surgeon form initial data: {form.initial}")
-        logger.info(f"Surgeon city: {surgeon.city}, country: {surgeon.country}")
+       
         <div class="mb-3">
             <h2>Add Clinics</h2>
             {{ clinic_formset.non_field_errors }} 
@@ -62,11 +61,11 @@
                   {%for clinic_form in clinic_formset%} 
                 <div class="clinic_form mb-4" id="clinic-form-{{forloop.counter0}}">
                 <!---  <h3>Clinic Entry{{forloop.counter}}</h3>-->
-                    {{ clinic_form.non_field_errors }}
+                    <span>{{ clinic_form.non_field_errors }}
                     <div class="mb-3">
                         
                         {{ clinic_form.clinic.label_tag }}
-                        {{ clinic_form.clinic }}
+                             {{ clinic_form.clinic }}
                         {{ clinic_form.clinic.errors }}
                    
                 </div>
