@@ -86,7 +86,7 @@
     </form>
 </div>
 <script>
-    // Function to filter clinics by cit
+    // Function to filter clinics by city
 function filterClinicsByCity() {
     const citySelect = document.getElementById('id_city');
     const clinicSelect = document.getElementById('id_clinic');
@@ -106,10 +106,32 @@ function filterClinicsByCity() {
             }
         }
 
-        // Reset clinic selectio
+        // Reset clinic selection
         clinicSelect.value = '';
     });
 }
+
+// Function to add another clinic
+function addAnotherClinic() {
+    const addClinicButton = document.getElementById('add-clinic');
+    const clinicForms = document.getElementById('clinic-forms');
+    const totalFormsInput = document.querySelector('#clinic-management-form input[name$=TOTAL_FORMS]');
+
+    addClinicButton.addEventListener('click', function() {
+        const formCount = clinicForms.children.length;
+        const newForm = clinicForms.children[0].cloneNode(true);
+
+
+        // Clear input values
+        newForm.querySelectorAll('input, select').forEach(input => {
+            input.value = '';
+        });
+
+        clinicForms.appendChild(newForm);
+        totalFormsInput.value = formCount + 1;
+    });
+}
+
 
     #submit button
     document.querySelector('form').addEventListener('submit', function(e) {
