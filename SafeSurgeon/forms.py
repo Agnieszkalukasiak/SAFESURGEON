@@ -138,7 +138,8 @@ class ClinicForm(forms.ModelForm):
         return clinics
 '''
 class ClinicForm(forms.ModelForm):
-    existing_clinics = forms.ModelChoiceField(
+    #existing_clinics = forms.ModelChoiceField(
+    clinic = forms.ModelChoiceField(  
         queryset=Clinic.objects.all(),
         required=False,
         label="Select Existing Clinic",
@@ -152,15 +153,18 @@ class ClinicForm(forms.ModelForm):
 
     class Meta:
         model = Surgeon.clinic.through  
-        fields = [] 
+        fields = ['clinic'] #this is chnaged added clinic
 
     def clean(self):
         cleaned_data = super().clean()
         clinic = cleaned_data.get('clinic')
-        print("Cleaned data: ", cleaned_data)
-        existing_clinics = cleaned_data.get('existing_clinics')
         new_clinic_name = cleaned_data.get('new_clinic_name')
-        print("Existing clinic: ", existing_clinics)
+       # existing_clinics = cleaned_data.get('existing_clinics')
+        
+        print("Cleaned data: ", cleaned_data)
+        print("Clinic: ", clinic)
+        print("New clinic name: ", new_clinic_name)
+        #print("Existing clinic: ", existing_clinics)
         
 
         existing_clinic = cleaned_data.get("clinic")

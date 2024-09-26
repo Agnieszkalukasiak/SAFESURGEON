@@ -6738,3 +6738,29 @@ INFO 2024-09-26 10:09:18,041 autoreload 3714 140255224818752 /workspace/SAFESURG
 INFO 2024-09-26 10:09:18,504 autoreload 3757 140131466030144 Watching for file changes with StatReloader
 INFO 2024-09-26 10:09:38,826 autoreload 3757 140131466030144 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
 INFO 2024-09-26 10:09:39,288 autoreload 3780 140437485546560 Watching for file changes with StatReloader
+INFO 2024-09-26 14:24:04,373 autoreload 3308 139945146485824 Watching for file changes with StatReloader
+WARNING 2024-09-26 14:24:47,447 log 3308 139944814089792 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2024-09-26 14:25:07,009 views 3308 139944295118400 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 14:25:57,558 views 3308 139944286725696 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 14:30:40,598 autoreload 3308 139945146485824 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:30:41,063 autoreload 3916 140143062568000 Watching for file changes with StatReloader
+INFO 2024-09-26 14:31:18,674 autoreload 3916 140143062568000 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:31:19,133 autoreload 4012 140359723437120 Watching for file changes with StatReloader
+INFO 2024-09-26 14:34:37,778 autoreload 4710 140631021935680 Watching for file changes with StatReloader
+INFO 2024-09-26 14:34:44,222 views 4710 140630941324864 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 14:35:05,743 views 4710 140630558754368 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 14:35:51,362 views 4710 140630550361664 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 14:39:02,390 autoreload 4710 140631021935680 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:39:02,867 autoreload 5136 140606638246976 Watching for file changes with StatReloader
+INFO 2024-09-26 14:39:11,054 autoreload 5136 140606638246976 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:39:11,513 autoreload 5190 139743217605696 Watching for file changes with StatReloader
+INFO 2024-09-26 14:40:33,694 autoreload 5190 139743217605696 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:40:34,191 autoreload 5281 140704992382016 Watching for file changes with StatReloader
+INFO 2024-09-26 14:40:40,445 autoreload 5281 140704992382016 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:40:40,911 autoreload 5324 140297999203392 Watching for file changes with StatReloader
+INFO 2024-09-26 14:40:45,938 views 5324 140297937507904 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-26 14:40:46,370 views 5324 140297937507904 Created new clinic: medispa (Stockholm)
+DEBUG 2024-09-26 14:40:46,472 views 5324 140297937507904 Updated surgeon's clinics: {<Clinic: medispa (Stockholm)>}
+INFO 2024-09-26 14:40:46,504 views 5324 140297937507904 Transaction committed successfully
+INFO 2024-09-26 14:40:56,414 autoreload 5324 140297999203392 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:40:56,884 autoreload 5387 139845502422080 Watching for file changes with StatReloader
