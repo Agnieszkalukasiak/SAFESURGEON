@@ -11,5 +11,5 @@
     <p>Verification status: Pending</p>
 {% endif %}
 <p>We will review your updates and get back to you shortly.</p>
-<a href="{% url 'surgeon_profile' surgeon.id %}">Return to Profile</a>
+<a href="{% url 'edit_surgeon_profile' surgeon_id=surgeon.id %}"></a>
 {% endblock %}

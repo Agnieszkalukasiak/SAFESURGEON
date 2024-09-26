@@ -5300,3 +5300,49 @@ INFO 2024-09-26 00:55:28,900 views 6325 140324926250048 This is an info message 
 WARNING 2024-09-26 00:55:28,900 views 6325 140324926250048 This is a warning message at the top of views.py
 ERROR 2024-09-26 00:55:28,900 views 6325 140324926250048 This is an error message at the top of views.py
 INFO 2024-09-26 00:55:59,131 views 6325 140324864554560 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 01:00:04,674 autoreload 6325 140324926250048 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 01:00:05,155 autoreload 6968 140299239115840 Watching for file changes with StatReloader
+DEBUG 2024-09-26 01:00:05,182 views 6968 140299239115840 This is a debug message at the top of views.py
+INFO 2024-09-26 01:00:05,182 views 6968 140299239115840 This is an info message at the top of views.py
+WARNING 2024-09-26 01:00:05,182 views 6968 140299239115840 This is a warning message at the top of views.py
+ERROR 2024-09-26 01:00:05,182 views 6968 140299239115840 This is an error message at the top of views.py
+INFO 2024-09-26 01:00:17,489 autoreload 6968 140299239115840 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 01:00:17,942 autoreload 7008 140254878989376 Watching for file changes with StatReloader
+DEBUG 2024-09-26 01:00:17,974 views 7008 140254878989376 This is a debug message at the top of views.py
+INFO 2024-09-26 01:00:17,974 views 7008 140254878989376 This is an info message at the top of views.py
+WARNING 2024-09-26 01:00:17,974 views 7008 140254878989376 This is a warning message at the top of views.py
+ERROR 2024-09-26 01:00:17,974 views 7008 140254878989376 This is an error message at the top of views.py
+INFO 2024-09-26 01:00:28,367 views 7008 140254817293888 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 01:02:57,301 autoreload 7008 140254878989376 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 01:02:57,766 autoreload 7125 139754600844352 Watching for file changes with StatReloader
+DEBUG 2024-09-26 01:02:57,794 views 7125 139754600844352 This is a debug message at the top of views.py
+INFO 2024-09-26 01:02:57,794 views 7125 139754600844352 This is an info message at the top of views.py
+WARNING 2024-09-26 01:02:57,794 views 7125 139754600844352 This is a warning message at the top of views.py
+ERROR 2024-09-26 01:02:57,794 views 7125 139754600844352 This is an error message at the top of views.py
+INFO 2024-09-26 01:03:14,151 autoreload 7125 139754600844352 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 01:03:14,619 autoreload 7146 140298250366016 Watching for file changes with StatReloader
+DEBUG 2024-09-26 01:03:14,647 views 7146 140298250366016 This is a debug message at the top of views.py
+INFO 2024-09-26 01:03:14,647 views 7146 140298250366016 This is an info message at the top of views.py
+WARNING 2024-09-26 01:03:14,647 views 7146 140298250366016 This is a warning message at the top of views.py
+ERROR 2024-09-26 01:03:14,647 views 7146 140298250366016 This is an error message at the top of views.py
+INFO 2024-09-26 01:03:21,479 views 7146 140298188670528 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 01:12:42,969 autoreload 7146 140298250366016 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 01:12:43,441 autoreload 7572 139952156888128 Watching for file changes with StatReloader
+DEBUG 2024-09-26 01:12:43,469 views 7572 139952156888128 This is a debug message at the top of views.py
+INFO 2024-09-26 01:12:43,469 views 7572 139952156888128 This is an info message at the top of views.py
+WARNING 2024-09-26 01:12:43,469 views 7572 139952156888128 This is a warning message at the top of views.py
+ERROR 2024-09-26 01:12:43,469 views 7572 139952156888128 This is an error message at the top of views.py
+WARNING 2024-09-26 01:12:49,427 log 7572 139952085734976 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2024-09-26 01:12:58,945 log 7572 139952076277312 Forbidden (CSRF token from POST incorrect.): /admin/SafeSurgeon/surgeon/62/change/
+INFO 2024-09-26 01:13:28,237 autoreload 7572 139952156888128 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 01:13:28,708 autoreload 7635 139888453078080 Watching for file changes with StatReloader
+DEBUG 2024-09-26 01:13:28,736 views 7635 139888453078080 This is a debug message at the top of views.py
+INFO 2024-09-26 01:13:28,736 views 7635 139888453078080 This is an info message at the top of views.py
+WARNING 2024-09-26 01:13:28,736 views 7635 139888453078080 This is a warning message at the top of views.py
+ERROR 2024-09-26 01:13:28,736 views 7635 139888453078080 This is an error message at the top of views.py
+INFO 2024-09-26 01:13:54,326 autoreload 7635 139888453078080 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-26 01:13:54,788 autoreload 7683 140027737467968 Watching for file changes with StatReloader
+DEBUG 2024-09-26 01:13:54,808 views 7683 140027737467968 This is a debug message at the top of views.py
+INFO 2024-09-26 01:13:54,808 views 7683 140027737467968 This is an info message at the top of views.py
+WARNING 2024-09-26 01:13:54,808 views 7683 140027737467968 This is a warning message at the top of views.py
+ERROR 2024-09-26 01:13:54,808 views 7683 140027737467968 This is an error message at the top of views.py
