@@ -414,3 +414,23 @@ def edit_surgeon_profile(request, surgeon_id):
         'education_formset': education_formset,
     }
     return render(request, 'edit_surgeon_profile.html', context)
+
+    from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Surgeon
+
+@login_required
+def surgeon_profile(request, surgeon_id=None):
+    if surgeon_id:
+        # If a specific surgeon_id is provided, fetch that surgeon
+        surgeon = get_object_or_404(Surgeon, id=surgeon_id)
+    else:
+        # Otherwise, get the surgeon profile for the logged-in user
+        surgeon = get_object_or_404(Surgeon, user=request.user)
+    
+    context = {
+        'surgeon': surgeon,
+        'form': SurgeonForm(),
+        'education_formset': EducationFormSet(instance=surgeon),
+    }
+    return render(request, 'surgeon_profile.html', context)

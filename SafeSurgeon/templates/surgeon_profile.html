@@ -6,20 +6,11 @@
     <div class="card">
         <div class="card-header">
             <h2 class="card-title">
-                {% if surgeon.verification_status == 'verified' %}
-                    <span class="badge bg-success">Verified</span>
-                {% elif surgeon.verification_status == 'rejected' %}
-                    <span class="badge bg-danger">Rejected</span>
-                    <p>Your profile has been rejected. Please edit and resubmit your profile for verification.</p>
-                {% else %}
-                    <span class="badge bg-warning">Pending Verification</span>
-                {% endif %}
-                <!---
                 {% if surgeon.is_verified %}
-                    <span class="badge bg-success">Verified</span>
+                     <span class="badge bg-success">Verified</span>
                 {% else %}
-                    <span class="badge bg-warning">Not Verified</span>
-                {% endif %}-->
+                    <span class="badge bg-danger">Rejected</span>
+                {% endif %}
 
 
                 Surgeon Profile
@@ -115,5 +106,21 @@
         </div>
     </div>
 </div>
+
+@login_required
+def surgeon_profile(request, surgeon_id=None):
+    if surgeon_id:
+        # If a specific surgeon_id is provided, fetch that surgeon
+        surgeon = get_object_or_404(Surgeon, id=surgeon_id)
+    else:
+        # Otherwise, get the surgeon profile for the logged-in user
+        surgeon = get_object_or_404(Surgeon, user=request.user)
+    
+    context = {
+        'surgeon': surgeon,
+        'form': SurgeonForm(instance=surgeon),
+        'education_formset': EducationFormSet(instance=surgeon),
+    }
+    return render(request, 'surgeon_profile.html', context)
 
 {% endblock %}
