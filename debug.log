@@ -6764,3 +6764,20 @@ DEBUG 2024-09-26 14:40:46,472 views 5324 140297937507904 Updated surgeon's clini
 INFO 2024-09-26 14:40:46,504 views 5324 140297937507904 Transaction committed successfully
 INFO 2024-09-26 14:40:56,414 autoreload 5324 140297999203392 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
 INFO 2024-09-26 14:40:56,884 autoreload 5387 139845502422080 Watching for file changes with StatReloader
+INFO 2024-09-26 14:43:05,668 autoreload 5387 139845502422080 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-26 14:43:06,128 autoreload 6350 140117326380096 Watching for file changes with StatReloader
+INFO 2024-09-26 14:44:38,019 views 6350 140116731360832 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-26 14:47:16,392 connectionpool 6350 140116102202944 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-26 14:47:17,841 connectionpool 6350 140116102202944 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-26 14:47:18,699 connectionpool 6350 140116102202944 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-26 14:47:19,492 connectionpool 6350 140116102202944 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-26 14:51:20,384 views 6350 140113963112000 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-26 14:52:40,771 views 6350 140113954719296 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-26 14:52:41,106 views 6350 140113954719296 Created new clinic: dance1 (London)
+DEBUG 2024-09-26 14:52:41,191 views 6350 140113954719296 Updated surgeon's clinics: {<Clinic: dance1 (London)>}
+INFO 2024-09-26 14:52:41,272 views 6350 140113954719296 Transaction committed successfully
+INFO 2024-09-26 14:54:34,064 views 6350 140112880977472 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-26 14:54:55,844 views 6350 140112872584768 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-26 14:54:56,315 views 6350 140112872584768 Updated surgeon's clinics: {<Clinic: myszka (London)>}
+INFO 2024-09-26 14:54:56,398 views 6350 140112872584768 Transaction committed successfully
+INFO 2024-09-26 14:59:31,611 autoreload 2328 139821772127296 Watching for file changes with StatReloader
