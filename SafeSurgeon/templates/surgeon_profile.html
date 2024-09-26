@@ -78,10 +78,20 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                <h5 class="modal-title" id="editProfileModalLabel"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <div class="text-center"></div>
+                    <a href="{% url 'edit_surgeon_profile' surgeon.id %}" class="btn btn-primary btn-lg">Edit and Resubmit for Verification</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
@@ -106,21 +116,5 @@
         </div>
     </div>
 </div>
-
-@login_required
-def surgeon_profile(request, surgeon_id=None):
-    if surgeon_id:
-        # If a specific surgeon_id is provided, fetch that surgeon
-        surgeon = get_object_or_404(Surgeon, id=surgeon_id)
-    else:
-        # Otherwise, get the surgeon profile for the logged-in user
-        surgeon = get_object_or_404(Surgeon, user=request.user)
-    
-    context = {
-        'surgeon': surgeon,
-        'form': SurgeonForm(instance=surgeon),
-        'education_formset': EducationFormSet(instance=surgeon),
-    }
-    return render(request, 'surgeon_profile.html', context)
-
+-->
 {% endblock %}

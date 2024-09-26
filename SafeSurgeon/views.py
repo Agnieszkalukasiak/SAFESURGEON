@@ -79,8 +79,12 @@ def get_clinics(request, city_id):
 
 @login_required
 def get_verified(request): 
-    surgeon = getattr(request.user, 'surgeon', None)
-    print(f"Debug: Surgeon instance for user {request.user.id} = {surgeon}")
+    try:
+        surgeon = Surgeon.objects.get(user=request.user)
+    except Surgeon.DoesNotExist:
+        surgeon = None
+    #surgeon = getattr(request.user, 'surgeon', None)
+    #print(f"Debug: Surgeon instance for user {request.user.id} = {surgeon}")
     
     # Determine the appropriate template and set messages
     if surgeon is None:
@@ -209,6 +213,7 @@ def get_verified(request):
     cities = City.objects.all()
 
     context = {
+        'surgeon': surgeon,
         'form': form,
         'education_formset': education_formset,
         'clinic_formset': clinic_formset,
@@ -415,9 +420,6 @@ def edit_surgeon_profile(request, surgeon_id):
     }
     return render(request, 'edit_surgeon_profile.html', context)
 
-    from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from .models import Surgeon
 
 @login_required
 def surgeon_profile(request, surgeon_id=None):
@@ -430,7 +432,7 @@ def surgeon_profile(request, surgeon_id=None):
     
     context = {
         'surgeon': surgeon,
-        'form': SurgeonForm(),
+        'form': SurgeonForm(instance=surgeon),
         'education_formset': EducationFormSet(instance=surgeon),
     }
     return render(request, 'surgeon_profile.html', context)
