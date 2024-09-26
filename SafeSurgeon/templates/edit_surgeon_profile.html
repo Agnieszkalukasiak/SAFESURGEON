@@ -121,6 +121,10 @@ function addAnotherClinic() {
         const formCount = clinicForms.children.length;
         const newForm = clinicForms.children[0].cloneNode(true);
 
+          // Update form index
+          newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
+        newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
+
 
         // Clear input values
         newForm.querySelectorAll('input, select').forEach(input => {
@@ -132,8 +136,39 @@ function addAnotherClinic() {
     });
 }
 
+// Function to add another education entry
+function addAnotherEducation() {
+    const addEducationButton = document.getElementById('add-education');
+    const educationFormset = document.getElementById('education-formset');
+    const totalFormsInput = document.querySelector('input[name$=TOTAL_FORMS]');
 
-    #submit button
+    addEducationButton.addEventListener('click', function() {
+        const formCount = educationFormset.children.length;
+        const newForm = educationFormset.children[0].cloneNode(true);
+
+        // Update form index
+        newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
+        newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
+
+        // Clear input values
+        newForm.querySelectorAll('input, select').forEach(input => {
+            input.value = '';
+        });
+
+        educationFormset.appendChild(newForm);
+        totalFormsInput.value = formCount + 1;
+    });
+}
+
+// Initialize all functions when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    filterClinicsByCity();
+    addAnotherClinic();
+    addAnotherEducation();
+});
+
+
+//submit button
     document.querySelector('form').addEventListener('submit', function(e) {
         console.log('Form submitted to:', this.action);
     });
