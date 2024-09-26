@@ -6132,3 +6132,114 @@ DEBUG 2024-09-26 02:58:04,585 connectionpool 11859 140208452392512 https://api.c
 DEBUG 2024-09-26 02:58:05,535 connectionpool 11859 140208452392512 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
 DEBUG 2024-09-26 02:58:06,538 connectionpool 11859 140208452392512 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
 DEBUG 2024-09-26 03:02:52,028 connectionpool 11859 140207907128896 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/image/upload HTTP/11" 200 None
+ERROR 2024-09-26 03:22:52,231 log 11859 140205684110912 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 311, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit_surgeon_profile' with arguments '('',)' not found. 2 pattern(s) tried: ['surgeon/(?P<surgeon_id>[0-9]+)/edit/\\Z', 'edit_surgeon_profile/(?P<surgeon_id>[0-9]+)/\\Z']
+WARNING 2024-09-26 03:23:24,986 log 11859 140205675718208 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2024-09-26 03:25:16,292 log 11859 140205642147392 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2024-09-26 03:26:47,691 views 11859 140205566613056 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 03:27:47,549 views 11859 140205558220352 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 03:28:53,712 views 11859 140205549827648 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-26 03:28:54,275 views 11859 140205549827648 Removed clinic association: Surgeon 62 - Clinic 4
+DEBUG 2024-09-26 03:28:54,342 views 11859 140205549827648 Updated surgeon's clinics: {<Clinic: MOnsterMunch (Stockholm)>}
+INFO 2024-09-26 03:28:54,468 views 11859 140205549827648 Transaction committed successfully
+INFO 2024-09-26 03:32:35,761 views 11859 140205541434944 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-26 03:32:36,235 views 11859 140205541434944 Updated surgeon's clinics: {<Clinic: MOnsterMunch (Stockholm)>}
+INFO 2024-09-26 03:32:36,324 views 11859 140205541434944 Transaction committed successfully
+INFO 2024-09-26 03:32:38,461 views 11859 140205533042240 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:32:43,066 views 11859 140205524649536 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:34:31,446 views 11859 140205482686016 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-26 03:34:32,020 views 11859 140205482686016 Updated surgeon's clinics: {<Clinic: idaslips (Malmö)>}
+INFO 2024-09-26 03:34:32,048 views 11859 140205482686016 Transaction committed successfully
+INFO 2024-09-26 03:34:37,147 views 11859 140205474293312 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:35:02,334 views 11859 140205465900608 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-26 03:35:02,839 views 11859 140205465900608 Updated surgeon's clinics: {<Clinic: ppp (Stockholm)>}
+INFO 2024-09-26 03:35:02,868 views 11859 140205465900608 Transaction committed successfully
+INFO 2024-09-26 03:36:18,367 views 11859 140205457507904 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:36:28,766 views 11859 140205449115200 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-26 03:36:29,282 views 11859 140205449115200 Updated surgeon's clinics: {<Clinic: kkk (Malmö)>}
+INFO 2024-09-26 03:36:29,310 views 11859 140205449115200 Transaction committed successfully
+INFO 2024-09-26 03:38:08,575 views 11859 140205440722496 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:38:19,879 views 11859 140205432329792 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:38:51,050 views 11859 140205423937088 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:39:04,808 views 11859 140205415544384 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:39:12,442 views 11859 140205407151680 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-26 03:39:12,959 views 11859 140205407151680 Updated surgeon's clinics: {<Clinic: idaslips (Malmö)>}
+INFO 2024-09-26 03:39:12,988 views 11859 140205407151680 Transaction committed successfully
+INFO 2024-09-26 03:40:32,627 views 11859 140205398758976 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:40:47,091 views 11859 140205390366272 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:40:58,275 views 11859 140205381973568 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:41:10,374 views 11859 140205373580864 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:41:29,207 views 11859 140205365188160 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:41:33,784 views 11859 140205356795456 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:44:05,114 views 11859 140205214119488 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-26 03:44:28,950 views 11859 140205205726784 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-26 03:44:29,411 views 11859 140205205726784 Updated surgeon's clinics: {<Clinic: kubatek (Malmö)>}
+INFO 2024-09-26 03:44:29,462 views 11859 140205205726784 Transaction committed successfully
+INFO 2024-09-26 03:44:39,671 views 11859 140205197334080 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:44:55,161 views 11859 140205188941376 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:45:01,944 views 11859 140205180548672 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-26 03:47:21,692 views 11859 140205088228928 Editing profile for surgeon: Henio Tideman - Verified
+WARNING 2024-09-26 03:47:39,484 log 11859 140205037872704 Not Found: /favicon.ico

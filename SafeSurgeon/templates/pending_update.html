@@ -2,14 +2,16 @@
 {% load static %}
 
 {%block content%}
-<h1>Verification Pending</h1>
-<p>Thank you. Dr. {{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</p>
-{% if surgeon.verification %}
-    <p>Current status: {{ surgeon.verification.get_status_display }}</p>
-    <p>Last updated: {{ surgeon.verification.updated_at }}</p>
-{% else %}
-    <p>Verification status: Pending</p>
-{% endif %}
-<p>We will review your updates and get back to you shortly.</p>
-<!--<a href="{% url 'edit_surgeon_profile' surgeon_id=surgeon.id %}"></a>-->
+<div class="container d-flex vh-100">
+    <div class="row justify-content-center align-self-center w-100">
+        <div class="col-md-6 text-center">
+            <div class="alert alert-info" role="alert">
+                <h4 class="alert-heading">Profile Pending Verification</h4>
+                <p>Thank you. Dr. {{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</p>   
+                <p>We will review your updates and get back to you shortly.</p>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
