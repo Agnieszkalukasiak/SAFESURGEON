@@ -151,8 +151,8 @@ class ClinicForm(forms.ModelForm):
     )
 
     class Meta:
-        model = Surgeon.clinic.through  # Assuming this is correct for the M2M relationship
-        fields = []  # No direct fields required here since we're using custom ones.
+        model = Surgeon.clinic.through  
+        fields = [] 
 
     def clean(self):
         cleaned_data = super().clean()
@@ -166,8 +166,6 @@ class ClinicForm(forms.ModelForm):
         existing_clinic = cleaned_data.get("clinic")
         print("Clinic: ", existing_clinic)
         # Ensure that at least one clinic is selected or provided
-        # if not existing_clinics and not new_clinic_name:
-        #     raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
         
         if not existing_clinic and not new_clinic_name:
             raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")

@@ -86,6 +86,32 @@
     </form>
 </div>
 <script>
+    // Function to filter clinics by cit
+function filterClinicsByCity() {
+    const citySelect = document.getElementById('id_city');
+    const clinicSelect = document.getElementById('id_clinic');
+
+    citySelect.addEventListener('change', function() {
+        const selectedCity = this.value;
+        const clinicOptions = clinicSelect.options;
+
+        for (let i = 0; i < clinicOptions.length; i++) {
+            const clinicOption = clinicOptions[i];
+            const clinicCity = clinicOption.getAttribute('data-city');
+
+            if (clinicCity === selectedCity || selectedCity === '') {
+                clinicOption.style.display = '';
+            } else {
+                clinicOption.style.display = 'none';
+            }
+        }
+
+        // Reset clinic selectio
+        clinicSelect.value = '';
+    });
+}
+
+    #submit button
     document.querySelector('form').addEventListener('submit', function(e) {
         console.log('Form submitted to:', this.action);
     });
