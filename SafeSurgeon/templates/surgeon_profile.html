@@ -4,72 +4,78 @@
 {% block content %}
     <div class="container mt-5">
     <div class="card">
-        <div class="card-header">
-            <h2 class="card-title">
+        <div class="card-header bg-primary text-white">
+            <h2 class="card-title mb-0 d-flex justify-content-between align-items-center">
+                Surgeon Profile
                 {% if surgeon.is_verified %}
                      <span class="badge bg-success">Verified</span>
                 {% else %}
                     <span class="badge bg-danger">Rejected</span>
                 {% endif %}
-
-
-                Surgeon Profile
             </h2>
         </div>
-    <div class="card-body">
-         <!---Messages -->        
+        <div class="card-body">   
         {% if messages %}
-            <div class="messages">
             {% for message in messages%}
-            <div class="alert alert-{{message.tags}}">{{message}}</div>
-            {%endfor%}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            {%endfor%}
         {% endif %}         
             <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                 {% if surgeon.profile_picture %}
-                    <img src="{{surgeon.profile_picture.url}}" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
+                <img src="{{ surgeon.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
                 {% else %}
-                    <img src="{% static 'image/default_profile.png' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mb-3">
+                <img src="{% static 'image/default_profile.png' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
                 {% endif%}
             </div>
             <div class="col-md-8">
                 <!--user information accessed via the user-->
-                <h3>Name: {{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</h3>
-                <p><strong>Email:</strong> {{ surgeon.user.email }}</p>
+                <h3>{{ surgeon.user.first_name }} {{ surgeon.user.last_name }}</h3>
+                <p class="text-muted"><i class="fas fa-envelope"></i> {{ surgeon.user.email }}</p>
 
-                <!-- Clinic Information (ManyToManyField) -->
-               <h4>Clinics:</h4>
-                <ul>
+                <!-- Clinic Information -->
+               <h4 class="mt-4">Clinics</h4>
+               <div class="list-group"></div>
                     {% for clinic in surgeon.clinic.all %}
-                        <li>
-                            <strong>Clinic Name:</strong> {{ clinic.name }}<br>
-                            <strong>City:</strong> {{ clinic.city.name }}<br>
-                            <strong>Country:</strong> {{ clinic.city.country.name }}
-                        </li>
-                    {% endfor %}            
-                    <!--education information-->
-
-                <h4 class="mt-4">Education</h4>
-                {% for edu in surgeon.education.all %}
-                    <div>
-                        <p><strong>Institution:</strong>{{edu.institution}}</p>
-                        <p><strong>Program:</strong>{{edu.program}}</p>
-                        <p><strong>Institution_Country:</strong>{{edu.institution_country}}</p>
-                        <p><strong>End Date:</strong>{{edu.start_date}}</p>
-                        <p><strong>Start Date:</strong>{{edu.end_date}}</p>
+                    <div class="list-group-item">
+                        <h5 class="mb-1">{{ clinic.name }}</h5>
+                        <p class="mb-1"><small><i class="fas fa-map-marker-alt"></i> {{ clinic.city.name }}, {{ clinic.city.country.name }}</small></p>
                     </div>
-                    {% if not forloop.last %}<hr>{% endif %}
                 {% empty %}
-                    <p>No education information available.</p>
+                <p class="text-muted">No clinic information available.</p>
+                {% endfor %}
+            </div>        
+                    <!--education information-->
+            <h4 class="mt-4">Education</h4>
+            <div class="accordion" id="educationAccordion">
+                {% for edu in surgeon.education.all %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                            {{ edu.institution }} - {{ edu.program }}
+                        </button>
+                    </h2>
+                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#educationAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Institution Country:</strong> {{ edu.institution_country }}</p>
+                            <p><strong>Duration:</strong> {{ edu.start_date|date:"M Y" }} - {{ edu.end_date|date:"M Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                    <p class="text-muted">No education information available.</p>
                 {% endfor %}
             </div>
         </div>
     </div>
-    <div class="card-footer">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
-    </div>
 </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-primary btn-lg px-5  " data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
+        </div>
+    </div>
 </div>
 
 <!-- Edit Profile Modal -->
@@ -78,43 +84,15 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editProfileModalLabel"></h5>
+                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="text-center"></div>
+            <div class="modal-body text-center">
+                <p class="mb-4">Are you sure you want to edit your profile? <br>This will require re-verification.</p>
                     <a href="{% url 'edit_surgeon_profile' surgeon.id %}" class="btn btn-primary btn-lg">Edit and Resubmit for Verification</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!--
-
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    
-                    <h3>Education</h3>
-                    {{ education_formset.management_form }}
-                    {% for education_form in education_formset %}
-                        <div class="education-form">
-                            {{education_form.as_p}}
-                    {% if education_form.instance.pk %}
-                                <p>Current certificate: {{ education_form.instance.certificate.name }}</p>
-                            {% endif %}
-                        </div>
-                    {% endfor %}          
-                    <div class="container mt-3 mb-5">
-                        <div class="text-center">
-                            <a href="{% url 'edit_surgeon_profile' surgeon.id %}" class="btn btn-primary btn-lg">Edit and Resubmit for Verification</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
--->
 {% endblock %}

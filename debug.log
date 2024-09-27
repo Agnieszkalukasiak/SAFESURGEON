@@ -8023,3 +8023,28 @@ WARNING 2024-09-27 12:09:53,079 log 2009 140692902889024 Forbidden (CSRF token m
 WARNING 2024-09-27 12:10:03,066 log 2009 140692886103616 Forbidden (CSRF token missing.): /login/
 INFO 2024-09-27 12:14:19,909 autoreload 2009 140694443052096 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
 INFO 2024-09-27 12:14:20,436 autoreload 2579 139650232241216 Watching for file changes with StatReloader
+INFO 2024-09-27 12:17:59,031 autoreload 3843 140182532791360 Watching for file changes with StatReloader
+INFO 2024-09-27 12:19:11,917 autoreload 3843 140182532791360 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-27 12:19:12,130 autoreload 2579 139650232241216 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-27 12:19:12,414 autoreload 3942 139742188174400 Watching for file changes with StatReloader
+INFO 2024-09-27 12:19:12,654 autoreload 3944 140347316112448 Watching for file changes with StatReloader
+INFO 2024-09-27 12:20:10,451 autoreload 3942 139742188174400 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-27 12:20:10,964 autoreload 4200 140285086149696 Watching for file changes with StatReloader
+INFO 2024-09-27 12:20:20,164 autoreload 4200 140285086149696 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-27 12:20:20,667 autoreload 4254 140020922186816 Watching for file changes with StatReloader
+INFO 2024-09-27 12:20:24,905 autoreload 4254 140020922186816 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-27 12:20:25,409 autoreload 4286 139637100706880 Watching for file changes with StatReloader
+INFO 2024-09-27 12:21:28,441 autoreload 4286 139637100706880 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-27 12:21:28,959 autoreload 4429 140542610226240 Watching for file changes with StatReloader
+INFO 2024-09-27 12:25:09,045 autoreload 4429 140542610226240 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 12:25:09,546 autoreload 4713 140308740357184 Watching for file changes with StatReloader
+INFO 2024-09-27 12:26:54,099 autoreload 4713 140308740357184 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 12:26:54,602 autoreload 4830 139665196129344 Watching for file changes with StatReloader
+INFO 2024-09-27 13:11:23,051 autoreload 3417 139623608261696 Watching for file changes with StatReloader
+INFO 2024-09-27 13:18:36,762 autoreload 3417 139623608261696 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 13:18:37,258 autoreload 3784 140067756166208 Watching for file changes with StatReloader
+INFO 2024-09-27 13:18:55,822 autoreload 3784 140067756166208 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 13:18:56,324 autoreload 3824 140332783148096 Watching for file changes with StatReloader
+INFO 2024-09-27 13:19:42,215 autoreload 3824 140332783148096 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 13:19:42,715 autoreload 3869 140000241810496 Watching for file changes with StatReloader
+INFO 2024-09-27 13:26:08,418 views 3869 139999466997312 Editing profile for surgeon: Rory McKellar - Rejected

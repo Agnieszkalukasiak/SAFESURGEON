@@ -1,13 +1,13 @@
 from django.urls import path
 from .import views
-from django.views.generic import TemplateView   
+from django.views.generic import TemplateView 
+
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('verify/', views.verify, name='verify'),
     path('signup/', views.signup_view, name='signup'),
     path('login/', views.login_view, name='login'),
-    path('accounts/', include('django.contrib.auth.urls')),  
     path('get_verified/', views.get_verified, name='get_verified'), 
     path('get_cities/<int:country_id>/', views.get_cities, name='get_cities'),
     path('get_cities/', views.get_cities, name='get_all_cities'),
