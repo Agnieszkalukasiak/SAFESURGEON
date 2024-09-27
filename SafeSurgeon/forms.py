@@ -147,7 +147,7 @@ class ClinicForm(forms.ModelForm):
     )
     new_clinic_name = forms.CharField(
         required=False,
-        widget=forms.TextInput(attrs={'placeholder': 'Enter new clinic name'}),
+        widget=forms.TextInput(attrs={'class': 'form-control'}), #{'placeholder': 'Enter new clinic name'}
         label="Or Enter New Clinic Name"
     )
 
@@ -261,9 +261,13 @@ class EducationForm(forms.ModelForm):
         model = Education
         fields = ['institution','institution_country', 'program', 'start_date', 'end_date', 'certificate']
         widgets = {
-        'start_date': forms.DateInput(attrs={'type': 'date'}),
-        'end_date': forms.DateInput(attrs={'type': 'date'}),
-    }
+            'institution': forms.TextInput(attrs={'class': 'form-control'}),
+            'institution_country': forms.Select(attrs={'class': 'form-control'}),
+            'program': forms.TextInput(attrs={'class': 'form-control'}),
+            'start_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'end_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'certificate': forms.FileInput(attrs={'class': 'form-control'}),
+        }
 
 EducationFormSet = forms.inlineformset_factory(
     Surgeon, 
