@@ -8835,3 +8835,9 @@ INFO 2024-09-27 16:14:08,233 views 2009 140278572762688 Editing profile for surg
 INFO 2024-09-27 16:14:30,354 views 2009 140278564369984 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-27 16:14:34,786 views 2009 140278555977280 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-27 16:17:25,248 views 2009 140278547584576 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 16:21:48,081 views 2009 140277482235456 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 16:22:49,079 views 2009 140277473842752 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-27 16:22:49,543 views 2009 140277473842752 Created new clinic: tired (Stockholm)
+DEBUG 2024-09-27 16:22:49,607 views 2009 140277473842752 Updated surgeon's clinics: {<Clinic: tired (Stockholm)>, <Clinic: medispa (Stockholm)>}
+INFO 2024-09-27 16:22:49,704 views 2009 140277473842752 Transaction committed successfully
+INFO 2024-09-27 16:24:33,693 views 2009 140276425279040 Editing profile for surgeon: Henio Tideman - Pending
