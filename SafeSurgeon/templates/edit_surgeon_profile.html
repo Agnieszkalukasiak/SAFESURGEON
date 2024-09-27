@@ -3,211 +3,192 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h2 class="mb-0">Edit Profile for {{ surgeon.user.get_full_name }}</h2>
-            <div>
-                <div class="card-body">
-                    <p class="lead">Email: {{ surgeon.user.email }}</p>
+    <h2 class="mb-4">Edit Profile for {{ surgeon.user.get_full_name }}</h2>
+    <p class="lead mb-4">Email: {{ surgeon.user.email }}</p>
 
-                    <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}">
-                        {% csrf_token %}
+    <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
 
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h3 class="mb-0 text-bg">Personal Information</h3>
-                            </div>
-                            <div class="card-body">
-                                {% for field in form %}
-                                <div class="mb-3">
-                                    {{ field.label_tag }}
-                                    {{ field }}
-                                    {% if field.errors %}
-                                    <div class="text-danger">{{ field.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <!--
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Personal Information</h3>
+            </div>
+            <div class="card-body">
                 {{ form.as_p }}
-                {{ form.non_field_errors }}
-             -->
-
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <h3 class="mb-0">Update your clinic</h3>
-                            </div>
-                            <div class="card-body">
-                                {{ form.non_field_errors }}
-                                <div id="clinic-management-form">
-                                    {{clinic_formset.management_form}}
-                                </div>
-                                <div id="clinic-forms">
-                                    {%for clinic_form in clinic_formset%}
-                                    <div class="clinic_form mb-4">
-                                        <!---
-                {% for hidden in clinic_form.hidden_fields %}
-                  {{hidden}}
-                  {% endfor %} 
-                <div class="clinic_form mb-4" >
-                    {{ clinic_form.non_field_errors }}
-                    <div class="mb-3"> -->
-                                        <h4>Clinic Entry{{forloop.counter}}</h4>
-                                        {% for hidden in clinic_form.hidden_fields %}
-                                        {{hidden}}
-                                        {% endfor %}
-                                        {{ clinic_form.non_field_errors }}
-                                        <div class="mb-3">
-                                            {{ clinic_form.label_tag }}
-                                            {{ clinic_form.clinic }}
-                                            {{ clinic_form.clinic.errors }}
-                                        </div>
-                                        <div class="mb-3">
-                                            {{ clinic_form.new_clinic_name.label_tag }}
-                                            {{ clinic_form.new_clinic_name }}
-                                            {{ clinic_form.new_clinic_name.errors }}
-                                        </div>
-                                        {% if clinic_formset.can_delete %}
-                                        <div class="mb-3 form-check">
-                                            {{ clinic_form.DELETE }}
-                                            {{ clinic_form.DELETE.label_tag }}
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                                <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another
-                                    Clinic</button>
-                            </div>
-                        </div>
-
-                        <h4 class="mt-4">
-                            <div class="card-header">
-                                <h3>Update Your Education</h3>
-                            </div>
-                            <div class="card-body">
-                                {{ education_formset.management_form }}
-                                <div id="education-formset">
-                                    {% for education_form in education_formset %}
-                                    <div class="education-form mb-4">
-                                        <h4>Education Entry {{ forloop.counter }}</h4>
-                                        {% for field in education_form %}
-                                        <!---   {{ education_form.as_p }}-->
-                                        <div class="mb-3">
-                                            <!--{% if education_form.instance.pk %}-->
-                                            {{ field.label_tag }}
-                                            {{ field }}
-                                            {% if field.errors %}
-                                            <div class="text-danger">{{ field.errors }}</div>
-                                            {% endif %}
-                                        </div>
-                                        {% endfor %}
-                                        {% if education_form.instance.pk %}
-                                        <p>Current certificate: {{ education_form.instance.certificate.name }}</p>
-                                        {% endif %}
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                                <button type="button" id="add-education" class="btn btn-secondary">Add Another Education
-                                    Entry</button>
-                            </div>
-                </div>
-
-                <div class="text mt-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
-                </div>
-                </form>
             </div>
         </div>
+
+        {{ form.non_field_errors }}
+        <div id="add-clinic-section">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Update your clinic</h3>
+                </div>
+                <div class="card-body">
+                    <div id="clinic-management-form">
+                        {{clinic_formset.management_form}}
+                    </div>
+                    <div id="clinic-forms">
+                        {%for clinic_form in clinic_formset%} 
+                        {% for hidden in clinic_form.hidden_fields %}
+                        {{hidden}}
+                        {% endfor %}
+                        
+                        <div class="clinic_form mb-4">
+                            {{ clinic_form.non_field_errors }}
+                            <div class="mb-3">
+                                <h3>Clinic Entry{{forloop.counter}}</h3>
+                                {{ clinic_form.non_field_errors }}
+                                <div class="mb-3">
+                                    {{ clinic_form.label_tag }}
+                                    {{ clinic_form.clinic }}
+                                    {{ clinic_form.clinic.errors }}
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                {{ clinic_form.new_clinic_name.label_tag }}  
+                                {{ clinic_form.new_clinic_name }}  
+                                {{ clinic_form.new_clinic_name.errors }}
+                            </div>
+                            {% if clinic_formset.can_delete %}
+                            <div class="mb-3">
+                                {{ clinic_form.DELETE.label_tag }}
+                                {{ clinic_form.DELETE }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Update Your Education</h4>
+            </div>
+            <div class="card-body">
+                {{ education_formset.management_form }}
+                <div id="education-formset">
+                    {% for education_form in education_formset %}
+                        <div class="education-form">
+                            {{ education_form.as_p }}
+                            {% if education_form.instance.pk %}
+                                </div>
+                            {% endif %}
+                            <hr>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Update Identification</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        {{ form.id_document.label_tag }}
+                        {{ form.id_document }}
+                        {{ form.id_document.errors }}
+                    </div>
+                </div>
+            </div>
+    
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+            </div>
+        </form>
     </div>
+                                
+     
 
-    <script>
-        // Function to filter clinics by city
-        function filterClinicsByCity() {
-            const citySelect = document.getElementById('id_city');
-            const clinicSelect = document.getElementById('id_clinic');
+<script>
+    // Function to filter clinics by city
+function filterClinicsByCity() {
+    const citySelect = document.getElementById('id_city');
+    const clinicSelect = document.getElementById('id_clinic');
 
-            citySelect.addEventListener('change', function () {
-                const selectedCity = this.value;
-                const clinicOptions = clinicSelect.options;
+    citySelect.addEventListener('change', function() {
+        const selectedCity = this.value;
+        const clinicOptions = clinicSelect.options;
 
-                for (let i = 0; i < clinicOptions.length; i++) {
-                    const clinicOption = clinicOptions[i];
-                    const clinicCity = clinicOption.getAttribute('data-city');
+        for (let i = 0; i < clinicOptions.length; i++) {
+            const clinicOption = clinicOptions[i];
+            const clinicCity = clinicOption.getAttribute('data-city');
 
-                    if (clinicCity === selectedCity || selectedCity === '') {
-                        clinicOption.style.display = '';
-                    } else {
-                        clinicOption.style.display = 'none';
-                    }
-                }
-
-                // Reset clinic selection
-                clinicSelect.value = '';
-            });
+            if (clinicCity === selectedCity || selectedCity === '') {
+                clinicOption.style.display = '';
+            } else {
+                clinicOption.style.display = 'none';
+            }
         }
 
-        // Function to add another clinic
-        function addAnotherClinic() {
-            const addClinicButton = document.getElementById('add-clinic');
-            const clinicForms = document.getElementById('clinic-forms');
-            const totalFormsInput = document.querySelector('#clinic-management-form input[name$=TOTAL_FORMS]');
+            // Reset clinic selection
+        clinicSelect.value = '';
+    });
+}
 
-            addClinicButton.addEventListener('click', function () {
-                const formCount = clinicForms.children.length;
-                const newForm = clinicForms.children[0].cloneNode(true);
+    // Function to add another clinic
+function addAnotherClinic() {
+    const addClinicButton = document.getElementById('add-clinic');
+    const clinicForms = document.getElementById('clinic-forms');
+    const totalFormsInput = document.querySelector('#clinic-management-form input[name$=TOTAL_FORMS]');
 
-                // Update form index
-                newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
-                newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
+    addClinicButton.addEventListener('click', function() {
+        const formCount = clinicForms.children.length;
+        const newForm = clinicForms.children[0].cloneNode(true);
 
+            // Update form index
+        newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
+        newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
 
-                // Clear input values
-                newForm.querySelectorAll('input, select').forEach(input => {
-                    input.value = '';
-                });
-
-                clinicForms.appendChild(newForm);
-                totalFormsInput.value = formCount + 1;
-            });
-        }
-
-        // Function to add another education entry
-        function addAnotherEducation() {
-            const addEducationButton = document.getElementById('add-education');
-            const educationFormset = document.getElementById('education-formset');
-            const totalFormsInput = document.querySelector('input[name$=TOTAL_FORMS]');
-
-            addEducationButton.addEventListener('click', function () {
-                const formCount = educationFormset.children.length;
-                const newForm = educationFormset.children[0].cloneNode(true);
-
-                // Update form index
-                newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
-                newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
-
-                // Clear input values
-                newForm.querySelectorAll('input, select').forEach(input => {
-                    input.value = '';
-                });
-
-                educationFormset.appendChild(newForm);
-                totalFormsInput.value = formCount + 1;
-            });
-        }
-
-        // Initialize all functions when the DOM is loaded
-        document.addEventListener('DOMContentLoaded', function () {
-            filterClinicsByCity();
-            addAnotherClinic();
-            addAnotherEducation();
+            // Clear input values
+        newForm.querySelectorAll('input, select').forEach(input => {
+            input.value = '';
         });
 
-
-        //submit button
-        document.querySelector('form').addEventListener('submit', function (e) {
-            console.log('Form submitted to:', this.action);
+            clinicForms.appendChild(newForm);
+            totalFormsInput.value = formCount + 1;
         });
-    </script>
-    {% endblock %}
+    }
+
+    // Function to add another education entry
+function addAnotherEducation() {
+    const addEducationButton = document.getElementById('add-education');
+    const educationFormset = document.getElementById('education-formset');
+    const totalFormsInput = document.querySelector('input[name$=TOTAL_FORMS]');
+
+    addEducationButton.addEventListener('click', function() {
+        const formCount = educationFormset.children.length;
+        const newForm = educationFormset.children[0].cloneNode(true);
+
+            // Update form index
+        newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
+        newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
+
+            // Clear input values
+        newForm.querySelectorAll('input, select').forEach(input => {
+            input.value = '';
+        });
+
+        educationFormset.appendChild(newForm);
+        totalFormsInput.value = formCount + 1;
+    });
+}
+
+    // Initialize all functions when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    filterClinicsByCity();
+    addAnotherClinic();
+    addAnotherEducation();
+});
+
+    //submit button
+document.querySelector('form').addEventListener('submit', function(e) {
+    console.log('Form submitted to:', this.action);
+});
+</script>
+{% endblock %}
