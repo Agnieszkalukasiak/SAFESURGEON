@@ -8,15 +8,16 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'account_logout' as logout_url %}
 
 
 <!DOCTYPE html>
-
 <html class="h-100" lang="en">
 
 <head>
     <title>SafeSurgeon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,12 +26,13 @@
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
     <!-- scripts CSS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-   <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Main custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -42,8 +44,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ home_url }}">
-            <img src="{% static 'images/SafeSurgeon.png' %}" alt="SafeSurgeon Logo" class="logo-small">              
-                
+                <img src="{% static 'images/SafeSurgeon3.png' %}" alt="SafeSurgeon Logo" class="img-fluid" style="width: 80px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,13 +58,15 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'verify' %}">Verify Your Surgeon</a></li>
-                            <li><a class="dropdown-item" href="{% url 'get_verified' %}">Get Verified</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{% url 'login' %}">Verify Your Surgeon</a></li>
-                            <li><a class="dropdown-item" href="{% url 'logout' %}">Verify Your Surgeon</a></li>
-
-                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'home' %}">Verify Your Surgeon</a></li>
+                            <li><a class="dropdown-item" href="{% url 'signup' %}">Get Verified</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'login' %}">Log In</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="{% url 'about' %}">About</a></li>
                             <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
                         </ul>
@@ -72,16 +75,16 @@
                 <ul class="navbar-nav ms-auto">
                     <!-- Check if user is authenticated -->
                     {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ logout_url }}">Logout</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ logout_url }}">Logout</a>
+                    </li>
                     {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ login_url }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ signup_url }}">Sign Up</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ login_url }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ signup_url }}">Sign Up</a>
+                    </li>
                     {% endif %}
                 </ul>
             </div>
@@ -95,24 +98,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">SafeSurgeon</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+    <footer class="footer mt-auto" style="background-color: white; color: black;"> 
+        <p class="m-0 text-center py-3">Copywrite©2023</p>
+
+         <!-- For future social media links
+            <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i>
-        </p>
-    </footer>
+        -->
+      
 
-    <!-- Bootstrap JS -->
+<!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
     <script src="{% static 'SafeSurgeon/safeSurgeon.js' %}"></script>
 
+    
     {% block extra_js %}
-    <!--js here-->
     {% endblock extra_js %}
-</body>
 
+    </body>
 </html>
