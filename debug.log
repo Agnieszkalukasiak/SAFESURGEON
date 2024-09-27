@@ -8814,3 +8814,24 @@ psycopg2.errors.InvalidCursorName: cursor "_django_curs_140281265509952_sync_3" 
 INFO 2024-09-27 15:39:31,949 views 2009 140281265509952 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-27 15:42:14,026 views 2009 140281273902656 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-27 15:42:16,956 views 2009 140281257117248 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 15:44:01,716 views 2009 140281240331840 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 15:47:30,559 views 2009 140281231939136 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 15:55:28,384 views 2009 140280745424448 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-27 15:59:51,537 views 2009 140280728639040 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-27 16:05:32,051 views 2009 140280720246336 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-27 16:05:39,139 views 2009 140280711853632 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-27 16:05:44,924 views 2009 140280703460928 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-27 16:05:58,731 views 2009 140280695068224 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-27 16:05:59,154 views 2009 140280695068224 Updated surgeon's clinics: {<Clinic: myszka (London)>}
+INFO 2024-09-27 16:05:59,181 views 2009 140280695068224 Transaction committed successfully
+INFO 2024-09-27 16:06:10,127 views 2009 140280208553536 Editing profile for surgeon: Rory McKellar - Pending
+INFO 2024-09-27 16:07:17,406 views 2009 140280200160832 Editing profile for surgeon: Rory McKellar - Pending
+DEBUG 2024-09-27 16:07:17,851 views 2009 140280200160832 Created new clinic: izadora (London)
+DEBUG 2024-09-27 16:07:17,947 views 2009 140280200160832 Updated surgeon's clinics: {<Clinic: dogandcats (Stockholm)>, <Clinic: izadora (London)>}
+INFO 2024-09-27 16:07:18,101 views 2009 140280200160832 Transaction committed successfully
+INFO 2024-09-27 16:10:51,427 views 2009 140279118026304 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 16:12:58,113 views 2009 140278581155392 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 16:14:08,233 views 2009 140278572762688 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 16:14:30,354 views 2009 140278564369984 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 16:14:34,786 views 2009 140278555977280 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-27 16:17:25,248 views 2009 140278547584576 Editing profile for surgeon: Henio Tideman - Verified

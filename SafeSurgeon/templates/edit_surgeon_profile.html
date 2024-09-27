@@ -3,17 +3,14 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="mb-4">Edit Profile for {{ surgeon.user.get_full_name }}</h2>
-    <p class="lead mb-4">Email: {{ surgeon.user.email }}</p>
-
     <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="card mb-4">
             <div class="card-header bg-primary text-white">
-                <h3 class="mb-0">Personal Information</h3>
+                <h3 class="mb-0">Personal Information </h3>
             </div>
-            <div class="card-body">
+            <div class="card-body py-4 px-5 mb-4"">
                 {{ form.as_p }}
             </div>
         </div>
@@ -102,36 +99,36 @@
             </div>
         </form>
     </div>
-                                
-     
 
 <script>
-    // Function to filter clinics by city
+       // Function to filter clinics by city
 function filterClinicsByCity() {
     const citySelect = document.getElementById('id_city');
     const clinicSelect = document.getElementById('id_clinic');
 
-    citySelect.addEventListener('change', function() {
-        const selectedCity = this.value;
-        const clinicOptions = clinicSelect.options;
+    if (citySelect && clinicSelect) {
+        citySelect.addEventListener('change', function() {
+            const selectedCity = this.value;
+            const clinicOptions = clinicSelect.options;
 
-        for (let i = 0; i < clinicOptions.length; i++) {
-            const clinicOption = clinicOptions[i];
-            const clinicCity = clinicOption.getAttribute('data-city');
+            for (let i = 0; i < clinicOptions.length; i++) {
+                const clinicOption = clinicOptions[i];
+                const clinicCity = clinicOption.getAttribute('data-city');
 
-            if (clinicCity === selectedCity || selectedCity === '') {
-                clinicOption.style.display = '';
-            } else {
-                clinicOption.style.display = 'none';
+                if (clinicCity === selectedCity || selectedCity === '') {
+                    clinicOption.style.display = '';
+                } else {
+                    clinicOption.style.display = 'none';
+                }
             }
-        }
 
             // Reset clinic selection
-        clinicSelect.value = '';
-    });
+            clinicSelect.value = '';
+        });
+    }
 }
 
-    // Function to add another clinic
+// Function to add another clinic
 function addAnotherClinic() {
     const addClinicButton = document.getElementById('add-clinic');
     const clinicForms = document.getElementById('clinic-forms');
@@ -141,21 +138,24 @@ function addAnotherClinic() {
         const formCount = clinicForms.children.length;
         const newForm = clinicForms.children[0].cloneNode(true);
 
-            // Update form index
+        // Update form index
         newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
         newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
 
-            // Clear input values
+        // Clear input values
         newForm.querySelectorAll('input, select').forEach(input => {
             input.value = '';
         });
 
-            clinicForms.appendChild(newForm);
-            totalFormsInput.value = formCount + 1;
-        });
-    }
+        clinicForms.appendChild(newForm);
+        totalFormsInput.value = formCount + 1;
 
-    // Function to add another education entry
+        // Reapply event listener for dynamically added forms
+        filterClinicsByCity();
+    });
+}
+
+// Function to add another education entry
 function addAnotherEducation() {
     const addEducationButton = document.getElementById('add-education');
     const educationFormset = document.getElementById('education-formset');
@@ -165,11 +165,11 @@ function addAnotherEducation() {
         const formCount = educationFormset.children.length;
         const newForm = educationFormset.children[0].cloneNode(true);
 
-            // Update form index
+        // Update form index
         newForm.innerHTML = newForm.innerHTML.replace(/form-(\d+)/g, `form-${formCount}`);
         newForm.innerHTML = newForm.innerHTML.replace(/id_form-(\d+)/g, `id_form-${formCount}`);
 
-            // Clear input values
+        // Clear input values
         newForm.querySelectorAll('input, select').forEach(input => {
             input.value = '';
         });
@@ -179,16 +179,17 @@ function addAnotherEducation() {
     });
 }
 
-    // Initialize all functions when the DOM is loaded
+// Initialize all functions when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     filterClinicsByCity();
     addAnotherClinic();
     addAnotherEducation();
 });
 
-    //submit button
-document.querySelector('form').addEventListener('submit', function(e) {
-    console.log('Form submitted to:', this.action);
-});
-</script>
+        </script>
+    
+                                
+     
+
+
 {% endblock %}
