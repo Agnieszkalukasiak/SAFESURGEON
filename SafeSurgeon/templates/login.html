@@ -23,7 +23,7 @@
                     {% endif %}
                     
                     <form method="POST">
-                        
+                        {% csrf_token %}
                         {% for field in form %}
                             <div class="mb-3">
                                 {{ field.label_tag }}
@@ -42,6 +42,7 @@
                 </div>
                 <div class="card-footer text-center">
                     <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+                    <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
                 </div>
             </div>
         </div>

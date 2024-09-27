@@ -8014,3 +8014,12 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' 
 INFO 2024-09-27 09:44:02,365 autoreload 3111 139679881112640 Watching for file changes with StatReloader
 INFO 2024-09-27 09:48:41,191 autoreload 3111 139679881112640 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
 INFO 2024-09-27 09:48:41,672 autoreload 3914 140390889724992 Watching for file changes with StatReloader
+INFO 2024-09-27 12:02:31,544 autoreload 2009 140694443052096 Watching for file changes with StatReloader
+DEBUG 2024-09-27 12:09:12,826 connectionpool 2009 140693431367232 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-27 12:09:14,179 connectionpool 2009 140693431367232 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-27 12:09:15,491 connectionpool 2009 140693431367232 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+WARNING 2024-09-27 12:09:39,337 log 2009 140692928067136 Forbidden (CSRF token missing.): /login/
+WARNING 2024-09-27 12:09:53,079 log 2009 140692902889024 Forbidden (CSRF token missing.): /login/
+WARNING 2024-09-27 12:10:03,066 log 2009 140692886103616 Forbidden (CSRF token missing.): /login/
+INFO 2024-09-27 12:14:19,909 autoreload 2009 140694443052096 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-27 12:14:20,436 autoreload 2579 139650232241216 Watching for file changes with StatReloader
