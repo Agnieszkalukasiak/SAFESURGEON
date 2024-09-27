@@ -57,11 +57,15 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ verify_surgeon_url }}">Verify Your Surgeon</a></li>
-                            <li><a class="dropdown-item" href="{{ get_verified_url }}">Get Verified</a></li>
+                            <li><a class="dropdown-item" href="{% url 'verify' %}">Verify Your Surgeon</a></li>
+                            <li><a class="dropdown-item" href="{% url 'get_verified' %}">Get Verified</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ about_url }}">About</a></li>
-                            <li><a class="dropdown-item" href="{{ contact_url }}">Contact</a></li>
+                            <li><a class="dropdown-item" href="{% url 'login' %}">Verify Your Surgeon</a></li>
+                            <li><a class="dropdown-item" href="{% url 'logout' %}">Verify Your Surgeon</a></li>
+
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'about' %}">About</a></li>
+                            <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
