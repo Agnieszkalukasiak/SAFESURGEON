@@ -6781,3 +6781,1158 @@ INFO 2024-09-26 14:54:55,844 views 6350 140112872584768 Editing profile for surg
 DEBUG 2024-09-26 14:54:56,315 views 6350 140112872584768 Updated surgeon's clinics: {<Clinic: myszka (London)>}
 INFO 2024-09-26 14:54:56,398 views 6350 140112872584768 Transaction committed successfully
 INFO 2024-09-26 14:59:31,611 autoreload 2328 139821772127296 Watching for file changes with StatReloader
+INFO 2024-09-27 01:58:07,705 autoreload 2020 139729166183488 Watching for file changes with StatReloader
+DEBUG 2024-09-27 02:00:57,147 connectionpool 2020 139728523302464 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-27 02:00:58,497 connectionpool 2020 139728523302464 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-27 02:00:59,278 connectionpool 2020 139728523302464 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-27 02:01:00,107 connectionpool 2020 139728523302464 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-27 02:04:09,379 connectionpool 2020 139725243393600 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+ERROR 2024-09-27 02:04:21,697 log 2020 139724740093504 Internal Server Error: /admin/SafeSurgeon/surgeon/76/change/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_139724740093504_sync_2" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/html.py", line 466, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 107, in as_widget
+    return widget.render(
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/admin/widgets.py", line 320, in get_context
+    "rendered_widget": self.widget.render(name, value, attrs),
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 758, in get_context
+    context = super().get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 717, in get_context
+    context["widget"]["optgroups"] = self.optgroups(
+                                     ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 657, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1403, in __iter__
+    for obj in queryset:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 516, in _iterator
+    yield from iterable
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 121, in __iter__
+    for row in compiler.results_iter(results):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 97, in inner
+    with self:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: cursor "_django_curs_139724740093504_sync_2" does not exist
+
+INFO 2024-09-27 02:06:50,980 views 2020 139723112695360 Editing profile for surgeon: est11 111 - Rejected
+INFO 2024-09-27 02:07:19,488 views 2020 139723104302656 Editing profile for surgeon: est11 111 - Rejected
+DEBUG 2024-09-27 02:07:20,005 views 2020 139723104302656 Updated surgeon's clinics: {<Clinic: HealthTmr (Malmö)>, <Clinic: ipa (Malmö)>}
+INFO 2024-09-27 02:07:20,086 views 2020 139723104302656 Transaction committed successfully
+WARNING 2024-09-27 02:08:45,937 log 2020 139722064131648 Not Found: /test1
+DEBUG 2024-09-27 02:10:57,407 connectionpool 2020 139721493689920 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-27 02:27:40,944 autoreload 3219 139670021942336 Watching for file changes with StatReloader
+DEBUG 2024-09-27 02:29:24,506 connectionpool 3219 139669551429184 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-27 02:29:25,502 connectionpool 3219 139669551429184 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-27 02:34:15,256 autoreload 3219 139670021942336 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 02:34:15,741 autoreload 3765 140154941389888 Watching for file changes with StatReloader
+INFO 2024-09-27 02:38:02,972 autoreload 3765 140154941389888 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 02:38:03,440 autoreload 4284 140450427853888 Watching for file changes with StatReloader
+INFO 2024-09-27 02:54:57,405 autoreload 4284 140450427853888 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 02:54:57,888 autoreload 5291 140387880832064 Watching for file changes with StatReloader
+INFO 2024-09-27 02:55:06,189 autoreload 5291 140387880832064 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 02:55:06,655 autoreload 5343 140073915083840 Watching for file changes with StatReloader
+INFO 2024-09-27 02:59:36,438 autoreload 5343 140073915083840 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 02:59:36,905 autoreload 5721 139659357801536 Watching for file changes with StatReloader
+INFO 2024-09-27 03:01:19,361 autoreload 5721 139659357801536 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:01:19,826 autoreload 5883 139822464912448 Watching for file changes with StatReloader
+INFO 2024-09-27 03:04:48,842 autoreload 5883 139822464912448 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:04:49,313 autoreload 6199 140696427387968 Watching for file changes with StatReloader
+INFO 2024-09-27 03:05:29,988 autoreload 6199 140696427387968 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:05:30,445 autoreload 6336 140383031585856 Watching for file changes with StatReloader
+INFO 2024-09-27 03:05:32,655 autoreload 6336 140383031585856 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:05:33,116 autoreload 6364 140103532780608 Watching for file changes with StatReloader
+WARNING 2024-09-27 03:05:46,076 log 6364 140103471085120 Forbidden (CSRF token from POST incorrect.): /login/
+INFO 2024-09-27 03:08:06,454 autoreload 6364 140103532780608 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:08:06,944 autoreload 6825 139691497671744 Watching for file changes with StatReloader
+INFO 2024-09-27 03:13:58,888 autoreload 6825 139691497671744 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:13:59,377 autoreload 7264 140703759830080 Watching for file changes with StatReloader
+INFO 2024-09-27 03:14:24,880 autoreload 7264 140703759830080 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:14:25,345 autoreload 7330 140361887308864 Watching for file changes with StatReloader
+INFO 2024-09-27 03:14:36,666 autoreload 7330 140361887308864 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:14:37,130 autoreload 7391 139929880620096 Watching for file changes with StatReloader
+INFO 2024-09-27 03:14:44,305 autoreload 7391 139929880620096 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:14:44,770 autoreload 7443 140703989062720 Watching for file changes with StatReloader
+INFO 2024-09-27 03:15:20,341 autoreload 7443 140703989062720 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:15:20,811 autoreload 7506 140368609053760 Watching for file changes with StatReloader
+INFO 2024-09-27 03:16:03,369 autoreload 7506 140368609053760 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:16:03,828 autoreload 7577 139784035134528 Watching for file changes with StatReloader
+INFO 2024-09-27 03:22:08,906 autoreload 7577 139784035134528 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:22:09,409 autoreload 8317 140225469201472 Watching for file changes with StatReloader
+INFO 2024-09-27 03:24:05,017 autoreload 8317 140225469201472 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:24:05,486 autoreload 8458 139965326998592 Watching for file changes with StatReloader
+INFO 2024-09-27 03:24:12,762 autoreload 8458 139965326998592 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:24:13,227 autoreload 8507 140229011758144 Watching for file changes with StatReloader
+INFO 2024-09-27 03:26:52,506 autoreload 8507 140229011758144 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:26:52,979 autoreload 8796 139630796770368 Watching for file changes with StatReloader
+INFO 2024-09-27 03:29:37,347 autoreload 8796 139630796770368 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:29:37,823 autoreload 8989 139870435028032 Watching for file changes with StatReloader
+INFO 2024-09-27 03:34:18,730 autoreload 8989 139870435028032 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:34:19,220 autoreload 9416 140440230657088 Watching for file changes with StatReloader
+INFO 2024-09-27 03:34:41,682 autoreload 9416 140440230657088 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:34:42,156 autoreload 9479 140001172737088 Watching for file changes with StatReloader
+INFO 2024-09-27 03:37:30,646 autoreload 9479 140001172737088 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:37:31,133 autoreload 9760 140132097969216 Watching for file changes with StatReloader
+INFO 2024-09-27 03:42:03,746 autoreload 9760 140132097969216 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:42:04,212 autoreload 9987 139798067637312 Watching for file changes with StatReloader
+DEBUG 2024-09-27 03:43:44,253 connectionpool 9987 139797595141696 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-27 03:43:45,237 connectionpool 9987 139797595141696 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-27 03:44:28,398 autoreload 9987 139798067637312 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-27 03:44:28,886 autoreload 10310 140178059066432 Watching for file changes with StatReloader
+INFO 2024-09-27 04:41:35,117 autoreload 2324 139657415674944 Watching for file changes with StatReloader
+ERROR 2024-09-27 05:07:34,556 log 2324 139656330982976 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% endif %' from '% endif %'
+ERROR 2024-09-27 05:39:26,716 log 2324 139656322590272 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% endif %' from '% endif %'
+ERROR 2024-09-27 05:39:31,711 log 2324 139656314197568 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% endif %' from '% endif %'
+ERROR 2024-09-27 05:43:24,315 log 2324 139655282419264 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% endif %' from '% endif %'
+INFO 2024-09-27 05:43:50,795 views 2324 139655274026560 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-27 05:44:49,432 log 2324 139655265633856 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'add_class'
+ERROR 2024-09-27 05:45:25,044 log 2324 139655257241152 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'add_class'
+ERROR 2024-09-27 05:48:20,340 log 2324 139655248848448 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'add_class'
+ERROR 2024-09-27 05:48:57,002 log 2324 139655240455744 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'add_class'
+INFO 2024-09-27 06:11:58,691 autoreload 2324 139657415674944 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
+INFO 2024-09-27 06:11:59,254 autoreload 6478 139767663316032 Watching for file changes with StatReloader
+INFO 2024-09-27 06:15:31,249 autoreload 6478 139767663316032 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-27 06:15:31,763 autoreload 6644 140051014671424 Watching for file changes with StatReloader
+ERROR 2024-09-27 06:49:07,548 log 6644 140049312097856 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 204: 'endfor', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2024-09-27 06:53:50,208 log 6644 140049303705152 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 333: 'endfor'. Did you forget to register or load this tag?
+ERROR 2024-09-27 06:55:09,521 log 6644 140048817190464 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 468: 'endblock'. Did you forget to register or load this tag?
+ERROR 2024-09-27 06:57:41,091 log 6644 140048808797760 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 230, in get_verified
+    return render(request, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 468: 'endblock'. Did you forget to register or load this tag?

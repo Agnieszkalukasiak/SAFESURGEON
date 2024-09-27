@@ -143,7 +143,7 @@ class ClinicForm(forms.ModelForm):
         queryset=Clinic.objects.all(),
         required=False,
         label="Select Existing Clinic",
-        widget=forms.Select(attrs={'class': 'form-control'})
+        widget=forms.Select(attrs={'class': 'form-select'})
     )
     new_clinic_name = forms.CharField(
         required=False,

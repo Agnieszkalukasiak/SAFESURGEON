@@ -8,7 +8,7 @@
     <h1 class="mb-4">Submit Your Profile for Verification</h1>
     
     {% if messages %}
-    <div class="messages">
+    <div class="messages mb-4">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
             {{ message }}
@@ -50,105 +50,118 @@
             {{ form.city }}         
             {{ form.city.errors }}
         </div>
-       
-        <div class="mb-3">
-            <h2>Add Clinics</h2>
+    -->
+    <div class="mb-4">
+        <div class="card-header">
+            <h2 class="mb-0">Add Clinics</h2>
+        </div>
+        <div class="card-body">
             {{ clinic_formset.non_field_errors }} 
             <div id="clinic-management-form">
                 {{clinic_formset.management_form}}
             </div>
             <div id="clinic-forms">
                   {%for clinic_form in clinic_formset%} 
-                <div class="clinic_form mb-4" id="clinic-form-{{forloop.counter0}}">
-                <!---  <h3>Clinic Entry{{forloop.counter}}</h3>-->
-                    <span>{{ clinic_form.non_field_errors }}
-                    <div class="mb-3">
-                        
+                <div class="clinic_form mb-3" id="clinic-form-{{forloop.counter0}}">
+                      {{ clinic_form.non_field_errors }}
+                    <div class="row">
+                        <div class="col-md-6 mb-3">                     
                         {{ clinic_form.clinic.label_tag }}
-                             {{ clinic_form.clinic }}
+                        {{ clinic_form.clinic }}
                         {{ clinic_form.clinic.errors }}
-                   
+                    </div>
                 </div>
                 <!-- new clinic -->
-                <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                     {{ clinic_form.new_clinic_name.label_tag }}  
                     {{ clinic_form.new_clinic_name }}  
                     {{ clinic_form.new_clinic_name.errors }}
+                    </div>
                 </div>
-    
-                {% if clinic_formset.can_delete %}
-                <div class="mb-3">
+         <!---  {% if clinic_formset.can_delete %}
+            <div class="mb-3">
                     {{ clinic_form.DELETE.label_tag }}
-                    {{ clinic_form.DELETE }}
+                    {{ clinic_form.DELETE  }}
                 </div>
-                {% endif %}
+                {% endif %}-->
             </div>
             {% endfor %}
         </div>
         <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
     </div>
-    <!--
-        <form method="post"> 
-        --> 
-        <div class="mb-3">  
-        <h2>Add Education</h2>
-        <div class="alert alert-danger">
-            {{ education_formset.non_field_errors }}
+</div>
+
+<!--education-->
+<div class="card mb-4"> 
+    <div class="card-header">
+        <h2 class="mb-0">Add Education</h2>
+    </div>
+    <div class="card-body">
+        {{ education_formset.non_field_errors }}
+        <div id= "education-management-form">
+            {{ education_formset.management_form }}
         </div>
-        <div id="education-managment-form">
-                {{ education_formset.management_form }}
-             
-                <!--{{ education_formset.management_form.as_p }}-->
-                
-                {% for education_form in education_formset %}
+
+        <div id="education-forms"> 
+              {% for education_form in education_formset %}
                 <div class="education-form mb-4">
-                  <!--- <h3>Education Entry {{ forloop.counter }}</h3>-->
                     {{ education_form.non_field_errors }}
-                    <div class="mb-3">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                         {{ education_form.institution.label_tag }}
                         {{ education_form.institution }}
                         {{ education_form.institution.errors }}
                     </div>
-                    <div class="mb-3">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                         {{ education_form.institution_country.label_tag }}
                         {{ education_form.institution_country }}
                         {{ education_form.institution_country.errors }}
                     </div>
-                    <div class="mb-3">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                         {{ education_form.program.label_tag }}
-                        {{ education_form.program }}
+                        {{ education_form.program  }}
                         {{ education_form.program.errors }}
                     </div>
-                    <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                         {{ education_form.country.label_tag }}
                         {{ education_form.country }}
                         {{ education_form.country.errors }}
                     </div>
-                    <div class="mb-3">
+                </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                         {{ education_form.start_date.label_tag }}
                         {{ education_form.start_date }}
                         {{ education_form.start_date.errors }}
                     </div>
-                    <div class="mb-3">
+                </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                         {{ education_form.end_date.label_tag }}
                         {{ education_form.end_date }}
                         {{ education_form.end_date.errors }}
                     </div>
-                    <div class="mb-3">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
                         {{ education_form.certificate.label_tag }}
                         {{ education_form.certificate }}
                         {{ education_form.certificate.errors }}
                     </div>
-                    {% if education_formset.can_delete %}
-                        <div class="mb-3">
-                            {{ education_form.DELETE.label_tag }}
-                            {{ education_form.DELETE }}
-                        </div>
-                    {% endif %}
                 </div>
-            </div>
             {% endfor %}
         </div>
+        <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
+            </div>
+            </div>
+          
+    </div>
         <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
         <div class="mb-3">
             {{ form.id_document.label_tag }}
@@ -159,15 +172,17 @@
         </div>
       </div>
 </form>
-{% if form.errors %}
-<div class="alert alert-danger">
-    <ul>
-    {% for field, errors in form.errors.items %}
-        <li>{{ field }}: {{ errors }}</li>
-    {% endfor %}
-    </ul>
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <ul>
+        {% for field, errors in form.errors.items %}
+            <li>{{ field }}: {{ errors }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
 </div>
-{% endif %}
 
 
 <script>
@@ -230,6 +245,54 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('form').addEventListener('submit', saveClinicSelections);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const addButton = document.getElementById('add-education');
+    if (addButton) {
+        addButton.addEventListener('click', function() {
+            // Wait a bit for the new form to be added to the DOM
+            setTimeout(retrieveSecondFormData, 100);
+        });
+    }
+
+    function retrieveSecondFormData() {
+        const educationForms = document.querySelectorAll('[id^="education_set-"]');
+        if (educationForms.length >= 2) {
+            const secondForm = educationForms[1];
+            const formData = new FormData(secondForm);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            console.log('Second Education Form Data:', data);
+        } else {
+            console.log('Second education form not found');
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const addEducationButton = document.getElementById('add-education');
+    const educationForms = document.getElementById('education-forms');
+    const totalFormsInput = document.querySelector('#id_education_set-TOTAL_FORMS');
+    
+    if (addEducationButton) {
+        addEducationButton.addEventListener('click', function() {
+            const formCount = educationForms.children.length;
+            const newForm = educationForms.children[0].cloneNode(true);
+            
+            newForm.innerHTML = newForm.innerHTML.replace(/-\d+-/g, `-${formCount}-`);
+            newForm.querySelectorAll('input, select').forEach(input => {
+                input.value = '';
+                input.id = input.id.replace(/-\d+-/, `-${formCount}-`);
+                input.name = input.name.replace(/-\d+-/, `-${formCount}-`);
+            });
+            
+            educationForms.appendChild(newForm);
+            totalFormsInput.value = formCount + 1;
+        });
+    }
+});
+
 </script>
 
 {% endblock %}
@@ -248,3 +311,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
 {% endblock %}
+

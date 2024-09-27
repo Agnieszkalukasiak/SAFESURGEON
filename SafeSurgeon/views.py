@@ -149,9 +149,9 @@ def get_verified(request):
                     surgeon.save()
                     
                     print("Debug: surgeon after save =", surgeon)
-                    print("Debug: surgeon.user after save =", surgeon.user)
-            
+                    print("Debug: surgeon.user after save =", surgeon.user)       
 
+                    
                     # Save education formset
                     print("Saving education formset")
                     for education_form in education_formset:
@@ -160,6 +160,12 @@ def get_verified(request):
                             education.surgeon = surgeon
                             education.save()
                     print("Education formset saved successfully")
+                    
+
+                  
+                    
+                    
+
 
                     # Save clinic formset
                     print("Saving clinic formset")

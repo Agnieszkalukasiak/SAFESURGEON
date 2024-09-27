@@ -40,7 +40,7 @@ class City(models.Model):
 
 
 class Clinic(models.Model):
-    name = models.CharField(max_length=100,unique=True)
+    name = models.CharField(max_length=50,unique=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='clinics',null=True, blank=True)
    
 
