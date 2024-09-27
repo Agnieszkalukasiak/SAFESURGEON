@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block title %}Get Verified - SafeSurgeon{% endblock %}
 
 {% block content %}
@@ -20,158 +21,167 @@
     <form method="post" enctype="multipart/form-data" id="verification-form">
         {% csrf_token %}
 
+        {% if form.non_field_errors %}
         <div class="alert alert-danger">
             {{ form.non_field_errors }}
         </div>
+        {% endif %}
 
-        <h2>Personal Information</h2>
-        {{ form.non_field_errors }}
-        <div class="mb-3">
-            {{ request.user.first_name }}
-            {{ request.user.last_name }}
-
-        </div>
-        <div class="mb-3">
-            {{ request.user.email }}
-        </div>
-        <div class="mb-3">
-            {{ form.profile_picture.label_tag }}
-            {{ form.profile_picture }}
-            {{ form.profile_picture.errors }}
-        </div>
-        <h2>Location</h2>
-        <div class="mb-3">
-            {{ form.country.label_tag }}
-            {{ form.country }}
-            {{ form.country.errors }}
-        </div>
-        <div class="mb-3">
-            {{ form.city.label_tag }}
-            {{ form.city }}         
-            {{ form.city.errors }}
-        </div>
-    -->
-    <div class="mb-4">
-        <div class="card-header">
-            <h2 class="mb-0">Add Clinics</h2>
-        </div>
-        <div class="card-body">
-            {{ clinic_formset.non_field_errors }} 
-            <div id="clinic-management-form">
-                {{clinic_formset.management_form}}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0">Personal Information</h2>
             </div>
-            <div id="clinic-forms">
-                  {%for clinic_form in clinic_formset%} 
-                <div class="clinic_form mb-3" id="clinic-form-{{forloop.counter0}}">
-                      {{ clinic_form.non_field_errors }}
-                    <div class="row">
-                        <div class="col-md-6 mb-3">                     
-                        {{ clinic_form.clinic.label_tag }}
-                        {{ clinic_form.clinic }}
-                        {{ clinic_form.clinic.errors }}
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="form-control-static">{{ request.user.first_name }} {{ request.user.last_name }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="form-control-static">{{ request.user.email }}</p>
                     </div>
                 </div>
-                <!-- new clinic -->
+                <div class="mb-3">
+                    {{ form.profile_picture.label_tag }}
+                    {{ form.profile_picture }}
+                    {{ form.profile_picture.errors }}
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0">Location</h2>
+            </div>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                    {{ clinic_form.new_clinic_name.label_tag }}  
-                    {{ clinic_form.new_clinic_name }}  
-                    {{ clinic_form.new_clinic_name.errors }}
+                        {{ form.country.label_tag }}
+                        {{ form.country }}
+                        {{ form.country.errors }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        {{ form.city.label_tag }}
+                        {{ form.city }}
+                        {{ form.city.errors }}
                     </div>
                 </div>
-         <!---  {% if clinic_formset.can_delete %}
-            <div class="mb-3">
-                    {{ clinic_form.DELETE.label_tag }}
-                    {{ clinic_form.DELETE  }}
-                </div>
-                {% endif %}-->
             </div>
-            {% endfor %}
-        </div>
-        <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
-    </div>
-</div>
-
-<!--education-->
-<div class="card mb-4"> 
-    <div class="card-header">
-        <h2 class="mb-0">Add Education</h2>
-    </div>
-    <div class="card-body">
-        {{ education_formset.non_field_errors }}
-        <div id= "education-management-form">
-            {{ education_formset.management_form }}
         </div>
 
-        <div id="education-forms"> 
-              {% for education_form in education_formset %}
-                <div class="education-form mb-4">
-                    {{ education_form.non_field_errors }}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0">Add Clinics</h2>
+            </div>
+            <div class="card-body">
+                {{ clinic_formset.non_field_errors }} 
+                <div id="clinic-management-form">
+                    {{clinic_formset.management_form}}
+                </div>
+                <div id="clinic-forms">
+                    {% for clinic_form in clinic_formset %}
+                    <div class="clinic_form mb-3" id="clinic-form-{{forloop.counter0}}">
+                        {{ clinic_form.non_field_errors }}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">                     
+                                {{ clinic_form.clinic.label_tag }}
+                                {{ clinic_form.clinic }}
+                                {{ clinic_form.clinic.errors }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ clinic_form.new_clinic_name.label_tag }}  
+                                {{ clinic_form.new_clinic_name }}  
+                                {{ clinic_form.new_clinic_name.errors }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="button" id="add-clinic" class="btn btn-secondary">Add Another Clinic</button>
+            </div>
+        </div>
 
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                        {{ education_form.institution.label_tag }}
-                        {{ education_form.institution }}
-                        {{ education_form.institution.errors }}
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                        {{ education_form.institution_country.label_tag }}
-                        {{ education_form.institution_country }}
-                        {{ education_form.institution_country.errors }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        {{ education_form.program.label_tag }}
-                        {{ education_form.program  }}
-                        {{ education_form.program.errors }}
-                    </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        {{ education_form.country.label_tag }}
-                        {{ education_form.country }}
-                        {{ education_form.country.errors }}
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                        {{ education_form.start_date.label_tag }}
-                        {{ education_form.start_date }}
-                        {{ education_form.start_date.errors }}
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                        {{ education_form.end_date.label_tag }}
-                        {{ education_form.end_date }}
-                        {{ education_form.end_date.errors }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        {{ education_form.certificate.label_tag }}
-                        {{ education_form.certificate }}
-                        {{ education_form.certificate.errors }}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
+        <div class="card mb-4"> 
+            <div class="card-header">
+                <h2 class="mb-0">Add Education</h2>
             </div>
+            <div class="card-body">
+                {{ education_formset.non_field_errors }}
+                <div id="education-management-form">
+                    {{ education_formset.management_form }}
+                </div>
+                <div id="education-forms"> 
+                    {% for education_form in education_formset %}
+                    <div class="education-form mb-4">
+                        {{ education_form.non_field_errors }}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ education_form.institution.label_tag }}
+                                {{ education_form.institution }}
+                                {{ education_form.institution.errors }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ education_form.institution_country.label_tag }}
+                                {{ education_form.institution_country }}
+                                {{ education_form.institution_country.errors }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ education_form.program.label_tag }}
+                                {{ education_form.program }}
+                                {{ education_form.program.errors }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ education_form.country.label_tag }}
+                                {{ education_form.country }}
+                                {{ education_form.country.errors }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ education_form.start_date.label_tag }}
+                                {{ education_form.start_date }}
+                                {{ education_form.start_date.errors }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ education_form.end_date.label_tag }}
+                                {{ education_form.end_date }}
+                                {{ education_form.end_date.errors }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                {{ education_form.certificate.label_tag }}
+                                {{ education_form.certificate }}
+                                {{ education_form.certificate.errors }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="button" id="add-education" class="btn btn-secondary">Add Another Education Entry</button>
             </div>
-          
-    </div>
-        <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
-        <div class="mb-3">
-            {{ form.id_document.label_tag }}
-            {{ form.id_document }}
-            {{ form.id_document.errors }}
         </div>
-            <button type="submit" class="btn btn-primary">Submit for Verification</button>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0">Identification</h2>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    {{ form.id_document.label_tag }}
+                    {{ form.id_document }}
+                    {{ form.id_document.errors }}
+                </div>
+            </div>
         </div>
-      </div>
-</form>
+
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Submit for Verification</button>
+            </div>
+        </div>
+    </form>
 
     {% if form.errors %}
     <div class="alert alert-danger">
