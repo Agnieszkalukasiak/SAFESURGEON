@@ -8,39 +8,37 @@
         <div class="card-header bg-primary text-white">
             <h2 class="mb-0">Edit Profile for {{ surgeon.user.get_full_name }}</h2>
         <div>
-            <div class="card-body">
-                <p class="lead">Email: {{ surgeon.user.email }}</p>
-                <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}">
+        <div class="card-body">
+            <p class="lead">Email: {{ surgeon.user.email }}</p>
+                
+            <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}">
                     {% csrf_token %}
 
                 <div class="card mb-4">
                     <div class="card-header">
-                <h3 class="mb-0 text-bg" >Personal Information</h3>
-            </div>
-            <div class="card-body">
-                {% for field in form %}
-                    <div class="mb-3">
-                        {{ field.label_tag }}
-                        {{ field }}
-                        {% if field.errors %}
-                            <div class="text-danger">{{ field.errors }}</div>
-                        {% endif %}
+                        <h3 class="mb-0 text-bg" >Personal Information</h3>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-
-        <!--
+                    <div class="card-body">
+                        {% for field in form %}
+                            <div class="mb-3">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger">{{ field.errors }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            <!--
                 {{ form.as_p }}
                 {{ form.non_field_errors }}
-
-        -->
+             -->
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <h3 class="mb-0">Update your clinic </h3>
+                    <h3 class="mb-0">Update your clinic</h3>
                 </div>
-
                 <div class="card-body">
                     {{ form.non_field_errors }}
                 <div id="clinic-management-form">
@@ -56,69 +54,70 @@
                 <div class="clinic_form mb-4" >
                     {{ clinic_form.non_field_errors }}
                     <div class="mb-3"> -->
-                        <h4>Clinic Entry{{forloop.counter}}</h4>
-                        {% for hidden in clinic_form.hidden_fields %}
-                            {{hidden}}
-                        {% endfor %} 
-                        {{ clinic_form.non_field_errors }}
-                        <div class="mb-3">
-                            {{ clinic_form.label_tag }}
-                            {{ clinic_form.clinic }}
-                            {{ clinic_form.clinic.errors }}
-                        </div>
-                        <div class="mb-3">
-                            {{ clinic_form.new_clinic_name.label_tag }}  
-                            {{ clinic_form.new_clinic_name }}  
-                            {{ clinic_form.new_clinic_name.errors }}
-                        </div>
+                            <h4>Clinic Entry{{forloop.counter}}</h4>
+                            {% for hidden in clinic_form.hidden_fields %}
+                                {{hidden}}
+                            {% endfor %} 
+                            {{ clinic_form.non_field_errors }}
+                            <div class="mb-3">
+                                {{ clinic_form.label_tag }}
+                                {{ clinic_form.clinic }}
+                                {{ clinic_form.clinic.errors }}
+                            </div>
+                            <div class="mb-3">
+                                {{ clinic_form.new_clinic_name.label_tag }}  
+                                {{ clinic_form.new_clinic_name }}  
+                                {{ clinic_form.new_clinic_name.errors }}
+                            </div>
                             {% if clinic_formset.can_delete %}
-                        <div class="mb-3 form-check">
-                    {{ clinic_form.DELETE }}
-                    {{ clinic_form.DELETE.label_tag }}
+                                <div class="mb-3 form-check">
+                                    {{ clinic_form.DELETE }}
+                                    {{ clinic_form.DELETE.label_tag }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
                 </div>
-                {% endif %}
+                <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
             </div>
-            {% endfor %}
         </div>
-        <button type="button" id="add-clinic" class="btn btn-secondary mb-3">Add Another Clinic</button>
-    </div>
-</div>
 
-    <h4 class="mt-4">
-        <div class="card-header">
-            <h3>Update Your Education</h3>
-        </div>
-        <div class="card-body">
-        {{ education_formset.management_form }}
-        <div id="education-formset">
-            {% for education_form in education_formset %}
-                <div class="education-form mb-4">
-                <h4>Education Entry {{ forloop.counter }}</h4>
-                    {{ education_form.as_p }}
-                <div class="mb-3">
+        <h4 class="mt-4">
+            <div class="card-header">
+                <h3>Update Your Education</h3>
+            </div>
+            <div class="card-body">
+                {{ education_formset.management_form }}
+            <div id="education-formset">
+                {% for education_form in education_formset %}
+                    <div class="education-form mb-4">
+                        <h4>Education Entry {{ forloop.counter }}</h4>
+                        {% for field in education_form %}
+                  <!---   {{ education_form.as_p }}-->
+                            <div class="mb-3">
                 <!--{% if education_form.instance.pk %}-->
-                    {{ field.label_tag }}
-                    {{ field }}
-                    {% if field.errors %}
-                        <div class="text-danger">{{ field.errors }}</div>
-                    {% endif %}
-                </div>
-            {% endfor %}
-            {% if education_form.instance.pk %}
-            <p>Current certificate: {{ education_form.instance.certificate.name }}</p>
-        </div>
-    {% endfor %}
-</div>
-
-</div>
-<button type="button" id="add-education" class="btn btn-secondary">Add Another Education Entry</button>
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger">{{ field.errors }}</div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        {% if education_form.instance.pk %}
+                            <p>Current certificate: {{ education_form.instance.certificate.name }}</p>
+                        {% endif %}
+                     </div>
+                {% endfor %}
+            </div>
+            <button type="button" id="add-education" class="btn btn-secondary">Add Another Education Entry</button>
         </div>
     </div>
 
-        <div class="text mt-4">
+    <div class="text mt-4">
             <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
         </div>
     </form>
+</div>
 </div>
 </div>
 
