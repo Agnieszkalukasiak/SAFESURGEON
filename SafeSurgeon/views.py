@@ -9,8 +9,8 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 import logging
 import sys
-from django.core.serializers import serialize
-import json
+from django.core.mail import send_mail
+
 
 
 
@@ -73,6 +73,7 @@ def get_cities(request, country_id):
     cities = City.objects.filter(country_id=country_id).order_by('name')
     city_list = [{'id': city.id, 'name': city.name} for city in cities]
     return JsonResponse({'cities': city_list})
+
 
 
 def get_clinics(request, city_id):

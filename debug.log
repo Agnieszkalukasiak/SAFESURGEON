@@ -9547,3 +9547,21 @@ INFO 2024-09-28 11:23:37,207 views 3470 139973042890304 Transaction committed su
 INFO 2024-09-28 11:25:32,170 views 3470 139972497626688 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-28 11:33:42,157 views 3470 139972489233984 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-28 11:42:38,075 autoreload 9021 139926740851776 Watching for file changes with StatReloader
+ERROR 2024-09-28 12:36:42,631 log 3470 139965535090240 Internal Server Error: /contact/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 355, in contact
+    send_mail(
+    ^^^^^^^^^
+NameError: name 'send_mail' is not defined
+INFO 2024-09-28 12:38:50,584 autoreload 3470 139979092352064 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-28 12:38:51,104 autoreload 13444 140142169287744 Watching for file changes with StatReloader
+INFO 2024-09-28 12:39:30,767 autoreload 13444 140142169287744 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2024-09-28 12:39:31,253 autoreload 13490 140146107067456 Watching for file changes with StatReloader
+INFO 2024-09-28 13:09:16,978 autoreload 2436 139656976882752 Watching for file changes with StatReloader
+INFO 2024-09-28 13:37:56,955 autoreload 4903 140566381091904 Watching for file changes with StatReloader

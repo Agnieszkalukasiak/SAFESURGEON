@@ -16,9 +16,9 @@
             {% if surgeon.verification_status == "VERIFIED" %}
                 <span class="badge bg-success fs-4 p-3">Verified</span>
             {% elif surgeon.verification_status == "PENDING" %}
-                <span class="badge bg-warning">Pending</span>
+                <span class="badge bg-warning fs-4 p-3">Pending</span>
             {% elif surgeon.verification_status == "REJECTED" %}
-                <span class="badge bg-danger">Rejected</span>
+                <span class="badge bg-danger fs-4 p-3">Rejected</span>
             {% endif %}
         </div>
         <!-- surgon education-->
@@ -41,20 +41,22 @@
         {% endif %}
     </div>
     {% else %}
-    <div class="alert alert-danger text-center"></div>
+    <div class="alert alert-danger text-center">
+        <div class="container mt-5">
+            <div class="card shadow-lg">
         <h2>No Surgeon Found</h2>
         <p>
             {% if search_params.user_first_name or search_params.user_last_name %}
-                Name: {{ search_params.user_first_name }} {{ search_params.user_last_name }} <br>
+            <h2>Name: {{ search_params.user_first_name }} {{ search_params.user_last_name }} </h2> 
             {% endif %}
             {% if search_params.clinic %}
-                Clinic: {{ search_params.clinic }} <br>
+            <p class="fs-4"><strong>Clinic: {{ search_params.clinic }} </strong></p>
             {% endif %}
             {% if search_params.city or search_params.country %}
-                City: {{ search_params.city }}, Country: {{ search_params.country }}
+            <p class="fs-4">{{ search_params.city }}, {{ search_params.country }}</p>
             {% endif %}
         </p>
-            <span class="badge bg-danger">Not Verified</span>
+            <span class="badge bg-danger fs-4 p-3">Not Verified</span>
         </div>
         {% endif %}
     </div>
