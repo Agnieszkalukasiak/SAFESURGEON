@@ -8841,3 +8841,215 @@ DEBUG 2024-09-27 16:22:49,543 views 2009 140277473842752 Created new clinic: tir
 DEBUG 2024-09-27 16:22:49,607 views 2009 140277473842752 Updated surgeon's clinics: {<Clinic: tired (Stockholm)>, <Clinic: medispa (Stockholm)>}
 INFO 2024-09-27 16:22:49,704 views 2009 140277473842752 Transaction committed successfully
 INFO 2024-09-27 16:24:33,693 views 2009 140276425279040 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-28 03:56:51,496 autoreload 3896 140043083062336 Watching for file changes with StatReloader
+WARNING 2024-09-28 03:56:55,628 log 3896 140043003500096 Not Found: /favicon.ico
+INFO 2024-09-28 04:03:01,599 views 3896 140038885078592 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:09:42,693 views 3896 140038876685888 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:09:57,736 views 3896 140038868293184 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:14:10,236 views 3896 140038859900480 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:14:21,321 views 3896 140038851507776 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:18:05,148 views 3896 140038843115072 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:19:52,525 views 3896 140038834722368 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:20:05,347 views 3896 140038348207680 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:21:18,368 views 3896 140038339814976 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:21:37,152 views 3896 140038331422272 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:23:35,271 views 3896 140038323029568 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:23:54,243 views 3896 140038314636864 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:27:45,787 views 3896 140038306244160 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:29:24,054 views 3896 140038297851456 Editing profile for surgeon: Henio Tideman - Verified
+WARNING 2024-09-28 04:29:55,055 log 3896 140037811336768 Not Found: /surgeon/62/edit/undefined2
+WARNING 2024-09-28 04:30:01,137 log 3896 140037802944064 Not Found: /surgeon/62/edit/undefined1
+WARNING 2024-09-28 04:30:05,974 log 3896 140037794551360 Not Found: /surgeon/62/edit/undefined2
+INFO 2024-09-28 04:30:43,283 views 3896 140037786158656 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:30:57,303 views 3896 140037777765952 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:32:52,381 views 3896 140037769373248 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:32:56,561 views 3896 140037760980544 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:38:14,416 views 3896 140037274465856 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:40:08,134 views 3896 140037266073152 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:40:34,554 views 3896 140037257680448 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:41:02,462 views 3896 140037249287744 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:44:52,378 views 3896 140037240895040 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:46:31,121 views 3896 140037232502336 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:46:40,391 views 3896 140037224109632 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:49:51,308 views 3896 140036737594944 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 04:56:50,818 views 3896 140036729202240 Editing profile for surgeon: Henio Tideman - Verified
+ERROR 2024-09-28 04:56:53,461 log 3896 140036729202240 Internal Server Error: /surgeon/62/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140036729202240_sync_3" does not exist
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2093, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 97, in inner
+    with self:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: cursor "_django_curs_140036729202240_sync_3" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 427, in edit_surgeon_profile
+    return render(request, 'edit_surgeon_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+            ^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/html.py", line 466, in <lambda>
+    klass.__str__ = lambda self: mark_safe(klass_str(self))
+                                           ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 34, in __str__
+    return self.as_widget()
+           ^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/boundfield.py", line 107, in as_widget
+    return widget.render(
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 280, in render
+    context = self.get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 758, in get_context
+    context = super().get_context(name, value, attrs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 717, in get_context
+    context["widget"]["optgroups"] = self.optgroups(
+                                     ^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/widgets.py", line 657, in optgroups
+    for index, (option_value, option_label) in enumerate(self.choices):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/forms/models.py", line 1403, in __iter__
+    for obj in queryset:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 516, in _iterator
+    yield from iterable
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 121, in __iter__
+    for row in compiler.results_iter(results):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 2096, in cursor_iter
+    cursor.close()
+psycopg2.errors.InvalidCursorName: cursor "_django_curs_140036729202240_sync_3" does not exist
+
+INFO 2024-09-28 04:58:35,514 views 3896 140036720809536 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 05:14:13,411 views 3896 140036712416832 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 05:14:27,165 views 3896 140036704024128 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 05:19:58,478 views 3896 140036695631424 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 05:20:05,418 views 3896 140036687238720 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 05:20:10,594 views 3896 140036200724032 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 05:21:23,564 views 3896 140036192331328 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 05:21:31,746 views 3896 140036183938624 Editing profile for surgeon: Henio Tideman - Verified
+WARNING 2024-09-28 05:42:32,234 log 3896 140035647067712 Not Found: /favicon.ico
+WARNING 2024-09-28 05:45:36,732 log 3896 140035126982208 Not Found: /surgeon_profile/
+ERROR 2024-09-28 05:46:56,985 log 3896 140034548147776 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 213, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())
+                                                             ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 617, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 1022, in __init__
+    raise ValueError(
+ValueError: "<Surgeon:   - Pending>" needs to have a value for field "id" before this many-to-many relationship can be used.
+INFO 2024-09-28 06:00:25,039 autoreload 3896 140043083062336 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-28 06:00:25,569 autoreload 10950 140485549571136 Watching for file changes with StatReloader
+WARNING 2024-09-28 06:08:11,527 log 10950 140482759857728 Not Found: /favicon.ico
+WARNING 2024-09-28 06:10:29,090 log 10950 140481166030400 Not Found: /favicon.ico
+ERROR 2024-09-28 06:17:38,426 log 10950 140480125859392 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 214, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())
+                                                             ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 617, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 1022, in __init__
+    raise ValueError(
+ValueError: "<Surgeon: Test User - Pending>" needs to have a value for field "id" before this many-to-many relationship can be used.
+WARNING 2024-09-28 06:27:25,616 log 10950 140465890387520 Forbidden (CSRF token from POST incorrect.): /signup/
+WARNING 2024-09-28 06:27:27,496 log 10950 140465881994816 Forbidden (CSRF token from POST incorrect.): /signup/
+INFO 2024-09-28 06:40:37,376 autoreload 10950 140485549571136 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-28 06:40:37,945 autoreload 13220 140135968463936 Watching for file changes with StatReloader
