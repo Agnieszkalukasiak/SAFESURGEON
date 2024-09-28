@@ -12,6 +12,7 @@ import sys
 
 
 
+
 from .models import Surgeon, Country, City, Clinic, Education, Verification
 from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm, ClinicForm, ClinicFormSet
 
@@ -442,3 +443,5 @@ def surgeon_profile(request, surgeon_id=None):
         'education_formset': EducationFormSet(instance=surgeon),
     }
     return render(request, 'surgeon_profile.html', context)
+
+

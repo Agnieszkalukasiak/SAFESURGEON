@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block content %}
 <div class="container mt-5">
+    {% load json_encode from json_tags %}
     <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}" enctype="multipart/form-data">
         {% csrf_token %}
 
@@ -178,5 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
+
+
 
 {% endblock %}
