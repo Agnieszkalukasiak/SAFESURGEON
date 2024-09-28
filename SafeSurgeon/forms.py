@@ -60,83 +60,6 @@ class SurgeonForm(forms.ModelForm):
             #prepopulate cities based on stored countries if editing profile
             self.fields['city'].queryset = self.instance.country.cities.order_by('name')
         
-'''
-class ClinicForm(forms.ModelForm):   
-    existing_clinics= forms.ModelChoiceField(
-        queryset=Clinic.objects.all(),
-        required=False,
-        label="Select Existing Clinic",
-        widget=forms.Select(attrs={'class': 'form-control'}) 
-    )
-    new_clinic_name=forms.CharField(
-        required=False,
-        widget=forms.TextInput(attrs={'placeholder': 'Enter new clinic name'}),
-        label="Or Enter New Clinic Name"
-        )
-
-    class Meta:
-        model = Surgeon.clinic.through
-        #fields = ('clinic',)
-        fields = []
-       
-
-    def __init__(self, *args, **kwargs):
-        city = kwargs.pop('city', None)
-        super().__init__(*args, **kwargs)
-        self.fields['clinic'].label = "Select Existing Clinic"
-           # Check if we're working with a Surgeon instance, not a Clinic
-        instance = kwargs.get('instance', None)
-        if instance and hasattr(instance, 'city') and instance.city:
-        # Now filter the Clinic objects based on the surgeon's city
-            self.fields['clinic'].queryset = Clinic.objects.filter(city=instance.city).order_by('name')
-        
-        #if 'instance' in kwargs and kwargs['instance'].surgeon.city:
-            #self.fields['clinic'].queryset = Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
-            #Clinic.objects.filter(city=kwargs['instance'].surgeon.city).order_by('name')
-
-    def clean(self):
-        cleaned_data = super().clean()
-        existing_clinics = cleaned_data.get ('existing_clinics')
-        new_clinic_name = cleaned_data.get ('new_clinic_name')
-
-    
-
-         # Ensuring at least one clinic is selected or provided
-        if not existing_clinics and not new_clinic_name:
-            raise forms.ValidationError("Please either select existing clinic or enter a new clinic name.")
-
-            # Split new clinic names by linea and store as a list
-        if new_clinic_name:
-            new_clinic_list = [name.strip() for name in new_clinic_name.split('\n') if name.strip()]
-            cleaned_data['new_clinic_list'] = new_clinic_list
-
-
-        return cleaned_data
-
-    def save(self, surgeon, city, commit=True):
-        clinics = []
-        #clinics = list(self.cleaned_data.get('existing_clinics', []))
-        #new_clinic_name = self.cleaned_data.get('new_clinic_list', [])
-        existing_clinic = self.cleaned_data.get('existing_clinics', None)
-        if existing_clinic:
-            clinics.append(existing_clinic)
-
-        #create new clinics and link to surgon's city
-        #for name in new_clinic_name:
-        #    clinic, created = Clinic.objects.get_or_create(name=name, city=city)
-        #   clinics.append(clinic)
-
-        # If a new clinic name is provided, create it and link it to the surgeon's city
-        if new_clinic_name:
-            clinic, created = Clinic.objects.get_or_create(name=new_clinic_name, city=city)
-            clinics.append(clinic)
-
-        #associate all clinics new and exiting with the surgon 
-        if commit and clinics:
-            surgeon.clinic.set(clinics)
-
-        return clinics
-'''
 class ClinicForm(forms.ModelForm):
     #existing_clinics = forms.ModelChoiceField(
     clinic = forms.ModelChoiceField(  
@@ -170,10 +93,6 @@ class ClinicForm(forms.ModelForm):
         existing_clinic = cleaned_data.get("clinic")
         print("Clinic: ", existing_clinic)
 
-        # Ensure that at least one clinic is selected or provided
-        #if not existing_clinic and not new_clinic_name:
-            #raise forms.ValidationError("Please either select an existing clinic or enter a new clinic name.")
-
          # This allows the form to be valid if either field is filled or both are empty
         if clinic or new_clinic_name or self.cleaned_data.get('DELETE'):
             return cleaned_data
@@ -189,27 +108,6 @@ class ClinicForm(forms.ModelForm):
     def save(self, surgeon, city, commit=True):
         # Prepare an empty list of clinics to associate with the surgeon
         clinics = []
-
-        '''
-        
-        # Get selected existing clinic
-        # existing_clinic = self.cleaned_data.get('existing_clinics')
-        existing_clinic = self.cleaned_data.get("clinic")
-        if existing_clinic:
-            clinics.append(existing_clinic)
-
-        # Get new clinic names from the cleaned data
-        new_clinic_list = self.cleaned_data.get('new_clinic_list', [])
-        if new_clinic_list:
-            for clinic_name in new_clinic_list:
-                # Create new clinics if they don't exist, and link them to the surgeon's city
-                clinic, created = Clinic.objects.get_or_create(name=clinic_name, city=city)
-                clinics.append(clinic)
-
-        # Save all selected clinics (both new and existing) to the surgeon's profile
-        if commit and clinics:
-            surgeon.clinic.set(clinics)  # Using set to replace existing clinics
-        '''
 
         # Handle existing clinic
         clinic = self.cleaned_data.get("clinic")

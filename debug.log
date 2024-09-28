@@ -9184,3 +9184,118 @@ log
 socialaccount
 static
 tz
+INFO 2024-09-28 08:30:06,709 autoreload 8578 140570270248000 Watching for file changes with StatReloader
+INFO 2024-09-28 08:30:44,586 views 5878 139689021392448 Editing profile for surgeon: ivona lala - Verified
+ERROR 2024-09-28 08:30:44,748 log 5878 139689021392448 Internal Server Error: /surgeon/112/edit/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 1026, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'json_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 428, in edit_surgeon_profile
+    return render(request, 'edit_surgeon_profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 1082, in load
+    lib = find_library(parser, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/defaulttags.py", line 1028, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'json_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_urls
+allauth
+cache
+cloudinary
+cloudinary_static
+i18n
+l10n
+log
+socialaccount
+static
+tz
+INFO 2024-09-28 08:31:59,561 views 5878 139689012999744 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:33:50,040 views 5878 139689004607040 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:33:55,030 views 5878 139688996214336 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:40:04,544 autoreload 5878 139689485098048 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-28 08:40:05,043 autoreload 9327 140202559740992 Watching for file changes with StatReloader
+INFO 2024-09-28 08:43:32,888 autoreload 9327 140202559740992 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-28 08:43:33,383 autoreload 9506 139837813763136 Watching for file changes with StatReloader
+INFO 2024-09-28 08:44:37,374 autoreload 9506 139837813763136 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-28 08:44:37,866 autoreload 9567 140368693394496 Watching for file changes with StatReloader
+INFO 2024-09-28 08:45:38,409 views 9567 140368631699008 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:45:49,201 views 9567 140368621192768 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:51:19,587 views 9567 140368612783680 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:51:30,090 views 9567 140368604374592 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:57:50,457 autoreload 9567 140368693394496 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-28 08:57:50,963 autoreload 10256 140289913449536 Watching for file changes with StatReloader
+INFO 2024-09-28 08:59:32,558 autoreload 10256 140289913449536 /workspace/SAFESURGEON/SafeSurgeon/forms.py changed, reloading.
+INFO 2024-09-28 08:59:33,050 autoreload 10349 140332866452544 Watching for file changes with StatReloader
+INFO 2024-09-28 08:59:40,266 views 10349 140332804757056 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:59:59,324 views 10349 140332410857024 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 09:20:47,428 views 10349 140332402464320 Editing profile for surgeon: ivona lala - Verified
+WARNING 2024-09-28 09:20:51,271 log 10349 140332394071616 Not Found: /get-cities/
+WARNING 2024-09-28 09:20:57,915 log 10349 140332385678912 Not Found: /get-cities/
+WARNING 2024-09-28 09:21:10,506 log 10349 140332377286208 Not Found: /get-cities/

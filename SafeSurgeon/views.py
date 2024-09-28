@@ -9,6 +9,8 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 import logging
 import sys
+from django.core.serializers import serialize
+import json
 
 
 
@@ -425,6 +427,8 @@ def edit_surgeon_profile(request, surgeon_id):
         'clinic_formset': clinic_formset,
         'education_formset': education_formset,
     }
+    
+    
     return render(request, 'edit_surgeon_profile.html', context)
 
 

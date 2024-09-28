@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    {% load json_encode from json_tags %}
+   
     <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}" enctype="multipart/form-data">
         {% csrf_token %}
 
@@ -177,6 +177,60 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const countrySelect = document.getElementById('id_country');
+    const citySelect = document.getElementById('id_city');
+    const clinicSelects = document.querySelectorAll('select[id$="-clinic"]');
+
+    function updateCities() {
+        const selectedCountry = countrySelect.value;
+        
+        // Use AJAX to fetch cities for the selected country
+        fetch(`/get-cities/?country=${selectedCountry}`)
+            .then(response => response.json())
+            .then(cities => {
+                // Clear existing options
+                citySelect.innerHTML = '<option value="">---------</option>';
+
+                // Add new city options
+                cities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.id;
+                    option.textContent = city.name;
+                    citySelect.appendChild(option);
+                });
+
+                updateClinics()
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        function updateClinics(){
+            const selectedCity = citySelect.options[citySelect.selectedIndex].text;
+            
+            clinicSelects.forEach(select => {
+                Array.from(select.options).forEach(option => {
+                if (option.value === '' || option.text.includes(selectedCity)) {
+                    option.style.display = '';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+        });
+    }
+    if (countrySelect && citySelect) {
+        countrySelect.addEventListener('change', updateCities);
+        citySelect.addEventListener('change', updateClinics);
+    
+    // Initial update
+        if (countrySelect.value) {
+            updateCities();
+        } else {
+            updateClinics();
+
+        }
+    }
+
+});
 
 
 </script>
