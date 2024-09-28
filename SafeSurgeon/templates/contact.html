@@ -13,11 +13,10 @@
 
                     <form method="post" action="{% url 'contact' %}" class="needs-validation" novalidate>
                         {% csrf_token %}
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="name" class="form-label fw-bold">Name</label>
-                            <input type="text" class="form-control fw-bold" id="name" name="name" required>
-                        </div class="invalid-feedback">Please provide your name.</div>
-                    </div>
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" required>  
+                        </div>
                         <div class="mb-4">
                             <label for="email" class="form-label fw-bold">Email address</label>
                             <input type="email" class="form-control form-control-lg" id="email" name="email" required>
