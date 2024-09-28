@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+/*
 document.addEventListener('DOMContentLoaded', function() {
     const countrySelect = document.getElementById('id_country');
     const citySelect = document.getElementById('id_city');
@@ -192,15 +193,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!response.ok) {
                     throw new Error ('Network response was not ok')
                 }
-               response.json();
+               return response.json();
             })
             .then(data => {
-                console.log('Received data:', data);  // Debugging
+                console.log('Received cities:', data);  // Debugging
                 
                 // Clear existing options
                 citySelect.innerHTML = '<option value="">---------</option>';
 
-                // Add new city options
+                const cities = Array.isArray(data) ?  data: data.cities;
                 cities.forEach(city => {
                     const option = document.createElement('option');
                     option.value = city.id;
@@ -208,12 +209,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     citySelect.appendChild(option);
                 });
 
-                console.log('City select updated');  // Debugging
+                console.log('City select updated'); 
 
-                updateClinics()
+                updateClinics();
+
             })
-            .catch(error => console.error('Error:', error));
+
+            .catch(error => {
+            console.error('Error:', error)
+            });
         }
+        
         function updateClinics(){
             const selectedCity = citySelect.options[citySelect.selectedIndex].text;
             
@@ -234,14 +240,84 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial update
         if (countrySelect.value) {
             updateCities();
-        } else {
-            updateClinics();
-
         }
     }
 
-});
+*/
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const countrySelect = document.getElementById('id_country');
+    const citySelect = document.getElementById('id_city');
+    const clinicSelects = document.querySelectorAll('select[id$="-clinic"]');
+
+    function updateCities() {
+        const selectedCountry = countrySelect.value;
+        console.log('Selected country:', selectedCountry);  // Debugging
+        
+        // AJAX to fetch cities for the selected country
+        fetch(`/get_cities/${selectedCountry}/`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Received data:', data);  // Debugging
+                
+                // Clear existing options
+                citySelect.innerHTML = '<option value="">---------</option>';
+
+                const cities = Array.isArray(data) ? data : data.cities;
+                
+                if (!cities || cities.length === 0) {
+                    console.log('No cities received');
+                    return;
+                }
+
+                cities.forEach(city => {
+                    if (city && city.id && city.name) {
+                        const option = document.createElement('option');
+                        option.value = city.id;
+                        option.textContent = city.name;
+                        citySelect.appendChild(option);
+                    }
+                });
+
+                console.log('City select updated'); 
+
+                updateClinics();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+        
+    function updateClinics(){
+        const selectedCity = citySelect.options[citySelect.selectedIndex].text;
+        
+        clinicSelects.forEach(select => {
+            Array.from(select.options).forEach(option => {
+                if (option.value === '' || option.text.includes(selectedCity)) {
+                    option.style.display = '';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    if (countrySelect && citySelect) {
+        countrySelect.addEventListener('change', updateCities);
+        citySelect.addEventListener('change', updateClinics);
+    
+        // Initial update
+        if (countrySelect.value) {
+            updateCities();
+        }
+    }
+});
 
 </script>
 

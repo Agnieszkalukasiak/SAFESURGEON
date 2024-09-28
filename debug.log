@@ -9526,3 +9526,22 @@ DEBUG 2024-09-28 10:41:51,916 connectionpool 3470 139978369635904 https://api.cl
 DEBUG 2024-09-28 10:41:52,676 connectionpool 3470 139978369635904 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
 DEBUG 2024-09-28 10:41:53,524 connectionpool 3470 139978369635904 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
 DEBUG 2024-09-28 10:41:54,280 connectionpool 3470 139978369635904 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 10:53:54,882 connectionpool 3470 139976230544960 Resetting dropped connection: api.cloudinary.com
+DEBUG 2024-09-28 10:53:56,277 connectionpool 3470 139976230544960 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 10:53:57,083 connectionpool 3470 139976230544960 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 10:53:57,916 connectionpool 3470 139976230544960 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 10:53:58,606 connectionpool 3470 139976230544960 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-28 10:56:18,773 views 3470 139974661895744 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 10:58:08,617 views 3470 139974645110336 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 10:58:34,357 views 3470 139974619932224 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 10:58:57,242 views 3470 139974108239424 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:03:24,119 views 3470 139974091454016 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:16:52,119 views 3470 139973588153920 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:17:14,038 views 3470 139973579761216 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:18:11,980 views 3470 139973571368512 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:22:04,039 views 3470 139973562975808 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:23:36,457 views 3470 139973042890304 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-28 11:23:37,056 views 3470 139973042890304 Created new clinic: Ibiza (Malmö)
+DEBUG 2024-09-28 11:23:37,150 views 3470 139973042890304 Updated surgeon's clinics: {<Clinic: Ikaro (Malmö)>, <Clinic: idaslips (Malmö)>, <Clinic: Ibiza (Malmö)>}
+INFO 2024-09-28 11:23:37,207 views 3470 139973042890304 Transaction committed successfully
+INFO 2024-09-28 11:25:32,170 views 3470 139972497626688 Editing profile for surgeon: Rory McKellar - Rejected
