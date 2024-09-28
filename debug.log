@@ -10307,3 +10307,84 @@ Traceback (most recent call last):
     cursor.close()
 psycopg2.errors.InvalidCursorName: cursor "_django_curs_139651364927040_sync_8" does not exist
 
+ERROR 2024-09-28 14:25:16,665 log 2436 139647069959744 Internal Server Error: /admin/auth/user/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.ForeignKeyViolation: update or delete on table "auth_user" violates foreign key constraint "SafeFaceIntro_beauticians_author_id_b15cbd40_fk_auth_user_id" on table "SafeFaceIntro_beauticians"
+DETAIL:  Key (id)=(3) is still referenced from table "SafeFaceIntro_beauticians".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1983, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/admin/actions.py", line 51, in delete_selected
+    modeladmin.delete_queryset(request, queryset)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1237, in delete_queryset
+    queryset.delete()
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/query.py", line 1148, in delete
+    deleted, _rows_count = collector.delete()
+                           ^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/deletion.py", line 459, in delete
+    with transaction.atomic(using=self.using, savepoint=False):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/transaction.py", line 263, in __exit__
+    connection.commit()
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/backends/base/base.py", line 337, in commit
+    self._commit()
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/backends/base/base.py", line 312, in _commit
+    with debug_transaction(self, "COMMIT"), self.wrap_database_errors:
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/backends/base/base.py", line 313, in _commit
+    return self.connection.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: update or delete on table "auth_user" violates foreign key constraint "SafeFaceIntro_beauticians_author_id_b15cbd40_fk_auth_user_id" on table "SafeFaceIntro_beauticians"
+DETAIL:  Key (id)=(3) is still referenced from table "SafeFaceIntro_beauticians".
+
+DEBUG 2024-09-28 14:30:12,654 connectionpool 2436 139645450954304 Resetting dropped connection: api.cloudinary.com
+DEBUG 2024-09-28 14:30:13,839 connectionpool 2436 139645450954304 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 14:30:14,659 connectionpool 2436 139645450954304 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 14:30:15,449 connectionpool 2436 139645450954304 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 14:30:16,066 connectionpool 2436 139645450954304 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-28 14:34:04,256 views 2436 139642808563264 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-28 14:35:35,851 views 2436 139642783385152 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-28 14:35:36,397 views 2436 139642783385152 Removed clinic association: Surgeon 113 - Clinic 5
+DEBUG 2024-09-28 14:35:36,434 views 2436 139642783385152 Created new clinic: Isad (London)
+DEBUG 2024-09-28 14:35:36,518 views 2436 139642783385152 Updated surgeon's clinics: {<Clinic: Isad (London)>, <Clinic: SafeMedic (London)>}
+INFO 2024-09-28 14:35:36,627 views 2436 139642783385152 Transaction committed successfully
+INFO 2024-09-28 14:39:24,515 autoreload 2372 140365478984768 Watching for file changes with StatReloader
+WARNING 2024-09-28 14:39:27,541 log 2372 140365417289280 Not Found: /surgeon/admin
