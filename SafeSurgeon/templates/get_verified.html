@@ -92,6 +92,7 @@
                                 {{ clinic_form.new_clinic_name }}  
                                 {{ clinic_form.new_clinic_name.errors }}
                             </div>
+                            <hr>
                         </div>
                     </div>
                     {% endfor %}
@@ -149,14 +150,16 @@
                                 {{ education_form.certificate.label_tag }}
                                 {{ education_form.certificate }}
                                 {{ education_form.certificate.errors }}
+                                
                             </div>
+                            <hr>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
                 <button type="button" id="add-education" class="btn btn-secondary">Add Another Education Entry</button>
-            </div>
         </div>
+    </div>
 
         <div class="card mb-4">
             <div class="card-header">

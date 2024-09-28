@@ -184,11 +184,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateCities() {
         const selectedCountry = countrySelect.value;
+        console.log('Selected country:', selectedCountry);  // Debugging
         
         // Use AJAX to fetch cities for the selected country
-        fetch(`/get-cities/?country=${selectedCountry}`)
-            .then(response => response.json())
-            .then(cities => {
+        fetch(`/get_cities/${selectedCountry}/`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error ('Network response was not ok')
+                }
+               response.json();
+            })
+            .then(data => {
+                console.log('Received data:', data);  // Debugging
+                
                 // Clear existing options
                 citySelect.innerHTML = '<option value="">---------</option>';
 
@@ -199,6 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     option.textContent = city.name;
                     citySelect.appendChild(option);
                 });
+
+                console.log('City select updated');  // Debugging
 
                 updateClinics()
             })
