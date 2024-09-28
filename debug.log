@@ -9545,3 +9545,5 @@ DEBUG 2024-09-28 11:23:37,056 views 3470 139973042890304 Created new clinic: Ibi
 DEBUG 2024-09-28 11:23:37,150 views 3470 139973042890304 Updated surgeon's clinics: {<Clinic: Ikaro (Malmö)>, <Clinic: idaslips (Malmö)>, <Clinic: Ibiza (Malmö)>}
 INFO 2024-09-28 11:23:37,207 views 3470 139973042890304 Transaction committed successfully
 INFO 2024-09-28 11:25:32,170 views 3470 139972497626688 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:33:42,157 views 3470 139972489233984 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-28 11:42:38,075 autoreload 9021 139926740851776 Watching for file changes with StatReloader

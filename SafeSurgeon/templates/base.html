@@ -84,10 +84,7 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ login_url }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ signup_url }}">Sign Up</a>
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
