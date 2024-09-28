@@ -10,75 +10,79 @@
         <div class="col-md-8 col-lg-6">
             <div class="card shadow-lg border-0">
                 <div class="card-body p-5">
-        <h1 class="card-title text-center mb-4 text-primary">Verify your Surgeon</h1>
-        <form action= "{% url 'verify' %}" method="post">
-        {% csrf_token %}
-        <div class="mb-4">
-        <label for="id_country" class="form-label"></label>
-            <select class="form-select form-select-lg" id="country_select" name="country" required>
-                <option value="">Select a country</option>
-                {%for country in countries%}
-                <option value="{{country.id}}">{{country.name}}</option>
-                {% endfor %}
-            </select>       
+                    <h1 class="card-title text-center mb-4 text-primary">Verify your Surgeon</h1>
+                    <form action="{% url 'verify' %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="id_country" class="form-label"></label>
+                            <select class="form-select form-select-lg" id="country_select" name="country" required>
+                                <option value="">Select a country</option>
+                                {%for country in countries%}
+                                <option value="{{country.id}}">{{country.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="id_city" class="form-label fw-bold"></label>
+                            <select class="form-select form-select-lg" id="city_select" name="city" required>
+                                <option value="">Select a city</option>
+                                {%for city in cities%}
+                                <option value="{{ city.id }}" data-country-id="{{ city.country.id }}">{{ city.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="clinic" class="form-label fw-bold"></label>
+                            <input type='text' class="form-control form-control-lg" id="clinic" name="clinic"
+                                placeholder='clinic' required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="first_name" class="form-label fw-bold"></label>
+                            <input type="text" class="form-control form-control-lg" id="first_name"
+                                name="user_first_name" placeholder="First Name" required>
+
+                        </div>
+                        <div class="mb-4">
+                            <label for="last_name" class="form-label fw-bold"></label>
+                            <input type="text" class="form-control form-control-lg" id="last_name" name="user_last_name"
+                                placeholder="Last Name" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Verify</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mb-4">
-        <label for="id_city" class="form-label fw-bold"></label>
-            <select class="orm-select form-select-lg" id="city_select" name="city" required>
-                <option value="">Select a city</option>
-                {%for city in cities%}
-                <option value="{{ city.id }}" data-country-id="{{ city.country.id }}">{{ city.name }}</option>
-                {% endfor %}
-            </select>       
-    </div>
-    <div class="mb-4">
-        <label for="clinic" class="form-label fw-bold"></label>
-            <input type='text' class="form-control form-control-lg" id="clinic" name="clinic" placeholder='clinic'required>    
-    </div>
-    <div class="mb-4">
-        <label for="first_name" class="form-label fw-bold"></label>
-                <input type="text" class="form-control form-control-lg" id="first_name" name="user_first_name" placeholder="First Name"required>
-              
-    </div>  
-    <div class="mb-4">
-        <label for="last_name" class="form-label fw-bold"></label>
-                <input type="text" class="form-control form-control-lg" id="last_name" name="user_last_name" placeholder="Last Name" required>
-    </div>
-    <div class="d-grid">
-    <button type="submit" class="btn btn-primary btn-lg">Verify</button>
-    </div>
-</form>
-</div>
-</div>
-</div>
-</div>
 </main>
 
 <script>
-   
-document.addEventListener('DOMContentLoaded', function() {
-    const countrySelect = document.getElementById('country_select');
-    const citySelect = document.getElementById('city_select');
 
-    // Store all city options
-    const allCityOptions = Array.from(citySelect.options);
+    document.addEventListener('DOMContentLoaded', function () {
+        const countrySelect = document.getElementById('country_select');
+        const citySelect = document.getElementById('city_select');
 
-    countrySelect.addEventListener('change', function() {
-        const selectedCountryId = this.value;
-        
-        // Clear current city options
-        citySelect.innerHTML = '<option value="">Select a city</option>';
-        
-        if (selectedCountryId) {
-            // Filter and add city options for the selected country
-            allCityOptions.forEach(option => {
-                if (option.dataset.countryId === selectedCountryId) {
-                    citySelect.appendChild(option.cloneNode(true));
-                }
-            });
-        }
+        // Store all city options
+        const allCityOptions = Array.from(citySelect.options);
+
+        countrySelect.addEventListener('change', function () {
+            const selectedCountryId = this.value;
+
+            // Clear current city options
+            citySelect.innerHTML = '<option value="">Select a city</option>';
+
+            if (selectedCountryId) {
+                // Filter and add city options for the selected country
+                allCityOptions.forEach(option => {
+                    if (option.dataset.countryId === selectedCountryId) {
+                        citySelect.appendChild(option.cloneNode(true));
+                    }
+                });
+            }
+        });
     });
-});
 </script>
 
 {% endblock %}
