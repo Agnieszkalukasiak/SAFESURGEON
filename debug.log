@@ -9053,3 +9053,37 @@ WARNING 2024-09-28 06:27:25,616 log 10950 140465890387520 Forbidden (CSRF token 
 WARNING 2024-09-28 06:27:27,496 log 10950 140465881994816 Forbidden (CSRF token from POST incorrect.): /signup/
 INFO 2024-09-28 06:40:37,376 autoreload 10950 140485549571136 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
 INFO 2024-09-28 06:40:37,945 autoreload 13220 140135968463936 Watching for file changes with StatReloader
+INFO 2024-09-28 07:30:51,411 autoreload 2360 139671121165376 Watching for file changes with StatReloader
+DEBUG 2024-09-28 07:32:40,478 connectionpool 2360 139670415451712 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-28 07:32:42,568 connectionpool 2360 139670415451712 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+ERROR 2024-09-28 07:32:42,814 log 2360 139670415451712 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 213, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())
+                                                             ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 617, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 1022, in __init__
+    raise ValueError(
+ValueError: "<Surgeon:   - Pending>" needs to have a value for field "id" before this many-to-many relationship can be used.
+DEBUG 2024-09-28 07:40:52,287 connectionpool 2360 139669383673408 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 07:40:53,252 connectionpool 2360 139669383673408 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 07:40:54,191 connectionpool 2360 139669383673408 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-28 07:40:55,020 connectionpool 2360 139669383673408 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-28 07:45:27,827 views 2360 139668276360768 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 07:48:14,593 views 2360 139668267968064 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 07:48:50,717 views 2360 139668259575360 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 07:49:21,031 views 2360 139667756275264 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 07:51:47,599 views 2360 139667739489856 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:00:42,706 views 2360 139667731097152 Editing profile for surgeon: ivona lala - Verified
+INFO 2024-09-28 08:02:48,677 views 2360 139667722704448 Editing profile for surgeon: ivona lala - Verified

@@ -72,14 +72,14 @@
                         <div class="education-form">
                             {{ education_form.as_p }}
                             {% if education_form.instance.pk %}
-                                </div>
                             {% endif %}
-                            <hr>
-                        </div>
+                        <hr>
+                    </div>
                     {% endfor %}
                 </div>
                 <button type="button" id="add-education" class="btn btn-secondary mb-3">Add Another Education Entry</button>
             </div>
+        </div>
 
             <div class="card mb-4">
                 <div class="card-header bg-primary text-white">
@@ -152,96 +152,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//*city select 
-
 document.addEventListener('DOMContentLoaded', function() {
-    const countrySelect = document.querySelector('select[name="country"]');
-    const citySelect = document.querySelector('select[name="city"]');
-    const cityUrl = window.cityUrl;
-
-    countrySelect.addEventListener('change', function() {
-        const countryId = this.value;
-        if (countryId) {
-            fetch(`${cityUrl}${countryId}`)
-                .then(response => response.json())
-                .then(data => {
-                    citySelect.innerHTML = '<option value="">---------</option>';
-                    data.cities.forEach(city => {
-                        const option = new Option(city.name, city.id);
-                        citySelect.add(option);
-                    });
-                });
-        } else {
-            citySelect.innerHTML = '<option value="">---------</option>';
-        }
-    });
-});
-
-
-//*clinic select 
-document.addEventListener('DOMContentLoaded', function() {
-    const citySelect = document.querySelector('select[name="city"]');
-    const clinicSelects = document.querySelectorAll('select[name$="-clinic"]');
-    const clinicUrl = window.clinicUrl;
-
-    citySelect.addEventListener('change', function() {
-        const cityId = this.value;
-        if (cityId) {
-            fetch(`${clinicUrl}${cityId}`)
-                .then(response => response.json())
-                .then(data => {
-                    clinicSelects.forEach(clinicSelect => {
-                        clinicSelect.innerHTML = '<option value="">---------</option>';
-                        data.clinics.forEach(clinic => {
-                            const option = new Option(clinic.name, clinic.id);
-                            clinicSelect.add(option);
-                        });
-                    });
-                });
-        } else {
-            clinicSelects.forEach(clinicSelect => {
-                clinicSelect.innerHTML = '<option value="">---------</option>';
-            });
-        }
-    });
-});
-
-// Function to add another education entry
-function addAnotherEducation() {
     const addEducationButton = document.getElementById('add-education');
-    const educationFormset = document.getElementById('education-formset');
-    const totalFormsInput = document.querySelector('input[name$=TOTAL_FORMS]');
+    const educationForms = document.getElementById('education-formset');
+    const totalFormsInput = document.querySelector('#id_education-TOTAL_FORMS');
     
-    addEducationButton.addEventListener('click', function() {
-        const formCount = parseInt(totalFormsInput.value);
-
-        const newForm = educationFormset.children[0].cloneNode(true);
-        // Update form index
-        newForm.innerHTML = newForm.innerHTML.replacev(/__prefix__/g, formCount);
-        newForm.innerHTML = newForm.innerHTML.replace(/-\d+-/g, `-${formCount}-`);
-        // Clear input values
-        newForm.querySelectorAll('input, select').forEach(input => {
-            input.value = '';
-            input.id = input.id.replace(/-\d+-/, `-${formCount}-`);
-            input.name = input.name.replace(/-\d+-/, `-${formCount}-`);
+    if (addEducationButton) {
+        addEducationButton.addEventListener('click', function() {
+            const formCount = educationForms.children.length;
+            const newForm = educationForms.children[0].cloneNode(true);
+            
+            newForm.innerHTML = newForm.innerHTML.replace(/-\d+-/g, `-${formCount}-`);
+            newForm.querySelectorAll('input, select').forEach(input => {
+                input.value = '';
+                input.id = input.id.replace(/-\d+-/, `-${formCount}-`);
+                input.name = input.name.replace(/-\d+-/, `-${formCount}-`);
+            });
+            
+            educationForms.appendChild(newForm);
+            totalFormsInput.value = formCount + 1;
         });
-
-        educationFormset.appendChild(newForm);
-        totalFormsInput.value = formCount + 1;
-    });
-}
-// Initialize all functions when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    filterClinicsByCity();
-    addAnotherClinic();
-    addAnotherEducation();
+    }
 });
 
 
-//submit button
-    document.querySelector('form').addEventListener('submit', function(e) {
-        console.log('Form submitted to:', this.action);
-    });
 
 </script>
 
