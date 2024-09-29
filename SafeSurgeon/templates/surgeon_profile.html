@@ -44,8 +44,7 @@
                     {% for clinic in surgeon.clinic.all %}
                     <div class="list-group-item">
                         <h5 class="mb-1">{{ clinic.name }}</h5>
-                        <p class="mb-1"><small><i class="fas fa-map-marker-alt"></i> {{ clinic.city.name }}, {{
-                                clinic.city.country.name }}</small></p>
+                        <p class="mb-1"><small><i class="fas fa-map-marker-alt"></i> {{ clinic.city.name }}, {{clinic.city.country.name }}</small></p>
                     </div>
                     {% empty %}
                     <p class="text-muted">No clinic information available.</p>

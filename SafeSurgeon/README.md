@@ -30,7 +30,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Landing Page
 
-![Alt text](image_url)
+![Alt text](static/images/Verify.png)
 
 -	Provides Simple Navigation: Offers two clear options—one for users to verify a surgeon and another for surgeons to start the verification process.
 
@@ -48,22 +48,22 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Navigation Bar 
 
-![Navigation Bar](image_url)
+![Navigation Bar](static/images/menu.png)
 
-The Safe Surgeon app features a simple, intuitive navigation bar and dropdown menu designed for seamless movement between pages. This functionality is crucial to ensuring a smooth, frustration-free experience for both patients and surgeons.
+- The Safe Surgeon app features a simple, intuitive navigation bar and dropdown menu designed for seamless movement between pages. This functionality is crucial to ensuring a smooth, frustration-free experience for both patients and surgeons.
 
+- User-Centric Design: Simple and intuitive navigation helps users focus on their primary tasks without confusion. Whether verifying credentials or updating profiles, users can do so with minimal clicks, improving both satisfaction and efficiency.
+
+#### Why it benefits the user:
 -	Effortless Navigation: The navigation bar and dropdown menu make it easy to move between different sections of the app. Whether users are verifying a surgeon or surgeons are managing their profiles, the ability to switch between tasks effortlessly enhances the overall usability of the platform.
 
 -	Quick Surgeon Login: For surgeons, the dropdown menu provides quick access to log in to their profile, making the verification process fast and simple. This reduces unnecessary steps and ensures surgeons can manage their credentials efficiently.
 
-
--	User-Centric Design: Simple and intuitive navigation helps users focus on their primary tasks without confusion. Whether verifying credentials or updating profiles, users can do so with minimal clicks, improving both satisfaction and efficiency.
-
-By prioritizing easy navigation and quick login options, Safe Surgeon ensures that users can access the necessary features without hassle, making the verification process smooth and reliable.
+- By prioritizing easy navigation and quick login options, Safe Surgeon ensures that users can access the necessary features without hassle, making the verification process smooth and reliable.
 
 ### Surgeon Search Page
 
-![Surgeon Search Page](image_url)
+![Surgeon Search Page](static/images/search_surgeon.png)
 
 -  Performs Surgeon Search: Users input the surgeon's country, city, name, and clinic to execute a search for the specific surgeon they want to verify.
 
@@ -79,9 +79,9 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 - Focused User Experience: By using minimal colors and a simple layout, the page ensures that users are not distracted and can efficiently find the information they need.
 
-### Search Result Page:  Surgeon Verified
+### Search Result Page: Surgeon Verified
 
-![Surgeon result Page-verified](image_url)
+![Surgeon result Page-verified](static/images/result_verified.png)
 
 -	Displays the surgeon’s basic details such as their name, clinic, and location.
 
@@ -96,7 +96,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 -	Offers a simple, streamlined design focusing on delivering crucial verification information without distractions.
 
-![Surgeon Search Page:Rejected](image_url)
+![Surgeon Search Page:Rejected](static/images/result_rejected.png)
 
 ### Rejected Surgeon Page
 
@@ -116,7 +116,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Surgeon Not Found (Not Verified) Page
 
-![Surgeon Search Page:Not Found](image_url)
+![Surgeon Search Page:Not Found](static/images/NotVerified.png)
 
 - The page displays a strong warning in bold pink with red accents that the surgeon is "Not Verified" and is not present in the database. 
 
@@ -134,7 +134,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Sign up page
 
-![Sign up page](image_url)
+![Sign up page](static/images/Signup.png)
 
 
 -	Provides an option for the surgeon to verify their credentials by guiding them to a secure signup page.
@@ -153,7 +153,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Get Verified Form Page
 
-![Get Verified Form Page](image_url)
+![Get Verified Form Page](static/images/get_verified_1.png)
 
 -	Provides a secure form for surgeons to fill in their personal details and professional credentials.
 
@@ -171,7 +171,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Verification Pending Page
 
-![Verification Pending Page](image_url)
+![Get Verified Form Page](static/images/pending1.png)
 
 -	Displays a confirmation message informing the surgeon that their verification request has been submitted and is now pending review.
 
@@ -189,7 +189,8 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Log in page Page
 
-![Log in page Page](image_url)
+![Log in page Page](static/images/login.png)
+
 
 -	Provides a simple and secure login form where surgeons can enter their username and password to access their profile.
 
@@ -207,7 +208,8 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Surgeon Profile Page:Verified
 
-![Surgeon Profile Page:Verfied](image_url)
+![Surgeon Profile Page:Verfied](static/images/Surgeon_profile_verified.png)
+
 
 -	Displays all of the surgeon's submitted personal and professional details, including clinic information, education, and verification status.
 
@@ -223,8 +225,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Surgeon Profile Page: Rejected
 
-![Surgeon Profile Page:Rejected](image_url)
-
+![Surgeon Profile Page:Rejected](static/images/surgeon_profile_rejected.png)
 
 - Displays the previously submitted personal and professional details, and verification status.
 
@@ -242,7 +243,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Drop down widged for Education Details
 
-![rop down widged for Education Details](image_url)
+![Drop down widged for Education Details](static/images/widget.png)
 
 - Consolidated Information: A dropdown menu allows additional education details to be neatly tucked away, providing a cleaner look on the profile page while still making the information easily accessible when needed.
 
@@ -257,9 +258,9 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 - Improved Navigation: A dropdown structure simplifies navigation, keeping the most important information prominent, while extra data remains hidden but accessible, contributing to a more intuitive user experience.
 
-
 ### Edit Profile Prompt
-![Edit Profile Prompt](image_url)
+![Edit Profile Prompt](static/images/edit_resubmit_verification_prompt.png)
+
 
 - Displays a confirmation prompt when the surgeon clicks the Edit button, informing them that making changes to their profile will require resubmission and re-evaluation.
 
@@ -276,8 +277,8 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Surgeon Profile Edit Page
 
-![Surgeon Profile Edit Page]
-(image_url)
+![Surgeon Profile Edit Page](static/images/edit_profile.png)
+
 
 -	Allows surgeons to edit their existing profile data, such as personal details, clinic information, and education credentials and easily edit them.
 
@@ -296,9 +297,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Post-Submission Pending Verification Page
 
-![Post-Submission Pending Verification Page]
-(image_url)
-
+![Post-Submission Pending Verification Page](static/images/pending_edit.png)
 
 -	Displays a personalized message thanking the surgeon by name for updating their profile and resubmitting their credentials.
 
@@ -317,9 +316,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### About Page
 
-
-![About Page](image_url)
-
+![About Page](static/images/about.png)
 
 -	Provides an overview of the website’s mission and the team or individuals behind the platform.
 
@@ -337,7 +334,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Contact Page
 
-![Contact Page](image_url)
+![Contact Page](static/images/contact.png)
 
 
 -	Provides a simple form for users to send a direct message, including fields like name, email, and message.
@@ -352,7 +349,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Footer
 
-![Footer](image_url)
+![Footer](static/images/footer1.png)
 
 #### Minimal Footer Design: Benefits
 - Focus on Core Content: By opting for a minimal footer with only a copyright symbol, the attention remains on the core functionality and features of the application rather than distracting the user with unnecessary social media links or additional information.
@@ -373,7 +370,7 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 
 ### Simple Logout Page
-![Logout Page](image_url)
+![Logout Page](static/images/signout.png)
 
 •	Clean and Direct: The logout page is kept simple, focusing on a single primary action—logging out—while also providing clear, secondary options to reset the password or delete the account, without overwhelming the user with unnecessary details.
 •	Confirmation for Logout: Before logging out, users are prompted with a confirmation to ensure they intend to end their session, preventing accidental logouts and ensuring they don’t unintentionally lose access to their current session or work.
@@ -387,32 +384,26 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 -	Convenient Account Management: With the additional options to reset the password or delete the account, users can easily manage their account security from one simple page, giving them full control over their login credentials and account status.
 
-
-
-
 ### Wireframes
 
 Wireframes for both the mobile and desktop versions were created using https://moqups.com/, ensuring that the structure and flow of the website are visually mapped out before development. 
 
 ### Features Left to Implement
-- A forgotten pw  feature on login
-- A cancel button on edit prompt
+- A forgot password feature on login
 
 ### Testing
 
 #### Manual Testing
 
-- I have tested the desktop and mobile version of the website with Chrome, Firefox and Edge on a Windows Computer.
+- I have tested the desktop and mobile version of the website with Chrome, Firefox and Edge on a Windows Computer and a Mac computer.
 
-- I have tested the mobile version with Chrome and Firefox on an android device.
+- I have tested the mobile version with Chrome and Firefox on an android device and iPhone.
 
-- I have tested the mobile version with Safari on an ios device.
+- I have tested the mobile version with Safari on an ios device and apple device.
 
 - I have shared the website with multiple users to confirm the website functionality on different devices and to get feedback on their experience.
 
 - I have tested all the internal and external links on the website.
-
-- I have checked that the contact form requires valid inputs.
 
 ### Validation
 
