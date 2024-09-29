@@ -425,7 +425,6 @@ There are no unfixed bugs.
 ### Deployment
 This project was deployed at Heroku, steps for deploy are listed bellow:
 
-
 Creat a new Heroku app.
 
 Set up the configs for the deployment.
