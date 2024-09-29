@@ -11103,3 +11103,83 @@ INFO 2024-09-29 14:28:19,834 autoreload 8251 140472552811584 /workspace/SAFESURG
 INFO 2024-09-29 14:28:20,313 autoreload 8332 140206042106944 Watching for file changes with StatReloader
 INFO 2024-09-29 14:29:47,573 autoreload 8332 140206042106944 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
 INFO 2024-09-29 14:29:48,044 autoreload 8410 140624486575168 Watching for file changes with StatReloader
+INFO 2024-09-29 14:57:25,137 autoreload 8410 140624486575168 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:57:25,610 autoreload 9995 140185543425088 Watching for file changes with StatReloader
+INFO 2024-09-29 14:57:31,872 autoreload 9995 140185543425088 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:57:32,350 autoreload 10010 139821287283776 Watching for file changes with StatReloader
+INFO 2024-09-29 14:57:48,807 autoreload 10010 139821287283776 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:57:49,286 autoreload 10035 139722126253120 Watching for file changes with StatReloader
+INFO 2024-09-29 14:58:07,763 autoreload 10035 139722126253120 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:58:08,240 autoreload 10063 140009872276544 Watching for file changes with StatReloader
+INFO 2024-09-29 15:04:09,829 autoreload 10063 140009872276544 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:04:10,305 autoreload 10356 140633336118336 Watching for file changes with StatReloader
+INFO 2024-09-29 15:11:31,073 autoreload 10356 140633336118336 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:11:31,550 autoreload 10725 140168771009600 Watching for file changes with StatReloader
+INFO 2024-09-29 15:12:43,607 autoreload 10725 140168771009600 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:12:44,089 autoreload 10803 140381371251776 Watching for file changes with StatReloader
+INFO 2024-09-29 15:12:57,455 autoreload 10803 140381371251776 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:12:57,934 autoreload 10826 140512033537088 Watching for file changes with StatReloader
+INFO 2024-09-29 15:13:52,785 autoreload 10826 140512033537088 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:13:53,254 autoreload 10882 139774381497408 Watching for file changes with StatReloader
+INFO 2024-09-29 15:16:18,245 autoreload 10882 139774381497408 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:16:18,726 autoreload 11016 140524346735680 Watching for file changes with StatReloader
+INFO 2024-09-29 15:17:08,522 autoreload 11016 140524346735680 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:17:09,010 autoreload 11080 139786473180224 Watching for file changes with StatReloader
+INFO 2024-09-29 15:17:14,264 autoreload 11080 139786473180224 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:17:14,736 autoreload 11097 140105044126784 Watching for file changes with StatReloader
+INFO 2024-09-29 15:17:21,017 autoreload 11097 140105044126784 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:17:21,493 autoreload 11111 139903757610048 Watching for file changes with StatReloader
+INFO 2024-09-29 15:18:51,822 autoreload 11111 139903757610048 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:18:52,288 autoreload 11195 140272553323584 Watching for file changes with StatReloader
+INFO 2024-09-29 15:19:04,655 autoreload 11195 140272553323584 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:19:05,124 autoreload 11217 140417397873728 Watching for file changes with StatReloader
+INFO 2024-09-29 15:19:36,693 autoreload 11217 140417397873728 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:19:37,159 autoreload 11254 140377266621504 Watching for file changes with StatReloader
+INFO 2024-09-29 15:25:48,940 autoreload 11254 140377266621504 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:25:49,415 autoreload 11588 140511452277824 Watching for file changes with StatReloader
+INFO 2024-09-29 15:27:22,754 autoreload 11588 140511452277824 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:27:23,227 autoreload 11679 139659181681728 Watching for file changes with StatReloader
+INFO 2024-09-29 15:27:37,590 autoreload 11679 139659181681728 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:27:38,057 autoreload 11707 140302490225728 Watching for file changes with StatReloader
+INFO 2024-09-29 15:28:54,165 autoreload 11707 140302490225728 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:28:54,642 autoreload 11780 139762235239488 Watching for file changes with StatReloader
+INFO 2024-09-29 15:30:51,289 autoreload 11780 139762235239488 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:30:51,769 autoreload 11903 139703212932160 Watching for file changes with StatReloader
+INFO 2024-09-29 15:31:19,293 autoreload 11903 139703212932160 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:31:19,766 autoreload 11946 140324400024640 Watching for file changes with StatReloader
+INFO 2024-09-29 15:42:04,851 autoreload 11946 140324400024640 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:42:05,323 autoreload 12487 140106356603968 Watching for file changes with StatReloader
+INFO 2024-09-29 15:43:08,293 autoreload 12487 140106356603968 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:43:08,763 autoreload 12549 140105355791424 Watching for file changes with StatReloader
+INFO 2024-09-29 15:43:46,406 autoreload 12549 140105355791424 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:43:46,883 autoreload 12590 140009283259456 Watching for file changes with StatReloader
+INFO 2024-09-29 15:45:10,108 autoreload 12590 140009283259456 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:45:10,589 autoreload 12666 140171804372032 Watching for file changes with StatReloader
+INFO 2024-09-29 15:47:52,778 autoreload 12666 140171804372032 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:47:53,250 autoreload 12816 140096644303936 Watching for file changes with StatReloader
+INFO 2024-09-29 15:54:46,538 autoreload 12816 140096644303936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:54:47,005 autoreload 13159 140047163259968 Watching for file changes with StatReloader
+INFO 2024-09-29 15:54:55,292 autoreload 13159 140047163259968 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 15:54:55,766 autoreload 13177 140334011829312 Watching for file changes with StatReloader
+INFO 2024-09-29 16:04:59,391 autoreload 13177 140334011829312 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:04:59,856 autoreload 13671 139942222408768 Watching for file changes with StatReloader
+INFO 2024-09-29 16:05:14,218 autoreload 13671 139942222408768 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:05:14,688 autoreload 13694 139624417233984 Watching for file changes with StatReloader
+INFO 2024-09-29 16:05:24,889 autoreload 13694 139624417233984 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:05:25,347 autoreload 13721 140186811669568 Watching for file changes with StatReloader
+INFO 2024-09-29 16:08:11,530 autoreload 13721 140186811669568 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:08:11,989 autoreload 13864 140443297446976 Watching for file changes with StatReloader
+INFO 2024-09-29 16:08:21,287 autoreload 13864 140443297446976 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:08:21,752 autoreload 13883 139702241238080 Watching for file changes with StatReloader
+INFO 2024-09-29 16:08:40,160 autoreload 13883 139702241238080 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:08:40,626 autoreload 13915 139884400098368 Watching for file changes with StatReloader
+INFO 2024-09-29 16:12:02,290 autoreload 13915 139884400098368 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:12:02,761 autoreload 14103 140198030490688 Watching for file changes with StatReloader
+INFO 2024-09-29 16:12:45,470 autoreload 14103 140198030490688 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:12:45,932 autoreload 14154 140114173836352 Watching for file changes with StatReloader
+INFO 2024-09-29 16:14:42,546 autoreload 14154 140114173836352 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:14:43,008 autoreload 14262 140439725849664 Watching for file changes with StatReloader
+INFO 2024-09-29 16:18:33,097 autoreload 14262 140439725849664 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:18:33,565 autoreload 14459 140072278223936 Watching for file changes with StatReloader
+INFO 2024-09-29 16:18:36,790 autoreload 14459 140072278223936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:18:37,259 autoreload 14472 140064311540800 Watching for file changes with StatReloader
