@@ -322,10 +322,99 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 ![Contact Page](image_url)
 
 
+-	Provides a simple form for users to send a direct message, including fields like name, email, and message.
+
+-	Offers a quick and easy way for users to reach out with questions, feedback, or inquiries related to the site or services.
+
+#### How it benefits the user:
+
+-	Facilitates easy communication, making it convenient for users to reach out for support or queries.
+
+-	Saves time by providing a straightforward and minimal form that ensures a smooth user experience.
+
+### Footer
+
+![Footer](image_url)
+
+#### Minimal Footer Design: Benefits
+- Focus on Core Content: By opting for a minimal footer with only a copyright symbol, the attention remains on the core functionality and features of the application rather than distracting the user with unnecessary social media links or additional information.
+
+- Streamlined User Experience: A simple footer reduces visual clutter, allowing users to navigate and interact with the site or application without additional elements that may divert focus from the primary purpose of the platform.
+
+- Professional Look: Avoiding social media links or unrelated content maintains a professional and polished design, ensuring the application’s branding and purpose remain clear and unobstructed.
+
+- Privacy and Security Conscious: Not including external links, especially to social media, helps keep the user experience self-contained and reduces the potential for privacy concerns related to tracking or third-party integrations.
+
+#### How it benefits the user:
+
+- Undistracted Focus: Users can concentrate on the task or content at hand without extraneous links drawing their attention away.
+
+- Faster Load Times: By not loading additional social media icons or widgets, the page remains lightweight, contributing to faster load times.
+
+- Simplicity and Elegance: A minimalist approach to the footer reinforces a clean, user-friendly design that aligns with professional standards, making it easier for users to engage with the site’s primary purpose.
 
 
+### Wireframes
+
+Wireframes for both the mobile and desktop versions were created using Moqup, ensuring that the structure and flow of the website are visually mapped out before development. 
+
+### Testing
+
+#### Manual Testing
+
+- I have tested the desktop and mobile version of the website with Chrome, Firefox and Edge on a Windows Computer.
+
+- I have tested the mobile version with Chrome and Firefox on an android device.
+
+- I have tested the mobile version with Safari on an ios device.
+
+- I have shared the website with multiple users to confirm the website functionality on different devices and to get feedback on their experience.
+
+- I have tested all the internal and external links on the website.
+
+- I have checked that the contact form requires valid inputs.
+
+### Validation
+
+#### HTML
+W3C HTML Validator
+There were no errors found on any page using the W3C HTML Validator.
+
+#### CSS
+W3C CSS Validator
+There were no errors found in the stylesheet using the W3C CSS Validator.
+
+#### Jgsaw
+
+#### No errors were returned when passing through the official PEP8 validator.
+
+### Bugs
+There are no unfixed bugs.
+
+### Deployment
+This project was deployed at Heroku, steps for deploy are listed bellow:
 
 
+Creat a new Heroku app.
+
+Set up the configs for the deployment.
+
+Link the Heroku app to the repository, then Deploy.
+
+The live link can be found here: SafeSurgon
+
+
+### Credits:
+
+The icon form SafeSurgeon are from https://www.design.com/
+
+The photos of team member from https://www.istockphoto.com/
+
+### Aknowladgments
+
+-	My mentor, Moritz Wach, for his quidance and advise.
+
+-	My fellow students for their company and encouragement.
 
 
 
