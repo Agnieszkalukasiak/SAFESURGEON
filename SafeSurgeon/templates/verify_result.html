@@ -47,22 +47,22 @@
             <div class="card shadow-lg">
                 <div class="card shadow-lg">
                     <div class="card-header text-center">
-                <h2>No Surgeon Found</h2>
-                <p>
-                    {% if search_params.user_first_name or search_params.user_last_name %}
-                <h2>Name: {{ search_params.user_first_name }} {{ search_params.user_last_name }} </h2>
-                {% endif %}
-                {% if search_params.clinic %}
-                <p class="fs-4"><strong>Clinic: {{ search_params.clinic }} </strong></p>
-                {% endif %}
-                {% if search_params.city or search_params.country %}
-                <p class="fs-4">{{ search_params.city }}, {{ search_params.country }}</p>
-                {% endif %}
-                </p>
-                <span class="badge bg-danger fs-4 p-3">Not Verified</span>
+                        <h2>No Surgeon Found</h2>
+                        <p>
+                            {% if search_params.user_first_name or search_params.user_last_name %}
+                        <h2>Name: {{ search_params.user_first_name }} {{ search_params.user_last_name }} </h2>
+                        {% endif %}
+                        {% if search_params.clinic %}
+                        <p class="fs-4"><strong>Clinic: {{ search_params.clinic }} </strong></p>
+                        {% endif %}
+                        {% if search_params.city or search_params.country %}
+                        <p class="fs-4">{{ search_params.city }}, {{ search_params.country }}</p>
+                        {% endif %}
+                        </p>
+                        <span class="badge bg-danger fs-4 p-3">Not Verified</span>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
-            {% endif %}
         </div>
-    </div>
-</div>
         {% endblock %}

@@ -10558,3 +10558,20 @@ INFO 2024-09-29 05:12:40,131 views 3500 140589647525440 Editing profile for surg
 INFO 2024-09-29 05:15:06,141 views 3500 140586375943744 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-29 05:17:11,513 views 3500 140585302201920 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-29 05:18:29,740 autoreload 2441 140105814719552 Watching for file changes with StatReloader
+WARNING 2024-09-29 05:19:20,546 log 2441 140105497953856 Forbidden (CSRF token from POST incorrect.): /admin/login/
+INFO 2024-09-29 05:20:06,806 views 2441 140104886629952 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:20:25,345 views 2441 140104869844544 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:20:49,106 views 2441 140104358151744 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:21:08,857 views 2441 140104341366336 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-29 05:21:08,862 connectionpool 2441 140104341366336 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-29 05:21:10,358 connectionpool 2441 140104341366336 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 05:21:10,772 views 2441 140104341366336 Updated surgeon's clinics: {<Clinic: HealthTmr (Malmö)>}
+INFO 2024-09-29 05:21:10,800 views 2441 140104341366336 Transaction committed successfully
+INFO 2024-09-29 05:21:56,100 views 2441 140103284409920 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:36:08,532 views 2441 140102185489984 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:36:30,130 views 2441 140101690582592 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:37:04,277 views 2441 140101673797184 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:38:12,790 views 2441 140101657011776 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:38:15,825 views 2441 140101648619072 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:38:55,928 views 2441 140101145318976 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:39:41,868 views 2441 140101128533568 Editing profile for surgeon: Rory McKellar - Rejected

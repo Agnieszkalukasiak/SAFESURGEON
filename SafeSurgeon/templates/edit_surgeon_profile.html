@@ -4,7 +4,9 @@
 
 {% block content %}
 <div class="container mt-5">
-   
+    <div class="card mb-4">
+    <h4 class="mb-0"> Edit Profile for {{ surgeon.user.first_name }} {{ surgeon.user.last_name }} </h4><hr>
+
     <form method="post" action="{% url 'edit_surgeon_profile' surgeon.id %}" enctype="multipart/form-data">
         {% csrf_token %}
 
