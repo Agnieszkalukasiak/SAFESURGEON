@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded: [clinic_add_button].js");
     const addClinicButton = document.getElementById('add-clinic');

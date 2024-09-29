@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 document.addEventListener('DOMContentLoaded', function () {
     const countrySelect = document.getElementById('country_select');
     const citySelect = document.getElementById('city_select');

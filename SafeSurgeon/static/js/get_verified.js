@@ -1,7 +1,7 @@
-
-    // add another clinic button
-
-    document.addEventListener('DOMContentLoaded', function() {
+/* jshint esversion: 6 */
+    
+// add another clinic button
+document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded: [clinic_add_button].js");
     const addClinicButton = document.getElementById('add-clinic');
     const clinicFormsContainer = document.getElementById('clinic-forms');

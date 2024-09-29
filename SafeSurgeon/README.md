@@ -410,11 +410,79 @@ Wireframes for both the mobile and desktop versions were created using https://m
 #### HTML
 W3C HTML Validator
 There were no errors found on any page using the W3C HTML Validator.
+
 https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2F
 
-#### CSS
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fverify%2F
+
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fsignup%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fget_verified%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fget_verified%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Flogin%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fget_verified%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fsurgeon%2F113%2Fedit%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fabout%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fcontact%2F
+
+https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Faccounts%2Flogout%2F
+
+
+### Jigsaw
 W3C CSS Validator
 There were no errors found in the stylesheet using the W3C CSS Validator.
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fverify%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fverify_result%2Fpaul%2Fanna%2FSafeFace%2FStockholm%2FSweden%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fsignup%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fget_verified%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Flogin%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fsurgeon%2F113%2Fedit%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Faccounts%2Flogout%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fabout%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net%2Fcontact%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+### Jshint (Java script)
+https://jshint.com/
+
+W3C CSS Validator
+There were no errors found in the java script files.
+
+### Simple Logout Page
+
+#### results for edit_surgon_profile.js
+![Logout Page](static/images/edit_surgeon_js.png)
+
+#### results for get_verified.js
+![Logout Page](static/images/get_verified_js.png)
+
+#### results for verify.js
+![Logout Page](static/images/verify_js.png)
+
+#### results for contact.js
+![Logout Page](static/images/contact_js.png)
+
+
+
+
+
 
 #### Jgsaw
 

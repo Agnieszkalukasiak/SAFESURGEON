@@ -11015,3 +11015,40 @@ INFO 2024-09-29 12:22:33,744 views 3402 140503983044160 Editing profile for surg
 DEBUG 2024-09-29 12:22:34,191 views 3402 140503983044160 Updated surgeon's clinics: {<Clinic: lazo (London)>}
 INFO 2024-09-29 12:22:34,219 views 3402 140503983044160 Transaction committed successfully
 INFO 2024-09-29 12:22:46,670 views 3402 140503974651456 Editing profile for surgeon: Henio Tideman - Pending
+DEBUG 2024-09-29 12:47:43,415 connectionpool 3402 140496483636800 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-29 12:47:44,423 connectionpool 3402 140496483636800 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-29 12:51:20,948 views 3402 140495409894976 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:51:48,010 views 3402 140495384716864 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:52:05,312 views 3402 140495376324160 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:52:32,839 views 3402 140495284069952 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-29 12:52:33,256 views 3402 140495284069952 Updated surgeon's clinics: {<Clinic: lazo (London)>}
+INFO 2024-09-29 12:52:33,284 views 3402 140495284069952 Transaction committed successfully
+INFO 2024-09-29 12:52:47,927 views 3402 140495275677248 Editing profile for surgeon: Henio Tideman - Pending
+INFO 2024-09-29 12:55:36,518 autoreload 2352 140063639710784 Watching for file changes with StatReloader
+INFO 2024-09-29 13:17:50,416 views 2352 140061366548032 Editing profile for surgeon: Paul McMenamin - Rejected
+INFO 2024-09-29 13:18:29,629 views 2352 140061341369920 Editing profile for surgeon: Paul McMenamin - Rejected
+DEBUG 2024-09-29 13:18:30,117 views 2352 140061341369920 Updated surgeon's clinics: {<Clinic: SafeMedic (London)>}
+INFO 2024-09-29 13:18:30,147 views 2352 140061341369920 Transaction committed successfully
+DEBUG 2024-09-29 13:28:45,289 connectionpool 2352 140060804499008 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-29 13:28:46,829 connectionpool 2352 140060804499008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 13:28:48,033 connectionpool 2352 140060804499008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+ERROR 2024-09-29 13:28:48,279 log 2352 140060804499008 Internal Server Error: /get_verified/
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 206, in get_verified
+    clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())
+                                                             ^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 617, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 1022, in __init__
+    raise ValueError(
+ValueError: "<Surgeon: 2 2 - Pending>" needs to have a value for field "id" before this many-to-many relationship can be used.
