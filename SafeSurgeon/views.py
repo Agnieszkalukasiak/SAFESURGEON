@@ -87,8 +87,6 @@ def get_verified(request):
         surgeon = Surgeon.objects.get(user=request.user)
     except Surgeon.DoesNotExist:
         surgeon = None
-    #surgeon = getattr(request.user, 'surgeon', None)
-    #print(f"Debug: Surgeon instance for user {request.user.id} = {surgeon}")
     
     # Determine the appropriate template and set messages
     if surgeon is None:
@@ -114,19 +112,18 @@ def get_verified(request):
         print("Debug: POST request received.")
         form = SurgeonForm(request.POST, request.FILES,instance=surgeon, user=request.user)
         education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon, prefix='education')
-        #clinic_formset = ClinicFormSet(request.POST,queryset=surgeon.clinic.all(), prefix='clinic') #instance=surgeon,
 
         city_id = request.POST.get('city') 
         print(f"Debug: City selected = {city_id}")
 
         # Filter clinics based on the selected city or initialize an empty queryset if no city is selected
         if city_id:
-            city = City.objects.get(id=city_id)  # Get the city object based on the selected city ID
+            city = City.objects.get(id=city_id)  
             print(f"Debug: City found: {city.name}")
             clinic_formset = ClinicFormSet(request.POST, queryset=Clinic.objects.filter(city=city), prefix='clinic')
         else:
             print("Debug: No city selected, returning empty clinic queryset.")
-            clinic_formset = ClinicFormSet(request.POST, queryset=Clinic.objects.none(), prefix='clinic')  # Empty queryset if no city selected
+            clinic_formset = ClinicFormSet(request.POST, queryset=Clinic.objects.none(), prefix='clinic') 
 
     
         if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
@@ -166,21 +163,14 @@ def get_verified(request):
                     print("Education formset saved successfully")
                     
 
-                  
-                    
-                    
-
-
                     # Save clinic formset
                     print("Saving clinic formset")
-                    clinics = [] #list to collect all clinics
+                    clinics = [] 
 
                     for clinic_form in clinic_formset:
                         if clinic_form.is_valid() and clinic_form.cleaned_data and not clinic_form.cleaned_data.get('DELETE', False):
                              # Save the clinics associated with the surgeon and city                      
                             clinic_list = clinic_form.save(surgeon=surgeon, city=surgeon.city)
-                            #clinic.save()
-                            #clinics.append(clinic)
                             clinics.extend(clinic_list) 
 
                         print("Clinic formset saved successfully")
@@ -210,7 +200,6 @@ def get_verified(request):
     else:
         form = SurgeonForm(instance=surgeon, user=request.user)
         education_formset = EducationFormSet(instance=surgeon, prefix='education')
-       # clinic_formset = ClinicFormSet(prefix='clinic', queryset=surgeon.clinic.all())#instance=surgeon,
         
         # Check if the surgeon exists before accessing clinic.all()
     if surgeon:
@@ -242,7 +231,6 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                #messages.success(request, f"Welcome back, {username}!")
                 return redirect('get_verified')
             else:
                 messages.error(request, "Invalid username or password.")
@@ -261,7 +249,7 @@ def signup_view(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # Log the user in
+            login(request, user)  
             return redirect('get_verified')
         else:
             messages.error(request, "_")
@@ -272,7 +260,7 @@ def signup_view(request):
     return render(request, 'signup.html', {'form': form})
       
 def verify_result(request, user_first_name, user_last_name, clinic, city, country):
-    #Try to get the verification resutls from the database
+    #get the verification resutls from the database
     surgeon = Surgeon.objects.filter(
         user__first_name__icontains=user_first_name,
         user__last_name__icontains=user_last_name,
@@ -298,8 +286,6 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
     if surgeon:
     #fetch surgeon education history if they exist
         education_history = surgeon.education.all() if surgeon else None
-        
-        
 
         context = {
         'surgeon': surgeon, #the surgeon info

@@ -38,12 +38,10 @@ class City(models.Model):
         return f"{self.name}"
 
 
-
 class Clinic(models.Model):
     name = models.CharField(max_length=50,unique=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='clinics',null=True, blank=True)
    
-
     @classmethod
     def get_default_clinic(cls):
         default_clinic, created = cls.objects.get_or_create(name="Default Clinic",null=True, blank=True)
@@ -51,8 +49,6 @@ class Clinic(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.city})"
-
-
 
 
 class Surgeon(models.Model):
@@ -85,7 +81,6 @@ class Surgeon(models.Model):
         
         super().save(*args, **kwargs) 
 
-
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.get_verification_status_display()}"
     
@@ -105,8 +100,7 @@ class Surgeon(models.Model):
             'education': [f"{edu.institution} - {edu.program}" for edu in self.education.all()]
         }
 
-  
-   
+     
         Education.create_default_education(default_surgeon)
         return default_surgeon
 
