@@ -5,7 +5,7 @@
 
 
 {% block content %}
-<main class="container my-5">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card shadow-lg border-0">
@@ -14,7 +14,6 @@
                     <form action="{% url 'verify' %}" method="post">
                         {% csrf_token %}
                         <div class="mb-4">
-                            <label for="id_country" class="form-label"></label>
                             <select class="form-select form-select-lg" id="country_select" name="country" required>
                                 <option value="">Select a country</option>
                                 {%for country in countries%}
@@ -23,7 +22,6 @@
                             </select>
                         </div>
                         <div class="mb-4">
-                            <label for="id_city" class="form-label fw-bold"></label>
                             <select class="form-select form-select-lg" id="city_select" name="city" required>
                                 <option value="">Select a city</option>
                                 {%for city in cities%}
@@ -56,7 +54,7 @@
             </div>
         </div>
     </div>
-</main>
+</div>
 
 {% endblock %}
 

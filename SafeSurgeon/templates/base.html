@@ -1,5 +1,4 @@
 {% load static %}
-
 {% url 'home' as home_url %}
 {% url 'verify_surgeon' as verify_surgeon_url %}
 {% url 'get_verified' as get_verified_url %}
@@ -20,7 +19,7 @@
 
 <head>
     <title>SafeSurgeon</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 
     <!-- Google Fonts CSS -->
@@ -102,13 +101,8 @@
     <!-- Footer -->
     <footer class="footer mt-auto" style="background-color: white; color: black;">
         <p class="m-0 text-center py-3">Copywrite©2023</p>
+    </footer>
 
-        <!-- For future social media links
-            <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
-        -->
 
 
         <!-- Bootstrap JS and dependencies -->
@@ -120,7 +114,6 @@
 
         {% block extra_js %}
         {% endblock extra_js %}
-
 </body>
 
 </html>
