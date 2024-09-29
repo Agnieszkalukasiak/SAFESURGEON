@@ -10,20 +10,20 @@
             <h1 class="text-center mb-5 display-4 fw-bold text-primary">Contact Us</h1>
 
             {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                {% endfor %}
-            {% endif %}          
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
             <div class="card shadow-lg border-0">
                 <div class="card-body p-5">
                     <form method="post" action="{% url 'contact' %}" class="needs-validation" novalidate>
                         {% csrf_token %}
                         <div class="mb-4">
                             <label for="name" class="form-label fw-bold">Name</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" required>  
+                            <input type="text" class="form-control form-control-lg" id="name" name="name" required>
                         </div>
                         <div class="mb-4">
                             <label for="email" class="form-label fw-bold">Email address</label>
@@ -32,12 +32,14 @@
                         </div>
                         <div class="mb-4">
                             <label for="subject" class="form-label fw-bold">Subject</label>
-                            <input type="text" class="form-control form-control-lg" id="subject" name="subject" required>
+                            <input type="text" class="form-control form-control-lg" id="subject" name="subject"
+                                required>
                             <div class="invalid-feedback">Please provide a subject for your message.</div>
                         </div>
                         <div class="mb-4">
                             <label for="message" class="form-label fw-bold">Message</label>
-                            <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required></textarea>
+                            <textarea class="form-control form-control-lg" id="message" name="message" rows="5"
+                                required></textarea>
                             <div class="invalid-feedback">Please enter your message.</div>
                         </div>
                         <div class="d-grid gap-2">

@@ -10575,3 +10575,10 @@ INFO 2024-09-29 05:38:12,790 views 2441 140101657011776 Editing profile for surg
 INFO 2024-09-29 05:38:15,825 views 2441 140101648619072 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-29 05:38:55,928 views 2441 140101145318976 Editing profile for surgeon: Rory McKellar - Rejected
 INFO 2024-09-29 05:39:41,868 views 2441 140101128533568 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-29 05:45:56,816 connectionpool 2441 140100079969856 Resetting dropped connection: api.cloudinary.com
+DEBUG 2024-09-29 05:45:58,059 connectionpool 2441 140100079969856 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-29 05:50:43,941 views 2441 140098427393600 Editing profile for surgeon: Micke Garrod - Rejected
+INFO 2024-09-29 05:55:04,612 views 2441 140097915700800 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 05:55:23,759 views 2441 140097890522688 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-29 05:55:24,254 views 2441 140097890522688 Updated surgeon's clinics: {<Clinic: SafeMedic (London)>}
+INFO 2024-09-29 05:55:24,283 views 2441 140097890522688 Transaction committed successfully
