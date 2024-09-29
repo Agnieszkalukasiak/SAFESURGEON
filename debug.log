@@ -10999,3 +10999,19 @@ DEBUG 2024-09-29 11:00:16,858 views 3402 140509922195008 Removed clinic associat
 DEBUG 2024-09-29 11:00:16,889 views 3402 140509922195008 Created new clinic: newclinic (London)
 DEBUG 2024-09-29 11:00:16,981 views 3402 140509922195008 Updated surgeon's clinics: {<Clinic: newclinic (London)>, <Clinic: SafeMedic (London)>}
 INFO 2024-09-29 11:00:17,091 views 3402 140509922195008 Transaction committed successfully
+INFO 2024-09-29 11:52:56,247 views 3402 140505065178688 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 11:53:08,103 views 3402 140505040000576 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 11:53:11,500 views 3402 140504553485888 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:11:41,978 views 3402 140504545093184 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:11:45,304 views 3402 140504536700480 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:12:43,702 views 3402 140504528307776 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:13:24,649 views 3402 140504519915072 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:15:00,836 views 3402 140504511522368 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:15:15,822 views 3402 140504016614976 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:18:23,453 views 3402 140504008222272 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:18:57,136 views 3402 140503999829568 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:20:52,366 views 3402 140503991436864 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 12:22:33,744 views 3402 140503983044160 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-29 12:22:34,191 views 3402 140503983044160 Updated surgeon's clinics: {<Clinic: lazo (London)>}
+INFO 2024-09-29 12:22:34,219 views 3402 140503983044160 Transaction committed successfully
+INFO 2024-09-29 12:22:46,670 views 3402 140503974651456 Editing profile for surgeon: Henio Tideman - Pending
