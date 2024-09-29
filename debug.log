@@ -10538,3 +10538,6 @@ INFO 2024-09-28 15:54:15,400 views 2367 140625861133888 Editing profile for surg
 INFO 2024-09-28 15:54:18,742 views 2367 140625844348480 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-28 15:55:24,578 views 2367 140625349441088 Editing profile for surgeon: Henio Tideman - Verified
 INFO 2024-09-28 15:55:27,979 views 2367 140625332655680 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 01:21:06,913 autoreload 2777 140045727681600 Watching for file changes with StatReloader
+INFO 2024-09-29 01:25:55,830 autoreload 2777 140045727681600 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2024-09-29 01:25:56,306 autoreload 3058 140360368467008 Watching for file changes with StatReloader
