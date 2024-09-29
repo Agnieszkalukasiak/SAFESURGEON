@@ -356,7 +356,11 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 ### Wireframes
 
-Wireframes for both the mobile and desktop versions were created using Moqup, ensuring that the structure and flow of the website are visually mapped out before development. 
+Wireframes for both the mobile and desktop versions were created using https://moqups.com/, ensuring that the structure and flow of the website are visually mapped out before development. 
+
+### Features Left to Implement
+- A forgotten pw  feature on login
+- A cancel button on edit prompt
 
 ### Testing
 
@@ -406,9 +410,29 @@ The live link can be found here: SafeSurgon
 
 ### Credits:
 
-The icon form SafeSurgeon are from https://www.design.com/
+- The icon form SafeSurgeon are from design.com
 
-The photos of team member from https://www.istockphoto.com/
+- The photos of team member from istockphoto.
+
+-	Django Documentation - For handling form submission, views, and templates.
+-	Django Allauth Documentation - For user authentication and profiles.
+-	Cloudinary Documentation - For image and document uploads (profile pictures, ID documents).
+-	Django Packages - Collection of reusable apps, tools, and libraries for Django.
+-	PythonAnywhere - For hosting Django projects with deployment tutorials.
+-	Mozilla Developer Network (MDN) - For HTML, CSS, and JavaScript best practices.
+-	W3Schools - A resource for front-end development basics and quick references.
+-	Bootstrap Snippets on Bootsnipp - Ready-to-use Bootstrap snippets for layout and design.
+-	CodePen - For front-end design inspiration and snippets (CSS/HTML/JavaScript).
+Learning Platforms
+-	Real Python - Django tutorials, Python web development, and guides.
+-	FreeCodeCamp - Web development tutorials, including Django and Bootstrap.
+-	Stack Overflow - A community for troubleshooting and getting help from developers.
+-	GitHub - For collaborating on and finding open-source Django projects.
+-	Code Institute Slack Community - Official student support community for solving coding issues.
+-	The Net Ninja Django Tutorials - YouTube tutorials focusing on building applications with Django.
+-	Django Rest Framework - For building APIs or handling external integrations with Django.
+-	Awesome Django on GitHub - A curated list of Django apps, projects, and resources.
+
 
 ### Aknowladgments
 
@@ -416,14 +440,6 @@ The photos of team member from https://www.istockphoto.com/
 
 -	My fellow students for their company and encouragement.
 
+- Sarah at Code Intitute Mentoring, for her incredible patience and hawk-eye spotting errors.
 
-
-
-
-
-
-
-
-
-
-
+- Key at CondeInstitute for being my mental support on this crazy journey.
