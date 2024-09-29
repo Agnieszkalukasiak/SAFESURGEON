@@ -11,37 +11,35 @@ import logging
 import sys
 from django.core.mail import send_mail
 
-
-
-
-
 from .models import Surgeon, Country, City, Clinic, Education, Verification
 from .forms import SurgeonForm, EducationForm, EducationFormSet, SignUpForm, ClinicForm, ClinicFormSet
 
-#create a logger for this view
+# create a logger for this view
 logger = logging.getLogger(__name__)
 
+# Views for home page
 
 
-# Create your views here for home page
 def home(request):
     return render(request, 'home.html')
+
 
 def verify(request):
     countries = Country.objects.all()
     context = {'countries': countries}
     if request.method == 'POST':
-        # Handle form submission  
+        # Handle form submission
         country_id = request.POST.get('country')
         city_id = request.POST.get('city')
-        clinic = request.POST.get('clinic','')
-        user_first_name = request.POST.get('user_first_name','')
-        user_last_name = request.POST.get('user_last_name','')
-     # Fetching country and city objects from their IDs
+        clinic = request.POST.get('clinic', '')
+        user_first_name = request.POST.get('user_first_name', '')
+        user_last_name = request.POST.get('user_last_name', '')
+    # Fetching country and city objects from their IDs
         try:
-            country = Country.objects.get(id=country_id) if country_id else None
+            country = Country.objects.get(
+                id=country_id) if country_id else None
         except Country.DoesNotExist:
-             country = None
+            country = None
         try:
             city = City.objects.get(id=city_id) if city_id else None
         except City.DoesNotExist:
@@ -49,14 +47,14 @@ def verify(request):
         # Pass country and city names to the redirect, not their IDs
         country_name = country.name if country else ''
         city_name = city.name if city else ''
-   
+
         # Redirect to verify_result with search parameters
-        return redirect ('verify_result', 
-        user_first_name = user_first_name, 
-        user_last_name=user_last_name, 
-        clinic=clinic, 
-        city=city_name,
-        country=country_name)
+        return redirect('verify_result',
+                        user_first_name=user_first_name,
+                        user_last_name=user_last_name,
+                        clinic=clinic,
+                        city=city_name,
+                        country=country_name)
     else:
         # GET request - display the form
         countries = Country.objects.all()
@@ -75,19 +73,23 @@ def get_cities(request, country_id):
     return JsonResponse({'cities': city_list})
 
 
-
 def get_clinics(request, city_id):
     clinics = Clinic.objects.filter(city_id=city_id).order_by('name')
-    clinic_list = [{'id': clinic.id, 'name': clinic.name} for clinic in clinics]
+    clinic_list = [{
+        'id': clinic.id,
+        'name': clinic.name} 
+        for clinic in clinics
+        ]
     return JsonResponse({'clinics': clinic_list})
 
+
 @login_required
-def get_verified(request): 
+def get_verified(request):
     try:
         surgeon = Surgeon.objects.get(user=request.user)
     except Surgeon.DoesNotExist:
         surgeon = None
-    
+
     # Determine the appropriate template and set messages
     if surgeon is None:
         print("Debug: No surgeon profile found for this user.")
@@ -99,7 +101,9 @@ def get_verified(request):
         return render(request, template, {'surgeon': surgeon})
     elif surgeon.verification_status == Verification.REJECTED.value:
         template = 'surgeon_profile.html'
-        messages.info(request, "Your profile was rejected. Please edit and resubmit for verification.")
+        messages.info(
+            request, "Your profile was rejected. Please edit and resubmit for verification."
+            )
     elif surgeon.verification_status == Verification.PENDING.value:
         template = 'pending.html'
         messages.info(request, "Your profile is pending verification.")

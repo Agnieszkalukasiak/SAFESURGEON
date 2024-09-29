@@ -11052,3 +11052,54 @@ Traceback (most recent call last):
   File "/workspace/.pip-modules/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 1022, in __init__
     raise ValueError(
 ValueError: "<Surgeon: 2 2 - Pending>" needs to have a value for field "id" before this many-to-many relationship can be used.
+DEBUG 2024-09-29 13:45:39,134 connectionpool 2352 140058665408064 Resetting dropped connection: api.cloudinary.com
+DEBUG 2024-09-29 13:45:40,410 connectionpool 2352 140058665408064 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 13:45:41,370 connectionpool 2352 140058665408064 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 13:45:42,533 connectionpool 2352 140058665408064 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-29 13:46:04,700 views 2352 140058145322560 Editing profile for surgeon: Henio Tideman - Verified
+INFO 2024-09-29 13:46:25,973 views 2352 140058120144448 Editing profile for surgeon: Henio Tideman - Verified
+DEBUG 2024-09-29 13:46:26,425 views 2352 140058120144448 Updated surgeon's clinics: {<Clinic: SafeMedic (London)>}
+INFO 2024-09-29 13:46:26,451 views 2352 140058120144448 Transaction committed successfully
+INFO 2024-09-29 13:58:20,984 autoreload 2352 140063639710784 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 13:58:21,520 autoreload 6580 140045713677376 Watching for file changes with StatReloader
+INFO 2024-09-29 14:00:13,072 autoreload 6580 140045713677376 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:00:13,543 autoreload 6703 139643035262016 Watching for file changes with StatReloader
+INFO 2024-09-29 14:00:49,158 autoreload 6703 139643035262016 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:00:49,662 autoreload 6744 140073653976128 Watching for file changes with StatReloader
+INFO 2024-09-29 14:01:17,181 autoreload 6744 140073653976128 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:01:17,655 autoreload 6776 140017882004544 Watching for file changes with StatReloader
+INFO 2024-09-29 14:01:58,344 autoreload 6776 140017882004544 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:01:58,821 autoreload 6818 140347877071936 Watching for file changes with StatReloader
+INFO 2024-09-29 14:02:31,399 autoreload 6818 140347877071936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:02:31,876 autoreload 6856 139696934906944 Watching for file changes with StatReloader
+INFO 2024-09-29 14:02:56,376 autoreload 6856 139696934906944 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:02:56,850 autoreload 6886 140129990937664 Watching for file changes with StatReloader
+INFO 2024-09-29 14:04:34,306 autoreload 6886 140129990937664 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:04:34,771 autoreload 6981 139999024872512 Watching for file changes with StatReloader
+INFO 2024-09-29 14:04:55,209 autoreload 6981 139999024872512 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:04:55,691 autoreload 7007 139722474536000 Watching for file changes with StatReloader
+INFO 2024-09-29 14:13:42,301 autoreload 7007 139722474536000 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:13:42,774 autoreload 7439 139784955759680 Watching for file changes with StatReloader
+INFO 2024-09-29 14:13:48,026 autoreload 7439 139784955759680 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:13:48,503 autoreload 7453 140175146531904 Watching for file changes with StatReloader
+WARNING 2024-09-29 14:14:00,414 log 7453 140175084836416 Forbidden (CSRF token from POST incorrect.): /accounts/logout/
+INFO 2024-09-29 14:19:24,056 autoreload 7453 140175146531904 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:19:24,541 autoreload 7762 140355725024320 Watching for file changes with StatReloader
+INFO 2024-09-29 14:19:35,867 autoreload 7762 140355725024320 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:19:36,346 autoreload 7784 139945880529984 Watching for file changes with StatReloader
+INFO 2024-09-29 14:20:11,967 autoreload 7784 139945880529984 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:20:12,442 autoreload 7824 140612688104512 Watching for file changes with StatReloader
+INFO 2024-09-29 14:21:50,840 autoreload 7824 140612688104512 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:21:51,321 autoreload 7919 139919798918208 Watching for file changes with StatReloader
+INFO 2024-09-29 14:21:57,582 autoreload 7919 139919798918208 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:21:58,053 autoreload 7932 139700530146368 Watching for file changes with StatReloader
+INFO 2024-09-29 14:22:14,438 autoreload 7932 139700530146368 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:22:14,906 autoreload 7959 139931942136896 Watching for file changes with StatReloader
+INFO 2024-09-29 14:22:28,253 autoreload 7959 139931942136896 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:22:28,724 autoreload 7978 139723956362304 Watching for file changes with StatReloader
+INFO 2024-09-29 14:27:05,275 autoreload 7978 139723956362304 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:27:05,746 autoreload 8251 140472552811584 Watching for file changes with StatReloader
+INFO 2024-09-29 14:28:19,834 autoreload 8251 140472552811584 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:28:20,313 autoreload 8332 140206042106944 Watching for file changes with StatReloader
+INFO 2024-09-29 14:29:47,573 autoreload 8332 140206042106944 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 14:29:48,044 autoreload 8410 140624486575168 Watching for file changes with StatReloader
