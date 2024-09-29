@@ -11183,3 +11183,17 @@ INFO 2024-09-29 16:18:33,097 autoreload 14262 140439725849664 /workspace/SAFESUR
 INFO 2024-09-29 16:18:33,565 autoreload 14459 140072278223936 Watching for file changes with StatReloader
 INFO 2024-09-29 16:18:36,790 autoreload 14459 140072278223936 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
 INFO 2024-09-29 16:18:37,259 autoreload 14472 140064311540800 Watching for file changes with StatReloader
+INFO 2024-09-29 16:27:38,361 autoreload 14472 140064311540800 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:27:38,835 autoreload 15884 140075411135552 Watching for file changes with StatReloader
+INFO 2024-09-29 16:41:20,423 autoreload 15884 140075411135552 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:41:20,897 autoreload 16589 140353036434496 Watching for file changes with StatReloader
+INFO 2024-09-29 16:44:10,153 autoreload 16589 140353036434496 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:44:10,618 autoreload 16794 140268997848128 Watching for file changes with StatReloader
+INFO 2024-09-29 16:45:50,035 autoreload 16794 140268997848128 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:45:50,502 autoreload 16923 140573478775872 Watching for file changes with StatReloader
+INFO 2024-09-29 16:47:42,072 autoreload 16923 140573478775872 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:47:42,532 autoreload 17059 140709719563328 Watching for file changes with StatReloader
+INFO 2024-09-29 16:48:30,291 autoreload 17059 140709719563328 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:48:30,753 autoreload 17138 139867531971648 Watching for file changes with StatReloader
+INFO 2024-09-29 16:51:00,811 autoreload 17138 139867531971648 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-29 16:51:01,279 autoreload 17321 140293994953792 Watching for file changes with StatReloader

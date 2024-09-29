@@ -134,22 +134,12 @@ def get_verified(request):
         if city_id:
             city = City.objects.get(id=city_id)
             print(f"Debug: City found: {city.name}")
-            clinic_formset = ClinicFormSet(
-                request.POST,
-                queryset=Clinic.objects.filter(
-                    city=city),prefix='clinic')
+            clinic_formset = ClinicFormSet(request.POST, queryset=Clinic.objects.filter(city=city),prefix='clinic')
         else:
             print("Debug: No city selected, returning empty clinic queryset.")
-            clinic_formset = ClinicFormSet(
-                request.POST,
-                queryset=Clinic.objects.none(),
-                prefix='clinic')
+            clinic_formset = ClinicFormSet(request.POST, queryset=Clinic.objects.none(), prefix='clinic')
 
-        if (
-            form.is_valid() 
-            and education_formset.is_valid()
-            and clinic_formset.is_valid()
-            ):
+        if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
             print("Form is valid.")
             print("Existing Clinics:",
                  form.cleaned_data.get
@@ -182,62 +172,43 @@ def get_verified(request):
                     # Save education formset
                     print("Saving education formset")
                     for education_form in education_formset:
-                        if (
-                            education_form.is_valid() 
-                            and education_form.cleaned_data 
-                            and not education_form.cleaned_data.get(
-                                'DELETE', False
-                            )
-                        ):
+                        if education_form.is_valid() and education_form.cleaned_data and not education_form.cleaned_data.get('DELETE', False):
                             education = education_form.save(commit=False)
                             education.surgeon = surgeon
                             education.save()
                             print("Education formset saved successfully")
 
 
-                            # Save clinic formset
-                            print("Saving clinic formset")
-                            clinics=[]
+                    # Save clinic formset
+                    print("Saving clinic formset")
+                    clinics=[]
 
                     for clinic_form in clinic_formset:
-                        if (clinic_form.is_valid() 
-                            and clinic_form.cleaned_data 
-                            and not clinic_form.cleaned_data.get(
-                                'DELETE', False)
-                            ):
+                        if clinic_form.is_valid() and clinic_form.cleaned_data and not clinic_form.cleaned_data.get('DELETE', False):
                              # Save the clinics                     
-                            clinic_list=clinic_form.save(
-                                surgeon=surgeon,
-                                city=surgeon.city)
+                            clinic_list=clinic_form.save(surgeon=surgeon, city=surgeon.city) 
                             clinics.extend(clinic_list)
 
                             print("Clinic formset saved successfully")
                             # Handle new clinic creation
-                            new_clinic_name=clinic_form.cleaned_data.get(
-                                'new_clinic_name')
+                            new_clinic_name=clinic_form.cleaned_data.get('new_clinic_name')
                             if new_clinic_name:
                             # Create a new clinic
-                                new_clinic, created=Clinic.objects.get_or_create(
-                                    name=new_clinic_name,
-                                    city=surgeon.city
-                                    )
+                                new_clinic, created=Clinic.objects.get_or_create(name=new_clinic_name, city=surgeon.city)
 
                             # Add the created clinic to list
-                            clinics.append(new_clinic)
-                            if clinics:
-                                surgeon.clinic.set(clinics)
-                            print("Clinics associated with the surgeon " 
-                            "successfully")
+                                clinics.append(new_clinic)
 
-                            print("Clinic formset saved successfully")
+                    if clinics:
+                        surgeon.clinic.set(clinics)
+                        print("Clinics associated with the surgeon successfully")
+
+                        print("Clinic formset saved successfully")
                 
-                            messages.success(request, 
-                            "Your profile has been submitted" 
-                            "for verification. We will email "
-                            "you when your verification process is completed.")
+                    messages.success(request, "Your profile has been submitted for verification. We will email you when your verification process is completed.")
                     return redirect('get_verified')
             except Exception as e:
-                messages.error(request, f"An error occurred: {str(e)}")
+                        messages.error(request, f"An error occurred: {str(e)}")
         else:
             print("Form errors:", form.errors)
             print("Education formset errors:", education_formset.errors)
