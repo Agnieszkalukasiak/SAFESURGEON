@@ -1,113 +1,340 @@
-Love Running
-In this section, you will include one or two paragraphs providing an overview of your project. Essentially, this part is your sales pitch. At this stage, you should have a name for your project so use it! Don’t introduce the project as a Portfolio project for the diploma. In this section, describe what the project hopes to accomplish, who it is intended to target and how it will be useful to the target audience.
+# SafeSurgeon
 
-For example; Love Running is a site that hopes to help keep people motivated to meet up for runs on a regular basis in Dublin, Ireland. The site will be targeted toward runners who are looking for a way to socialise and keep themselves fit. Love Running will be useful for runners to see exactly when and where they should be to join the running club.
+Choosing the right surgeon is a critical decision that can significantly impact your health and well-being. However, finding trustworthy and comprehensive information about medical professionals can be challenging. Safe Surgeon bridges this gap by offering a reliable platform where you can: Check the surgeon's education, board certifications, and licenses. Learn about their specialties, years of practice, and areas of expertise.
+With Safe Surgeon, you have the tools you need to make informed decisions about your healthcare.
 
-Responsice Mockup
+## Our Goal
+Our goal is to enhance patient safety and trust in the medical community by:
+Promoting Transparency and providing up-to-date and accurate information about surgeons.
+Empowering Users: Allowing patients to make informed choices based on verified data.
+Improving Healthcare Outcomes: Helping users select qualified professionals for better medical experiences.
 
-Features
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+Join us in making healthcare safer and more transparent for everyone.
 
-###Existing Features
-Navigation Bar
 
-Featured on all three pages, the full responsive navigation bar includes links to the Logo, Home page, Gallery and Sign Up page and is identical in each page to allow for easy navigation.
-This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button.
-Nav Bar
+### Design:
+Simplicity by Design: Trust and Reliability.
 
-The landing page image
+The Safe Surgeon app is intentionally designed with a minimalistic and straightforward approach to enhance trust, reliability, and user confidence. 
 
-The landing includes a photograph with text overlay to allow the user to see exactly which location this site would be applicable to.
-This section introduces the user to Love Running with an eye catching animation to grab their attention
-Landing Page
+The simplicity is not just aesthetic—it's purposeful, reflecting the app’s seriousness and professionalism. Here’s why this design approach is a plus:
 
-Club Ethos Section
+- Minimal Color Palette for Seriousness: The restrained use of color avoids distracting visuals, helping users focus on the core functionality—verifying surgeon credentials and clinic affiliations.
 
-The club ethos section will allow the user to see the benefits of joining the Love Running meetups, as well as the benefits of running overall.
-This user will see the value of signing up for the Love Running meetups. This should encourage the user to consider running as their form of exercise.
-Club Ethos
+-	Trustworthiness through Simplicity: A clean, no-frills interface fosters reliability. Users are more likely to trust a platform that is easy to navigate and free from clutter, as it reflects transparency and a focus on accuracy.
 
-Meetup Times section
+-	Ease of Use for All: The minimalist design ensures that users, regardless of age or technical proficiency, can navigate the app effortlessly. This reduces frustration and enhances user experience, reinforcing confidence in the app’s purpose.
 
-This section will allow the user to see exactly when the meetups will happen, where they will be located and how long the run will be in kilometers.
-This section will be updated as these times change to keep the user up to date.
-Meetup Times
+By combining a simple layout with a minimal color palette, Safe Surgeon delivers a focused, serious, and reliable platform, ensuring users can quickly and confidently verify their surgeon’s credentials.
 
-The Footer
 
-The footer section includes links to the relevant social media sites for Love Running. The links will open to a new tab to allow easy navigation for the user.
-The footer is valuable to the user as it encourages them to keep connected via social media
-Footer
+### Landing Page
 
-Gallery
+![Alt text](image_url)
 
-The gallery will provide the user with supporting images to see what the meet ups look like.
-This section is valuable to the user as they will be able to easily identify the types of events the organisation puts together.
-Gallery
+-	Provides Simple Navigation: Offers two clear options—one for users to verify a surgeon and another for surgeons to start the verification process.
 
-The Sign Up Page
+-	User-Friendly Layout: Designed for ease of use, the page presents only two buttons, minimizing confusion and simplifying the user journey.
 
-This page will allow the user to get signed up to Love Running to start their running journey with the community. The user will be able specify if they would like to take part in road, trail or both types of running. The user will be asked to submit their full name and email address.
-Sign Up
+-	Access to Surgeon Profiles: Features a dropdown menu that allows surgeons to log in directly to their profile and users to navigate other parts of the site easily.
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+#### Why it benefits the user:
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+-	Streamlined Experience: The simplicity of the home page makes it easy for users to quickly access the action they need without being overwhelmed by too many options.
 
-Features Left to Implement
-Another feature idea
-Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+-	Quick Surgeon Verification: Patients can efficiently verify their surgeon’s credentials with just a few clicks, enhancing trust and transparency.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+-	Easy Access for Surgeons: Surgeons can log in to their profile directly from the home page, ensuring a convenient and seamless process for managing their verification status.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+### Navigation Bar 
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+![Navigation Bar](image_url)
 
-Validator Testing
-HTML
-No errors were returned when passing through the official W3C validator
-CSS
-No errors were found when passing through the official (Jigsaw) validator
-Unfixed Bugs
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+The Safe Surgeon app features a simple, intuitive navigation bar and dropdown menu designed for seamless movement between pages. This functionality is crucial to ensuring a smooth, frustration-free experience for both patients and surgeons.
 
-Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
+-	Effortless Navigation: The navigation bar and dropdown menu make it easy to move between different sections of the app. Whether users are verifying a surgeon or surgeons are managing their profiles, the ability to switch between tasks effortlessly enhances the overall usability of the platform.
 
-The site was deployed to GitHub pages. The steps to deploy are as follows:
-In the GitHub repository, navigate to the Settings tab
-From the source section drop-down menu, select the Master Branch
-Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-The live link can be found here - https://code-institute-org.github.io/love-running-2.0/index.html
+-	Quick Surgeon Login: For surgeons, the dropdown menu provides quick access to log in to their profile, making the verification process fast and simple. This reduces unnecessary steps and ensures surgeons can manage their credentials efficiently.
 
-Credits
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
 
-You can break the credits section up into Content and Media, depending on what you have included in your project.
+-	User-Centric Design: Simple and intuitive navigation helps users focus on their primary tasks without confusion. Whether verifying credentials or updating profiles, users can do so with minimal clicks, improving both satisfaction and efficiency.
 
-Content
-The text for the Home page was taken from Wikipedia Article A
-Instructions on how to implement form validation on the Sign Up page was taken from Specific YouTube Tutorial
-The icons in the footer were taken from Font Awesome
-Media
-The photos used on the home and sign up page are from This Open Source site
-The images used for the gallery page were taken from this other open source site
-Congratulations on completing your Readme, you have made another big stride in the direction of being a developer!
+By prioritizing easy navigation and quick login options, Safe Surgeon ensures that users can access the necessary features without hassle, making the verification process smooth and reliable.
 
-Other General Project Advice
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work!
+### Surgeon Search Page
 
-One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through this article by Chris Beams on How to Write a Git Commit Message
+![Surgeon Search Page](image_url)
 
-Make sure to keep the messages in the imperative mood
-When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
+-  Performs Surgeon Search: Users input the surgeon's country, city, name, and clinic to execute a search for the specific surgeon they want to verify.
 
-For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept.
-Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
+- Simple Form Submission: Once the necessary details are filled in, users can submit the form to retrieve verified information about the surgeon, including credentials and clinic affiliations.
 
-Writing Your Best Code
-HTML & CSS Coding Best Practices
-Google HTML/CSS Style Guide
-Getting started with your Portfolio Projects can be daunting, planning your project can make it a lot easier to tackle, take small steps to reach the final outcome and enjoy the process!
+- Minimalist Design: The search page uses a clean, black-and-white color scheme to maintain a professional and serious atmosphere, keeping the focus on the task at hand.
+
+#### Why it benefits the user:
+
+- Direct and Simple Search Process: The clear and straightforward form allows users to quickly and easily perform the search, without unnecessary complexity.
+
+- Trustworthy Information: The clean design reinforces a sense of seriousness and reliability, giving users confidence in the results of their search.
+
+- Focused User Experience: By using minimal colors and a simple layout, the page ensures that users are not distracted and can efficiently find the information they need.
+
+### Search Result Page:  Surgeon Verified
+
+![Surgeon result Page-verified](image_url)
+
+-	Displays the surgeon’s basic details such as their name, clinic, and location.
+
+-	Showcases the surgeon's credentials and verification status, prominently marked as "Verified" in green.
+
+-	Highlights any additional relevant details such as education history and professional background.
+
+#### How it benefits the user:
+-	Provides instant reassurance by clearly indicating the surgeon's verification status, ensuring trustworthiness.
+
+-	Allows users to verify the professional background of the surgeon they are considering, ensuring peace of mind.
+
+-	Offers a simple, streamlined design focusing on delivering crucial verification information without distractions.
+
+![Surgeon Search Page:Rejected](image_url)
+
+### Rejected Surgeon Page
+
+-	Displays the surgeon’s basic details but marks the surgeon's verification status as "Rejected" in red.
+
+-	Provides any available information about why the verification failed, if applicable.
+
+-	Highlights the lack of verified credentials, which may raise concerns for the user.
+
+#### How it benefits the user:
+
+-	Alerts the user about potential red flags with the surgeon by showing their rejected status clearly.
+
+-	Helps users make informed decisions by understanding that the surgeon’s credentials did not meet verification standards.
+
+-	Simplifies the decision-making process, making it easier to avoid unverified or untrustworthy practitioners.
+
+### Surgeon Not Found (Not Verified) Page
+
+![Surgeon Search Page:Not Found](image_url)
+
+- The page displays a strong warning in bold pink with red accents that the surgeon is "Not Verified" and is not present in the database. 
+
+- The bold design is a clear indication that the surgeon cannot be considered reliable.
+
+- The user is informed that the surgeon's credentials cannot be verified because they are not in the system. 
+
+#### How it benefits the user:
+
+-	Clearly communicates when a surgeon cannot be verified, helping users avoid unknown or unlisted professionals.
+
+-	Provides reassurance that the system is thorough and won’t return a false positive verification.
+
+-	Encourages the user to double-check their information or search for alternative, verified surgeons.
+
+### Sign up page
+
+![Sign up page](image_url)
+
+
+-	Provides an option for the surgeon to verify their credentials by guiding them to a secure signup page.
+
+-	Allows the surgeon to create a user profile by entering essential information, protected by a secure username and password.
+
+-	Ensures a simple, serious, and trustworthy design with minimal distractions, focusing on security and the importance of verification.
+
+#### How it benefits the user:
+
+-	Offers a clear and secure path for surgeons to begin the verification process, boosting their credibility and professional standing.
+
+-	Ensures that the signup process is straightforward and user-friendly while maintaining a high level of data security through password protection.
+
+-	Instills trust through a serious and professional design, giving the surgeon confidence that their personal and professional information is handled securely and with integrity.
+
+### Get Verified Form Page
+
+![Get Verified Form Page](image_url)
+
+-	Provides a secure form for surgeons to fill in their personal details and professional credentials.
+
+-	Allows surgeons to upload supporting documents such as certificates and identification for verification purposes.
+
+-	Presents the form in a clean, no-nonsense design, similar to forms used in medical professions, reinforcing professionalism.
+
+#### How it benefits the user:
+
+-	Creates a structured and familiar environment for surgeons, building trust by mimicking other professional medical forms they are accustomed to.
+
+-	Ensures that surgeons can easily submit the necessary credentials and documents, simplifying the verification process.
+
+-	Enhances the feeling of security and seriousness, ensuring that the surgeon feels their credentials are handled with care and integrity, reinforcing the credibility of the site.
+
+### Verification Pending Page
+
+![Verification Pending Page](image_url)
+
+-	Displays a confirmation message informing the surgeon that their verification request has been submitted and is now pending review.
+
+-	Provides reassurance by explaining that the review process is underway.
+
+-	Projects a calm, serene atmosphere using a mint blue color scheme, ensuring a professional and reassuring experience after submission.
+
+#### How it benefits the user:
+
+-	Instills a sense of calm and reassurance, letting the surgeon know their submission was successful and is being handled professionally.
+
+-	Helps reduce anxiety by clearly stating that the verification process is pending, eliminating any uncertainty about the next steps.
+
+-	The simple and clean design, with a soothing color scheme, reinforces trust in the verification process while maintaining a professional tone.
+
+### Log in page Page
+
+![Log in page Page](image_url)
+
+-	Provides a simple and secure login form where surgeons can enter their username and password to access their profile.
+
+-	Directs surgeons to their profile page upon successful login, where they can review or update their credentials and verification status.
+
+-	Features a minimalist design focused solely on the login form, reflecting professionalism and trustworthiness.
+
+#### How it benefits the user:
+
+-	Offers a straightforward way for surgeons to log into their profile, ensuring ease of access without distractions.
+
+-	Promotes security through a focused and streamlined login form, assuring users their data is protected.
+
+-	Maintains a professional tone with a simple and clean design, reinforcing the seriousness of the site’s purpose.
+
+### Surgeon Profile Page:Verified
+
+![Surgeon Profile Page:Verfied](image_url)
+
+-	Displays all of the surgeon's submitted personal and professional details, including clinic information, education, and verification status.
+
+-	Highlights the verification status prominentlyin green, indicating the surgeon has been successfully verified .-	Provides an option for surgeons to edit their information and resubmit if their details change.
+
+### How it benefits the user:
+
+-	Allows surgeons with a "Verified" status to easily review their data, ensuring they stay informed about their verification outcome and their profile displays information that is up to date.
+
+-	Enhances transparency by clearly displaying the current verification status and providing options for editing if their details have chnaged.
+
+-	Gives surgeons control over their profile, enabling them to make updates and resubmit their information for re-verification, if necessary.
+
+### Surgeon Profile Page: Rejected
+
+![Surgeon Profile Page:Rejected](image_url)
+
+
+- Displays the previously submitted personal and professional details, and verification status.
+
+ - Highlights the verification status prominently as "Rejected" , making it clear that their submission did not meet the verification requirements, with actionable steps needed.
+
+- Provides an editable profile section where surgeons can update their details, correct any issues, and resubmit their profile for re-verification. The "Submit for Re-verification" button is clearly available for surgeons to initiate the re-evaluation process .
+
+#### How it benefits the user:
+
+-Clear Feedback: Surgeons with a "Rejected" status are given immediate, clear feedback on their profile, allowing them to understand the current state of their verification.
+
+- Editable and Actionable: Surgeons are empowered to easily edit and update their information, ensuring they can fix any discrepancies and resubmit their profile for review without starting the process from scratch.
+
+- Streamlined Re-verification: The "Submit for Re-verification" functionality simplifies the re-evaluation process, reducing the friction in getting verified and maintaining up-to-date professional credentials.
+
+### Edit Profile Prompt
+![Edit Profile Prompt](image_url)
+
+- Displays a confirmation prompt when the surgeon clicks the Edit button, informing them that making changes to their profile will require resubmission and re-evaluation.
+
+- Clearly states that editing the profile will initiate the full verification process again, meaning their current "Verified" or "Rejected" status will be replaced with a "Pending" status until the new information is reviewed.
+
+- Provides the option to either confirm and proceed with editing, or cancel and return to their profile page without making changes.
+
+#### How it benefits the user:
+- Transparency: Ensures surgeons are fully aware that any edits will trigger the complete re-verification process, preventing misunderstandings about their status.
+
+- Decision Clarity: Gives surgeons a chance to reconsider if they want to proceed with changes, allowing them to avoid unnecessary delays if their current verification status is satisfactory.
+
+- Control: Empowers surgeons to either move forward with updates or keep their profile as is, maintaining full control over their re-verification timeline.
+
+### Surgeon Profile Edit Page
+
+![Surgeon Profile Edit Page]
+(image_url)
+
+-	Allows surgeons to edit their existing profile data, such as personal details, clinic information, and education credentials and easily edit them.
+
+-	Provides the option to upload new documents, including certifications and ID verification, to support their profile update.
+
+-	Offers a "Resubmit for Verification" button after changes have been made, initiating the re-verification process.
+
+#### How it benefits the user:
+
+-	Enables surgeons to keep their profile data accurate and up to date, ensuring their credentials are properly maintained.
+
+-	Simplifies the process of adding new qualifications or documents, making it easy to enhance or correct their profile for re-verification.
+
+-	Provides control over their verification status, allowing them to resubmit their profile with updated information for another review, particularly useful if they were previously rejected.
+
+
+### Post-Submission Pending Verification Page
+
+![Post-Submission Pending Verification Page]
+(image_url)
+
+
+-	Displays a personalized message thanking the surgeon by name for updating their profile and resubmitting their credentials.
+
+-	Notifies the surgeon that their verification status is now pending, and that their updates will be reviewed.
+
+-	Projects a sense of calm and professionalism with a mint blue color scheme, reinforcing trust and transparency in the verification process.
+
+#### How it benefits the user:
+
+-	Provides immediate confirmation that their submission was successful, giving the surgeon peace of mind.
+
+-	Reassures the surgeon that their updated credentials are under review, reducing any uncertainty about the next steps in the verification process.
+
+-	The use of mint blue creates a serene and calming environment, making the user experience feel professional and stress-free during the waiting period.
+
+
+### About Page
+
+
+![About Page](image_url)
+
+
+-	Provides an overview of the website’s mission and the team or individuals behind the platform.
+
+-	Offers insight into the values and purpose of the site, such as how it supports surgeon verification and ensures user trust.
+
+-	Explains the process and importance of verification, highlighting the platform’s commitment to professionalism.
+
+#### How it benefits the user:
+
+-	Helps users understand the purpose and trustworthiness of the site, fostering confidence in the service.
+
+-	Strengthens the credibility of the platform by introducing the team and explaining their expertise and background.
+
+-	Enhances transparency by clearly explaining how the verification process works, ensuring users feel secure and informed.
+
+### Contact Page
+
+![Contact Page](image_url)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
