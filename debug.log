@@ -10725,3 +10725,76 @@ DEBUG 2024-09-29 07:59:35,035 views 1518 140114239940160 Created new clinic: Ani
 DEBUG 2024-09-29 07:59:35,119 views 1518 140114239940160 Updated surgeon's clinics: {<Clinic: Anias (Malmö)>, <Clinic: idaslips (Malmö)>}
 INFO 2024-09-29 07:59:35,259 views 1518 140114239940160 Transaction committed successfully
 WARNING 2024-09-29 08:00:01,490 log 1518 140114206369344 Not Found: /admn
+DEBUG 2024-09-29 08:24:28,249 connectionpool 1518 140111010321984 Resetting dropped connection: api.cloudinary.com
+DEBUG 2024-09-29 08:24:29,488 connectionpool 1518 140111010321984 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 08:24:30,217 connectionpool 1518 140111010321984 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 08:24:30,936 connectionpool 1518 140111010321984 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 08:24:31,630 connectionpool 1518 140111010321984 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-29 08:30:56,215 views 1518 140108871231040 Editing profile for surgeon: Paul McMenamin - Rejected
+INFO 2024-09-29 08:31:22,881 views 1518 140108846052928 Editing profile for surgeon: Paul McMenamin - Rejected
+DEBUG 2024-09-29 08:31:23,403 views 1518 140108846052928 Removed clinic association: Surgeon 119 - Clinic 58
+DEBUG 2024-09-29 08:31:23,428 views 1518 140108846052928 Updated surgeon's clinics: {<Clinic: heloo (Malmö)>}
+INFO 2024-09-29 08:31:23,481 views 1518 140108846052928 Transaction committed successfully
+WARNING 2024-09-29 08:31:38,821 log 1518 140108325967424 Forbidden (CSRF token from POST incorrect.): /admin/login/
+INFO 2024-09-29 08:32:30,975 views 1518 140107772311104 Editing profile for surgeon: Paul McMenamin - Verified
+ERROR 2024-09-29 08:43:09,640 log 1518 140107218654784 Internal Server Error: /
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/engine.py", line 161, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/SAFESURGEON/SafeSurgeon/views.py", line 28, in home
+    return render(request, 'home.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+DEBUG 2024-09-29 08:50:30,941 connectionpool 1518 140105658398272 Resetting dropped connection: api.cloudinary.com
+DEBUG 2024-09-29 08:50:32,288 connectionpool 1518 140105658398272 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 08:50:33,365 connectionpool 1518 140105658398272 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-29 08:52:01,191 views 1518 140104542692928 Editing profile for surgeon: Paul McMenamin - Rejected
+INFO 2024-09-29 08:52:26,808 views 1518 140104031000128 Editing profile for surgeon: Paul McMenamin - Rejected
+DEBUG 2024-09-29 08:52:27,286 views 1518 140104031000128 Updated surgeon's clinics: {<Clinic: SafeMedic (London)>}
+INFO 2024-09-29 08:52:27,314 views 1518 140104031000128 Transaction committed successfully
+INFO 2024-09-29 08:53:08,488 views 1518 140103477343808 Editing profile for surgeon: Paul McMenamin - Rejected

@@ -234,11 +234,29 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 
 #### How it benefits the user:
 
--Clear Feedback: Surgeons with a "Rejected" status are given immediate, clear feedback on their profile, allowing them to understand the current state of their verification.
+- Clear Feedback: Surgeons with a "Rejected" status are given immediate, clear feedback on their profile, allowing them to understand the current state of their verification.
 
 - Editable and Actionable: Surgeons are empowered to easily edit and update their information, ensuring they can fix any discrepancies and resubmit their profile for review without starting the process from scratch.
 
 - Streamlined Re-verification: The "Submit for Re-verification" functionality simplifies the re-evaluation process, reducing the friction in getting verified and maintaining up-to-date professional credentials.
+
+### Drop down widged for Education Details
+
+![rop down widged for Education Details](image_url)
+
+- Consolidated Information: A dropdown menu allows additional education details to be neatly tucked away, providing a cleaner look on the profile page while still making the information easily accessible when needed.
+
+- User-Friendly Design: Instead of overwhelming users with all education details upfront, the dropdown ensures a streamlined interface where users can choose to view more in-depth information only if they are interested.
+
+- Space Efficiency: By using a dropdown, the page layout stays compact, ensuring that crucial profile information like clinics, verification status, and personal details are emphasized without being crowded by additional educational details.
+
+### How it benefits the user:
+- Clutter-Free Layout: Users can review the surgeon’s basic information without scrolling through long sections of educational details unless they choose to expand them.
+
+- On-Demand Information: Users can easily access extra educational qualifications or certifications with a simple click, providing them with detailed insights when they want it, but not forcing them to view everything upfront.
+
+- Improved Navigation: A dropdown structure simplifies navigation, keeping the most important information prominent, while extra data remains hidden but accessible, contributing to a more intuitive user experience.
+
 
 ### Edit Profile Prompt
 ![Edit Profile Prompt](image_url)
@@ -352,6 +370,24 @@ By prioritizing easy navigation and quick login options, Safe Surgeon ensures th
 - Faster Load Times: By not loading additional social media icons or widgets, the page remains lightweight, contributing to faster load times.
 
 - Simplicity and Elegance: A minimalist approach to the footer reinforces a clean, user-friendly design that aligns with professional standards, making it easier for users to engage with the site’s primary purpose.
+
+
+### Simple Logout Page
+![Logout Page](image_url)
+
+•	Clean and Direct: The logout page is kept simple, focusing on a single primary action—logging out—while also providing clear, secondary options to reset the password or delete the account, without overwhelming the user with unnecessary details.
+•	Confirmation for Logout: Before logging out, users are prompted with a confirmation to ensure they intend to end their session, preventing accidental logouts and ensuring they don’t unintentionally lose access to their current session or work.
+•	Security Features: The page provides essential account management actions such as deleting the account or resetting the password, offering a one-stop location for important decisions related to account security and maintenance.
+
+### How it benefits the user:
+
+-	Focused Design: Users aren’t distracted by unnecessary content. The clear call to action makes it easy to log out, while secondary options for password reset or account deletion are available if needed.
+
+-	Error Prevention: The logout confirmation ensures users don't accidentally log out of their session, providing an extra layer of assurance that they’re making a conscious choice.
+
+-	Convenient Account Management: With the additional options to reset the password or delete the account, users can easily manage their account security from one simple page, giving them full control over their login credentials and account status.
+
+
 
 
 ### Wireframes
