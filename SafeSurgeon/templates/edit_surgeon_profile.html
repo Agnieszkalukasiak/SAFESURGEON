@@ -105,6 +105,7 @@
         </form>
     </div>
 
+<!--
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Script loaded: [clinic_add_button].js");
@@ -249,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const countrySelect = document.getElementById('id_country');
     const citySelect = document.getElementById('id_city');
@@ -323,7 +325,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 </script>
-
-
+-->
 
 {% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/edit_surgeon_profile.js' %}"></script>
+{% endblock extra_js %}

@@ -1,33 +1,85 @@
+
+    // add another clinic button
+
+    document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script loaded: [clinic_add_button].js");
+    const addClinicButton = document.getElementById('add-clinic');
+    const clinicFormsContainer = document.getElementById('clinic-forms');
+    const managementForm = document.querySelector('input[name$=TOTAL_FORMS]');
+    
+    console.log("Add Clinic button:", addClinicButton);
+    console.log("Clinic Forms Container:", clinicFormsContainer);
+    console.log("Management Form:", managementForm);
+    
+    if (addClinicButton && clinicFormsContainer && managementForm) {
+        addClinicButton.addEventListener('click', function() {
+            
+    
+            let formCount = parseInt(managementForm.value);
+            console.log("Current form count:", formCount);
+    
+    
+            if (clinicFormsContainer.children.length > 0) {
+                const lastForm = clinicFormsContainer.children[clinicFormsContainer.children.length - 1];
+                const newForm = lastForm.cloneNode(true);
+                console.log("New form cloned");
+    
+                newForm.innerHTML = newForm.innerHTML.replace(/clinic_set-\d+/g, `clinic_set-${formCount}`);
+                newForm.innerHTML = newForm.innerHTML.replace(/-\d+-/g, `-${formCount}-`);
+                console.log("Form index updated");
+    
+                newForm.querySelectorAll('input:not([type=hidden]), select').forEach(input => {
+                    input.value = '';
+                });
+                console.log("Input values cleared");
+    
+                formCount++;
+                managementForm.value = formCount;
+                console.log("Total forms updated to:", managementForm.value);
+    
+                clinicFormsContainer.appendChild(newForm);
+                console.log("New form appended");
+            } else {
+                console.error("No existing clinic forms to clone");
+            }
+        });
+    } else {
+        console.error("Required elements not found");
+        console.log("Add Clinic button:", addClinicButton);
+        console.log("Clinic Forms Container:", clinicFormsContainer);
+        console.log("Management Form:", managementForm);
+    }
+});
+
+/*city select */
+document.addEventListener('DOMContentLoaded', function() {
+    const countrySelect = document.querySelector('select[name="country"]');
+    const citySelect = document.querySelector('select[name="city"]');
+    const cityUrl = window.cityUrl;
+
+    countrySelect.addEventListener('change', function() {
+        const countryId = this.value;
+        if (countryId) {
+            fetch(`${cityUrl}${countryId}`)
+                .then(response => response.json())
+                .then(data => {
+                    citySelect.innerHTML = '<option value="">---------</option>';
+                    data.cities.forEach(city => {
+                        const option = new Option(city.name, city.id);
+                        citySelect.add(option);
+                    });
+                });
+        } else {
+            citySelect.innerHTML = '<option value="">---------</option>';
+        }
+    });
+});
+
+/*clinic select */
 document.addEventListener('DOMContentLoaded', function() {
     const citySelect = document.querySelector('select[name="city"]');
     const clinicSelects = document.querySelectorAll('select[name$="-clinic"]');
-    const newClinicInputs = document.querySelectorAll('input[name$="-new_clinic_name"]');
     const clinicUrl = window.clinicUrl;
-
-    function saveClinicSelections() {
-        const selections = {};
-        clinicSelects.forEach((select, index) => {
-            selections[index] = {
-                clinic: select.value,
-                new_clinic: newClinicInputs[index].value
-            };
-        });
-        localStorage.setItem('clinicSelections', JSON.stringify(selections));
-    }
-
-    function loadClinicSelections() {
-        const savedSelections = JSON.parse(localStorage.getItem('clinicSelections') || '{}');
-        clinicSelects.forEach((select, index) => {
-            if (savedSelections[index]) {
-                if (savedSelections[index].clinic && select.querySelector(`option[value="${savedSelections[index].clinic}"]`)) {
-                    select.value = savedSelections[index].clinic;
-                }
-                if (savedSelections[index].new_clinic) {
-                    newClinicInputs[index].value = savedSelections[index].new_clinic;
-                }
-            }
-        });
-    }
 
     citySelect.addEventListener('change', function() {
         const cityId = this.value;
@@ -49,37 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-
-    // Load saved selections when the page loads
-    loadClinicSelections();
-
-    // Save selections when the form is submitted
-    document.querySelector('form').addEventListener('submit', saveClinicSelections);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const addButton = document.getElementById('add-education');
-    if (addButton) {
-        addButton.addEventListener('click', function() {
-            // Wait a bit for the new form to be added to the DOM
-            setTimeout(retrieveSecondFormData, 100);
-        });
-    }
-
-    function retrieveSecondFormData() {
-        const educationForms = document.querySelectorAll('[id^="education_set-"]');
-        if (educationForms.length >= 2) {
-            const secondForm = educationForms[1];
-            const formData = new FormData(secondForm);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            console.log('Second Education Form Data:', data);
-        } else {
-            console.log('Second education form not found');
-        }
-    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {

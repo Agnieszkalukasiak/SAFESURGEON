@@ -10712,3 +10712,16 @@ DEBUG 2024-09-29 06:56:24,873 connectionpool 2441 140088772109888 Resetting drop
 DEBUG 2024-09-29 06:56:25,757 connectionpool 2441 140088772109888 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
 DEBUG 2024-09-29 06:56:26,617 connectionpool 2441 140088772109888 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
 DEBUG 2024-09-29 06:56:27,365 connectionpool 2441 140088772109888 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-29 07:48:06,032 autoreload 1518 140115682503744 Watching for file changes with StatReloader
+INFO 2024-09-29 07:53:10,598 views 1518 140115372398144 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 07:54:21,121 views 1518 140115347220032 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 07:58:09,280 views 1518 140114751632960 Editing profile for surgeon: Rory McKellar - Rejected
+INFO 2024-09-29 07:59:31,996 views 1518 140114239940160 Editing profile for surgeon: Rory McKellar - Rejected
+DEBUG 2024-09-29 07:59:32,051 connectionpool 1518 140114239940160 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-29 07:59:32,980 connectionpool 1518 140114239940160 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 07:59:34,100 connectionpool 1518 140114239940160 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 07:59:34,906 connectionpool 1518 140114239940160 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-29 07:59:35,035 views 1518 140114239940160 Created new clinic: Anias (Malmö)
+DEBUG 2024-09-29 07:59:35,119 views 1518 140114239940160 Updated surgeon's clinics: {<Clinic: Anias (Malmö)>, <Clinic: idaslips (Malmö)>}
+INFO 2024-09-29 07:59:35,259 views 1518 140114239940160 Transaction committed successfully
+WARNING 2024-09-29 08:00:01,490 log 1518 140114206369344 Not Found: /admn
