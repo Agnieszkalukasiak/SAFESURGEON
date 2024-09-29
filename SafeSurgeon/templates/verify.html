@@ -57,7 +57,7 @@
         </div>
     </div>
 </main>
-
+<!---
 <script>
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -84,5 +84,13 @@
         });
     });
 </script>
-
+-->
 {% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/verify.js' %}"></script>
+{% endblock extra_js %}
+    
+
+
+

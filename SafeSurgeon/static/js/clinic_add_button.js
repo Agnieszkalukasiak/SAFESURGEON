@@ -102,3 +102,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const addEducationButton = document.getElementById('add-education');
+    const educationForms = document.getElementById('education-forms');
+    const totalFormsInput = document.querySelector('#id_education-TOTAL_FORMS');
+    
+    if (addEducationButton) {
+        addEducationButton.addEventListener('click', function() {
+            const formCount = educationForms.children.length;
+            const newForm = educationForms.children[0].cloneNode(true);
+            
+            newForm.innerHTML = newForm.innerHTML.replace(/-\d+-/g, `-${formCount}-`);
+            newForm.querySelectorAll('input, select').forEach(input => {
+                input.value = '';
+                input.id = input.id.replace(/-\d+-/, `-${formCount}-`);
+                input.name = input.name.replace(/-\d+-/, `-${formCount}-`);
+            });
+            
+            educationForms.appendChild(newForm);
+            totalFormsInput.value = formCount + 1;
+        });
+    }
+});

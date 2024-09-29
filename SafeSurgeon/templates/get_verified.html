@@ -192,7 +192,7 @@
     {% endif %}
 </div>
 
-
+<!--
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const citySelect = document.querySelector('select[name="city"]');
@@ -253,6 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('form').addEventListener('submit', saveClinicSelections);
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const addButton = document.getElementById('add-education');
     if (addButton) {
@@ -278,6 +279,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+-
+    
+
 document.addEventListener('DOMContentLoaded', function() {
     const addEducationButton = document.getElementById('add-education');
     const educationForms = document.getElementById('education-forms');
@@ -302,20 +307,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 </script>
+-->
 
 {% endblock %}
 
 
 {% block extra_js %}
-    <script src="{% static 'js/clinic_form.js' %}"></script>
+   
     <script src="{% static 'js/clinic_add_button.js' %}"></script>
-    <script src="{% static 'js/education_add_button.js' %}"></script>
-    <script>
-        window.cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);
-    </script>
-    <script>
-        window.clinicUrl = "{% url 'get_clinics' 0 %}".slice(0, -1);
-    </script>
-    
+    <script>window.cityUrl = "{% url 'get_cities' 0 %}".slice(0, -1);</script>
+    <script>window.clinicUrl = "{% url 'get_clinics' 0 %}".slice(0, -1);</script>
 
-{% endblock %}
+{% endblock extra_js %}
+
+    <!---
+
+    <script src="{% static 'js/get_verified.js' %}"></script>
+
+-->
