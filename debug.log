@@ -12060,3 +12060,4 @@ psycopg2.errors.InvalidCursorName: cursor "_django_curs_140699831887424_sync_5" 
 
 INFO 2024-09-30 05:50:41,893 autoreload 32653 140702117424192 /workspace/SAFESURGEON/SafeSurgeon/models.py changed, reloading.
 INFO 2024-09-30 05:50:42,408 autoreload 34453 140060308036672 Watching for file changes with StatReloader
+INFO 2024-09-30 10:15:04,378 autoreload 2026 139726270291008 Watching for file changes with StatReloader
