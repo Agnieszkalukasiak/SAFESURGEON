@@ -11382,3 +11382,29 @@ DEBUG 2024-09-30 03:02:32,637 views 16377 140598078064192 Removed clinic associa
 DEBUG 2024-09-30 03:02:32,672 views 16377 140598078064192 Created new clinic: AkutX (Malmö)
 INFO 2024-09-30 03:02:32,849 views 16377 140598078064192 Transaction committed successfully
 INFO 2024-09-30 03:03:40,900 views 16377 140597524407872 Editing profile for surgeon: Agusia Aga2 - Verified
+INFO 2024-09-30 03:05:47,241 autoreload 16377 140600380476480 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 03:05:47,706 autoreload 17935 140459674737728 Watching for file changes with StatReloader
+INFO 2024-09-30 03:06:03,075 autoreload 17935 140459674737728 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 03:06:03,530 autoreload 18011 139895024520256 Watching for file changes with StatReloader
+INFO 2024-09-30 03:06:15,863 autoreload 18011 139895024520256 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 03:06:16,330 autoreload 18101 139890079513664 Watching for file changes with StatReloader
+INFO 2024-09-30 03:09:44,094 autoreload 18101 139890079513664 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:09:44,553 autoreload 18342 140304633756736 Watching for file changes with StatReloader
+INFO 2024-09-30 03:12:04,440 autoreload 18342 140304633756736 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:12:04,897 autoreload 18497 140590004546624 Watching for file changes with StatReloader
+INFO 2024-09-30 03:12:24,323 autoreload 18497 140590004546624 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:12:24,775 autoreload 18560 139783127280704 Watching for file changes with StatReloader
+INFO 2024-09-30 03:12:39,158 autoreload 18560 139783127280704 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:12:39,635 autoreload 18620 139974281169984 Watching for file changes with StatReloader
+INFO 2024-09-30 03:13:50,679 autoreload 18620 139974281169984 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:13:51,136 autoreload 18728 139973088431168 Watching for file changes with StatReloader
+INFO 2024-09-30 03:13:53,342 autoreload 18728 139973088431168 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:13:53,799 autoreload 18756 140473122835520 Watching for file changes with StatReloader
+INFO 2024-09-30 03:15:18,022 autoreload 18756 140473122835520 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:15:18,477 autoreload 18854 140400083582016 Watching for file changes with StatReloader
+INFO 2024-09-30 03:15:40,933 autoreload 18854 140400083582016 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:15:41,402 autoreload 18916 139895565417536 Watching for file changes with StatReloader
+INFO 2024-09-30 03:17:38,043 autoreload 18916 139895565417536 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:17:38,512 autoreload 19038 140066701626432 Watching for file changes with StatReloader
+INFO 2024-09-30 03:18:12,979 autoreload 19038 140066701626432 /workspace/SAFESURGEON/SafeSurgeon/urls.py changed, reloading.
+INFO 2024-09-30 03:18:13,454 autoreload 19108 140183975992384 Watching for file changes with StatReloader
