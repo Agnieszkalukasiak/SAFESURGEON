@@ -114,50 +114,49 @@ def get_verified(request):
         template = 'get_verified.html'
         pending_verification = False
 
+    #PEP
     if request.method == 'POST':
-        print("Debug: POST request received.")
-        form = SurgeonForm(request.POST,
-                           request.FILES,
-                           instance=surgeon,
-                           user=request.user
-                           )
+        form = SurgeonForm(
+            request.POST,
+            request.FILES,
+            instance=surgeon,
+            user=request.user
+        )
         education_formset = EducationFormSet(
-                            request.POST,
-                            request.FILES,
-                            instance=surgeon,
-                            prefix='education')
+            request.POST,
+            request.FILES,
+            instance=surgeon,
+            prefix='education'
+        )
 
         city_id = request.POST.get('city')
-        print(f"Debug: City selected = {city_id}")
 
-        # Filter clinics based on the selected city
+        # PEP8 Filter clinics based on the selected city
         if city_id:
             city = City.objects.get(id=city_id)
-            print(f"Debug: City found: {city.name}")
-            clinic_formset = ClinicFormSet(request.POST, queryset=Clinic.objects.filter(city=city),prefix='clinic')
+            clinic_formset = ClinicFormSet(
+                request.POST, 
+                queryset=Clinic.objects.filter(city=city),
+                prefix='clinic'
+            )
         else:
-            print("Debug: No city selected, returning empty clinic queryset.")
-            clinic_formset = ClinicFormSet(request.POST, queryset=Clinic.objects.none(), prefix='clinic')
+            clinic_formset = ClinicFormSet(
+                request.POST,
+                queryset=Clinic.objects.none(), 
+                prefix='clinic'
+            )
 
-        if form.is_valid() and education_formset.is_valid() and clinic_formset.is_valid():
-            print("Form is valid.")
-            print("Existing Clinics:",
-                 form.cleaned_data.get
-                    ('existing_clinics'))
-            print("New Clinic Name:",
-                  form.cleaned_data.get
-                        ('new_clinic_name'))
+        #PEP8
+        if (form.is_valid() and 
+                education_formset.is_valid() 
+                    and clinic_formset.is_valid()):
             try:
                 with transaction.atomic():
-                    print("Debug: request.user =", request.user)
-                    print("Debug: surgeon before save =", surgeon)
                     # Create or update the Surgeon instance
                     if surgeon is None:
                         surgeon = Surgeon(user=request.user)
-                        print("Debug: Created new surgeon instance")
                     else:
                         surgeon.user = request.user
-                        print("Debug: Updated existing surgeon instance")
 
                     # Update surgeon fields from the form
                     for field, value in form.cleaned_data.items():
@@ -166,13 +165,11 @@ def get_verified(request):
                     surgeon.verification_status = Verification.PENDING.value
                     surgeon.save()
 
-                    print("Debug: surgeon after save =", surgeon)
-                    print("Debug: surgeon.user after save =", surgeon.user)
-
-                    # Save education formset
-                    print("Saving education formset")
+                    # Save education formset***
                     for education_form in education_formset:
-                        if education_form.is_valid() and education_form.cleaned_data and not education_form.cleaned_data.get('DELETE', False):
+                        if (education_form.is_valid() and 
+                            education_form.cleaned_data and 
+                            not education_form.cleaned_data.get('DELETE', False)):
                             education = education_form.save(commit=False)
                             education.surgeon = surgeon
                             education.save()
@@ -184,8 +181,10 @@ def get_verified(request):
                     clinics=[]
 
                     for clinic_form in clinic_formset:
-                        if clinic_form.is_valid() and clinic_form.cleaned_data and not clinic_form.cleaned_data.get('DELETE', False):
-                             # Save the clinics                     
+                        if (clinic_form.is_valid() and 
+                                clinic_form.cleaned_data and 
+                                not clinic_form.cleaned_data.get('DELETE', False)):
+                            # Save the clinics               
                             clinic_list=clinic_form.save(surgeon=surgeon, city=surgeon.city) 
                             clinics.extend(clinic_list)
 
@@ -194,7 +193,8 @@ def get_verified(request):
                             new_clinic_name=clinic_form.cleaned_data.get('new_clinic_name')
                             if new_clinic_name:
                             # Create a new clinic
-                                new_clinic, created=Clinic.objects.get_or_create(name=new_clinic_name, city=surgeon.city)
+                                new_clinic, created=Clinic.objects.get_or_create(
+                                    name=new_clinic_name, city=surgeon.city)
 
                             # Add the created clinic to list
                                 clinics.append(new_clinic)
@@ -205,10 +205,12 @@ def get_verified(request):
 
                         print("Clinic formset saved successfully")
                 
-                    messages.success(request, "Your profile has been submitted for verification. We will email you when your verification process is completed.")
-                    return redirect('get_verified')
+                    messages.success(request, "Your profile has been submitted for" 
+                                    "verification. We will email you when your" 
+                                    "verification process is completed.")
+                return redirect('get_verified')
             except Exception as e:
-                        messages.error(request, f"An error occurred: {str(e)}")
+                messages.error(request, f"An error occurred: {str(e)}")
         else:
             print("Form errors:", form.errors)
             print("Education formset errors:", education_formset.errors)
@@ -252,7 +254,6 @@ def login_view(request):
             else:
                 messages.error(request, "Invalid username or password.")
         else:
-            # Only one message per invalid form submission
             if not messages.get_messages(request):
                 messages.error(request, "Invalid username or password.")
     else:
@@ -276,7 +277,8 @@ def signup_view(request):
     
     return render(request, 'signup.html', {'form': form})
       
-def verify_result(request, user_first_name, user_last_name, clinic, city, country):
+def verify_result(request, user_first_name, user_last_name, 
+                 clinic, city, country): #PEP
     #get the verification resutls from the database
     surgeon = Surgeon.objects.filter(
         user__first_name__icontains=user_first_name,
@@ -301,16 +303,17 @@ def verify_result(request, user_first_name, user_last_name, clinic, city, countr
 
     
     if surgeon:
-    #fetch surgeon education history if they exist
+        #fetch surgeon education history if they exist
         education_history = surgeon.education.all() if surgeon else None
 
         context = {
-        'surgeon': surgeon, #the surgeon info
-        'clinics': clinics , #the surgeon info
-        'clinic_name': clinics[0].name if clinics else 'None',
-        'clinic_city': clinics[0].city.name if clinics and clinics[0].city else 'None',
-        'education': education_history, #education of the surgeon
-        'verification_status': surgeon.verification_status, 
+            'surgeon': surgeon, 
+            'clinics': clinics , 
+            'clinic_name': clinics[0].name if clinics else 'None',
+            'clinic_city': clinics[0].city.name if clinics and 
+                           clinics[0].city else 'None',
+            'education': education_history,
+            'verification_status': surgeon.verification_status, 
         }
     else:
         #if no surgeon found , return a Not verified message
@@ -338,14 +341,20 @@ def delete_clinic(request, clinic_id):
     try:
         surgeon = request.user.surgeon
     except Surgeon.DoesNotExist:
-        return JsonResponse({'success': False, 'error': 'Surgeon profile not found'})
+        return JsonResponse({
+            'success': False,
+            'error': 'Surgeon profile not found'
+        })
 
 
     if clinic in surgeon.clinic.all():
         surgeon.clinic.remove(clinic)
         return JsonResponse({'success':True})
     else:
-        return JsonResponse({'success':False, 'error': 'Clinic not assosiated with this surgeon'})
+        return JsonResponse({
+            'success':False,
+            'error': 'Clinic not assosiated with this surgeon'
+        })
 
 
 def contact(request):
@@ -376,10 +385,16 @@ def edit_surgeon_profile(request, surgeon_id):
 
     if request.method == 'POST':
         form = SurgeonForm(request.POST, request.FILES, instance=surgeon)
-        clinic_formset = ClinicFormSet(request.POST, queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon))
-        education_formset = EducationFormSet(request.POST, request.FILES, instance=surgeon)
+        clinic_formset = ClinicFormSet(
+            request.POST,
+            queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon)
+        )
+        education_formset = EducationFormSet(
+            request.POST, request.FILES, instance=surgeon
+        )
 
-        if form.is_valid() and clinic_formset.is_valid() and education_formset.is_valid():
+        if (form.is_valid() and clinic_formset.is_valid() and 
+            education_formset.is_valid()):
             try:
                 with transaction.atomic():
                     surgeon = form.save(commit=False)
@@ -396,13 +411,21 @@ def edit_surgeon_profile(request, surgeon_id):
                                 clinic = clinic_form.cleaned_data.get('clinic')
                                 if clinic:
                                     surgeon.clinic.remove(clinic)
-                                    logger.debug(f"Removed clinic association: Surgeon {surgeon.id} - Clinic {clinic.id}")
+                                    logger.debug(f"Removed clinic association:" 
+                                    "Surgeon {surgeon.id} -" 
+                                    "Clinic {clinic.id}"
+                                )
                         else:
                             if clinic_form.cleaned_data.get('clinic'):
-                                updated_clinics.add(clinic_form.cleaned_data['clinic'])
-                            elif clinic_form.cleaned_data.get('new_clinic_name'):
+                                updated_clinics.add(
+                                    clinic_form.cleaned_data['clinic']
+                                )
+                            elif clinic_form.cleaned_data.get(
+                                    'new_clinic_name'):
                                 new_clinic = Clinic.objects.create(
-                                    name=clinic_form.cleaned_data['new_clinic_name'],
+                                    name=clinic_form.cleaned_data[
+                                        'new_clinic_name'
+                                    ],
                                     city=surgeon.city
                                 )
                                 updated_clinics.add(new_clinic)
@@ -415,14 +438,21 @@ def edit_surgeon_profile(request, surgeon_id):
                     education_formset.save()
 
                 logger.info("Transaction committed successfully")
-                messages.success(request, 'Profile updated successfully. Your changes are pending verification.')
-                return render(request, 'pending_update.html', {'surgeon': surgeon})
+                messages.success(
+                    request, 
+                    'Profile updated successfully.' 
+                    'Your changes are pending verification.'
+                )
+                return render(request, 'pending_update.html',
+                    {'surgeon': surgeon})
             except Exception as e:
                 logger.exception(f"An error occurred while saving: {e}")
                 messages.error(request, f'An error occurred: {str(e)}')
     else:
         form = SurgeonForm(instance=surgeon)
-        clinic_formset = ClinicFormSet(queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon))
+        clinic_formset = ClinicFormSet(
+            queryset=surgeon.clinic.through.objects.filter(surgeon=surgeon)
+        )
         education_formset = EducationFormSet(instance=surgeon)
 
     context = {

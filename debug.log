@@ -11197,3 +11197,47 @@ INFO 2024-09-29 16:48:30,291 autoreload 17059 140709719563328 /workspace/SAFESUR
 INFO 2024-09-29 16:48:30,753 autoreload 17138 139867531971648 Watching for file changes with StatReloader
 INFO 2024-09-29 16:51:00,811 autoreload 17138 139867531971648 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
 INFO 2024-09-29 16:51:01,279 autoreload 17321 140293994953792 Watching for file changes with StatReloader
+INFO 2024-09-30 00:10:58,434 autoreload 4239 139891496467520 Watching for file changes with StatReloader
+DEBUG 2024-09-30 00:12:32,201 connectionpool 4239 139890364769856 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-30 00:12:33,801 connectionpool 4239 139890364769856 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-30 00:12:34,904 connectionpool 4239 139890364769856 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-30 00:12:36,099 connectionpool 4239 139890364769856 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-30 00:16:40,034 autoreload 4239 139891496467520 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:16:40,523 autoreload 4898 140660138810432 Watching for file changes with StatReloader
+INFO 2024-09-30 00:20:31,516 autoreload 4898 140660138810432 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:20:31,982 autoreload 5141 140572818365504 Watching for file changes with StatReloader
+INFO 2024-09-30 00:22:45,795 autoreload 5141 140572818365504 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:22:46,280 autoreload 5295 140551152659520 Watching for file changes with StatReloader
+INFO 2024-09-30 00:24:52,048 autoreload 5295 140551152659520 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:24:52,501 autoreload 5421 140352132529216 Watching for file changes with StatReloader
+INFO 2024-09-30 00:25:45,329 autoreload 5421 140352132529216 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:25:45,789 autoreload 5511 139709568044096 Watching for file changes with StatReloader
+INFO 2024-09-30 00:27:24,190 autoreload 5511 139709568044096 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:27:24,650 autoreload 5622 139868045769792 Watching for file changes with StatReloader
+INFO 2024-09-30 00:28:04,333 autoreload 5622 139868045769792 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:28:04,785 autoreload 5699 140623904013376 Watching for file changes with StatReloader
+INFO 2024-09-30 00:30:00,382 autoreload 5699 140623904013376 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:30:00,835 autoreload 5829 139882929826880 Watching for file changes with StatReloader
+INFO 2024-09-30 00:32:03,514 autoreload 5829 139882929826880 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:32:03,976 autoreload 5958 140639003434048 Watching for file changes with StatReloader
+INFO 2024-09-30 00:33:07,922 autoreload 5958 140639003434048 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:33:08,374 autoreload 6048 139894818876480 Watching for file changes with StatReloader
+INFO 2024-09-30 00:33:17,669 autoreload 6048 139894818876480 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:33:18,137 autoreload 6102 140055357402176 Watching for file changes with StatReloader
+INFO 2024-09-30 00:34:05,902 autoreload 6102 140055357402176 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:34:06,353 autoreload 6189 140378445167680 Watching for file changes with StatReloader
+INFO 2024-09-30 00:35:05,256 autoreload 6189 140378445167680 /workspace/SAFESURGEON/SafeSurgeon/views.py changed, reloading.
+INFO 2024-09-30 00:35:05,725 autoreload 6272 139830245153856 Watching for file changes with StatReloader
+DEBUG 2024-09-30 00:36:42,997 connectionpool 6272 139830059046464 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2024-09-30 00:36:44,342 connectionpool 6272 139830059046464 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-30 00:36:45,387 connectionpool 6272 139830059046464 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-30 00:36:46,391 connectionpool 6272 139830059046464 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+INFO 2024-09-30 00:37:52,642 views 6272 139828993697344 Editing profile for surgeon: 99 999 - Verified
+INFO 2024-09-30 00:39:27,942 views 6272 139828482004544 Editing profile for surgeon: 99 999 - Verified
+DEBUG 2024-09-30 00:39:29,081 connectionpool 6272 139828482004544 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-30 00:39:30,155 connectionpool 6272 139828482004544 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-30 00:39:31,433 connectionpool 6272 139828482004544 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/11" 200 None
+DEBUG 2024-09-30 00:39:31,544 views 6272 139828482004544 Removed clinic association:Surgeon {surgeon.id} -Clinic {clinic.id}
+DEBUG 2024-09-30 00:39:31,576 views 6272 139828482004544 Created new clinic: AkutA (London)
+DEBUG 2024-09-30 00:39:31,659 views 6272 139828482004544 Updated surgeon's clinics: {<Clinic: AkutA (London)>, <Clinic: SafeMedic (London)>}
+INFO 2024-09-30 00:39:31,821 views 6272 139828482004544 Transaction committed successfully
