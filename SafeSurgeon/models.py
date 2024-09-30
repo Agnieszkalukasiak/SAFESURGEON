@@ -121,7 +121,7 @@ class Surgeon(models.Model):
     def __str__(self):
         return (
             f"{self.user.first_name} {self.user.last_name} -"
-            "{self.get_verification_status_display()}"
+            f"{self.get_verification_status_display()}"
         )
 
     def is_verified(self):
