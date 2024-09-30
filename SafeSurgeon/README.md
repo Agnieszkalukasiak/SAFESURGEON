@@ -465,8 +465,6 @@ https://jshint.com/
 W3C CSS Validator
 There were no errors found in the java script files.
 
-### Simple Logout Page
-
 #### results for edit_surgon_profile.js
 ![Logout Page](static/images/edit_surgeon_js.png)
 
@@ -481,12 +479,25 @@ There were no errors found in the java script files.
 
 
 
-
-
-
-#### Jgsaw
-
+#### PEP8 (https://pep8ci.herokuapp.com/)
 #### No errors were returned when passing through the official PEP8 validator.
+
+#### results for views.py
+![Pep8 for view.py)](static/images/pep8_view.png)
+
+
+#### results for url.py
+![Pep8 for url.py)](static/images/pep8_url.png)
+
+#### results for models.py
+![Pep8 for models.py)](static/images/pep8_models.png)
+
+#### results for forms.py
+![Pep8 for forms.py)](static/images/pep8_forms.png)
+
+#### results for admin.py
+![Pep8 for admin.py)](static/images/pep8_admin.png)
+
 
 ### Bugs
 There are no unfixed bugs.
