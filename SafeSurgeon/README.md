@@ -391,6 +391,8 @@ Wireframes for both the mobile and desktop versions were created using https://m
 ### Features Left to Implement
 - A forgot password feature on login
 
+- Make a surgeon be able to add different clinics in different towns.
+
 ### Testing
 
 #### Manual Testing
