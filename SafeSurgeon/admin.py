@@ -3,19 +3,21 @@ from .models import Verification, Country, City, Clinic, Surgeon, Education
 from django_summernote.admin import SummernoteModelAdmin
 from django.contrib.auth.models import User
 
-#country admin
+
+# country admin
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
     list_display = ('name',)
     list_filter = ('name',)
     search_fields = ['name']
 
-#city admin
+
+# city admin
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
     list_display = ('name', 'country')
     list_filter = ('country',)
-    search_fields = ['name','country__name']
+    search_fields = ['name', 'country__name']
 
 
 @admin.register(Clinic)
@@ -23,49 +25,54 @@ class ClinicAdmin(admin.ModelAdmin):
     list_display = ('name', 'city')
     search_fields = ['name', 'city__name']
 
-#inline education
-class EducationInline(admin.TabularInline):  
+
+# inline education
+class EducationInline(admin.TabularInline):
     model = Education
-    extra = 1 
+    extra = 1
 
-class ClinicInline(admin.TabularInline):  
-    model = Surgeon.clinic.through 
-    extra = 1 
 
-#surgeon admin
+class ClinicInline(admin.TabularInline):
+    model = Surgeon.clinic.through
+    extra = 1
+
+
+# surgeon admin
 @admin.register(Surgeon)
 class SurgeonAdmin(SummernoteModelAdmin):
     inlines = [EducationInline, ClinicInline]
     list_display = (
         'verification_status',
         'get_first_name',
-        'get_last_name',      
-        'get_clinic', 
-        'city', 
+        'get_last_name',
+        'get_clinic',
+        'city',
         'country',
-        'profile_picture',  
-        'id_document', 
+        'profile_picture',
+        'id_document',
         'get_email',
-        ) 
-    list_filter = ('verification_status', 'country','city',)
-    search_fields = ('user__first_name', 'user__last_name','clinic__name', 'city__name')
+        )
+    list_filter = ('verification_status', 'country', 'city',)
+    search_fields = ('user__first_name',
+                     'user__last_name',
+                     'clinic__name',
+                     'city__name'
+                     )
     readonly_fields = ('get_first_name', 'get_last_name', 'get_email')
 
-
-    #Grouping the fields into section in the admin panel
+    # Grouping the fields into section in the admin panel
     fieldsets = (
         (None, {
-            'fields': ('user', 'profile_picture', 'city', 'country') 
+            'fields': ('user', 'profile_picture', 'city', 'country')
         }),
         ('User Information', {
-        'fields': ('get_first_name', 'get_last_name', 'get_email')
+            'fields': ('get_first_name', 'get_last_name', 'get_email')
         }),
         ('Verification', {
             'fields': ('verification_status', 'id_document')
         }),
     )
 
-   
     def get_first_name(self, obj):
         return obj.user.first_name
     get_first_name.short_description = 'First Name'
@@ -89,11 +96,14 @@ class SurgeonAdmin(SummernoteModelAdmin):
     # Education admin
     @admin.register(Education)
     class EducationAdmin(admin.ModelAdmin):
-        list_display=('surgeon','institution', 'institution_country', 'program', 'start_date', 'end_date', 'certificate', )
+        list_display = (
+            'surgeon',
+            'institution',
+            'institution_country',
+            'program',
+            'start_date',
+            'end_date',
+            'certificate',
+        )
         list_filter = ('institution',)
-        search_fields= ['institution', 'program']
-
-
-    
-
-   
+        search_fields = ['institution', 'program']
