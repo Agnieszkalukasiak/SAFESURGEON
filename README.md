@@ -25,7 +25,7 @@ Rejected (their verification was denied),
 Pending(signup but awaiting admin verification) or
 Not Verified (not in the database at all).
 
-#### Surgeon Signup and Verification:
+### Surgeon Signup and Verification:
 
 Surgeons can sign up by filling in a form with their details and uploading supporting documents.
 After submission, the surgeon’s profile is marked as “pending verification” and requires administrative review. 
