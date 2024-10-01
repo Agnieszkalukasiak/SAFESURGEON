@@ -37,10 +37,7 @@ If a surgeon decides to change, delete, or add already verified details, their p
 ### Profile Management:
 
 Once a surgeon is added to the database, idependently if rejcted or verified, they can log into their profile.There they can: 
-#### edit
-#### delete
-#### add
-
+#### edit, delete add
 If they make changes to their profile, it will reset their verification status to "pending," and the profile will need to go through the verification process again before it is accessible to them.
 This system ensures that users can access accurate, up-to-date information about surgeons' verification status, while allowing surgeons to manage their profiles with ease.
 
