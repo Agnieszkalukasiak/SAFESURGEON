@@ -126,7 +126,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Offers a simple, streamlined design focusing on delivering crucial verification information without distractions.
 
-### Rejected Surgeon Page
+### Search Result Page: Surgeon Rejected
 
 ![Surgeon Search Page:Rejected](img/result_rejected.png)
 
@@ -145,7 +145,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Simplifies the decision-making process, making it easier to avoid unverified or untrustworthy practitioners.
 
-### Pending Surgeon Page
+### Search Result Page: Surgeon Pending
 
 ![Surgeon Search Page:Pending](img/result_pending.png)
 
@@ -163,7 +163,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Encourages transparency by clearly communicating that the surgeon’s credentials are not yet available for confirmation, allowing users to trust that the surgeon is actively pursuing verification and that more information will soon be available.
 
-### Surgeon Not Found (Not Verified) Page
+### Search Result Page: Surgeon Not Found (Not Verified) 
 
 ![Surgeon Search Page:Not Found](img/NotVerified.png)
 
@@ -236,7 +236,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	The simple and clean design, with a soothing color scheme, reinforces trust in the verification process while maintaining a professional tone.
 
-### Log in page Page
+### LogIn Page
 
 ![Log in page Page](img/login.png)
 
@@ -255,7 +255,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Maintains a professional tone with a simple and clean design, reinforcing the seriousness of the site’s purpose.
 
-### Surgeon Profile Page:Verified
+### Surgeon Profile Page: Verified
 
 ![Surgeon Profile Page:Verfied](img/Surgeon_profile_verified.png)
 
