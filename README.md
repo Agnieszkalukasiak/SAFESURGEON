@@ -668,7 +668,7 @@ Learning Platforms
 
 -	My mentor, Moritz Wach, for his incredible patience, quidance and support.
 
--	My fellow students for their company and encouragement.
+- My fellow students for their company and encouragement.
 
 - Sarah at Code Intitute Mentoring, for her incredible patience and hawk-eye.
 
