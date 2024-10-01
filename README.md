@@ -126,9 +126,10 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Offers a simple, streamlined design focusing on delivering crucial verification information without distractions.
 
+### Rejected Surgeon Page
+
 ![Surgeon Search Page:Rejected](img/result_rejected.png)
 
-### Rejected Surgeon Page
 
 -	Displays the surgeon’s basic details but marks the surgeon's verification status as "Rejected" in red.
 
@@ -143,6 +144,24 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 -	Helps users make informed decisions by understanding that the surgeon’s credentials did not meet verification standards.
 
 -	Simplifies the decision-making process, making it easier to avoid unverified or untrustworthy practitioners.
+
+### Pending Surgeon Page
+
+![Surgeon Search Page:Pending](img/result_pending.png)
+
+- Displays the surgeon’s basic details but marks the surgeon's verification status as "Pending" in yellow.
+
+- Indicates that the surgeon has signed up and is currently in the process of being verified by the admin.
+
+- Provides a clear message that the surgeon's credentials are still under review and not yet approved, signaling that they are actively engaging with the platform.
+
+### How it benefits the user:
+
+-Reassures the user that the surgeon is not ignoring their presence on the app but has proactively submitted their details for verification, showing their intent to comply with the platform’s standards.
+
+- Helps users distinguish between verified and unverified surgeons, while positively reflecting on those whose credentials are pending, indicating they are committed to getting verified.
+
+- Encourages transparency by clearly communicating that the surgeon’s credentials are not yet available for confirmation, allowing users to trust that the surgeon is actively pursuing verification and that more information will soon be available.
 
 ### Surgeon Not Found (Not Verified) Page
 
@@ -399,7 +418,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 
 ### Simple Logout Page
-![Logout Page](static/images/signout.png)
+![Logout Page](img/signout.png)
 
 •	Clean and Direct: The logout page is kept simple, focusing on a single primary action—logging out—while also providing clear, secondary options to reset the password or delete the account, without overwhelming the user with unnecessary details.
 •	Confirmation for Logout: Before logging out, users are prompted with a confirmation to ensure they intend to end their session, preventing accidental logouts and ensuring they don’t unintentionally lose access to their current session or work.
@@ -571,16 +590,16 @@ W3C CSS Validator
 There were no errors found in the java script files.
 
 #### results for edit_surgon_profile.js
-![Logout Page](static/images/edit_surgeon_js.png)
+![Logout Page](img/edit_surgeon_js.png)
 
 #### results for get_verified.js
-![Logout Page](static/images/get_verified_js.png)
+![Logout Page](img/get_verified_js.png)
 
 #### results for verify.js
-![Logout Page](static/images/verify_js.png)
+![Logout Page](img/verify_js.png)
 
 #### results for contact.js
-![Logout Page](static/images/contact_js.png)
+![Logout Page](img/contact_js.png)
 
 
 
@@ -588,20 +607,20 @@ There were no errors found in the java script files.
 #### No errors were returned when passing through the official PEP8 validator.
 
 #### results for views.py
-![Pep8 for view.py)](static/images/pep8_view.png)
+![Pep8 for view.py)](img/pep8_view.png)
 
 
 #### results for url.py
-![Pep8 for url.py)](static/images/pep8_url.png)
+![Pep8 for url.py)](img/pep8_url.png)
 
 #### results for models.py
-![Pep8 for models.py)](static/images/pep8_models.png)
+![Pep8 for models.py)](img/pep8_models.png)
 
 #### results for forms.py
-![Pep8 for forms.py)](static/images/pep8_forms.png)
+![Pep8 for forms.py)](img/pep8_forms.png)
 
 #### results for admin.py
-![Pep8 for admin.py)](static/images/pep8_admin.png)
+![Pep8 for admin.py)](img/pep8_admin.png)
 
 
 ### Bugs
@@ -647,10 +666,10 @@ Learning Platforms
 
 ### Aknowladgments
 
--	My mentor, Moritz Wach, for his quidance and advise.
+-	My mentor, Moritz Wach, for his incredible patience, quidance and support.
 
 -	My fellow students for their company and encouragement.
 
-- Sarah at Code Intitute Mentoring, for her incredible patience and hawk-eye spotting errors.
+- Sarah at Code Intitute Mentoring, for her incredible patience and hawk-eye.
 
-- Key at CondeInstitute for being my mental support on this crazy journey.
+- Kay at CondeInstitute for being my mental support on this crazy journey.
