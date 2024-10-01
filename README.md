@@ -1,8 +1,5 @@
-# SafeSurgeon
-
 
 # SafeSurgeon
-
 
 Choosing the right surgeon is a critical decision that can significantly impact your health and well-being. However, finding trustworthy and comprehensive information about medical professionals can be challenging. Safe Surgeon bridges this gap by offering a reliable platform where you can: Check the surgeon's education, board certifications, and licenses. Learn about their specialties, years of practice, and areas of expertise.
 With Safe Surgeon, you have the tools you need to make informed decisions about your healthcare.
@@ -14,6 +11,40 @@ Empowering Users: Allowing patients to make informed choices based on verified d
 Improving Healthcare Outcomes: Helping users select qualified professionals for better medical experiences.
 
 Join us in making healthcare safer and more transparent for everyone.
+
+## Project Description 
+This project allows users to search for surgeons and check their verification status. It also enables surgeons to sign up, create a profile by submitting their details for admin verification, and, once verified or rejected by the admin, access their profile page to edit and keep it up to date. If rejected, surgeons can resubmit their updated details for verification. Every time a surgeon changes their details, their status is automatically reset to pending, requiring them to go through admin verification before accessing their profile page again.
+
+### User Search Functionality:
+
+Users can log in and search for a surgeon using the surgeon’s name, clinic, country, and city.
+The search results will indicate if the surgeon is:
+
+Verified (present in the database and verified),
+Rejected (their verification was denied),
+Pending(signup but awaiting admin verification) or
+Not Verified (not in the database at all).
+
+#### Surgeon Signup and Verification:
+
+Surgeons can sign up by filling in a form with their details and uploading supporting documents.
+After submission, the surgeon’s profile is marked as “pending verification” and requires administrative review. 
+
+The admin can change the surgeon's status to either rejected or verified. Depending on this status, not only does the surgeon's profile appearance in the search results change, but also  their profile. If rejected, the surgeon has the chance to reapply with updated documentation and details.
+
+If a surgeon decides to change, delete, or add already verified details, their profile is automatically reset to pending in the database.
+
+### Profile Management:
+
+Once a surgeon is added to the database, idependently if rejcted or verified, they can log into their profile.There they can: 
+#### edit,
+#### delete,
+#### add,
+#### update details in already added elements,
+#### delete or replace attached documents
+
+If they make changes to their profile, it will reset their verification status to "pending," and the profile will need to go through the verification process again before it is accessible to them.
+This system ensures that users can access accurate, up-to-date information about surgeons' verification status, while allowing surgeons to manage their profiles with ease.
 
 
 ### Design:
@@ -34,7 +65,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Landing Page
 
-![Alt text](static/images/Verify.png)
+![Alt text](img/Verify.png)
 
 -	Provides Simple Navigation: Offers two clear options—one for users to verify a surgeon and another for surgeons to start the verification process.
 
@@ -52,7 +83,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Navigation Bar 
 
-![Navigation Bar](static/images/menu.png)
+![Navigation Bar](img/menu.png)
 
 - The Safe Surgeon app features a simple, intuitive navigation bar and dropdown menu designed for seamless movement between pages. This functionality is crucial to ensuring a smooth, frustration-free experience for both patients and surgeons.
 
@@ -67,7 +98,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Surgeon Search Page
 
-![Surgeon Search Page](static/images/search_surgeon.png)
+![Surgeon Search Page](img/search_surgeon.png)
 
 -  Performs Surgeon Search: Users input the surgeon's country, city, name, and clinic to execute a search for the specific surgeon they want to verify.
 
@@ -85,7 +116,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Search Result Page: Surgeon Verified
 
-![Surgeon result Page-verified](static/images/result_verified.png)
+![Surgeon result Page-verified](img/result_verified.png)
 
 -	Displays the surgeon’s basic details such as their name, clinic, and location.
 
@@ -100,7 +131,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Offers a simple, streamlined design focusing on delivering crucial verification information without distractions.
 
-![Surgeon Search Page:Rejected](static/images/result_rejected.png)
+![Surgeon Search Page:Rejected](img/result_rejected.png)
 
 ### Rejected Surgeon Page
 
@@ -120,7 +151,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Surgeon Not Found (Not Verified) Page
 
-![Surgeon Search Page:Not Found](static/images/NotVerified.png)
+![Surgeon Search Page:Not Found](img/NotVerified.png)
 
 - The page displays a strong warning in bold pink with red accents that the surgeon is "Not Verified" and is not present in the database. 
 
@@ -138,7 +169,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Sign up page
 
-![Sign up page](static/images/Signup.png)
+![Sign up page](img/Signup.png)
 
 
 -	Provides an option for the surgeon to verify their credentials by guiding them to a secure signup page.
@@ -157,7 +188,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Get Verified Form Page
 
-![Get Verified Form Page](static/images/get_verified_1.png)
+![Get Verified Form Page](img/get_verified_1.png)
 
 -	Provides a secure form for surgeons to fill in their personal details and professional credentials.
 
@@ -175,7 +206,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Verification Pending Page
 
-![Get Verified Form Page](static/images/pending1.png)
+![Get Verified Form Page](img/pending1.png)
 
 -	Displays a confirmation message informing the surgeon that their verification request has been submitted and is now pending review.
 
@@ -193,7 +224,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Log in page Page
 
-![Log in page Page](static/images/login.png)
+![Log in page Page](img/login.png)
 
 
 -	Provides a simple and secure login form where surgeons can enter their username and password to access their profile.
@@ -212,7 +243,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Surgeon Profile Page:Verified
 
-![Surgeon Profile Page:Verfied](static/images/Surgeon_profile_verified.png)
+![Surgeon Profile Page:Verfied](img/Surgeon_profile_verified.png)
 
 
 -	Displays all of the surgeon's submitted personal and professional details, including clinic information, education, and verification status.
@@ -229,7 +260,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Surgeon Profile Page: Rejected
 
-![Surgeon Profile Page:Rejected](static/images/surgeon_profile_rejected.png)
+![Surgeon Profile Page:Rejected](img/surgeon_profile_rejected.png)
 
 - Displays the previously submitted personal and professional details, and verification status.
 
@@ -247,7 +278,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Drop down widged for Education Details
 
-![Drop down widged for Education Details](static/images/widget.png)
+![Drop down widged for Education Details](img/widget.png)
 
 - Consolidated Information: A dropdown menu allows additional education details to be neatly tucked away, providing a cleaner look on the profile page while still making the information easily accessible when needed.
 
@@ -256,6 +287,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 - Space Efficiency: By using a dropdown, the page layout stays compact, ensuring that crucial profile information like clinics, verification status, and personal details are emphasized without being crowded by additional educational details.
 
 ### How it benefits the user:
+
 - Clutter-Free Layout: Users can review the surgeon’s basic information without scrolling through long sections of educational details unless they choose to expand them.
 
 - On-Demand Information: Users can easily access extra educational qualifications or certifications with a simple click, providing them with detailed insights when they want it, but not forcing them to view everything upfront.
@@ -263,7 +295,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 - Improved Navigation: A dropdown structure simplifies navigation, keeping the most important information prominent, while extra data remains hidden but accessible, contributing to a more intuitive user experience.
 
 ### Edit Profile Prompt
-![Edit Profile Prompt](static/images/edit_resubmit_verification_prompt.png)
+![Edit Profile Prompt](img/edit_resubmit_verification_prompt.png)
 
 
 - Displays a confirmation prompt when the surgeon clicks the Edit button, informing them that making changes to their profile will require resubmission and re-evaluation.
@@ -281,7 +313,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Surgeon Profile Edit Page
 
-![Surgeon Profile Edit Page](static/images/edit_profile.png)
+![Surgeon Profile Edit Page](img/edit_profile.png)
 
 
 -	Allows surgeons to edit their existing profile data, such as personal details, clinic information, and education credentials and easily edit them.
@@ -298,10 +330,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Provides control over their verification status, allowing them to resubmit their profile with updated information for another review, particularly useful if they were previously rejected.
 
-
 ### Post-Submission Pending Verification Page
 
-![Post-Submission Pending Verification Page](static/images/pending_edit.png)
+![Post-Submission Pending Verification Page](img/pending_edit.png)
 
 -	Displays a personalized message thanking the surgeon by name for updating their profile and resubmitting their credentials.
 
@@ -317,10 +348,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	The use of mint blue creates a serene and calming environment, making the user experience feel professional and stress-free during the waiting period.
 
-
 ### About Page
 
-![About Page](static/images/about.png)
+![About Page](img/about.png)
 
 -	Provides an overview of the website’s mission and the team or individuals behind the platform.
 
@@ -338,7 +368,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Contact Page
 
-![Contact Page](static/images/contact.png)
+![Contact Page](img/contact.png)
 
 
 -	Provides a simple form for users to send a direct message, including fields like name, email, and message.
@@ -353,7 +383,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 ### Footer
 
-![Footer](static/images/footer1.png)
+![Footer](img/footer2.png)
 
 #### Minimal Footer Design: Benefits
 - Focus on Core Content: By opting for a minimal footer with only a copyright symbol, the attention remains on the core functionality and features of the application rather than distracting the user with unnecessary social media links or additional information.
@@ -396,6 +426,49 @@ Wireframes for both the mobile and desktop versions were created using https://m
 
 https://safesurgeon-f2f78c12cdcc.herokuapp.com/
 
+To see the VERIFIED surgeon profile and ability to edit and delete, please sign in with a verified user:
+
+##### Username:Henrik
+##### Password:Monster0483
+
+To see the VERIFIED user found in the data base:
+
+Serach: 
+Country: UK, 
+City:London, 
+Clinic:SafeMedic, 
+First Name: Henio 
+Last Name: Tideman
+
+
+To see a REJETED user found in database:
+
+Serach:
+Country: Sweden, 
+City:Malmö, 
+Clinic:AkutB or MediCare, 
+First Name: Miriam 
+Last Name: Lukasiak
+
+To see a REJECTED surgeon profile, and ability to edit and delete, please sign in with:
+
+##### Username: Miriam
+##### Password: 123
+
+To see a PENDING user found in database:
+
+Serach: 
+Country: UK, 
+City: London, 
+Clinic:SafeMedic 
+First Name: Paul 
+Last Name: McMenamin
+
+To see what happens when a PENDING surgeon tries to sign in, please sign in with:
+##### Username: Paul
+##### Password: 123
+
+
 ### Features Left to Implement
 - A forgot password feature on login
 
@@ -405,15 +478,42 @@ https://safesurgeon-f2f78c12cdcc.herokuapp.com/
 
 #### Manual Testing
 
-- I have tested the desktop and mobile version of the website with Chrome, Firefox and Edge on a Windows Computer and a Mac computer.
+#####  Browser Compatibility:
+Test the app on different browsers like Safari, Chrome, and Firefox to ensure consistency.
 
-- I have tested the mobile version with Chrome and Firefox on an android device and iPhone.
+- User Login and Authentication:
 
-- I have tested the mobile version with Safari on an ios device and apple device.
+- Log in as a user using valid credentials.
 
-- I have shared the website with multiple users to confirm the website functionality on different devices and to get feedback on their experience.
+- Attempt to log in with incorrect credentials to verify error handling.
 
-- I have tested all the internal and external links on the website.
+- Surgeon Search Functionality:
+
+- Search for surgeons by name, clinic, country, and city.
+
+- Verify that the search returns accurate results (verified, rejected, not in the database).
+
+##### Surgeon Signup Process:
+
+- Fill out the signup form with required details and documents.
+
+- Verify that form submission successfully moves the surgeon to the pending verification state.
+
+##### Profile Management:
+
+- Edit details (e.g., name, clinic, or city) and save changes.
+
+- Ensure the profile is reset to pending status after edits.
+
+- Attempt to log in with pending status and ensure access is restricted.
+
+##### Document Uploads:
+
+- Test uploading profile pictures and documents (Cloudinary integration).
+
+##### Responsive Design:
+
+-Resize the browser window to different screen sizes to ensure the page responds well to various resolutions.
 
 ### Validation
 
