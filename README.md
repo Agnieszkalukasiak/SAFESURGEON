@@ -286,7 +286,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Streamlined Re-verification: The "Submit for Re-verification" functionality simplifies the re-evaluation process, reducing the friction in getting verified and maintaining up-to-date professional credentials.
 
-## Drop down widged for Education Details
+## Drop Down Widged For Education Details
 
 ![Drop down widged for Education Details](img/widget.png)
 
