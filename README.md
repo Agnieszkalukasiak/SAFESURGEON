@@ -473,13 +473,12 @@ To see what happens when a PENDING surgeon tries to sign in, please sign in with
 ##### Username: Paul
 ##### Password: 123
 
-
 ### Features Left to Implement
 - A forgot password feature on login
 
 - Make a surgeon be able to add different clinics in different towns.
 
-### Testing
+## Testing
 
 #### Manual Testing
 
