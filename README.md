@@ -58,7 +58,7 @@ The simplicity is not just aesthetic—it's purposeful, reflecting the app’s s
 By combining a simple layout with a minimal color palette, Safe Surgeon delivers a focused, serious, and reliable platform, ensuring users can quickly and confidently verify their surgeon’s credentials.
 
 
-### Landing Page
+## Landing Page
 
 ![Alt text](img/Verify.png)
 
@@ -76,7 +76,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Easy Access for Surgeons: Surgeons can log in to their profile directly from the home page, ensuring a convenient and seamless process for managing their verification status.
 
-### Navigation Bar 
+## Navigation Bar 
 
 ![Navigation Bar](img/menu.png)
 
@@ -91,7 +91,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - By prioritizing easy navigation and quick login options, Safe Surgeon ensures that users can access the necessary features without hassle, making the verification process smooth and reliable.
 
-### Surgeon Search Page
+## Surgeon Search Page
 
 ![Surgeon Search Page](img/search_surgeon.png)
 
@@ -109,7 +109,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Focused User Experience: By using minimal colors and a simple layout, the page ensures that users are not distracted and can efficiently find the information they need.
 
-### Search Result Page: Surgeon Verified
+## Search Result Page: Surgeon Verified
 
 ![Surgeon result Page-verified](img/result_verified.png)
 
@@ -126,10 +126,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Offers a simple, streamlined design focusing on delivering crucial verification information without distractions.
 
-### Search Result Page: Surgeon Rejected
+## Search Result Page: Surgeon Rejected
 
 ![Surgeon Search Page:Rejected](img/result_rejected.png)
-
 
 -	Displays the surgeon’s basic details but marks the surgeon's verification status as "Rejected" in red.
 
@@ -145,7 +144,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Simplifies the decision-making process, making it easier to avoid unverified or untrustworthy practitioners.
 
-### Search Result Page: Surgeon Pending
+## Search Result Page: Surgeon Pending
 
 ![Surgeon Search Page:Pending](img/result_pending.png)
 
@@ -163,7 +162,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Encourages transparency by clearly communicating that the surgeon’s credentials are not yet available for confirmation, allowing users to trust that the surgeon is actively pursuing verification and that more information will soon be available.
 
-### Search Result Page: Surgeon Not Found (Not Verified) 
+## Search Result Page: Surgeon Not Found (Not Verified) 
 
 ![Surgeon Search Page:Not Found](img/NotVerified.png)
 
@@ -181,10 +180,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Encourages the user to double-check their information or search for alternative, verified surgeons.
 
-### Sign up page
+## Sign up page
 
 ![Sign up page](img/Signup.png)
-
 
 -	Provides an option for the surgeon to verify their credentials by guiding them to a secure signup page.
 
@@ -200,7 +198,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Instills trust through a serious and professional design, giving the surgeon confidence that their personal and professional information is handled securely and with integrity.
 
-### Get Verified Form Page
+## Get Verified Form Page
 
 ![Get Verified Form Page](img/get_verified_1.png)
 
@@ -218,7 +216,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Enhances the feeling of security and seriousness, ensuring that the surgeon feels their credentials are handled with care and integrity, reinforcing the credibility of the site.
 
-### Verification Pending Page
+## Verification Pending Page
 
 ![Get Verified Form Page](img/pending1.png)
 
@@ -236,10 +234,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	The simple and clean design, with a soothing color scheme, reinforces trust in the verification process while maintaining a professional tone.
 
-### LogIn Page
+## LogIn Page
 
 ![Log in page Page](img/login.png)
-
 
 -	Provides a simple and secure login form where surgeons can enter their username and password to access their profile.
 
@@ -255,10 +252,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Maintains a professional tone with a simple and clean design, reinforcing the seriousness of the site’s purpose.
 
-### Surgeon Profile Page: Verified
+## Surgeon Profile Page: Verified
 
 ![Surgeon Profile Page:Verfied](img/Surgeon_profile_verified.png)
-
 
 -	Displays all of the surgeon's submitted personal and professional details, including clinic information, education, and verification status.
 
@@ -272,7 +268,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Gives surgeons control over their profile, enabling them to make updates and resubmit their information for re-verification, if necessary.
 
-### Surgeon Profile Page: Rejected
+## Surgeon Profile Page: Rejected
 
 ![Surgeon Profile Page:Rejected](img/surgeon_profile_rejected.png)
 
@@ -290,7 +286,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Streamlined Re-verification: The "Submit for Re-verification" functionality simplifies the re-evaluation process, reducing the friction in getting verified and maintaining up-to-date professional credentials.
 
-### Drop down widged for Education Details
+## Drop down widged for Education Details
 
 ![Drop down widged for Education Details](img/widget.png)
 
@@ -300,7 +296,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Space Efficiency: By using a dropdown, the page layout stays compact, ensuring that crucial profile information like clinics, verification status, and personal details are emphasized without being crowded by additional educational details.
 
-### How it benefits the user:
+#### How it benefits the user:
 
 - Clutter-Free Layout: Users can review the surgeon’s basic information without scrolling through long sections of educational details unless they choose to expand them.
 
@@ -308,9 +304,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Improved Navigation: A dropdown structure simplifies navigation, keeping the most important information prominent, while extra data remains hidden but accessible, contributing to a more intuitive user experience.
 
-### Edit Profile Prompt
-![Edit Profile Prompt](img/edit_resubmit_verification_prompt.png)
+## Edit Profile Prompt
 
+![Edit Profile Prompt](img/edit_resubmit_verification_prompt.png)
 
 - Displays a confirmation prompt when the surgeon clicks the Edit button, informing them that making changes to their profile will require resubmission and re-evaluation.
 
@@ -325,10 +321,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 - Control: Empowers surgeons to either move forward with updates or keep their profile as is, maintaining full control over their re-verification timeline.
 
-### Surgeon Profile Edit Page
+## Surgeon Profile Edit Page
 
 ![Surgeon Profile Edit Page](img/edit_profile.png)
-
 
 -	Allows surgeons to edit their existing profile data, such as personal details, clinic information, and education credentials and easily edit them.
 
@@ -344,7 +339,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Provides control over their verification status, allowing them to resubmit their profile with updated information for another review, particularly useful if they were previously rejected.
 
-### Post-Submission Pending Verification Page
+## Post-Submission Pending Verification Page
 
 ![Post-Submission Pending Verification Page](img/pending_edit.png)
 
@@ -362,7 +357,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	The use of mint blue creates a serene and calming environment, making the user experience feel professional and stress-free during the waiting period.
 
-### About Page
+## About Page
 
 ![About Page](img/about.png)
 
@@ -380,10 +375,9 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Enhances transparency by clearly explaining how the verification process works, ensuring users feel secure and informed.
 
-### Contact Page
+## Contact Page
 
 ![Contact Page](img/contact.png)
-
 
 -	Provides a simple form for users to send a direct message, including fields like name, email, and message.
 
@@ -395,7 +389,7 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Saves time by providing a straightforward and minimal form that ensures a smooth user experience.
 
-### Footer
+## Footer
 
 ![Footer](img/footer2.png)
 
@@ -417,12 +411,15 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 - Simplicity and Elegance: A minimalist approach to the footer reinforces a clean, user-friendly design that aligns with professional standards, making it easier for users to engage with the site’s primary purpose.
 
 
-### Simple Logout Page
+## Simple Logout Page
+
 ![Logout Page](img/signout.png)
 
-•	Clean and Direct: The logout page is kept simple, focusing on a single primary action—logging out—while also providing clear, secondary options to reset the password or delete the account, without overwhelming the user with unnecessary details.
-•	Confirmation for Logout: Before logging out, users are prompted with a confirmation to ensure they intend to end their session, preventing accidental logouts and ensuring they don’t unintentionally lose access to their current session or work.
-•	Security Features: The page provides essential account management actions such as deleting the account or resetting the password, offering a one-stop location for important decisions related to account security and maintenance.
+-	Clean and Direct: The logout page is kept simple, focusing on a single primary action—logging out—while also providing clear, secondary options to reset the password or delete the account, without overwhelming the user with unnecessary details.
+
+-	Confirmation for Logout: Before logging out, users are prompted with a confirmation to ensure they intend to end their session, preventing accidental logouts and ensuring they don’t unintentionally lose access to their current session or work.
+
+-	Security Features: The page provides essential account management actions such as deleting the account or resetting the password, offering a one-stop location for important decisions related to account security and maintenance.
 
 ### How it benefits the user:
 
@@ -432,46 +429,40 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 -	Convenient Account Management: With the additional options to reset the password or delete the account, users can easily manage their account security from one simple page, giving them full control over their login credentials and account status.
 
-### Wireframes
+## Wireframes
 
 Wireframes for both the mobile and desktop versions were created using https://moqups.com/, ensuring that the structure and flow of the website are visually mapped out before development. 
 
-### The live app can be found on:
+## The live app can be found on:
 
 https://safesurgeon-f2f78c12cdcc.herokuapp.com/
 
 To see the VERIFIED surgeon profile and ability to edit and delete, please sign in with a verified user:
-
 ##### Username:Henrik
 ##### Password:Monster0483
 
 To see the VERIFIED user found in the data base:
-
-Serach: 
+Search: 
 Country: UK, 
 City:London, 
 Clinic:SafeMedic, 
-First Name: Henio 
+First Name: Henio, 
 Last Name: Tideman
 
-
 To see a REJETED user found in database:
-
-Serach:
+Search:
 Country: Sweden, 
 City:Malmö, 
 Clinic:AkutB or MediCare, 
-First Name: Miriam 
+First Name: Miriam,
 Last Name: Lukasiak
 
 To see a REJECTED surgeon profile, and ability to edit and delete, please sign in with:
-
 ##### Username: Miriam
 ##### Password: 123
 
 To see a PENDING user found in database:
-
-Serach: 
+Search: 
 Country: UK, 
 City: London, 
 Clinic:SafeMedic 
