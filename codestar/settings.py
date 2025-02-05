@@ -35,16 +35,18 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
- 'safesurgeon-f2f78c12cdcc.herokuapp.com',
- 'localhost',
-'127.0.0.1' ]
+ALLOWED_HOSTS = [
+    '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net',
+    'safesurgeon-f2f78c12cdcc.herokuapp.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-agnieszkalu-safesurgeon-jnqo6orcz3z.ws.codeinstitute-ide.net',
-    'https://safesurgeon-f2f78c12cdcc.herokuapp.com'
+    'https://8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net',
+    'https://safesurgeon-f2f78c12cdcc.herokuapp.com',
 ]
 
 

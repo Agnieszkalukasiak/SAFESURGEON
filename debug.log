@@ -12063,3 +12063,111 @@ INFO 2024-09-30 05:50:42,408 autoreload 34453 140060308036672 Watching for file 
 INFO 2024-09-30 10:15:04,378 autoreload 2026 139726270291008 Watching for file changes with StatReloader
 INFO 2024-09-30 11:01:30,426 autoreload 2478 140688186907712 Watching for file changes with StatReloader
 INFO 2024-10-01 02:05:33,091 autoreload 6152 140443148241984 Watching for file changes with StatReloader
+INFO 2025-02-05 11:48:44,476 autoreload 2641 139834088475712 Watching for file changes with StatReloader
+ERROR 2025-02-05 11:48:48,430 exception 2641 139833934607936 Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+WARNING 2025-02-05 11:48:48,443 log 2641 139833934607936 Bad Request: /
+ERROR 2025-02-05 11:48:48,529 exception 2641 139833934607936 Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+WARNING 2025-02-05 11:48:48,539 log 2641 139833934607936 Bad Request: /favicon.ico
+INFO 2025-02-05 11:49:33,341 autoreload 2641 139834088475712 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 11:49:33,835 autoreload 2704 140446183488576 Watching for file changes with StatReloader
+ERROR 2025-02-05 11:49:41,114 exception 2704 140446099564096 Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+WARNING 2025-02-05 11:49:41,131 log 2704 140446099564096 Bad Request: /
+ERROR 2025-02-05 11:49:41,287 exception 2704 140446099564096 Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+WARNING 2025-02-05 11:49:41,296 log 2704 140446099564096 Bad Request: /favicon.ico
+INFO 2025-02-05 11:50:13,587 autoreload 2704 140446183488576 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 11:50:14,065 autoreload 2770 140374594899008 Watching for file changes with StatReloader
+ERROR 2025-02-05 11:50:14,577 exception 2770 140374512232000 Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+WARNING 2025-02-05 11:50:14,599 log 2770 140374512232000 Bad Request: /
+ERROR 2025-02-05 11:50:14,816 exception 2770 140374512232000 Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pip-modules/lib/python3.12/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net'. You may need to add '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net' to ALLOWED_HOSTS.
+WARNING 2025-02-05 11:50:14,832 log 2770 140374512232000 Bad Request: /favicon.ico
+INFO 2025-02-05 11:51:01,840 autoreload 2770 140374594899008 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 11:51:02,310 autoreload 2816 139861148986432 Watching for file changes with StatReloader
+WARNING 2025-02-05 11:51:06,272 log 2816 139860836869696 Not Found: /favicon.ico
+WARNING 2025-02-05 11:51:30,252 log 2816 139860811691584 Forbidden (Origin checking failed - https://8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net does not match any trusted origins.): /verify/
+INFO 2025-02-05 11:52:16,548 autoreload 2816 139861148986432 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 11:52:17,022 autoreload 2891 140405026159680 Watching for file changes with StatReloader
+DEBUG 2025-02-05 11:56:07,944 connectionpool 2891 140404527707712 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2025-02-05 11:56:09,750 connectionpool 2891 140404527707712 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-02-05 11:56:10,768 connectionpool 2891 140404527707712 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-02-05 11:56:11,702 connectionpool 2891 140404527707712 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-02-05 11:57:32,748 connectionpool 2891 140403957298752 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-02-05 11:57:33,976 connectionpool 2891 140403957298752 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-02-05 11:57:34,725 connectionpool 2891 140403957298752 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
