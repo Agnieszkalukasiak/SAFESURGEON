@@ -40,6 +40,8 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net',
     'safesurgeon-f2f78c12cdcc.herokuapp.com',
+    'safesurgeonapp-af6b1edbc353.herokuapp.com',
+    'safesurgeon-c80bc917dfec.herokuapp.com',
     'localhost',
     '127.0.0.1'
 ]
@@ -47,6 +49,8 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net',
     'https://safesurgeon-f2f78c12cdcc.herokuapp.com',
+    'https://safesurgeonapp-af6b1edbc353.herokuapp.com',
+    'https://safesurgeon-c80bc917dfec.herokuapp.com'
 ]
 
 

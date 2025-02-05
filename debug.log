@@ -12173,3 +12173,11 @@ DEBUG 2025-02-05 11:57:33,976 connectionpool 2891 140403957298752 https://api.cl
 DEBUG 2025-02-05 11:57:34,725 connectionpool 2891 140403957298752 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
 INFO 2025-02-05 12:07:16,724 autoreload 2891 140405026159680 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
 INFO 2025-02-05 12:07:17,235 autoreload 4379 139808680119360 Watching for file changes with StatReloader
+INFO 2025-02-05 12:09:24,024 autoreload 4379 139808680119360 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 12:09:24,497 autoreload 5040 139910515715136 Watching for file changes with StatReloader
+INFO 2025-02-05 12:10:14,280 autoreload 5040 139910515715136 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 12:10:14,748 autoreload 5091 140407707835456 Watching for file changes with StatReloader
+INFO 2025-02-05 12:15:48,035 autoreload 5091 140407707835456 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 12:15:48,535 autoreload 5329 140668165413952 Watching for file changes with StatReloader
+INFO 2025-02-05 12:16:05,929 autoreload 5329 140668165413952 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-02-05 12:16:06,400 autoreload 5348 140260793334848 Watching for file changes with StatReloader
