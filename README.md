@@ -15,13 +15,21 @@ Our goal is to enhance patient safety and trust in the medical community by:
 
 Join us in making healthcare safer and more transparent for everyone!
 
-## Project Description 
-This project is a web platform designed to connect users with verified surgeons and streamline the surgeon verification process.
-* Users can search for surgeons and view their verification status (e.g., Pending, Verified, Rejected).
-* Users can see the detailed information about their surgeon's education and exprience.
-* Surgeons can register and create a profile by submitting their professional details and supporting documentation for admin verification.
-* Admin can verify the surgeon and change their status accoridngly.
-* The surgeon can manage and update their own profile and saved documents in the database.
+## Project Overview: Surgeon Verification Web Platform
+This web platform is designed to connect users with verified surgeons and streamline the surgeon verification process. The core functionalities include:
+
+User Features:
+
+* Search for surgeons and view their verification status (e.g., Pending, Verified, Rejected).
+* Access detailed information about a surgeon’s education, experience, and credentials.
+
+Surgeon Features:
+* Register and create a professional profile by submitting details and supporting documents for verification.
+* Manage and update their profile information and stored documents.
+
+Admin Features:
+* Review surgeon submissions and supporting documentation.
+* Approve or reject surgeon applications, updating their verification status accordingly.
 
 ### User Search Functionality:
 Users can log in and search for surgeons using the following filters:
@@ -31,10 +39,10 @@ Users can log in and search for surgeons using the following filters:
 * City
 
 Each search result clearly shows the surgeon's verification status:
-*✅ Verified: Surgeon is verified and listed in the database. Users can view their education and prior experience.
-*❌ Rejected: Surgeon’s verification was denied. Users are informed that their education and experience could not be verified.
-*⏳ Pending: Surgeon has signed up and is awaiting admin approval. Users see that verification is in progress.
-*❓ Not Found: Surgeon is not in the database. Users are notified that the surgeon is not listed as safe.
+* ✅ Verified: Surgeon is verified and listed in the database. Users can view their education and prior experience.
+* ❌ Rejected: Surgeon’s verification was denied. Users are informed that their education and experience could not be verified.
+* ⏳ Pending: Surgeon has signed up and is awaiting admin approval. Users see that verification is in progress.
+* ❓ Not Found: Surgeon is not in the database. Users are notified that the surgeon is not listed as safe.
 
 ### Surgeon Signup and Verification:
 Surgeons can:
