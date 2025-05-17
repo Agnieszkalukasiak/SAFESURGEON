@@ -6,27 +6,24 @@ With Safe Surgeon, you have the tools you need to make informed decisions about 
 
 ## Our Goal
 Our goal is to enhance patient safety and trust in the medical community by:
-Promoting Transparency and providing up-to-date and accurate information about surgeons.
-Empowering Users: Allowing patients to make informed choices based on verified data.
-Improving Healthcare Outcomes: Helping users select qualified professionals for better medical experiences.
+* Promoting Transparency and providing up-to-date and accurate information about surgeons.
+* Empowering Users: Allowing patients to make informed choices based on verified data.
+* Improving Healthcare Outcomes: Helping users select qualified professionals for better medical experiences.
 
-Join us in making healthcare safer and more transparent for everyone.
+Join us in making healthcare safer and more transparent for everyone!
 
 ## Project Description 
 This project allows users to search for surgeons and check their verification status. It also enables surgeons to sign up, create a profile by submitting their details for admin verification, and, once verified or rejected by the admin, access their profile page to edit and keep it up to date. If rejected, surgeons can resubmit their updated details for verification. Every time a surgeon changes their details, their status is automatically reset to pending, requiring them to go through admin verification before accessing their profile page again.
 
 ### User Search Functionality:
-
 Users can log in and search for a surgeon using the surgeon’s name, clinic, country, and city.
 The search results will indicate if the surgeon is:
-
 Verified (present in the database and verified),
 Rejected (their verification was denied),
 Pending(signup but awaiting admin verification) or
 Not Verified (not in the database at all).
 
 ### Surgeon Signup and Verification:
-
 Surgeons can sign up by filling in a form with their details and uploading supporting documents.
 After submission, the surgeon’s profile is marked as “pending verification” and requires administrative review. 
 
@@ -35,11 +32,49 @@ The admin can change the surgeon's status to either rejected or verified. Depend
 If a surgeon decides to change, delete, or add already verified details, their profile is automatically reset to pending in the database.
 
 ### Profile Management:
-
 Once a surgeon is added to the database, idependently if rejcted or verified, they can log into their profile.There they can: 
 #### edit, delete, add.
 If they make changes to their profile, it will reset their verification status to "pending," and the profile will need to go through the verification process again before it is accessible to them.
 This system ensures that users can access accurate, up-to-date information about surgeons' verification status, while allowing surgeons to manage their profiles with ease.
+
+## The live app can be found on:
+https://safesurgeon-c80bc917dfec.herokuapp.com
+
+To see the VERIFIED surgeon profile and ability to edit and delete, please sign in with a verified user:
+##### Username:Henrik
+##### Password:Monster0483
+
+To see the VERIFIED user found in the data base:
+Search: 
+Country: UK, 
+City:London, 
+Clinic:SafeMedic, 
+First Name: Henio, 
+Last Name: Tideman
+
+To see a REJETED user found in database:
+Search:
+Country: Sweden, 
+City:Malmö, 
+Clinic:AkutB or MediCare, 
+First Name: Miriam,
+Last Name: Lukasiak
+
+To see a REJECTED surgeon profile, and ability to edit and delete, please sign in with:
+##### Username: Miriam
+##### Password: 123
+
+To see a PENDING user found in database:
+Search: 
+Country: UK, 
+City: London, 
+Clinic:SafeMedic 
+First Name: Paul 
+Last Name: McMenamin
+
+To see what happens when a PENDING surgeon tries to sign in, please sign in with:
+##### Username: Paul
+##### Password: 123
 
 
 ### Design:
@@ -433,50 +468,6 @@ By combining a simple layout with a minimal color palette, Safe Surgeon delivers
 
 Wireframes for both the mobile and desktop versions were created using https://moqups.com/, ensuring that the structure and flow of the website are visually mapped out before development. 
 
-## The live app can be found on:
-
-https://safesurgeon-c80bc917dfec.herokuapp.com
-
-To see the VERIFIED surgeon profile and ability to edit and delete, please sign in with a verified user:
-##### Username:Henrik
-##### Password:Monster0483
-
-To see the VERIFIED user found in the data base:
-Search: 
-Country: UK, 
-City:London, 
-Clinic:SafeMedic, 
-First Name: Henio, 
-Last Name: Tideman
-
-To see a REJETED user found in database:
-Search:
-Country: Sweden, 
-City:Malmö, 
-Clinic:AkutB or MediCare, 
-First Name: Miriam,
-Last Name: Lukasiak
-
-To see a REJECTED surgeon profile, and ability to edit and delete, please sign in with:
-##### Username: Miriam
-##### Password: 123
-
-To see a PENDING user found in database:
-Search: 
-Country: UK, 
-City: London, 
-Clinic:SafeMedic 
-First Name: Paul 
-Last Name: McMenamin
-
-To see what happens when a PENDING surgeon tries to sign in, please sign in with:
-##### Username: Paul
-##### Password: 123
-
-### Features Left to Implement
-- A forgot password feature on login
-
-- Make a surgeon be able to add different clinics in different towns.
 
 ## Testing
 
