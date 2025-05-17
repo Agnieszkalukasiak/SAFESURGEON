@@ -12202,3 +12202,7 @@ INFO 2025-05-17 11:08:22,027 autoreload 20450 136181030945408 Watching for file 
 INFO 2025-05-17 11:10:17,976 autoreload 21401 126450877895296 Watching for file changes with StatReloader
 INFO 2025-05-17 11:12:33,512 autoreload 22562 126752738730624 Watching for file changes with StatReloader
 WARNING 2025-05-17 11:12:40,428 log 22562 126752579897088 Not Found: /favicon.ico
+INFO 2025-05-17 11:19:07,601 autoreload 22562 126752738730624 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:19:08,071 autoreload 26041 131089816502912 Watching for file changes with StatReloader
+INFO 2025-05-17 11:19:09,296 autoreload 26041 131089816502912 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:19:09,775 autoreload 26068 129419221017216 Watching for file changes with StatReloader
