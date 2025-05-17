@@ -18,12 +18,11 @@ Join us in making healthcare safer and more transparent for everyone!
 ## Project Description 
 This project is a web platform designed to connect users with verified surgeons and streamline the surgeon verification process.
 * Users can search for surgeons and view their verification status (e.g., Pending, Verified, Rejected).
-* Surgeons can register and create a profile by submitting their professional details for admin verification.
+* Users can see the detailed information about their surgeon's education and exprience.
+* Surgeons can register and create a profile by submitting their professional details and supporting documentation for admin verification.
+* Admin can verify the surgeon and change their status accoridngly.
+* The surgeon can manage and update their own profile and saved documents in the database.
 
-
-Automatic Status Reset on Edits:
-* Any time a verified surgeon updates their profile information, their status is automatically set to Pending.
-* They must be re-verified by the admin before regaining access to their profile.
 
 ### User Search Functionality:
 Users can log in and search for surgeons using the following filters:
@@ -53,6 +52,10 @@ Admin Verification Workflow:
 Once a surgeon has an account (regardless of verification status), they can:
 * Log in to their dashboard.
 * Edit, delete, or add details to their profile.
+  
+Automatic Status Reset on Edits:
+* Any time a verified surgeon updates their profile information, their status is automatically set to Pending.
+* They must be re-verified by the admin before regaining access to their profile.
 
 ## The live app can be found on:
 https://safesurgeon-c80bc917dfec.herokuapp.com
