@@ -12263,3 +12263,14 @@ INFO 2025-05-17 13:52:11,108 autoreload 100698 129264380781184 Watching for file
 INFO 2025-05-17 13:52:11,262 autoreload 70505 126079141368448 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
 INFO 2025-05-17 13:52:11,599 autoreload 100700 133632201253504 Watching for file changes with StatReloader
 INFO 2025-05-17 13:52:11,948 autoreload 100704 124556011602560 Watching for file changes with StatReloader
+INFO 2025-05-17 13:52:59,320 autoreload 101315 130710413525632 Watching for file changes with StatReloader
+INFO 2025-05-17 13:54:08,269 views 100704 124555927860992 Editing profile for surgeon: Miriam Lukasiak -Verified
+INFO 2025-05-17 14:00:03,976 views 100704 124555910027008 Editing profile for surgeon: Miriam Lukasiak -Verified
+INFO 2025-05-17 14:01:18,305 autoreload 100698 129264380781184 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 14:01:18,514 autoreload 100704 124556011602560 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 14:01:18,820 autoreload 100700 133632201253504 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 14:01:19,162 autoreload 101315 130710413525632 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 14:01:19,251 autoreload 104998 126840152023680 Watching for file changes with StatReloader
+INFO 2025-05-17 14:01:19,579 autoreload 104999 135573271609984 Watching for file changes with StatReloader
+INFO 2025-05-17 14:01:20,101 autoreload 105009 124634532102784 Watching for file changes with StatReloader
+INFO 2025-05-17 14:01:20,294 autoreload 105022 135632117092992 Watching for file changes with StatReloader
