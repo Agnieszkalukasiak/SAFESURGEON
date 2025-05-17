@@ -435,7 +435,7 @@ Wireframes for both the mobile and desktop versions were created using https://m
 
 ## The live app can be found on:
 
-https://safesurgeon-f2f78c12cdcc.herokuapp.com/
+https://safesurgeon-c80bc917dfec.herokuapp.com
 
 To see the VERIFIED surgeon profile and ability to edit and delete, please sign in with a verified user:
 ##### Username:Henrik
