@@ -16,20 +16,27 @@ Join us in making healthcare safer and more transparent for everyone!
 This project allows users to search for surgeons and check their verification status. It also enables surgeons to sign up, create a profile by submitting their details for admin verification, and, once verified or rejected by the admin, access their profile page to edit and keep it up to date. If rejected, surgeons can resubmit their updated details for verification. Every time a surgeon changes their details, their status is automatically reset to pending, requiring them to go through admin verification before accessing their profile page again.
 
 ### User Search Functionality:
-Users can log in and search for a surgeon using the surgeon’s name, clinic, country, and city.
-The search results will indicate if the surgeon is:
-Verified (present in the database and verified),
-Rejected (their verification was denied),
-Pending(signup but awaiting admin verification) or
-Not Verified (not in the database at all).
+Users can log in and search for surgeons using the following filters:
+Surgeon’s Name
+Clinic
+Country
+City
+
+Each search result clearly shows the surgeon's verification status:
+✅ Verified: Surgeon is verified and listed in the database.
+❌ Rejected: Surgeon’s verification request was denied.
+⏳ Pending: Surgeon has signed up and is awaiting admin approval.
+❓ Not Found: Surgeon is not listed in the database.
 
 ### Surgeon Signup and Verification:
-Surgeons can sign up by filling in a form with their details and uploading supporting documents.
-After submission, the surgeon’s profile is marked as “pending verification” and requires administrative review. 
+Surgeons can:
+Sign up by submitting a form with personal and professional details.
+Upload documents for verification.
+After submission, their profile is marked as Pending Verification and awaits review by an admin.
 
-The admin can change the surgeon's status to either rejected or verified. Depending on this status, not only does the surgeon's profile appearance in the search results change, but also  their profile. If rejected, the surgeon has the chance to reapply with updated documentation and details.
-
-If a surgeon decides to change, delete, or add already verified details, their profile is automatically reset to pending in the database.
+The admin can either verify or reject the application.
+If rejected, surgeons can resubmit updated information for reconsideration.
+If any changes are made to a verified profile (e.g., editing or deleting information), the status is automatically reset to Pending, and the profile must be re-verified before access is restored.
 
 ### Profile Management:
 Once a surgeon is added to the database, idependently if rejcted or verified, they can log into their profile.There they can: 
