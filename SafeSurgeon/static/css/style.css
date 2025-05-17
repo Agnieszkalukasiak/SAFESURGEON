@@ -25,7 +25,7 @@ body {
     color: var(--ss-navy);
     /* background-color: var(--ss-cream);*/
     background-color: lime !important;
-    border: 15px solid purple !important;
+    border: 15px solid rgb(176, 91, 176) !important;
 }
 
 .main-bg {
