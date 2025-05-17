@@ -23,7 +23,6 @@ This project is a web platform designed to connect users with verified surgeons 
 * Admin can verify the surgeon and change their status accoridngly.
 * The surgeon can manage and update their own profile and saved documents in the database.
 
-
 ### User Search Functionality:
 Users can log in and search for surgeons using the following filters:
 * Surgeon’s Name
@@ -32,10 +31,10 @@ Users can log in and search for surgeons using the following filters:
 * City
 
 Each search result clearly shows the surgeon's verification status:
-* ✅ Verified: Surgeon is verified and listed in the database.
-* ❌ Rejected: Surgeon’s verification request was denied.
-* ⏳ Pending: Surgeon has signed up and is awaiting admin approval.
-* ❓ Not Found: Surgeon is not listed in the database.
+*✅ Verified: Surgeon is verified and listed in the database. Users can view their education and prior experience.
+*❌ Rejected: Surgeon’s verification was denied. Users are informed that their education and experience could not be verified.
+*⏳ Pending: Surgeon has signed up and is awaiting admin approval. Users see that verification is in progress.
+*❓ Not Found: Surgeon is not in the database. Users are notified that the surgeon is not listed as safe.
 
 ### Surgeon Signup and Verification:
 Surgeons can:
@@ -44,7 +43,7 @@ Surgeons can:
 * After submission, their profile is marked as Pending Verification and awaits review by an admin.
 
 Admin Verification Workflow:
-* After profile submission, an admin reviews and either verifies or rejects the details.
+* After profile submission, an admin reviews and verfies the submitted data and either verifies or rejects the submitted data.
 * If verified, the surgeon gains access to their full profile page.
 * If rejected, the surgeon can revise and resubmit their details for another review.
 
