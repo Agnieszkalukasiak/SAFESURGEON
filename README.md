@@ -13,36 +13,51 @@ Our goal is to enhance patient safety and trust in the medical community by:
 Join us in making healthcare safer and more transparent for everyone!
 
 ## Project Description 
-This project allows users to search for surgeons and check their verification status. It also enables surgeons to sign up, create a profile by submitting their details for admin verification, and, once verified or rejected by the admin, access their profile page to edit and keep it up to date. If rejected, surgeons can resubmit their updated details for verification. Every time a surgeon changes their details, their status is automatically reset to pending, requiring them to go through admin verification before accessing their profile page again.
+This project is a web platform designed to connect users with verified surgeons and streamline the surgeon verification process.
+
+Key Features:
+User Search Functionality:
+Users can search for surgeons and view their verification status (e.g., Pending, Verified, Rejected).
+
+Surgeon Sign-Up and Profile Creation:
+Surgeons can register and create a profile by submitting their professional details for admin verification.
+
+Admin Verification Workflow:
+After profile submission, an admin reviews and either verifies or rejects the details.
+If verified, the surgeon gains access to their full profile page.
+If rejected, the surgeon can revise and resubmit their details for another review.
+
+Automatic Status Reset on Edits:
+Any time a verified surgeon updates their profile information, their status is automatically set to Pending.
+They must be re-verified by the admin before regaining access to their profile.
 
 ### User Search Functionality:
 Users can log in and search for surgeons using the following filters:
-Surgeon’s Name
-Clinic
-Country
-City
+* Surgeon’s Name
+* Clinic
+* Country
+* City
 
 Each search result clearly shows the surgeon's verification status:
-✅ Verified: Surgeon is verified and listed in the database.
-❌ Rejected: Surgeon’s verification request was denied.
-⏳ Pending: Surgeon has signed up and is awaiting admin approval.
-❓ Not Found: Surgeon is not listed in the database.
+* ✅ Verified: Surgeon is verified and listed in the database.
+* ❌ Rejected: Surgeon’s verification request was denied.
+* ⏳ Pending: Surgeon has signed up and is awaiting admin approval.
+* ❓ Not Found: Surgeon is not listed in the database.
 
 ### Surgeon Signup and Verification:
 Surgeons can:
-Sign up by submitting a form with personal and professional details.
-Upload documents for verification.
-After submission, their profile is marked as Pending Verification and awaits review by an admin.
+* Sign up by submitting a form with personal and professional details.
+* Upload documents for verification.
+* After submission, their profile is marked as Pending Verification and awaits review by an admin.
 
 The admin can either verify or reject the application.
 If rejected, surgeons can resubmit updated information for reconsideration.
 If any changes are made to a verified profile (e.g., editing or deleting information), the status is automatically reset to Pending, and the profile must be re-verified before access is restored.
 
 ### Profile Management:
-Once a surgeon is added to the database, idependently if rejcted or verified, they can log into their profile.There they can: 
-#### edit, delete, add.
-If they make changes to their profile, it will reset their verification status to "pending," and the profile will need to go through the verification process again before it is accessible to them.
-This system ensures that users can access accurate, up-to-date information about surgeons' verification status, while allowing surgeons to manage their profiles with ease.
+Once a surgeon has an account (regardless of verification status), they can:
+* Log in to their dashboard.
+* Edit, delete, or add details to their profile.
 
 ## The live app can be found on:
 https://safesurgeon-c80bc917dfec.herokuapp.com
