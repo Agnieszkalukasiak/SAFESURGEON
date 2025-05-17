@@ -653,13 +653,3 @@ Learning Platforms
 -	Django Rest Framework - For building APIs or handling external integrations with Django.
 -	Awesome Django on GitHub - A curated list of Django apps, projects, and resources.
 
-
-### Aknowladgments
-
--	My mentor, Moritz Wach, for his incredible patience, quidance and support.
-
-- My fellow students for their company and encouragement.
-
-- Sarah at Code Intitute Mentoring, for her incredible patience and hawk-eye.
-
-- Kay at CondeInstitute for being my mental support on this crazy journey.
