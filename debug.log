@@ -12181,3 +12181,24 @@ INFO 2025-02-05 12:15:48,035 autoreload 5091 140407707835456 /workspace/SAFESURG
 INFO 2025-02-05 12:15:48,535 autoreload 5329 140668165413952 Watching for file changes with StatReloader
 INFO 2025-02-05 12:16:05,929 autoreload 5329 140668165413952 /workspace/SAFESURGEON/codestar/settings.py changed, reloading.
 INFO 2025-02-05 12:16:06,400 autoreload 5348 140260793334848 Watching for file changes with StatReloader
+INFO 2025-05-17 10:45:28,495 autoreload 8625 140417738523264 Watching for file changes with StatReloader
+INFO 2025-05-17 10:46:41,147 autoreload 9656 132685447647872 Watching for file changes with StatReloader
+INFO 2025-05-17 10:50:05,897 autoreload 9656 132685447647872 /workspaces/SAFESURGEON/env.py changed, reloading.
+INFO 2025-05-17 10:50:06,136 autoreload 8625 140417738523264 /workspaces/SAFESURGEON/env.py changed, reloading.
+INFO 2025-05-17 10:50:06,465 autoreload 11108 139021792879232 Watching for file changes with StatReloader
+INFO 2025-05-17 10:50:06,855 autoreload 11115 132469880619648 Watching for file changes with StatReloader
+INFO 2025-05-17 10:50:49,066 autoreload 11889 140239438230144 Watching for file changes with StatReloader
+INFO 2025-05-17 10:53:39,343 autoreload 11115 132469880619648 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 10:53:39,349 autoreload 11889 140239438230144 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 10:53:39,674 autoreload 11108 139021792879232 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 10:53:40,305 autoreload 13107 139993475662464 Watching for file changes with StatReloader
+INFO 2025-05-17 10:53:40,355 autoreload 13106 140339947737728 Watching for file changes with StatReloader
+INFO 2025-05-17 10:53:40,960 autoreload 13111 135111233901184 Watching for file changes with StatReloader
+INFO 2025-05-17 10:54:17,970 autoreload 13577 123712545321600 Watching for file changes with StatReloader
+INFO 2025-05-17 10:55:44,862 autoreload 14658 127599655969408 Watching for file changes with StatReloader
+INFO 2025-05-17 10:56:29,721 autoreload 15460 133035350643328 Watching for file changes with StatReloader
+INFO 2025-05-17 11:06:39,527 autoreload 19692 126018379723392 Watching for file changes with StatReloader
+INFO 2025-05-17 11:08:22,027 autoreload 20450 136181030945408 Watching for file changes with StatReloader
+INFO 2025-05-17 11:10:17,976 autoreload 21401 126450877895296 Watching for file changes with StatReloader
+INFO 2025-05-17 11:12:33,512 autoreload 22562 126752738730624 Watching for file changes with StatReloader
+WARNING 2025-05-17 11:12:40,428 log 22562 126752579897088 Not Found: /favicon.ico

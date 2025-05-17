@@ -35,7 +35,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-agnieszkalu-safesurgeon-3aaf08fndwb.ws.codeinstitute-ide.net',
@@ -147,8 +147,15 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ''))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+#DATABASES = {
+#    'default': dj_database_url.parse(os.environ.get('DATABASE_URL', ''))
+#}
 
 
 # Default primary key field type
