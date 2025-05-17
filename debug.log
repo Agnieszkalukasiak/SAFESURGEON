@@ -12206,3 +12206,44 @@ INFO 2025-05-17 11:19:07,601 autoreload 22562 126752738730624 /workspaces/SAFESU
 INFO 2025-05-17 11:19:08,071 autoreload 26041 131089816502912 Watching for file changes with StatReloader
 INFO 2025-05-17 11:19:09,296 autoreload 26041 131089816502912 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
 INFO 2025-05-17 11:19:09,775 autoreload 26068 129419221017216 Watching for file changes with StatReloader
+INFO 2025-05-17 11:21:33,882 autoreload 27270 140661572407936 Watching for file changes with StatReloader
+INFO 2025-05-17 11:23:31,440 autoreload 26068 129419221017216 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:23:31,636 autoreload 27270 140661572407936 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:23:32,014 autoreload 28135 125434688389760 Watching for file changes with StatReloader
+INFO 2025-05-17 11:23:32,394 autoreload 28137 132422481126016 Watching for file changes with StatReloader
+INFO 2025-05-17 11:23:42,734 autoreload 28137 132422481126016 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:23:43,210 autoreload 28309 128008879469184 Watching for file changes with StatReloader
+INFO 2025-05-17 11:23:43,463 autoreload 28135 125434688389760 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:23:43,892 autoreload 28319 138856454496896 Watching for file changes with StatReloader
+INFO 2025-05-17 11:23:59,578 autoreload 28309 128008879469184 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:24:00,012 autoreload 28517 140296098546304 Watching for file changes with StatReloader
+INFO 2025-05-17 11:24:00,275 autoreload 28319 138856454496896 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:24:00,733 autoreload 28521 126777591960192 Watching for file changes with StatReloader
+INFO 2025-05-17 11:25:08,872 autoreload 28521 126777591960192 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:25:09,015 autoreload 28517 140296098546304 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:25:09,510 autoreload 29068 131537269904000 Watching for file changes with StatReloader
+INFO 2025-05-17 11:25:09,719 autoreload 29071 128596056109696 Watching for file changes with StatReloader
+INFO 2025-05-17 11:43:52,965 autoreload 29068 131537269904000 /workspaces/SAFESURGEON/env.py changed, reloading.
+INFO 2025-05-17 11:43:53,404 autoreload 38208 124463858999936 Watching for file changes with StatReloader
+INFO 2025-05-17 11:43:59,677 autoreload 38208 124463858999936 /workspaces/SAFESURGEON/env.py changed, reloading.
+INFO 2025-05-17 11:44:00,101 autoreload 38293 123254918304384 Watching for file changes with StatReloader
+INFO 2025-05-17 11:44:29,657 autoreload 38293 123254918304384 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 11:44:30,083 autoreload 38537 125760325362304 Watching for file changes with StatReloader
+INFO 2025-05-17 11:47:21,711 autoreload 40498 127612253299328 Watching for file changes with StatReloader
+WARNING 2025-05-17 11:47:28,934 log 40498 127612161165056 Not Found: /favicon.ico
+INFO 2025-05-17 11:49:23,306 autoreload 41951 126928868938368 Watching for file changes with StatReloader
+INFO 2025-05-17 11:58:02,100 autoreload 45709 130257684525696 Watching for file changes with StatReloader
+DEBUG 2025-05-17 12:03:44,587 connectionpool 40498 127611782027008 Starting new HTTPS connection (1): api.cloudinary.com:443
+DEBUG 2025-05-17 12:03:45,496 connectionpool 40498 127611782027008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-05-17 12:03:46,837 connectionpool 40498 127611782027008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-05-17 12:03:48,201 connectionpool 40498 127611782027008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+DEBUG 2025-05-17 12:03:48,939 connectionpool 40498 127611782027008 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+INFO 2025-05-17 12:11:30,486 views 40498 127611790419712 Editing profile for surgeon: Miriam Lukasiak -Verified
+INFO 2025-05-17 12:11:43,455 views 40498 127611790419712 Editing profile for surgeon: Miriam Lukasiak -Verified
+INFO 2025-05-17 12:11:44,954 views 40498 127611790419712 Transaction committed successfully
+INFO 2025-05-17 12:13:38,794 views 40498 127611782027008 Editing profile for surgeon: Miriam Lukasiak -Verified
+INFO 2025-05-17 12:16:03,036 views 40498 127612150560512 Editing profile for surgeon: Miriam Lukasiak -Verified
+INFO 2025-05-17 12:16:24,101 views 40498 127611772585728 Editing profile for surgeon: Miriam Lukasiak -Verified
+DEBUG 2025-05-17 12:16:24,273 connectionpool 40498 127611772585728 Resetting dropped connection: api.cloudinary.com
+DEBUG 2025-05-17 12:16:25,231 connectionpool 40498 127611772585728 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
+INFO 2025-05-17 12:16:26,487 views 40498 127611772585728 Transaction committed successfully
