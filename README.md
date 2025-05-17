@@ -1,7 +1,9 @@
 
 # SafeSurgeon
 
-Choosing the right surgeon is a critical decision that can significantly impact your health and well-being. However, finding trustworthy and comprehensive information about medical professionals can be challenging. Safe Surgeon bridges this gap by offering a reliable platform where you can: Check the surgeon's education, board certifications, and licenses. Learn about their specialties, years of practice, and areas of expertise.
+Choosing the right surgeon is a critical decision that can significantly impact your health and well-being. However, finding trustworthy and comprehensive information about medical professionals can be challenging. Safe Surgeon bridges this gap by offering a reliable platform where you can: 
+* Check the surgeon's education, board certifications, and licenses. Learn about their specialties, years of practice, and areas of expertise.
+
 With Safe Surgeon, you have the tools you need to make informed decisions about your healthcare.
 
 ## Our Goal
