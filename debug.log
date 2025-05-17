@@ -12251,3 +12251,9 @@ INFO 2025-05-17 12:33:08,658 autoreload 38537 125760325362304 /workspaces/SAFESU
 INFO 2025-05-17 12:33:08,805 autoreload 40498 127612253299328 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
 INFO 2025-05-17 12:33:09,339 autoreload 63417 135822525547136 Watching for file changes with StatReloader
 INFO 2025-05-17 12:33:09,572 autoreload 63424 127445095162496 Watching for file changes with StatReloader
+INFO 2025-05-17 12:45:10,622 autoreload 68713 123622887916160 Watching for file changes with StatReloader
+INFO 2025-05-17 12:45:50,799 autoreload 69121 139373583872640 Watching for file changes with StatReloader
+INFO 2025-05-17 12:46:07,694 autoreload 69300 127017182491264 Watching for file changes with StatReloader
+INFO 2025-05-17 12:48:52,517 autoreload 70505 126079141368448 Watching for file changes with StatReloader
+WARNING 2025-05-17 12:48:58,860 log 70505 126078823687936 Not Found: /favicon.ico
+INFO 2025-05-17 13:08:53,753 views 70505 126078790117120 Editing profile for surgeon: Miriam Lukasiak -Verified
