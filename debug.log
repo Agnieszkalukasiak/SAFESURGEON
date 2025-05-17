@@ -12247,3 +12247,7 @@ INFO 2025-05-17 12:16:24,101 views 40498 127611772585728 Editing profile for sur
 DEBUG 2025-05-17 12:16:24,273 connectionpool 40498 127611772585728 Resetting dropped connection: api.cloudinary.com
 DEBUG 2025-05-17 12:16:25,231 connectionpool 40498 127611772585728 https://api.cloudinary.com:443 "POST /v1_1/dpecpzapk/auto/upload HTTP/1.1" 200 None
 INFO 2025-05-17 12:16:26,487 views 40498 127611772585728 Transaction committed successfully
+INFO 2025-05-17 12:33:08,658 autoreload 38537 125760325362304 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 12:33:08,805 autoreload 40498 127612253299328 /workspaces/SAFESURGEON/codestar/settings.py changed, reloading.
+INFO 2025-05-17 12:33:09,339 autoreload 63417 135822525547136 Watching for file changes with StatReloader
+INFO 2025-05-17 12:33:09,572 autoreload 63424 127445095162496 Watching for file changes with StatReloader

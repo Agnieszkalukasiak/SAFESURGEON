@@ -44,6 +44,7 @@ ALLOWED_HOSTS = [
     'safesurgeon-c80bc917dfec.herokuapp.com',
     'localhost',
     '127.0.0.1'
+    'safesurgeon.onrender.com' 
 ]
 
 CSRF_TRUSTED_ORIGINS = [
