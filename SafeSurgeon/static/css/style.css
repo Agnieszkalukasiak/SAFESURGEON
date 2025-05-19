@@ -1,31 +1,25 @@
-
 .logo-small {
     width: 200px; 
     height: 200px; 
 }
 
-
 :root {
     --ss-teal: #008080;
     --ss-teal-dark: #006666;
     --ss-coral: #FF6B6B;
-    --ss-navy: #2C3E50;
+    --ss-navy: #152e48;
     --ss-cream: #F9F7F3;
-    --ss-success: #3CAEA3;
+    --ss-success: #1129a2;
     --ss-warning: #F6D55C;
     --ss-danger: #ED553B;
     --ss-font: 'Outfit', sans-serif;
     --ss-heading: 'DM Serif Display', serif;
 }
 
-
-
 body {
     font-family: var(--ss-font);
     color: var(--ss-navy);
-    /* background-color: var(--ss-cream);*/
-    background-color: lime !important;
-    border: 15px solid rgb(176, 91, 176) !important;
+    background-color: var(--ss-cream);
 }
 
 .main-bg {
@@ -257,6 +251,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-success {
     background-color: var(--ss-success) !important;
+    color: white !important;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);  /* Add text shadow for better contrast */
+    font-weight: 600;  /* Make text slightly bolder */
 }
 
 .bg-warning {
@@ -334,7 +331,7 @@ footer::before {
     right: 5%;
     width: 200px;
     height: 200px;
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.08) 0%, rgba(255, 107, 107, 0.01) 70%);
+    background: linear-gradient(135deg, rgba(226, 125, 96, 0.08) 0%, rgba(226, 125, 96, 0.01) 70%);
 }
 
 /* Profile picture for surgeon pages */
@@ -361,6 +358,9 @@ footer::before {
 .badge-verified {
     background-color: var(--ss-success);
     color: white;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);  /* Add text shadow for better contrast */
+    font-weight: 700;  /* Make the text bolder for better readability */
+    letter-spacing: 0.5px;  /* Slightly increase letter spacing */
 }
 
 .badge-pending {
@@ -417,7 +417,7 @@ footer::before {
 }
 
 .alert-danger-custom {
-    background-color: rgba(237, 85, 59, 0.05);
+    background-color: rgba(196, 69, 54, 0.05);
     border-left-color: var(--ss-danger);
 }
 
